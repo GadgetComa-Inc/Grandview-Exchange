@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://gadgetcoma.github.io/Grandview-Exchange/sitemap.xml
