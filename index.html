@@ -1,12 +1,509 @@
-<!DOCTYPE html><html lang="en-gb"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Grandview Exchange</title><meta name="generator" content="Publii Open-Source CMS for Static Site"><link rel="canonical" href="https://gadgetcoma.github.io/Grandview-Exchange/"><link rel="alternate" type="application/atom+xml" href="https://gadgetcoma.github.io/Grandview-Exchange/feed.xml" title="Grandview Exchange - RSS"><link rel="alternate" type="application/json" href="https://gadgetcoma.github.io/Grandview-Exchange/feed.json" title="Grandview Exchange - JSON"><meta property="og:title" content="Grandview Exchange"><meta property="og:site_name" content="Grandview Exchange"><meta property="og:description" content=""><meta property="og:url" content="https://gadgetcoma.github.io/Grandview-Exchange/"><meta property="og:type" content="website"><link rel="stylesheet" href="https://gadgetcoma.github.io/Grandview-Exchange/assets/css/style.css?v=a0ba884548820066dfadd8416036abba"><script type="application/ld+json">{"@context":"http://schema.org","@type":"Organization","name":"Grandview Exchange","url":"https://gadgetcoma.github.io/Grandview-Exchange/"}</script><noscript><style>img[loading] {
-                    opacity: 1;
-                }</style></noscript></head><body class="home-template"><header class="top js-header"><a class="logo" href="https://gadgetcoma.github.io/Grandview-Exchange/">Grandview Exchange</a></header><main><div class="hero hero--noimage"><header class="hero__content"><div class="wrapper"><h1>Discover My Blogging Journey: Adventures, Travels, and Hobbies!</h1><p>Join me as I share captivating stories, travel experiences, and dive into the joys of my favorite hobbies.</p><p><a href="#" class="btn">Read more</a></p></div></header></div><div class="wrapper feed"></div></main><footer class="footer"><div class="wrapper"><div class="footer__copyright">Powered by Publii</div><button id="backToTop" class="footer__bttop" aria-label="Back to top" title="Back to top"><svg width="20" height="20"><use xlink:href="https://gadgetcoma.github.io/Grandview-Exchange/assets/svg/svg-map.svg#toparrow"/></svg></button></div></footer><script defer="defer" src="https://gadgetcoma.github.io/Grandview-Exchange/assets/js/scripts.min.js?v=dafec4f87fead6718cb125f0b0fc8441"></script><script>window.publiiThemeMenuConfig={mobileMenuMode:'sidebar',animationSpeed:300,submenuWidth: 'auto',doubleClickTime:500,mobileMenuExpandableSubmenus:true,relatedContainerForOverlayMenuSelector:'.top'};</script><script>var images = document.querySelectorAll('img[loading]');
-        for (var i = 0; i < images.length; i++) {
-            if (images[i].complete) {
-                images[i].classList.add('is-loaded');
-            } else {
-                images[i].addEventListener('load', function () {
-                    this.classList.add('is-loaded');
-                }, false);
-            }
-        }</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Grandview Exchange landing page with quick links, guidance, and calendar access." />
+  <title>Grandview Exchange</title>
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --surface:#0f1b33;
+      --surface2:#122042;
+      --text:#eaf0ff;
+      --muted:#b8c3e6;
+      --border:rgba(255,255,255,.12);
+      --shadow: 0 12px 30px rgba(0,0,0,.35);
+      --accent:#7aa7ff;
+      --accent2:#57e3ff;
+      --ok:#39d98a;
+      --warn:#ffd166;
+      --radius:22px;
+      --radius2:28px;
+      --max:1100px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 20% 10%, rgba(122,167,255,.22), transparent 55%),
+        radial-gradient(900px 500px at 80% 15%, rgba(87,227,255,.18), transparent 55%),
+        radial-gradient(900px 500px at 60% 85%, rgba(57,217,138,.10), transparent 55%),
+        linear-gradient(180deg, var(--bg), #070c16 70%);
+      line-height:1.55;
+    }
+    a{ color:inherit; text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+    .wrap{ max-width:var(--max); margin:0 auto; padding:28px 18px 64px; }
+
+    /* Banner */
+    .banner{
+      border-radius:var(--radius2);
+      overflow:hidden;
+      background: linear-gradient(135deg, rgba(122,167,255,.20), rgba(87,227,255,.14));
+      box-shadow: var(--shadow);
+      border:1px solid var(--border);
+    }
+    .banner-inner{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      padding:22px;
+      align-items:center;
+    }
+    @media (max-width: 860px){
+      .banner-inner{ grid-template-columns: 1fr; }
+    }
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .brand h1{
+      margin:0;
+      font-size: clamp(28px, 4vw, 44px);
+      letter-spacing:.3px;
+      line-height:1.1;
+    }
+    .brand p{ margin:0; color:var(--muted); font-size: 1.02rem; }
+    .badge-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:6px; }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      background: rgba(255,255,255,.08);
+      border:1px solid var(--border);
+      color:var(--text);
+      font-size:.92rem;
+      white-space:nowrap;
+    }
+    .dot{
+      width:10px;height:10px;border-radius:50%;
+      background: var(--accent2);
+      box-shadow: 0 0 0 4px rgba(87,227,255,.12);
+    }
+    .banner-media{
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      background: rgba(0,0,0,.18);
+      min-height:180px;
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:12px;
+    }
+    .banner-media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .placeholder{
+      font-family:var(--mono);
+      font-size:.92rem;
+      color:rgba(234,240,255,.80);
+    }
+    .placeholder strong{ color: var(--warn); font-weight:600; }
+
+    /* Content grid */
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:18px;
+      margin-top:18px;
+    }
+    @media (max-width: 980px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+    .card{
+      background: rgba(15,27,51,.72);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:18px 18px 16px;
+      position:relative;
+      overflow:hidden;
+    }
+    .card::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(420px 160px at 10% 0%, rgba(122,167,255,.20), transparent 60%),
+                  radial-gradient(420px 160px at 80% 10%, rgba(87,227,255,.14), transparent 60%);
+      pointer-events:none;
+      opacity:.9;
+    }
+    .card > *{ position:relative; }
+    .card h2{
+      margin:0 0 8px 0;
+      font-size: 1.18rem;
+      letter-spacing:.2px;
+    }
+    .card p{ margin:0 0 12px 0; color: var(--muted); }
+    .card ul{ margin:0; padding-left:18px; color: var(--muted); }
+    .card li{ margin:8px 0; }
+    .kicker{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom:10px;
+      color: rgba(234,240,255,.92);
+      font-weight:600;
+    }
+    .k-icon{
+      width:32px;height:32px;border-radius:10px;
+      display:grid;place-items:center;
+      background: rgba(122,167,255,.14);
+      border:1px solid var(--border);
+      color: var(--text);
+      font-weight:700;
+    }
+
+    /* Buttons */
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:10px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      font-weight:600;
+      cursor:pointer;
+      transition: transform .08s ease, background .15s ease, border-color .15s ease;
+      min-width: 190px;
+    }
+    .btn:hover{
+      background: rgba(255,255,255,.10);
+      border-color: rgba(255,255,255,.22);
+      text-decoration:none;
+      transform: translateY(-1px);
+    }
+    .btn .arrow{ opacity:.9; }
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(122,167,255,.28), rgba(87,227,255,.18));
+    }
+    .btn.ok{
+      background: linear-gradient(135deg, rgba(57,217,138,.20), rgba(87,227,255,.10));
+    }
+
+    /* Calendar section */
+    .calendar{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:18px;
+      align-items:start;
+    }
+    @media (max-width: 980px){
+      .calendar{ grid-template-columns: 1fr; }
+    }
+    .calendar-embed{
+      background: rgba(18,32,66,.60);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      min-height: 520px;
+      position:relative;
+    }
+    .calendar-embed .embed-placeholder{
+      height:100%;
+      min-height: 520px;
+      display:grid;
+      place-items:center;
+      padding:18px;
+      text-align:center;
+    }
+    .calendar-links a{
+      display:block;
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.05);
+      margin:10px 0;
+      color: var(--text);
+      font-weight:600;
+    }
+    .calendar-links a:hover{
+      background: rgba(255,255,255,.09);
+      text-decoration:none;
+    }
+    .hint{
+      margin-top:10px;
+      color: var(--muted);
+      font-size:.95rem;
+    }
+
+    /* Footer */
+    footer{
+      margin-top:26px;
+      color: rgba(184,195,230,.85);
+      font-size:.92rem;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:space-between;
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+    }
+    .small{ font-family: var(--mono); font-size:.86rem; opacity:.9; }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- ===== Banner (replace with your "home group start page" banner) ===== -->
+    <header class="banner" aria-label="Grandview Exchange banner">
+      <div class="banner-inner">
+        <div class="brand">
+          <h1>Grandview Exchange</h1>
+          <p>
+            Welcome to Grandview Exchange—your central hub for community updates, resources, and ways to get involved.
+            Use the quick links below to jump to the homepage, guides, help, registration, and training.
+          </p>
+          <div class="badge-row" aria-label="Highlights">
+            <span class="badge"><span class="dot" aria-hidden="true"></span>Quick links to key resources</span>
+            <span class="badge"><span class="dot" aria-hidden="true" style="background:var(--ok)"></span>Calendar + subscriptions</span>
+            <span class="badge"><span class="dot" aria-hidden="true" style="background:var(--accent)"></span>Clear next steps</span>
+          </div>
+        </div>
+
+        <div class="banner-media" aria-label="Banner image">
+          <!-- OPTION A (recommended): place coverphoto.png in the same folder as this HTML file -->
+          <img
+            src="coverphoto.png"
+            alt="Grandview Exchange banner"
+            onerror="this.remove(); this.parentElement.querySelector('.placeholder').style.display='block';"
+          />
+          <!-- Fallback placeholder if image path is not available -->
+          <div class="placeholder" style="display:none;">
+            <strong>Banner placeholder</strong><br/>
+            Put <span style="color:var(--warn)">coverphoto.png</span> beside this HTML file, or replace the <span style="color:var(--warn)">src</span> with a URL.
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===== Intro / Getting Started ===== -->
+    <section class="grid" aria-label="Grandview Exchange getting started">
+      <article class="card">
+        <div class="kicker">
+          <div class="k-icon" aria-hidden="true">1</div>
+          <h2 style="margin:0;">Introduction</h2>
+        </div>
+        <p>
+          Grandview Exchange brings together announcements, club activities, schedules, and self-service help in one place.
+          Whether you’re looking for the latest community information, need to register, or want to sign up for training,
+          this page gives you a fast, reliable path to what you need.
+        </p>
+        <p>
+          Tip: If you’re new, start with the <strong>Homepage</strong>, then visit the <strong>User Guide</strong> for a quick walkthrough.
+          If you get stuck, the <strong>Help Assistant</strong> is your fastest route to answers.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="kicker">
+          <div class="k-icon" aria-hidden="true">2</div>
+          <h2 style="margin:0;">Quick Actions</h2>
+        </div>
+
+        <p>Use these shortcuts to reach the most common destinations.</p>
+
+        <div class="actions" role="navigation" aria-label="Primary navigation buttons">
+          <a class="btn primary" href="<<HOME_PAGE_URL>>" target="_blank" rel="noopener">
+            Go to Home Page <span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="btn" href="<<USER_GUIDE_URL>>" target="_blank" rel="noopener">
+            Open User Guide <span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="btn" href="<<HELP_ASSISTANT_URL>>" target="_blank" rel="noopener">
+            Launch Help Assistant <span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="btn ok" href="<<REGISTRATION_PAGE_URL>>" target="_blank" rel="noopener">
+            Go to Registration <span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="btn" href="<<TRAINING_SIGNUP_URL>>" target="_blank" rel="noopener">
+            Training Sign Up <span class="arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div class="hint">
+          <div class="small">Placeholders to replace:</div>
+          <div class="small"><<HOME_PAGE_URL>> • <<USER_GUIDE_URL>> • <<HELP_ASSISTANT_URL>> • <<REGISTRATION_PAGE_URL>> • <<TRAINING_SIGNUP_URL>></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===== Detail Sections (paragraphs + bullets as requested) ===== -->
+    <section class="grid" aria-label="Detailed navigation guidance">
+      <article class="card">
+        <div class="kicker">
+          <div class="k-icon" aria-hidden="true">A</div>
+          <h2 style="margin:0;">Get to the Home Page</h2>
+        </div>
+        <p>
+          The Home Page is the best starting point for announcements, featured updates, and navigation to community areas.
+        </p>
+        <ul>
+          <li>Use this when you want the latest information and top-level navigation.</li>
+          <li>Bookmark it for quick access.</li>
+        </ul>
+        <div class="actions">
+          <a class="btn primary" href="<<HOME_PAGE_URL>>" target="_blank" rel="noopener">Open Home Page →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="kicker">
+          <div class="k-icon" aria-hidden="true">B</div>
+          <h2 style="margin:0;">Get to the User Guide</h2>
+        </div>
+        <p>
+          The User Guide provides step-by-step instructions, best practices, and tips for using Grandview Exchange.
+        </p>
+        <ul>
+          <li>Start here if you’re new or want a refresher.</li>
+          <li>Check troubleshooting sections for common questions.</li>
+        </ul>
+        <div class="actions">
+          <a class="btn" href="<<USER_GUIDE_URL>>" target="_blank" rel="noopener">Open User Guide →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="kicker">
+          <div class="k-icon" aria-hidden="true">C</div>
+          <h2 style="margin:0;">Get to the Help Assistant</h2>
+        </div>
+        <p>
+          Use the Help Assistant when you need quick answers, navigation help, or guidance on where to go next.
+        </p>
+        <ul>
+          <li>Great for “how do I…?” questions.</li>
+          <li>Use it if a page isn’t loading or you’re unsure which link to use.</li>
+        </ul>
+        <div class="actions">
+          <a class="btn" href="<<HELP_ASSISTANT_URL>>" target="_blank" rel="noopener">Launch Help Assistant →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="kicker">
+          <div class="k-icon" aria-hidden="true">D</div>
+          <h2 style="margin:0;">Get to the Registration Page</h2>
+        </div>
+        <p>
+          Registration is where you create or update your information to access Grandview Exchange services and features.
+        </p>
+        <ul>
+          <li>Use this to begin onboarding or update your profile.</li>
+          <li>Keep your contact details current for announcements and reminders.</li>
+        </ul>
+        <div class="actions">
+          <a class="btn ok" href="<<REGISTRATION_PAGE_URL>>" target="_blank" rel="noopener">Go to Registration →</a>
+        </div>
+      </article>
+
+      <article class="card" style="grid-column: 1 / -1;">
+        <div class="kicker">
+          <div class="k-icon" aria-hidden="true">E</div>
+          <h2 style="margin:0;">Get to the Training Sign Up Page</h2>
+        </div>
+        <p>
+          The Training Sign Up page is for reserving a spot in available training sessions and learning opportunities.
+        </p>
+        <ul>
+          <li>Look for upcoming sessions and required prerequisites.</li>
+          <li>Use the calendar below to discover dates/times, then sign up here.</li>
+        </ul>
+        <div class="actions">
+          <a class="btn" href="<<TRAINING_SIGNUP_URL>>" target="_blank" rel="noopener">Training Sign Up →</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===== Calendar Area ===== -->
+    <section class="calendar" aria-label="Calendar and subscriptions">
+      <div class="calendar-embed" aria-label="Embedded calendar">
+        <!-- Replace this placeholder block with an <iframe> (Google Calendar or alternative). -->
+        <div class="embed-placeholder">
+          <div>
+            <h2 style="margin:0 0 10px 0;">Community Calendar</h2>
+            <p style="margin:0 0 10px 0; color: var(--muted);">
+              Calendar embed placeholder. Replace this area with an embed (e.g., Google Calendar iframe, Outlook group calendar, or another provider).
+            </p>
+            <div class="placeholder">
+              <strong>EMBED PLACEHOLDER</strong><br/>
+              Replace with: &lt;iframe src="<<CALENDAR_EMBED_URL>>" ...&gt;&lt;/iframe&gt;<br/>
+              Or alternative provider embed code.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card calendar-links" aria-label="Calendar links">
+        <div class="kicker">
+          <div class="k-icon" aria-hidden="true">↻</div>
+          <h2 style="margin:0;">Subscribe & Club Calendars</h2>
+        </div>
+        <p>
+          Use the links below to subscribe to the main calendar and access club calendars.
+        </p>
+
+        <!-- Subscription links -->
+        <a href="<<SUBSCRIBE_CALENDAR_URL>>" target="_blank" rel="noopener">
+          Subscribe to the Community Calendar →
+        </a>
+
+        <!-- Club calendar links (placeholders) -->
+        <a href="<<CLUB_CALENDAR_1_URL>>" target="_blank" rel="noopener">
+          Club Calendar 1 (Placeholder Name) →
+        </a>
+        <a href="<<CLUB_CALENDAR_2_URL>>" target="_blank" rel="noopener">
+          Club Calendar 2 (Placeholder Name) →
+        </a>
+        <a href="<<CLUB_CALENDAR_3_URL>>" target="_blank" rel="noopener">
+          Club Calendar 3 (Placeholder Name) →
+        </a>
+
+        <div class="hint">
+          <div class="small">Placeholders to replace:</div>
+          <div class="small"><<CALENDAR_EMBED_URL>> • <<SUBSCRIBE_CALENDAR_URL>> • <<CLUB_CALENDAR_1_URL>> • <<CLUB_CALENDAR_2_URL>> • <<CLUB_CALENDAR_3_URL>></div>
+        </div>
+      </aside>
+    </section>
+
+    <footer aria-label="Footer">
+      <div>© <span id="year"></span> Grandview Exchange</div>
+      <div class="small">Landing page template • Replace placeholders, then publish</div>
+    </footer>
+
+  </div>
+
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
