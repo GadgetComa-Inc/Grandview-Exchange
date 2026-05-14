@@ -197,11 +197,6 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
   box-shadow: 0 0 0 3px rgba(13,115,119,0.22), 0 10px 24px rgba(13,115,119,0.14);
 }
 
-/* Slightly “button-like” hover on the CTA */
-.card-link{
-  transition: background 160ms ease, transform 160ms ease;
-}
-
 /* Icon smaller + aligned */
 .card-icon {
   font-size: 1.15rem;
@@ -245,6 +240,8 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
   font-weight: 600;
 
   text-align: center;
+  transition: background 160ms ease, transform 160ms ease;
+
 }
 
 .card-link:hover {
