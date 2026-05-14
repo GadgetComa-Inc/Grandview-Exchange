@@ -197,13 +197,15 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
   box-shadow: 0 0 0 3px rgba(13,115,119,0.22), 0 10px 24px rgba(13,115,119,0.14);
 }
 
-/* Icon smaller + aligned */
+/* Icon styling */
 .card-icon {
   font-size: 1.15rem;
   line-height: 1;
+  flex-shrink: 0;        /* prevents shrinking */
+  margin-top: 2px;
 }
 
-/* Title next to icon */
+/* Title styling */
 .card-title {
   font-family: "Lora", serif;
   font-size: 1rem;
@@ -219,12 +221,13 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
   margin-top: 2px;
 }
 
-/* ── Top row: icon + title inline ───────────────────────── */
+/* Top row: icon + title inline */
 .card-header {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  align-items: flex-start;   /* vertical alignment */
+  gap: 10px;             /* space between icon and text */
 }
+
 
 /* ── Button tighter ───────────────────────────────── */
 .card-link {
