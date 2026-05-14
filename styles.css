@@ -34,9 +34,15 @@ body {
   background: var(--bg-page);
 }
 
-a { color: var(--teal); text-decoration: none; }
-a:hover { text-decoration: underline; color: var(--teal-dark); }
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
 
+a:hover {
+  text-decoration: underline;
+  color: var(--primary-hover);
+}
 /* ── Layout container ────────────────────────────────────── */
 .container {
   max-width: 880px;
@@ -79,7 +85,7 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
   font-family: "Lora", serif;
   font-size: 2rem;
   font-weight: 600;
-  color: var(--teal-dark);
+  color: var(--primary-hover);
   margin-bottom: 14px;
 }
 
@@ -98,7 +104,7 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
   font-family: "Lora", serif;
   font-size: 1.4rem;
   font-weight: 600;
-  color: var(--teal-dark);
+  color: var(--primary-hover);
   margin-bottom: 24px;
   padding-bottom: 10px;
   border-bottom: 2px solid var(--border);
@@ -126,11 +132,11 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
 
 /* ── Stronger group labels ───────────────────────────────── */
 .group-label {
-  font-size: 0.8rem;
+  font-size: 1.05rem;
   font-weight: 700;
-  letter-spacing: 0.6px;
-
-  color: var(--text-muted);
+  color: var(--primary);
+  
+  margin-bottom: 14px;
 }
 
 
@@ -143,37 +149,6 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
   padding: 14px 16px;
 
   box-shadow: var(--shadow-soft);
-}
-
-.theme-pill{
-  display:inline-flex;
-  align-items:center;
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  border: 1px solid var(--border);
-  background: var(--bg-white);
-  color: var(--text-dark);
-}
-
-.theme-pill.access{ border-left: 4px solid var(--teal); }
-.theme-pill.learning{ border-left: 4px solid var(--gold); }
-.theme-pill.support{ border-left: 4px solid #6c63ff; }
-
-/* ── Card theme badge (optional, minimal height) ───────────── */
-.card-badge{
-  align-self:flex-start;
-  margin-top: -2px;
-  margin-bottom: 2px;
-  padding: 4px 8px;
-  border-radius: 999px;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: .2px;
-  color: var(--text-dark);
-  background: var(--teal-light);
-  border: 1px solid var(--border);
 }
 
 /* ── Hover effect (subtle and modern) ───────────────────── */
@@ -226,14 +201,26 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
 }
 
 
-.card-link {
-  background: var(--primary);
-  font-size: 0.85rem;
+.card .card-link {
+  display: inline-block;
+  margin-top: 6px;
+
   padding: 6px 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+
+  background-color: var(--primary);
+  color: #ffffff !important;
+
+  border-radius: 4px;
+  text-align: center;
+
+  text-decoration: none;
 }
 
-.card-link:hover {
-  background: var(--primary-hover);
+.card .card-link:hover {
+  background-color: var(--primary-hover);
+  color: #ffffff !important;
 }
 
 
@@ -248,14 +235,14 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
 .calendar-placeholder {
   width: 100%;
   min-height: 500px;
-  background: var(--teal-light);
+  background: var(--primary-light, #eef5f5);
   border: 2px dashed var(--teal);
   border-radius: 6px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: var(--teal-dark);
+  color: var(--primary-hover);
   font-size: 1rem;
   gap: 8px;
   text-align: center;
@@ -296,10 +283,10 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
   gap: 12px;
   background: var(--bg-white);
   border: 1px solid var(--border);
-  border-left: 4px solid var(--gold);
+  border-left: 4px solid var(--accent);
   border-radius: 5px;
   padding: 13px 16px;
-  box-shadow: var(--card-shadow);
+  box-shadow: var(--shadow-soft);
 }
 
 .subscribe-list .cal-label {
@@ -316,7 +303,7 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
   white-space: nowrap;
 }
 
-.subscribe-list a:hover { color: var(--teal-dark); }
+.subscribe-list a:hover { color: var(--primary-hover); }
 
 /* ── Footer ──────────────────────────────────────────────── */
 .site-footer {
