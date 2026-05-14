@@ -121,10 +121,9 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
 
 /* ── Stronger group labels ───────────────────────────────── */
 .group-label {
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.6px;
-  text-transform: uppercase;
   color: var(--primary-dark);
 
   margin-bottom: 12px;
