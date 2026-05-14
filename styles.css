@@ -126,31 +126,23 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
 
 /* ── Stronger group labels ───────────────────────────────── */
 .group-label {
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.6px;
-  color: var(--primary-dark);
 
-  margin-bottom: 12px;
-  padding-left: 2px;
+  color: var(--text-muted);
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 
+.card {
   background: var(--bg-white);
   border: 1px solid var(--border);
-  border-left: 4px solid var(--primary);
+  border-left: 3px solid var(--primary);
 
-  border-radius: 6px;
+  border-radius: 5px;
   padding: 14px 16px;
 
   box-shadow: var(--shadow-soft);
-  transition: transform 140ms ease, box-shadow 140ms ease;
-
-  min-height: 110px; /* shorter cards */
 }
 
 .theme-pill{
@@ -234,28 +226,14 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
 }
 
 
-/* ── Button tighter ───────────────────────────────── */
 .card-link {
-  display: inline-block;
-  margin-top: 6px;
-
-  padding: 7px 14px;
-  font-size: 0.88rem;
-
   background: var(--primary);
-  color: #fff;
-  border-radius: 4px;
-  font-weight: 600;
-
-  text-align: center;
-  transition: background 160ms ease, transform 160ms ease;
-
+  font-size: 0.85rem;
+  padding: 6px 12px;
 }
 
 .card-link:hover {
-  background: var(--primary-dark);
-  text-decoration: none;
-  transform: translateY(-1px);
+  background: var(--primary-hover);
 }
 
 
