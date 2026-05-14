@@ -258,7 +258,9 @@ a:hover {
   color: var(--text-muted);
   max-width: 420px;
 }
-
+.calendar-embed {
+  margin-top: 20px;
+}
 /* ── Subscribe links ─────────────────────────────────────── */
 .subscribe-section {
   padding: 36px 0 44px;
