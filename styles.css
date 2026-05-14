@@ -1,20 +1,25 @@
-
-/* ── Groups.io-inspired color palette (updated) ───────────── */
 :root {
-  --primary: #1c6e73;         /* main teal */
-  --primary-dark: #15555a;
-  --primary-light: #e9f3f4;
+  /* Primary (main brand feel) */
+  --primary: #2f6f73;        /* muted blue-teal */
+  --primary-hover: #25585b;
 
-  --accent: #f2a93b;          /* warm accent */
-  --text-dark: #24353a;
-  --text-body: #3f5257;
-  --text-muted: #7b8f94;
-
-  --border: #d9e5e6;
-  --bg-page: #f4f8f8;
+  /* Backgrounds */
+  --bg-page: #f5f7f7;        /* very light gray */
   --bg-white: #ffffff;
 
-  --shadow-soft: 0 2px 6px rgba(0,0,0,0.05);
+  /* Borders */
+  --border: #d8e1e2;
+
+  /* Text */
+  --text-dark: #243536;
+  --text-body: #3f5456;
+  --text-muted: #7a8f92;
+
+  /* Accent (very subtle) */
+  --accent: #6aa6a9;         /* soft teal accent (NOT orange) */
+
+  /* Shadows */
+  --shadow-soft: 0 1px 4px rgba(0,0,0,0.06);
 }
 
 
