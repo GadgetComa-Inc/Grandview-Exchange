@@ -97,8 +97,16 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
 /* ── Access cards ────────────────────────────────────────── */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
+}
+
+@media (max-width: 900px){
+  .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 600px){
+  .cards { grid-template-columns: 1fr; }
 }
 
 .card {
@@ -111,6 +119,66 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
   display: flex;
   flex-direction: column;
   gap: 10px;
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+/* ── Theme legend (compact grouping) ───────────────────────── */
+.theme-legend{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin: 0 0 18px;
+}
+
+.theme-pill{
+  display:inline-flex;
+  align-items:center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  background: var(--bg-white);
+  color: var(--text-dark);
+}
+
+.theme-pill.access{ border-left: 4px solid var(--teal); }
+.theme-pill.learning{ border-left: 4px solid var(--gold); }
+.theme-pill.support{ border-left: 4px solid #6c63ff; }
+
+/* ── Card theme badge (optional, minimal height) ───────────── */
+.card-badge{
+  align-self:flex-start;
+  margin-top: -2px;
+  margin-bottom: 2px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: .2px;
+  color: var(--text-dark);
+  background: var(--teal-light);
+  border: 1px solid var(--border);
+}
+
+/* ── Hover + focus effects (polished + accessible) ─────────── */
+.card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(13,115,119,0.16);
+  border-color: rgba(13,115,119,0.35);
+}
+
+.card:focus-within{
+  box-shadow: 0 0 0 3px rgba(13,115,119,0.22), 0 10px 24px rgba(13,115,119,0.14);
+}
+
+/* Slightly “button-like” hover on the CTA */
+.card-link{
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.card-link:hover{
+  transform: translateY(-1px);
 }
 
 .card-icon {
