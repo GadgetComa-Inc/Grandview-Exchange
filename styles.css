@@ -40,20 +40,23 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
   Result: entire image remains visible. If aspect ratios differ,
   you may see background “letterboxing”, which is intentional.
 */
+
+/* ── Header image (recommended approach) ─────────────────── */
 .site-header {
   width: 100%;
-  background: #0a2a2b; /* shows behind image if letterboxed */
+  height: clamp(180px, 28vw, 340px); /* responsive height */
+  overflow: hidden;
+  position: relative;
 }
 
 .site-header img {
-  display: block;
   width: 100%;
-  max-height: 320px; /* adjust if you want taller header */
-  height: auto;
-  object-fit: contain;     /* <-- ensures whole image is visible */
-  object-position: center; /* centers the whole image */
-  background: #0a2a2b;
+  height: 100%;
+  object-fit: cover;           /* fills area cleanly */
+  object-position: center;     /* keeps image centered */
+  display: block;
 }
+
 
 /* ── Welcome section ─────────────────────────────────────── */
 .welcome {
