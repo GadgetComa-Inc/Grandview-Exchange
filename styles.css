@@ -1,0 +1,247 @@
+/* ── Color palette (Groups.io inspired) ─────────────────── */
+:root {
+  --teal: #0d7377;
+  --teal-dark: #0a5c60;
+  --teal-light: #e6f4f4;
+  --gold: #c8922a;
+  --text-dark: #1a2e35;
+  --text-body: #3a4a50;
+  --text-muted: #6b7c82;
+  --border: #d0e0e1;
+  --bg-page: #f7fafa;
+  --bg-white: #ffffff;
+  --card-shadow: 0 2px 8px rgba(13,115,119,0.10);
+}
+
+/* ── Reset & base ────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--text-body);
+  background: var(--bg-page);
+}
+
+a { color: var(--teal); text-decoration: none; }
+a:hover { text-decoration: underline; color: var(--teal-dark); }
+
+/* ── Layout container ────────────────────────────────────── */
+.container {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ── Header image (UPDATED: show full image) ─────────────── */
+/*
+  Key change: object-fit: contain (not cover)
+  Result: entire image remains visible. If aspect ratios differ,
+  you may see background “letterboxing”, which is intentional.
+*/
+.site-header {
+  width: 100%;
+  background: #0a2a2b; /* shows behind image if letterboxed */
+}
+
+.site-header img {
+  display: block;
+  width: 100%;
+  max-height: 320px; /* adjust if you want taller header */
+  height: auto;
+  object-fit: contain;     /* <-- ensures whole image is visible */
+  object-position: center; /* centers the whole image */
+  background: #0a2a2b;
+}
+
+/* ── Welcome section ─────────────────────────────────────── */
+.welcome {
+  background: var(--bg-white);
+  border-bottom: 3px solid var(--teal-light);
+  padding: 40px 0 36px;
+}
+
+.welcome h1 {
+  font-family: "Lora", serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--teal-dark);
+  margin-bottom: 14px;
+}
+
+.welcome p {
+  font-size: 1.1rem;
+  color: var(--text-body);
+  max-width: 680px;
+}
+
+/* ── Section titles ──────────────────────────────────────── */
+.section {
+  padding: 44px 0;
+}
+
+.section-title {
+  font-family: "Lora", serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--teal-dark);
+  margin-bottom: 24px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--border);
+}
+
+/* ── Access cards ────────────────────────────────────────── */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--teal);
+  border-radius: 6px;
+  padding: 22px 20px 20px;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.card-title {
+  font-family: "Lora", serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.card-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  flex: 1;
+}
+
+.card-link {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 9px 18px;
+  background: var(--teal);
+  color: #fff;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: background 0.2s;
+  text-align: center;
+}
+
+.card-link:hover {
+  background: var(--teal-dark);
+  text-decoration: none;
+  color: #fff;
+}
+
+/* ── Calendar section ────────────────────────────────────── */
+.calendar-section {
+  background: var(--bg-white);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 44px 0;
+}
+
+.calendar-placeholder {
+  width: 100%;
+  min-height: 500px;
+  background: var(--teal-light);
+  border: 2px dashed var(--teal);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--teal-dark);
+  font-size: 1rem;
+  gap: 8px;
+  text-align: center;
+  padding: 24px;
+}
+
+.calendar-placeholder .cal-icon {
+  font-size: 2.4rem;
+}
+
+.calendar-placeholder p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  max-width: 420px;
+}
+
+/* ── Subscribe links ─────────────────────────────────────── */
+.subscribe-section {
+  padding: 36px 0 44px;
+}
+
+.subscribe-intro {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+
+.subscribe-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.subscribe-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--gold);
+  border-radius: 5px;
+  padding: 13px 16px;
+  box-shadow: var(--card-shadow);
+}
+
+.subscribe-list .cal-label {
+  flex: 1;
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: 0.98rem;
+}
+
+.subscribe-list a {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--teal);
+  white-space: nowrap;
+}
+
+.subscribe-list a:hover { color: var(--teal-dark); }
+
+/* ── Footer ──────────────────────────────────────────────── */
+.site-footer {
+  background: var(--text-dark);
+  color: #9bb5b8;
+  font-size: 0.88rem;
+  text-align: center;
+  padding: 22px 20px;
+}
+
+.site-footer a { color: #7ecece; }
+
+/* ── Responsive tweaks ───────────────────────────────────── */
+@media (max-width: 600px) {
+  body { font-size: 16px; }
+  .welcome h1 { font-size: 1.5rem; }
+  .cards { grid-template-columns: 1fr; }
+}

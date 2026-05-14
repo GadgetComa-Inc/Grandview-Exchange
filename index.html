@@ -1,257 +1,21 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Grandview Exchange</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
-  <style>
-    /* ── Color palette (Groups.io inspired) ─────────────────── */
-    :root {
-      --teal:        #0d7377;
-      --teal-dark:   #0a5c60;
-      --teal-light:  #e6f4f4;
-      --gold:        #c8922a;
-      --text-dark:   #1a2e35;
-      --text-body:   #3a4a50;
-      --text-muted:  #6b7c82;
-      --border:      #d0e0e1;
-      --bg-page:     #f7fafa;
-      --bg-white:    #ffffff;
-      --card-shadow: 0 2px 8px rgba(13,115,119,0.10);
-    }
-
-```
-/* ── Reset & base ────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-body {
-  font-family: 'Source Sans 3', sans-serif;
-  font-size: 18px;
-  line-height: 1.7;
-  color: var(--text-body);
-  background: var(--bg-page);
-}
-
-a { color: var(--teal); text-decoration: none; }
-a:hover { text-decoration: underline; color: var(--teal-dark); }
-
-/* ── Layout container ────────────────────────────────────── */
-.container {
-  max-width: 880px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* ── Header image ────────────────────────────────────────── */
-.site-header {
-  width: 100%;
-  background: #0a2a2b;
-}
-.site-header img {
-  display: block;
-  width: 100%;
-  max-height: 320px;
-  object-fit: cover;
-  object-position: center top;
-}
-
-/* ── Welcome section ─────────────────────────────────────── */
-.welcome {
-  background: var(--bg-white);
-  border-bottom: 3px solid var(--teal-light);
-  padding: 40px 0 36px;
-}
-.welcome h1 {
-  font-family: 'Lora', serif;
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--teal-dark);
-  margin-bottom: 14px;
-}
-.welcome p {
-  font-size: 1.1rem;
-  color: var(--text-body);
-  max-width: 680px;
-}
-
-/* ── Section titles ──────────────────────────────────────── */
-.section {
-  padding: 44px 0;
-}
-.section-title {
-  font-family: 'Lora', serif;
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: var(--teal-dark);
-  margin-bottom: 24px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid var(--border);
-}
-
-/* ── Access cards ────────────────────────────────────────── */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 18px;
-}
-
-.card {
-  background: var(--bg-white);
-  border: 1px solid var(--border);
-  border-top: 4px solid var(--teal);
-  border-radius: 6px;
-  padding: 22px 20px 20px;
-  box-shadow: var(--card-shadow);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.card-icon {
-  font-size: 1.6rem;
-  line-height: 1;
-}
-
-.card-title {
-  font-family: 'Lora', serif;
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--text-dark);
-}
-
-.card-desc {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  flex: 1;
-}
-
-.card-link {
-  display: inline-block;
-  margin-top: 4px;
-  padding: 9px 18px;
-  background: var(--teal);
-  color: #fff;
-  border-radius: 4px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  transition: background 0.2s;
-  text-align: center;
-}
-.card-link:hover {
-  background: var(--teal-dark);
-  text-decoration: none;
-  color: #fff;
-}
-
-/* ── Calendar section ────────────────────────────────────── */
-.calendar-section {
-  background: var(--bg-white);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 44px 0;
-}
-
-.calendar-placeholder {
-  width: 100%;
-  min-height: 500px;
-  background: var(--teal-light);
-  border: 2px dashed var(--teal);
-  border-radius: 6px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: var(--teal-dark);
-  font-size: 1rem;
-  gap: 8px;
-  text-align: center;
-  padding: 24px;
-}
-.calendar-placeholder .cal-icon {
-  font-size: 2.4rem;
-}
-.calendar-placeholder p {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  max-width: 420px;
-}
-
-/* ── Subscribe links ─────────────────────────────────────── */
-.subscribe-section {
-  padding: 36px 0 44px;
-}
-.subscribe-intro {
-  font-size: 1rem;
-  color: var(--text-muted);
-  margin-bottom: 18px;
-}
-
-.subscribe-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.subscribe-list li {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: var(--bg-white);
-  border: 1px solid var(--border);
-  border-left: 4px solid var(--gold);
-  border-radius: 5px;
-  padding: 13px 16px;
-  box-shadow: var(--card-shadow);
-}
-
-.subscribe-list .cal-label {
-  flex: 1;
-  font-weight: 600;
-  color: var(--text-dark);
-  font-size: 0.98rem;
-}
-
-.subscribe-list a {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--teal);
-  white-space: nowrap;
-}
-.subscribe-list a:hover { color: var(--teal-dark); }
-
-/* ── Footer ──────────────────────────────────────────────── */
-.site-footer {
-  background: var(--text-dark);
-  color: #9bb5b8;
-  font-size: 0.88rem;
-  text-align: center;
-  padding: 22px 20px;
-}
-.site-footer a { color: #7ecece; }
-
-/* ── Responsive tweaks ───────────────────────────────────── */
-@media (max-width: 600px) {
-  body { font-size: 16px; }
-  .welcome h1 { font-size: 1.5rem; }
-  .cards { grid-template-columns: 1fr; }
-}
-```
-
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-
   <!-- ══ HEADER IMAGE ══════════════════════════════════════════ -->
-
   <header class="site-header">
     <img src="coverphoto.png" alt="Grandview Exchange — Connecting Our Community" />
   </header>
 
   <!-- ══ WELCOME ═══════════════════════════════════════════════ -->
-
   <section class="welcome">
     <div class="container">
       <h1>Welcome to Grandview Exchange!</h1>
@@ -265,66 +29,60 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
   </section>
 
   <!-- ══ HOW TO GET STARTED ════════════════════════════════════ -->
-
   <section class="section">
     <div class="container">
       <h2 class="section-title">Getting Started</h2>
+
       <div class="cards">
+        <div class="card">
+          <div class="card-icon">🌐</div>
+          <div class="card-title">Access Grandview Exchange</div>
+          <div class="card-desc">
+            Visit our community platform to browse conversations, announcements, and club activity.
+          </div>
+          <a class="card-link" href="PLACEHOLDER_ACCESS_URL">Go to Grandview Exchange</a>
+        </div>
 
-```
-    <div class="card">
-      <div class="card-icon">🌐</div>
-      <div class="card-title">Access Grandview Exchange</div>
-      <div class="card-desc">
-        Visit our community platform to browse conversations, announcements, and club activity.
+        <div class="card">
+          <div class="card-icon">✍️</div>
+          <div class="card-title">Register for an Account</div>
+          <div class="card-desc">
+            New to Grandview Exchange? Create your free account in just a few steps and join the community.
+          </div>
+          <a class="card-link" href="PLACEHOLDER_REGISTER_URL">Register Now</a>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🎓</div>
+          <div class="card-title">Sign Up for Training</div>
+          <div class="card-desc">
+            Join a free orientation session to learn how to use Grandview Exchange with confidence.
+          </div>
+          <a class="card-link" href="PLACEHOLDER_TRAINING_URL">Sign Up for Training</a>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">📖</div>
+          <div class="card-title">View the User Guide</div>
+          <div class="card-desc">
+            Browse our step-by-step guide with tips and instructions for getting the most out of Grandview Exchange.
+          </div>
+          <a class="card-link" href="PLACEHOLDER_GUIDE_URL">Open User Guide</a>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🤖</div>
+          <div class="card-title">AI Help Assistant</div>
+          <div class="card-desc">
+            Have a question? Our friendly AI Help Assistant is available anytime to guide you.
+          </div>
+          <a class="card-link" href="PLACEHOLDER_AI_URL">Ask the Help Assistant</a>
+        </div>
       </div>
-      <a class="card-link" href="PLACEHOLDER_ACCESS_URL">Go to Grandview Exchange</a>
     </div>
-
-    <div class="card">
-      <div class="card-icon">✍️</div>
-      <div class="card-title">Register for an Account</div>
-      <div class="card-desc">
-        New to Grandview Exchange? Create your free account in just a few steps and join the community.
-      </div>
-      <a class="card-link" href="PLACEHOLDER_REGISTER_URL">Register Now</a>
-    </div>
-
-    <div class="card">
-      <div class="card-icon">🎓</div>
-      <div class="card-title">Sign Up for Training</div>
-      <div class="card-desc">
-        Join a free orientation session to learn how to use Grandview Exchange with confidence.
-      </div>
-      <a class="card-link" href="PLACEHOLDER_TRAINING_URL">Sign Up for Training</a>
-    </div>
-
-    <div class="card">
-      <div class="card-icon">📖</div>
-      <div class="card-title">View the User Guide</div>
-      <div class="card-desc">
-        Browse our step-by-step guide with tips and instructions for getting the most out of Grandview Exchange.
-      </div>
-      <a class="card-link" href="PLACEHOLDER_GUIDE_URL">Open User Guide</a>
-    </div>
-
-    <div class="card">
-      <div class="card-icon">🤖</div>
-      <div class="card-title">AI Help Assistant</div>
-      <div class="card-desc">
-        Have a question? Our friendly AI Help Assistant is available anytime to guide you.
-      </div>
-      <a class="card-link" href="PLACEHOLDER_AI_URL">Ask the Help Assistant</a>
-    </div>
-
-  </div>
-</div>
-```
-
   </section>
 
   <!-- ══ CALENDAR ═══════════════════════════════════════════════ -->
-
   <section class="calendar-section">
     <div class="container">
       <h2 class="section-title">Community Calendar</h2>
@@ -332,78 +90,60 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
         Stay up to date with everything happening at The Grandview and across our clubs.
       </p>
 
-```
-  <!-- ╔══════════════════════════════════════════════════════╗
-       ║  REPLACE this placeholder div with the Google        ║
-       ║  Calendar embed code from:                           ║
-       ║  Google Calendar → Settings → Integrate Calendar     ║
-       ║  → "Embed code" (HTML iframe)                        ║
-       ╚══════════════════════════════════════════════════════╝ -->
-  <div class="calendar-placeholder">
-    <div class="cal-icon">📅</div>
-    <strong>Google Calendar will appear here</strong>
-    <p>
-      Replace this block with your Google Calendar embed code.<br />
-      (Google Calendar → Settings → Integrate Calendar → Copy embed code)
-    </p>
-  </div>
-
-</div>
-```
-
+      <!-- ╔══════════════════════════════════════════════════════╗
+           ║ REPLACE this placeholder div with your calendar      ║
+           ║ embed code (Google or alternative provider).         ║
+           ╚══════════════════════════════════════════════════════╝ -->
+      <div class="calendar-placeholder">
+        <div class="cal-icon">📅</div>
+        <strong>Calendar will appear here</strong>
+        <p>
+          Replace this block with your calendar embed code (Google Calendar iframe or another provider).
+        </p>
+      </div>
+    </div>
   </section>
 
   <!-- ══ SUBSCRIBE TO CALENDARS ════════════════════════════════ -->
-
   <section class="subscribe-section">
     <div class="container">
       <h2 class="section-title">Subscribe to Individual Calendars</h2>
       <p class="subscribe-intro">
         Add any of these calendars directly to your phone, tablet, or computer to receive automatic updates.
       </p>
+
       <ul class="subscribe-list">
-
-```
-    <li>
-      <span class="cal-label">📅 Grandview Community Events</span>
-      <a href="PLACEHOLDER_SUBSCRIBE_1">Subscribe</a>
-    </li>
-
-    <li>
-      <span class="cal-label">🎯 Grandview Clubs</span>
-      <a href="PLACEHOLDER_SUBSCRIBE_2">Subscribe</a>
-    </li>
-
-    <li>
-      <span class="cal-label">🏋️ Fitness &amp; Wellness</span>
-      <a href="PLACEHOLDER_SUBSCRIBE_3">Subscribe</a>
-    </li>
-
-    <li>
-      <span class="cal-label">🎨 Arts &amp; Activities</span>
-      <a href="PLACEHOLDER_SUBSCRIBE_4">Subscribe</a>
-    </li>
-
-    <li>
-      <span class="cal-label">🍽️ Dining &amp; Special Events</span>
-      <a href="PLACEHOLDER_SUBSCRIBE_5">Subscribe</a>
-    </li>
-
-  </ul>
-</div>
-```
-
+        <li>
+          <span class="cal-label">📅 Grandview Community Events</span>
+          <a href="PLACEHOLDER_SUBSCRIBE_1">Subscribe</a>
+        </li>
+        <li>
+          <span class="cal-label">🎯 Grandview Clubs</span>
+          <a href="PLACEHOLDER_SUBSCRIBE_2">Subscribe</a>
+        </li>
+        <li>
+          <span class="cal-label">🏋️ Fitness & Wellness</span>
+          <a href="PLACEHOLDER_SUBSCRIBE_3">Subscribe</a>
+        </li>
+        <li>
+          <span class="cal-label">🎨 Arts & Activities</span>
+          <a href="PLACEHOLDER_SUBSCRIBE_4">Subscribe</a>
+        </li>
+        <li>
+          <span class="cal-label">🍽️ Dining & Special Events</span>
+          <a href="PLACEHOLDER_SUBSCRIBE_5">Subscribe</a>
+        </li>
+      </ul>
+    </div>
   </section>
 
   <!-- ══ FOOTER ═════════════════════════════════════════════════ -->
-
   <footer class="site-footer">
     <p>
-      &copy; 2025 Grandview Exchange &nbsp;·&nbsp;
-      The Grandview, Bethesda, MD &nbsp;·&nbsp;
+      © 2025 Grandview Exchange ·
+      The Grandview, Bethesda, MD ·
       Questions? <a href="PLACEHOLDER_CONTACT_URL">Contact Us</a>
     </p>
   </footer>
-
 </body>
 </html>
