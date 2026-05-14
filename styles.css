@@ -226,6 +226,7 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
   display: flex;
   align-items: flex-start;   /* vertical alignment */
   gap: 10px;             /* space between icon and text */
+  font-weight: 600;
 }
 
 
