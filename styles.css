@@ -201,7 +201,7 @@ a:hover {
 }
 
 
-.card .card-link {
+.card-link {
   display: inline-block;
   margin-top: 6px;
 
@@ -218,7 +218,7 @@ a:hover {
   text-decoration: none;
 }
 
-.card .card-link:hover {
+.card-link:hover {
   background-color: var(--primary-hover);
   color: #ffffff !important;
 }
@@ -324,3 +324,21 @@ a:hover {
   .welcome h1 { font-size: 1.5rem; }
   .cards { grid-template-columns: 1fr; }
 }
+
+
+  @media print {
+    /* Hide everything except the iframe */
+    body * {
+      visibility: hidden;
+    }
+    iframe {
+      visibility: visible;
+      width: 100%;
+      height: 100vh;
+    }
+    /* Force landscape orientation */
+    @page {
+      size: A4 landscape;
+      margin: 0;
+    }
+  }
