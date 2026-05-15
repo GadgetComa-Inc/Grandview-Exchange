@@ -17,8 +17,11 @@
       "&src=aWs4MnNyZGI4ZTR0ZTZzcGRxOHZxMnAxMnIyb2VtMXNAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20" +
       "&color=%23039be5&color=%23d81b60";
 
-    const win = window.open("", "_blank", "width=1000,height=740");
-    win.document.write(`<!DOCTYPE html>
+const pw = 1000, ph = 740;
+const left = window.screenX + Math.round((window.outerWidth  - pw) / 2);
+const top  = window.screenY + Math.round((window.outerHeight - ph) / 2);
+const win  = window.open("", "_blank",
+  `width=${pw},height=${ph},left=${left},top=${top}`);    win.document.write(`<!DOCTYPE html>
 <html>
 <head>
   <title>Grandview Community Calendar — Print</title>
