@@ -9,6 +9,69 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 
+<script>
+  function printCalendar() {
+    const calUrl =
+      "https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&showPrint=0" +
+      "&src=Z3JhbmR2aWV3ZXhjaGFuZ2VjYWxlbmRhckBnbWFpbC5jb20" +
+      "&src=aWs4MnNyZGI4ZTR0ZTZzcGRxOHZxMnAxMnIyb2VtMXNAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20" +
+      "&color=%23039be5&color=%23d81b60";
+
+    const win = window.open("", "_blank", "width=1000,height=740");
+    win.document.write(`<!DOCTYPE html>
+<html>
+<head>
+  <title>Grandview Community Calendar — Print</title>
+  <style>
+    @page { size: landscape; margin: 0.3in; }
+    body  { margin: 0; padding: 0; font-family: sans-serif; }
+    .notice {
+      background: #2f6f73;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 10px 16px;
+      font-size: 0.95rem;
+    }
+    .notice strong { font-size: 1rem; }
+    .print-btn {
+      background: #fff;
+      color: #2f6f73;
+      border: none;
+      border-radius: 4px;
+      padding: 6px 16px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .print-btn:hover { background: #e0f0f0; }
+    iframe {
+      width: 100%;
+      height: calc(100vh - 48px);
+      border: none;
+      display: block;
+    }
+    @media print {
+      .notice { display: none; }
+      iframe   { height: 100vh; }
+    }
+  </style>
+</head>
+<body>
+  <div class="notice">
+    <span>⚠ To print, click the <strong>Print Calendar</strong> button, then select <strong>Landscape</strong> orientation in the print window</span>
+    <button class="print-btn" onclick="window.print()">Print Calendar</button>
+  </div>
+  <iframe src="${calUrl}" scrolling="no"></iframe>
+</body>
+</html>`);
+    win.document.close();
+  }
+</script>
+
 <body>
 
   <!-- HEADER -->
@@ -37,10 +100,10 @@
       <div class="calendar-placeholder">
         <div class="cal-icon">📅</div>
         <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&showPrint=0&src=Z3JhbmR2aWV3ZXhjaGFuZ2VjYWxlbmRhckBnbWFpbC5jb20&src=aWs4MnNyZGI4ZTR0ZTZzcGRxOHZxMnAxMnIyb2VtMXNAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039be5&color=%23d81b60" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-        <button class="card-link" onclick="window.print()">Print Calendar</button>
-  </div>
-</div>
+        <button class="card-link" onclick="printCalendar()">Print Calendar</button>
+      </div>
     </div>
+    
   </section>
 
   <!-- SUBSCRIBE -->
