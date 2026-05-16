@@ -41,13 +41,11 @@
   </style>
 </head>
 <body>
-  <div class="notice">
-    <span>Ready to print — click the button when you are ready.</span>
-    <button class="print-btn" onclick="window.print()">🖨️ Print Calendar</button>
-  </div>
   <iframe
     src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&mode=AGENDA&title=The%20Grandview%20Community%20Calendar&showTz=0&src=Z3JhbmR2aWV3ZXhjaGFuZ2VjYWxlbmRhckBnbWFpbC5jb20&color=%23039be5"
     scrolling="no">
   </iframe>
+  <script>window.onload = function() { window.print(); };</script>
+
 </body>
 </html>
