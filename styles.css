@@ -1,230 +1,142 @@
+/* ── Color palette (Groups.io inspired) ─────────────────────── */
 :root {
-  /* Primary (main brand feel) */
-  --primary: #2f6f73;        /* muted blue-teal */
-  --primary-hover: #25585b;
-
-  /* Backgrounds */
-  --bg-page: #f5f7f7;        /* very light gray */
-  --bg-white: #ffffff;
-
-  /* Borders */
-  --border: #d8e1e2;
-
-  /* Text */
-  --text-dark: #243536;
-  --text-body: #3f5456;
-  --text-muted: #7a8f92;
-
-  /* Accent (very subtle) */
-  --accent: #6aa6a9;         /* soft teal accent (NOT orange) */
-
-  /* Shadows */
-  --shadow-soft: 0 1px 4px rgba(0,0,0,0.06);
+  --teal:        #0d7377;
+  --teal-dark:   #0a5c60;
+  --teal-light:  #e6f4f4;
+  --gold:        #c8922a;
+  --text-dark:   #1a2e35;
+  --text-body:   #3a4a50;
+  --text-muted:  #6b7c82;
+  --border:      #d0e0e1;
+  --bg-page:     #f7fafa;
+  --bg-white:    #ffffff;
+  --card-shadow: 0 2px 8px rgba(13,115,119,0.10);
 }
 
-
-/* ── Reset & base ────────────────────────────────────────── */
+/* ── Reset & base ────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  font-family: "Source Sans 3", sans-serif;
+  font-family: 'Source Sans 3', sans-serif;
   font-size: 18px;
   line-height: 1.7;
   color: var(--text-body);
   background: var(--bg-page);
 }
 
-a {
-  color: var(--primary);
-  text-decoration: none;
-}
+a { color: var(--teal); text-decoration: none; }
+a:hover { text-decoration: underline; color: var(--teal-dark); }
 
-a:hover {
-  text-decoration: underline;
-  color: var(--primary-hover);
-}
-/* ── Layout container ────────────────────────────────────── */
+/* ── Layout container ────────────────────────────────────────── */
 .container {
   max-width: 880px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* ── Header image (UPDATED: show full image) ─────────────── */
-/*
-  Key change: object-fit: contain (not cover)
-  Result: entire image remains visible. If aspect ratios differ,
-  you may see background “letterboxing”, which is intentional.
-*/
-
-/* ── Header image (recommended approach) ─────────────────── */
+/* ── Header image ────────────────────────────────────────────── */
+/* Image is 450x300. Display at natural size, centered, not stretched. */
 .site-header {
-  width: 100%;
-  height: clamp(180px, 28vw, 340px); /* responsive height */
-  overflow: hidden;
-  position: relative;
+  background: #0a2a2b;
+  text-align: center;
+  padding: 24px 20px;
 }
-
 .site-header img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;           /* fills area cleanly */
-  object-position: center;     /* keeps image centered */
-  display: block;
+  display: inline-block;
+  max-width: 100%;        /* shrinks on very narrow screens   */
+  width: auto;            /* natural width (450px) otherwise  */
+  height: auto;           /* preserve aspect ratio            */
 }
 
-
-/* ── Welcome section ─────────────────────────────────────── */
+/* ── Welcome section ─────────────────────────────────────────── */
 .welcome {
   background: var(--bg-white);
   border-bottom: 3px solid var(--teal-light);
   padding: 40px 0 36px;
 }
-
 .welcome h1 {
-  font-family: "Lora", serif;
+  font-family: 'Lora', serif;
   font-size: 2rem;
   font-weight: 600;
-  color: var(--primary-hover);
+  color: var(--teal-dark);
   margin-bottom: 14px;
 }
-
 .welcome p {
   font-size: 1.1rem;
   color: var(--text-body);
   max-width: 680px;
 }
 
-/* ── Section titles ──────────────────────────────────────── */
+/* ── Section titles ──────────────────────────────────────────── */
 .section {
   padding: 44px 0;
 }
-
 .section-title {
-  font-family: "Lora", serif;
+  font-family: 'Lora', serif;
   font-size: 1.4rem;
   font-weight: 600;
-  color: var(--primary-hover);
+  color: var(--teal-dark);
   margin-bottom: 24px;
   padding-bottom: 10px;
   border-bottom: 2px solid var(--border);
 }
 
-/* ── Force 2-column layout ───────────────────────────────── */
+/* ── Access cards ────────────────────────────────────────────── */
 .cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
 }
-
-@media (max-width: 900px){
-  .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
-@media (max-width: 600px){
-  .cards { grid-template-columns: 1fr; }
-}
-
-/* ── Card groups (more breathing room between rows) ──────── */
-.card-group {
-  margin-bottom: 34px;
-}
-
-/* ── Stronger group labels ───────────────────────────────── */
-.group-label {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--primary);
-  
-  margin-bottom: 14px;
-}
-
 
 .card {
   background: var(--bg-white);
   border: 1px solid var(--border);
-  border-left: 3px solid var(--primary);
-
-  border-radius: 5px;
-  padding: 14px 16px;
-
-  box-shadow: var(--shadow-soft);
+  border-top: 4px solid var(--teal);
+  border-radius: 6px;
+  padding: 22px 20px 20px;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-/* ── Hover effect (subtle and modern) ───────────────────── */
-.card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.10);
-}
-
-/* ── Mobile ─────────────────────────────────────────────── */
-@media (max-width: 700px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-.card:focus-within{
-  box-shadow: 0 0 0 3px rgba(13,115,119,0.22), 0 10px 24px rgba(13,115,119,0.14);
-}
-
-/* Icon styling */
 .card-icon {
-  font-size: 1.15rem;
+  font-size: 1.6rem;
   line-height: 1;
-  flex-shrink: 0;        /* prevents shrinking */
-  margin-top: 2px;
 }
 
-/* Title styling */
 .card-title {
-  font-family: "Lora", serif;
-  font-size: 1rem;
+  font-family: 'Lora', serif;
+  font-size: 1.05rem;
   font-weight: 600;
   color: var(--text-dark);
 }
 
-/* ── Description tighter ───────────────────────────────── */
 .card-desc {
-  font-size: 0.88rem;
-  line-height: 1.35;
+  font-size: 0.95rem;
   color: var(--text-muted);
-  margin-top: 2px;
+  flex: 1;
 }
-
-/* Top row: icon + title inline */
-.card-header {
-  display: flex;
-  align-items: flex-start;   /* vertical alignment */
-  gap: 10px;             /* space between icon and text */
-  font-weight: 600;
-}
-
 
 .card-link {
   display: inline-block;
-  margin-top: 6px;
-
-  padding: 6px 12px;
-  font-size: 0.85rem;
-  font-weight: 600;
-
-  background-color: var(--primary);
-  color: #ffffff !important;
-
+  margin-top: 4px;
+  padding: 9px 18px;
+  background: var(--teal);
+  color: #fff;
   border-radius: 4px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: background 0.2s;
   text-align: center;
-
-  text-decoration: none;
 }
-
 .card-link:hover {
-  background-color: var(--primary-hover);
-  color: #ffffff !important;
+  background: var(--teal-dark);
+  text-decoration: none;
+  color: #fff;
 }
 
-
-/* ── Calendar section ────────────────────────────────────── */
+/* ── Calendar section ────────────────────────────────────────── */
 .calendar-section {
   background: var(--bg-white);
   border-top: 1px solid var(--border);
@@ -235,37 +147,32 @@ a:hover {
 .calendar-placeholder {
   width: 100%;
   min-height: 500px;
-/*  background: var(--primary-light, #eef5f5); */
+  background: var(--teal-light);
   border: 2px dashed var(--teal);
   border-radius: 6px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: var(--primary-hover);
+  color: var(--teal-dark);
   font-size: 1rem;
   gap: 8px;
   text-align: center;
   padding: 24px;
 }
-
 .calendar-placeholder .cal-icon {
   font-size: 2.4rem;
 }
-
 .calendar-placeholder p {
   font-size: 0.9rem;
   color: var(--text-muted);
   max-width: 420px;
 }
-.calendar-embed {
-  margin-top: 20px;
-}
-/* ── Subscribe links ─────────────────────────────────────── */
+
+/* ── Subscribe links ─────────────────────────────────────────── */
 .subscribe-section {
   padding: 36px 0 44px;
 }
-
 .subscribe-intro {
   font-size: 1rem;
   color: var(--text-muted);
@@ -285,10 +192,10 @@ a:hover {
   gap: 12px;
   background: var(--bg-white);
   border: 1px solid var(--border);
-  border-left: 4px solid var(--accent);
+  border-left: 4px solid var(--gold);
   border-radius: 5px;
   padding: 13px 16px;
-  box-shadow: var(--shadow-soft);
+  box-shadow: var(--card-shadow);
 }
 
 .subscribe-list .cal-label {
@@ -304,10 +211,9 @@ a:hover {
   color: var(--teal);
   white-space: nowrap;
 }
+.subscribe-list a:hover { color: var(--teal-dark); }
 
-.subscribe-list a:hover { color: var(--primary-hover); }
-
-/* ── Footer ──────────────────────────────────────────────── */
+/* ── Footer ──────────────────────────────────────────────────── */
 .site-footer {
   background: var(--text-dark);
   color: #9bb5b8;
@@ -315,10 +221,65 @@ a:hover {
   text-align: center;
   padding: 22px 20px;
 }
-
 .site-footer a { color: #7ecece; }
 
-/* ── Responsive tweaks ───────────────────────────────────── */
+/* ── Calendar embed wrapper ──────────────────────────────────── */
+.calendar-embed {
+  width: 100%;
+  overflow-x: auto;           /* scroll on narrow screens        */
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px;
+  box-shadow: var(--card-shadow);
+}
+.calendar-embed iframe {
+  display: block;
+  border: none;
+}
+
+/* ── Print options bar ───────────────────────────────────────── */
+.print-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 14px 18px;
+  background: var(--teal-light);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+.print-bar .print-label {
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-right: 4px;
+}
+
+/* Secondary (outline) button variant for print options */
+.btn-outline {
+  display: inline-block;
+  padding: 8px 18px;
+  background: var(--bg-white);
+  color: var(--teal-dark);
+  border: 2px solid var(--teal);
+  border-radius: 4px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  font-family: inherit;
+  white-space: nowrap;
+}
+.btn-outline:hover {
+  background: var(--teal);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ── Responsive tweaks ───────────────────────────────────────── */
 @media (max-width: 600px) {
   body { font-size: 16px; }
   .welcome h1 { font-size: 1.5rem; }
