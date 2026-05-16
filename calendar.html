@@ -12,15 +12,13 @@
 <script>
   function printCalendar() {
     const calUrl =
-      "https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&showPrint=0
-      &src=Z3JhbmR2aWV3ZXhjaGFuZ2VjYWxlbmRhckBnbWFpbC5jb20
-      &color=%23039be5" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no";
-
-const pw = 1000, ph = 740;
-const left = window.screenX + Math.round((window.outerWidth  - pw) / 2);
-const top  = window.screenY + Math.round((window.outerHeight - ph) / 2);
-const win  = window.open("", "_blank",
-  `width=${pw},height=${ph},left=${left},top=${top}`);    win.document.write(`<!DOCTYPE html>
+      "https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&showPrint=0" +
+      "&src=Z3JhbmR2aWV3ZXhjaGFuZ2VjYWxlbmRhckBnbWFpbC5jb20" +
+      ""&color=%23039be5&color=%23d81b60";
+    const pw = 1000, ph = 740;
+    const left = window.screenX + Math.round((window.outerWidth  - pw) / 2);
+    const top  = window.screenY + Math.round((window.outerHeight - ph) / 2);
+    const win  = window.open("", "_blank",`width=${pw},height=${ph},left=${left},top=${top}`);    win.document.write(`<!DOCTYPE html>
 <html>
 <head>
   <title>The Grandview Community Calendar — Print</title>
