@@ -155,6 +155,7 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
   background: var(--bg-white);
   border: 0px;
   padding: 4px;
+  margin-bottom: 10px;
 }
 
 .calendar-embed iframe {
