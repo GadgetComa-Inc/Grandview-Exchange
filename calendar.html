@@ -1,111 +1,140 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Grandview Community Calendar</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 
+<script>
+  function printCalendar() {
+        const calUrl =
+          "https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York" +
+          "&mode=AGENDA" +
+          "&title=The%20Grandview%20Community%20Calendar" +
+          "&showTz=0" +
+          "&src=Z3JhbmR2aWV3ZXhjaGFuZ2VjYWxlbmRhckBnbWFpbC5jb20" +
+          "&color=%23039be5";
+        const pw = 1000, ph = 740;
+        const left = window.screenX + Math.round((window.outerWidth  - pw) / 2);
+       const top  = window.screenY + Math.round((window.outerHeight - ph) / 2);
+       const win  = window.open("", "_blank",`width=${pw},height=${ph},left=${left},top=${top}`);    win.document.write(`<!DOCTYPE html>
+<html>
+<head>
+  <title>The Grandview Community Calendar — Print</title>
+  <style>
+    @page { size: landscape; margin: 0.3in; }
+    body  { margin: 0; padding: 0; font-family: sans-serif; }
+    .notice {
+      background: #2f6f73;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 10px 16px;
+      font-size: 0.95rem;
+    }
+    .notice strong { font-size: 1rem; }
+    .print-btn {
+      background: #fff;
+      color: #2f6f73;
+      border: none;
+      border-radius: 4px;
+      padding: 6px 16px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .print-btn:hover { background: #e0f0f0; }
+    iframe {
+      width: 100%;
+      height: calc(100vh - 48px);
+      border: none;
+      display: block;
+    }
+    @media print {
+      .notice { display: none; }
+      iframe   { height: 100vh; }
+    }
+  </style>
+</head>
+<body>
+  <div class="notice">
+    <span>⚠ To print, click the <strong>Print Calendar</strong> button</span>
+    <button class="print-btn" onclick="window.print()">Print Calendar</button>
+  </div>
+  <iframe src="${calUrl}" scrolling="no"></iframe>
+</body>
+</html>`);
+    win.document.close();
+  }
+</script>
+
 <body>
 
-  <!-- ══ HEADER IMAGE ════════════════════════════════════════════ -->
-
+  <!-- HEADER -->
   <header class="site-header">
     <img src="coverphoto.png" alt="Grandview Exchange — Connecting Our Community" />
   </header>
 
-  <!-- ══ PAGE INTRO ══════════════════════════════════════════════ -->
-
+  <!-- PAGE INTRO -->
   <section class="section">
     <div class="container">
       <h1 class="section-title">The Grandview Community Calendar</h1>
-      <p style="margin-bottom: 16px; font-size:1rem; color:var(--text-muted);">
+
+      <p style="margin-bottom: 20px; font-size:1rem; color:var(--text-muted);">
         Stay up to date with everything happening at The Grandview and across our clubs.
       </p>
-      <a href="index.html" style="font-size: 0.9rem;">&#8592; Back to Home</a>
+
+      <!-- Optional back link -->
+      <a href="index.html" style="font-size: 0.9rem;">← Back to Home</a>
     </div>
   </section>
 
-  <!-- ══ CALENDAR ════════════════════════════════════════════════ -->
-
+  <!-- CALENDAR -->
   <section class="calendar-section">
     <div class="container">
 
-```
-  <!-- Embedded Google Calendar (agenda view) -->
-  <div class="calendar-embed">
-    <iframe
-      src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&mode=AGENDA&title=The%20Grandview%20Community%20Calendar&showTz=0&src=Z3JhbmR2aWV3ZXhjaGFuZ2VjYWxlbmRhckBnbWFpbC5jb20&color=%23039be5"
-      width="800"
-      height="600"
-      scrolling="no">
-    </iframe>
-  </div>
-
-  <!-- Print options — styled as a card group matching the rest of the site -->
-  <div class="card-group" style="margin-top: 24px;">
-    <div class="group-label">&#128438; Print this calendar</div>
-    <div class="cards">
-
-      <div class="card">
-        <div class="card-header">
-          <div class="card-icon">🖨️</div>
-          <div class="card-title">Print Schedule</div>
-        </div>
-        <div class="card-desc">
-          Prints the schedule with the title, date, and time of each event.
-        </div>
-        <a class="card-link" href="print-schedule.html" target="_blank">Print Schedule</a>
+      <div class="calendar-placeholder">
+        <div class="cal-icon">📅</div>
+          <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&mode=AGENDA&title=The%20Grandview%20Community%20Calendar&showTz=0&src=Z3JhbmR2aWV3ZXhjaGFuZ2VjYWxlbmRhckBnbWFpbC5jb20&color=%23039be5" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+          <button class="card-link" onclick="printCalendar()">Print Calendar</button>
       </div>
-
-      <div class="card">
-        <div class="card-header">
-          <div class="card-icon">📋</div>
-          <div class="card-title">Print Schedule with Notes</div>
-        </div>
-        <div class="card-desc">
-          Prints the schedule with the title, date, time, and detailed description of each event.
-        </div>
-        <a class="card-link" href="print-notes.html" target="_blank">Print with Notes</a>
-      </div>
-
     </div>
-  </div>
-
-</div>
-```
-
+    
   </section>
 
-  <!-- ══ SUBSCRIBE ═══════════════════════════════════════════════ -->
-
+  <!-- SUBSCRIBE -->
   <section class="subscribe-section">
     <div class="container">
-      <h2 class="section-title">Subscribe to This Calendar</h2>
+
       <p class="subscribe-intro">
-        Add this calendar directly to your phone, tablet, or computer to receive automatic updates.
+        Click the link below to add this calendar directly to your phone, tablet, or computer to receive automatic updates
       </p>
+
       <ul class="subscribe-list">
         <li>
-          <span class="cal-label">&#128197; The Grandview Community Events</span>
+          <span class="cal-label">📅 The Grandview Community Events</span>
           <a href="https://calendar.google.com/calendar/ical/grandviewexchangecalendar%40gmail.com/public/basic.ics">Subscribe</a>
         </li>
       </ul>
+
     </div>
   </section>
 
-  <!-- ══ FOOTER ══════════════════════════════════════════════════ -->
-
+  <!-- FOOTER -->
   <footer class="site-footer">
     <p>
-      &copy; 2025 Grandview Exchange &nbsp;&middot;&nbsp;
-      The Grandview, Bethesda, MD &nbsp;&middot;&nbsp;
-      Questions? <a href="mailto:admin@grandviewexchange.com?subject=Questions%20about%20Grandview%20Exchange">Contact Us</a>
+      © 2025 Grandview Exchange ·
+      The Grandview, Bethesda, MD ·
+      Questions? <a href="PLACEHOLDER_CONTACT_URL">Contact Us</a>
     </p>
   </footer>
 
 </body>
-</html> 
+</html>
