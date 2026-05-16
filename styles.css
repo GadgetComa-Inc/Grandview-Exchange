@@ -162,6 +162,20 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
   border: none;
 }
 
+/* ── Card groups (more breathing room between rows) ──────── */
+.card-group {
+  margin-bottom: 34px;
+}
+
+/* ── Stronger group labels ───────────────────────────────── */
+.group-label {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary);
+  
+  margin-bottom: 14px;
+}
+
 /* ── Subscribe links ─────────────────────────────────────────── */
 .subscribe-section {
   padding: 36px 0 44px;
