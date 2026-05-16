@@ -12,10 +12,7 @@
 <script>
   function printCalendar() {
     const calUrl =
-      "https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&showPrint=0" +
-      "&src=Z3JhbmR2aWV3ZXhjaGFuZ2VjYWxlbmRhckBnbWFpbC5jb20" +
-      "&src=aWs4MnNyZGI4ZTR0ZTZzcGRxOHZxMnAxMnIyb2VtMXNAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20" +
-      "&color=%23039be5&color=%23d81b60";
+      "https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&showPrint=0&src=Z3JhbmR2aWV3ZXhjaGFuZ2VjYWxlbmRhckBnbWFpbC5jb20&color=%23039be5" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no";
 
 const pw = 1000, ph = 740;
 const left = window.screenX + Math.round((window.outerWidth  - pw) / 2);
@@ -102,8 +99,8 @@ const win  = window.open("", "_blank",
 
       <div class="calendar-placeholder">
         <div class="cal-icon">📅</div>
-        <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&showPrint=0&src=Z3JhbmR2aWV3ZXhjaGFuZ2VjYWxlbmRhckBnbWFpbC5jb20&src=aWs4MnNyZGI4ZTR0ZTZzcGRxOHZxMnAxMnIyb2VtMXNAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039be5&color=%23d81b60" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-        <button class="card-link" onclick="printCalendar()">Print Calendar</button>
+          <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&showPrint=0&src=Z3JhbmR2aWV3ZXhjaGFuZ2VjYWxlbmRhckBnbWFpbC5jb20&color=%23039be5" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+          <button class="card-link" onclick="printCalendar()">Print Calendar</button>
       </div>
     </div>
     
