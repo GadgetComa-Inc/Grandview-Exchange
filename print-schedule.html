@@ -46,7 +46,9 @@
     scrolling="no">
   </iframe>
 <script>
-  document.querySelector('iframe').onload = function() { window.print(); };
+  document.querySelector('iframe').onload = function() {
+    setTimeout(window.print, 2000);
+  };
 </script>
 
 
