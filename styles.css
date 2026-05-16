@@ -68,6 +68,13 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
   max-width: 680px;
   margin: 0;
 }
+.welcome-section {
+  margin-bottom: 28px;
+}
+.welcome-section:last-child {
+  margin-bottom: 0;
+}
+
 
 /* ── Section titles ──────────────────────────────────────────── */
 .section {
