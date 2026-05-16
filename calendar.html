@@ -64,11 +64,9 @@
   </style>
 </head>
 <body>
-  <div class="notice">
-    <span>⚠ To print, click the <strong>Print Calendar</strong> button</span>
-    <button class="print-btn" onclick="window.print()">Print Calendar</button>
-  </div>
   <iframe src="${calUrl}" scrolling="no"></iframe>
+  <script>window.onload = function() { window.print(); };</script>
+
 </body>
 </html>`);
     win.document.close();
