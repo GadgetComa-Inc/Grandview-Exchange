@@ -237,12 +237,13 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
   border-radius: 6px;
   padding: 4px;
   box-shadow: var(--card-shadow);
-  text-align: center;
 }
 
 .calendar-embed iframe {
   display: block;
   border: none;
+    text-align: center;
+
 }
 
 /* ── Responsive tweaks ───────────────────────────────────────── */
