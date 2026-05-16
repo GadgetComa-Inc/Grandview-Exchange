@@ -39,11 +39,11 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
 .site-header {
   background: #0a2a2b;
   text-align: center;
-  padding: 24px 20px;
+  padding: 16px 12px;
 }
 .site-header img {
   display: inline-block;
-  max-width: 100%;        /* shrinks on very narrow screens   */
+  max-width: 80%;        /* shrinks on very narrow screens   */
   width: auto;            /* natural width (450px) otherwise  */
   height: auto;           /* preserve aspect ratio            */
 }
@@ -52,7 +52,7 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
 .welcome {
   background: var(--bg-white);
   border-bottom: 3px solid var(--teal-light);
-  padding: 40px 0 36px;
+  padding: 20px 0 16px;
 }
 .welcome h1 {
   font-family: 'Lora', serif;
@@ -69,14 +69,14 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
 
 /* ── Section titles ──────────────────────────────────────────── */
 .section {
-  padding: 44px 0;
+  padding: 24px 0;
 }
 .section-title {
   font-family: 'Lora', serif;
   font-size: 1.4rem;
   font-weight: 600;
   color: var(--teal-dark);
-  margin-bottom: 24px;
+  margin-bottom: 18px;
   padding-bottom: 10px;
   border-bottom: 2px solid var(--border);
 }
@@ -146,7 +146,7 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
   background: var(--bg-white);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  padding: 44px 0;
+  padding: 24px 0;
 }
 
 /* ── Calendar embed wrapper ──────────────────────────────────── */
