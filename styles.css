@@ -69,7 +69,7 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
 
 /* ── Section titles ──────────────────────────────────────────── */
 .section {
-  padding: 24px 0;
+  padding: 12px 0;
 }
 .section-title {
   font-family: 'Lora', serif;
