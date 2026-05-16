@@ -187,17 +187,79 @@
 
 ```
 /* ── Option 2: Print with Notes ──────────────────────────── */
-/*   Opens the full Google Calendar web app in agenda view.   */
-/*   Event descriptions/notes are visible; user prints from   */
-/*   the browser (Ctrl+P / Cmd+P).                            */
+/*   Opens a popup with the embedded calendar showing event   */
+/*   descriptions. Uses showTitle, showPrint, showDetails=1   */
+/*   which surfaces notes in the agenda view.                 */
 function printWithNotes() {
-  const fullUrl =
-    "https://calendar.google.com/calendar/r/agenda" +
-    "?cid=" + CAL_ENC;
-  window.open(fullUrl, "_blank");
-}
+  const embedUrl =
+    "https://calendar.google.com/calendar/embed" +
+    "?height=600&wkst=1&ctz=America%2FNew_York" +
+    "&mode=AGENDA" +
+    "&title=The%20Grandview%20Community%20Calendar" +
+    "&showTz=0" +
+    "&showDetails=1" +
+    "&src=" + btoa(CAL_ID).replace(/=/g, "") +
+    "&color=%23039be5";
+
+  const pw = 1000, ph = 740;
+  const left = window.screenX + Math.round((window.outerWidth  - pw) / 2);
+  const top  = window.screenY + Math.round((window.outerHeight - ph) / 2);
+  const win  = window.open("", "_blank",
+    `width=${pw},height=${ph},left=${left},top=${top}`);
+
+  win.document.write(`<!DOCTYPE html>
 ```
 
+<html>
+<head>
+  <title>The Grandview Community Calendar — Print with Notes</title>
+  <style>
+    @page { size: landscape; margin: 0.3in; }
+    body  { margin: 0; padding: 0; font-family: sans-serif; }
+    .notice {
+      background: #0a5c60;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 10px 16px;
+      font-size: 0.95rem;
+    }
+    .print-btn {
+      background: #fff;
+      color: #0a5c60;
+      border: none;
+      border-radius: 4px;
+      padding: 6px 16px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .print-btn:hover { background: #e0f0f0; }
+    iframe {
+      width: 100%;
+      height: calc(100vh - 48px);
+      border: none;
+      display: block;
+    }
+    @media print {
+      .notice { display: none; }
+      iframe   { height: 100vh; }
+    }
+  </style>
+</head>
+<body>
+  <div class="notice">
+    <span>Ready to print with notes &mdash; click the button when you are ready.</span>
+    <button class="print-btn" onclick="window.print()">&#128438; Print Calendar</button>
+  </div>
+  <iframe src="${embedUrl}" scrolling="no"></iframe>
+</body>
+</html>`);
+      win.document.close();
+    }
   </script>
 
 </body>
