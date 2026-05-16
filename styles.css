@@ -149,29 +149,18 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
   padding: 44px 0;
 }
 
-.calendar-placeholder {
+/* ── Calendar embed wrapper ──────────────────────────────────── */
+.calendar-embed {
   width: 100%;
-  min-height: 500px;
-  background: var(--teal-light);
+  overflow-x: auto;           /* scroll on narrow screens        */
+  background: var(--bg-white);
   border: 0px;
-  border-radius: 6px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: var(--teal-dark);
-  font-size: 1rem;
-  gap: 8px;
-  text-align: center;
-  padding: 24px;
+  padding: 4px;
 }
-.calendar-placeholder .cal-icon {
-  font-size: 2.4rem;
-}
-.calendar-placeholder p {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  max-width: 420px;
+
+.calendar-embed iframe {
+  display: block;
+  border: none;
 }
 
 /* ── Subscribe links ─────────────────────────────────────────── */
@@ -227,20 +216,6 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
   padding: 22px 20px;
 }
 .site-footer a { color: #7ecece; }
-
-/* ── Calendar embed wrapper ──────────────────────────────────── */
-.calendar-embed {
-  width: 100%;
-  overflow-x: auto;           /* scroll on narrow screens        */
-  background: var(--bg-white);
-  border: 0px;
-  padding: 4px;
-}
-
-.calendar-embed iframe {
-  display: block;
-  border: none;
-}
 
 /* ── Responsive tweaks ───────────────────────────────────────── */
 @media (max-width: 600px) {
