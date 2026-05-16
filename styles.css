@@ -233,10 +233,8 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
   width: 100%;
   overflow-x: auto;           /* scroll on narrow screens        */
   background: var(--bg-white);
-  border: 1px solid var(--border);
-  border-radius: 6px;
+  border: 0px;
   padding: 4px;
-  box-shadow: var(--card-shadow);
 }
 
 .calendar-embed iframe {
