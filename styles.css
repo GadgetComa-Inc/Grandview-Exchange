@@ -53,7 +53,6 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
   background: var(--bg-white);
   border-bottom: 3px solid var(--teal-light);
   padding: 20px 0 16px;
-  text-align: center;
 }
 .welcome h1 {
   font-family: 'Lora', serif;
@@ -61,6 +60,7 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
   font-weight: 600;
   color: var(--teal-dark);
   margin-bottom: 14px;
+  text-align: center;
 }
 .welcome p {
   font-size: 1.1rem;
