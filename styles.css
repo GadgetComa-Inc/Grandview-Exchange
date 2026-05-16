@@ -140,11 +140,6 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
   align-items: center;
   gap: 10px;
 }
-.card-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
 
 /* ── Calendar section ────────────────────────────────────────── */
 .calendar-section {
