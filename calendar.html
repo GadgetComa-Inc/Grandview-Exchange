@@ -45,25 +45,35 @@
     </iframe>
   </div>
 
-  <!-- Print options bar -->
-  <div class="print-bar">
-    <span class="print-label">&#128438; Print this calendar:</span>
-    <span style="color:var(--text-muted); font-size:0.9rem;">
-      Choose how you'd like to print &mdash;
-    </span>
-    <button class="btn-outline" onclick="printSchedule()">
-      Print Schedule
-    </button>
-    <button class="btn-outline" onclick="printWithNotes()">
-      Print Schedule with Notes
-    </button>
-  </div>
+  <!-- Print options — styled as a card group matching the rest of the site -->
+  <div class="card-group" style="margin-top: 24px;">
+    <div class="group-label">&#128438; Print this calendar</div>
+    <div class="cards">
 
-  <!-- Print option explanations -->
-  <ul style="margin-top:14px; padding-left:1.4em; font-size:0.9rem; color:var(--text-muted); line-height:1.9;">
-    <li><strong>Print Schedule</strong> &mdash; Prints the schedule with the title, date, and time of the event.</li>
-    <li><strong>Print Schedule with Notes</strong> &mdash; Prints the schedule with the title, date, time, and detailed description of the event.</li>
-  </ul>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">🖨️</div>
+          <div class="card-title">Print Schedule</div>
+        </div>
+        <div class="card-desc">
+          Prints the schedule with the title, date, and time of each event.
+        </div>
+        <a class="card-link" href="#" onclick="printSchedule(); return false;">Print Schedule</a>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">📋</div>
+          <div class="card-title">Print Schedule with Notes</div>
+        </div>
+        <div class="card-desc">
+          Prints the schedule with the title, date, time, and detailed description of each event.
+        </div>
+        <a class="card-link" href="#" onclick="printWithNotes(); return false;">Print with Notes</a>
+      </div>
+
+    </div>
+  </div>
 
 </div>
 ```
@@ -93,7 +103,7 @@
     <p>
       &copy; 2025 Grandview Exchange &nbsp;&middot;&nbsp;
       The Grandview, Bethesda, MD &nbsp;&middot;&nbsp;
-      Questions? <a href="PLACEHOLDER_CONTACT_URL">Contact Us</a>
+      Questions? <a href="mailto:admin@grandviewexchange.com?subject=Questions%20about%20Grandview%20Exchange">Contact Us</a>
     </p>
   </footer>
 
@@ -139,7 +149,6 @@
       padding: 10px 16px;
       font-size: 0.95rem;
     }
-    .notice strong { font-size: 1rem; }
     .print-btn {
       background: #fff;
       color: #0a5c60;
