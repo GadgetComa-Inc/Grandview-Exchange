@@ -66,6 +66,7 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
   font-size: 1.1rem;
   color: var(--text-body);
   max-width: 680px;
+  margin: 0;
 }
 
 /* ── Section titles ──────────────────────────────────────────── */
