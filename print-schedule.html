@@ -38,6 +38,13 @@
       .notice { display: none; }
       iframe   { height: 100vh; }
     }
+    @media print {
+  iframe {
+    height: 100vh;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+}
   </style>
 </head>
 <body>
