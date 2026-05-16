@@ -242,8 +242,6 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
 .calendar-embed iframe {
   display: block;
   border: none;
-    text-align: center;
-
 }
 
 /* ── Responsive tweaks ───────────────────────────────────────── */
