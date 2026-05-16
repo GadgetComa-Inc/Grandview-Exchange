@@ -149,7 +149,6 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
   padding: 24px 0;
 }
 
-/* ── Calendar embed wrapper ──────────────────────────────────── */
 .calendar-embed {
   width: 100%;
   overflow-x: auto;           /* scroll on narrow screens        */
