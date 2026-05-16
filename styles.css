@@ -37,7 +37,7 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
 /* ── Header image ────────────────────────────────────────────── */
 /* Image is 450x300. Display at natural size, centered, not stretched. */
 .site-header {
-  background: #0a2a2b;
+  background: #0a5c60;
   text-align: center;
   padding: 16px 12px;
 }
