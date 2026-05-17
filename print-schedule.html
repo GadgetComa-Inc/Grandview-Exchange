@@ -5,13 +5,19 @@
   <title>The Grandview Community Calendar — Print</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  @page { margin: 0.3in; }
-  html, body { width: 100%; height: 100%; overflow: hidden; }
+  html, body { width: 100%; height: 100%; }
   iframe {
     display: block;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     border: none;
+  }
+  @media print {
+    @page { margin: 0.3in; }
+    iframe {
+      height: auto;
+      min-height: 100vh;
+    }
   }
 </style>
 
