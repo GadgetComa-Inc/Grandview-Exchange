@@ -245,3 +245,10 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
   .welcome h1 { font-size: 1.5rem; }
   .cards { grid-template-columns: 1fr; }
 }
+
+.fullwidth-embed {
+  width: 100%;
+  max-width: 1400px; /* or 1600px */
+  margin: 0 auto;
+}
+
