@@ -334,7 +334,7 @@ a:hover {
 
 /* Active state — your existing dark button color */
 .action-btn.active {
-  background: var(--text-dark);
+  background: var(--teal-dark);
   color: #fff;
 }
 
