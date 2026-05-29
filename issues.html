@@ -23,26 +23,27 @@
       gap: 10px; /* buttons inside each group stay close */
     }
 
-    .toggle-btn {
-      padding: 8px 16px;
-      background: var(--accent);
-      color: white;
-      border: none;
+    /* Match existing button style (card-link) */
+    .action-btn {
+      padding: 9px 18px;
+      background: var(--teal);
+      color: #fff;
       border-radius: 4px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: none;
       cursor: pointer;
-      font-size: 0.9rem;
-      transition: background 0.2s ease;
+      transition: background 0.2s;
     }
 
-    .toggle-btn:hover {
-      background: var(--accent-dark);
+    .action-btn:hover {
+      background: var(--teal-dark);
     }
 
-    .toggle-btn.active {
-      background: #333;
+    .action-btn.active {
+      background: var(--text-dark);
     }
 
-    /* Embed container */
     .fullwidth-embed iframe {
       width: 100%;
       border: 1px solid #ccc;
@@ -72,7 +73,7 @@
     </div>
   </section>
 
-  <!-- NEW BUTTON CONTROLS -->
+  <!-- BUTTON CONTROLS -->
   <section class="section">
     <div class="container">
 
@@ -80,14 +81,14 @@
 
         <!-- VIEW TYPE BUTTONS -->
         <div class="button-group">
-          <button class="toggle-btn active" id="btn-list">List View</button>
-          <button class="toggle-btn" id="btn-card">Card View</button>
+          <button class="action-btn active" id="btn-list">List View</button>
+          <button class="action-btn" id="btn-card">Card View</button>
         </div>
 
         <!-- OPEN/CLOSED BUTTONS -->
         <div class="button-group">
-          <button class="toggle-btn active" id="btn-open">Open Issues</button>
-          <button class="toggle-btn" id="btn-closed">Closed Issues</button>
+          <button class="action-btn active" id="btn-open">Open Issues</button>
+          <button class="action-btn" id="btn-closed">Closed Issues</button>
         </div>
 
       </div>
@@ -110,8 +111,89 @@
     </div>
   </section>
 
-  <!-- FIELD DEFINITIONS (unchanged) -->
-  <!-- ... your existing definitions section remains unchanged ... -->
+  <!-- FIELD DEFINITIONS -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">How to Read This Page</h2>
+
+      <p style="margin-bottom: 18px;">
+        Below are simple explanations of the fields you’ll see in the issue tracker. These help clarify 
+        how items are categorized and what each status means.
+      </p>
+
+      <div class="card-group">
+        <div class="group-label">Field Definitions</div>
+
+        <div class="cards">
+
+          <div class="card">
+            <div class="card-header">
+              <span class="card-icon">📝</span>
+              <span class="card-title">Type</span>
+            </div>
+            <div class="card-desc">
+              Identifies the kind of issue:
+              <strong>Question</strong>, <strong>Feature Request</strong>, 
+              <strong>Technical Issue/Bug</strong>, <strong>Usability Issue</strong>, or <strong>Content Issue</strong>.
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <span class="card-icon">📂</span>
+              <span class="card-title">Category</span>
+            </div>
+            <div class="card-desc">
+              Indicates where the issue occurs, such as Posting & Messages, Email Delivery, Mobile App, 
+              Browser/Desktop, Documentation, or Training.
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <span class="card-icon">📱</span>
+              <span class="card-title">Environment</span>
+            </div>
+            <div class="card-desc">
+              Shows the platform where the issue appears: Web, iPhone, Android, Email, or Unknown.
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <span class="card-icon">⭐</span>
+              <span class="card-title">Priority</span>
+            </div>
+            <div class="card-desc">
+              Indicates urgency: Low, Medium, High, or Urgent. Helps determine what should be addressed first.
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <span class="card-icon">🔄</span>
+              <span class="card-title">Status</span>
+            </div>
+            <div class="card-desc">
+              Tracks progress: New, In Review, In Progress, Waiting for Info, Planned, Resolved, or Closed.
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <span class="card-icon">🛠️</span>
+              <span class="card-title">Resolution Method</span>
+            </div>
+            <div class="card-desc">
+              Explains how the issue was resolved: Training/Documentation, Site Change, Process Change, 
+              No Action Needed, Duplicate, or Other.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer class="site-footer">

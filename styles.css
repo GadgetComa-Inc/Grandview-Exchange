@@ -252,3 +252,20 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
   margin: 0 auto;
 }
 
+.action-btn {
+  padding: 9px 18px;
+  background: var(--teal);
+  color: #fff;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.action-btn:hover {
+  background: var(--teal-dark);
+}
+.action-btn.active {
+  background: var(--text-dark);
+}
