@@ -308,40 +308,65 @@ a:hover {
 	gap: 10px;
 	/* buttons inside each group stay close */
 }
-/* ── Action Buttons (List/Card + Open/Closed) ───────────────── */
 
-.action-btn {
-  padding: 9px 18px;
-  border-radius: 4px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-}
+/* ── Action Buttons (List/Card + Open/Closed) ───────────────── */
 
 /* Inactive state — softer teal family */
 .action-btn:not(.active) {
-  background: var(--teal-light);   /* pale teal */
-  color: var(--teal-dark);         /* dark teal text */
+	background: var(--teal-light);
+	/* pale teal */
+	color: var(--teal-dark);
+	/* dark teal text */
 }
 
 /* Hover on inactive buttons */
 .action-btn:not(.active):hover {
-  background: #cfeaea;             /* slightly darker pale teal */
-  color: var(--teal-dark);
+	background: #cfeaea;
+	/* slightly darker pale teal */
+	color: var(--teal-dark);
 }
 
-/* Active state — your existing dark button color */
+
+/* ── Action Buttons (List/Card + Open/Closed) ───────────────── */
+
+.action-btn {
+	padding: 9px 18px;
+	border-radius: 4px;
+	font-size: 0.95rem;
+	font-weight: 600;
+	border: none;
+	cursor: pointer;
+	transition: background 0.2s, color 0.2s;
+}
+
+/* Inactive state — softer teal family */
+.action-btn:not(.active) {
+	background: var(--teal-light);
+	/* pale teal */
+	color: var(--teal-dark);
+	/* dark teal text */
+}
+
+/* Hover on inactive buttons */
+.action-btn:not(.active):hover {
+	background: #cfeaea;
+	/* slightly darker pale teal */
+	color: var(--teal-dark);
+}
+
+/* Active state — teal-dark */
 .action-btn.active {
-  background: var(--teal-dark);
-  color: #fff;
+	background: var(--teal-dark);
+	color: #fff;
 }
 
 /* Hover on active button */
 .action-btn.active:hover {
-  background: #000;                /* subtle darkening */
+	background: #08494c;
+	/* slightly darker teal-dark */
 }
+
+
 
 .fullwidth-embed iframe {
 	width: 100%;
