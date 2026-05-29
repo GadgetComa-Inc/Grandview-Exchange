@@ -322,31 +322,32 @@ body.help-site {
 	background: var(--bg-white);
 	border: 1px solid var(--border);
 	border-radius: 10px;
-	padding: 18px;
+	padding: 16px;
 	box-shadow: var(--card-shadow);
 }
 
 .help-sidebar h2 {
 	font-family: 'Lora', serif;
-	font-size: 1.1rem;
+	font-size: 1rem;
 	color: var(--teal-dark);
-	margin-bottom: 12px;
+	margin-bottom: 10px;
 }
 
 .help-nav-list {
 	list-style: none;
 	display: flex;
 	flex-direction: column;
-	gap: 8px;
+	gap: 6px;
 }
 
 .help-nav-list a {
 	display: block;
-	padding: 10px 12px;
+	padding: 8px 10px;
 	border-radius: 6px;
 	background: var(--bg-page);
 	border: 1px solid transparent;
 	color: var(--text-body);
+	font-size: 0.94rem;
 }
 
 .help-nav-list a:hover,
@@ -374,14 +375,14 @@ body.help-site {
 }
 
 .help-hero {
-	padding: 24px 24px 18px;
+	padding: 20px 20px 16px;
 }
 
 .help-hero h1 {
 	font-family: 'Lora', serif;
-	font-size: 2rem;
+	font-size: 1.8rem;
 	color: var(--teal-dark);
-	margin-bottom: 10px;
+	margin-bottom: 8px;
 }
 
 .help-hero p {
@@ -398,7 +399,7 @@ body.help-site {
 }
 
 .help-section {
-	padding: 20px 22px;
+	padding: 18px 20px;
 }
 
 .help-section h2,
@@ -406,7 +407,7 @@ body.help-site {
 .help-content h3 {
 	font-family: 'Lora', serif;
 	color: var(--teal-dark);
-	margin-bottom: 10px;
+	margin-bottom: 8px;
 }
 
 .help-section h2 {
@@ -431,13 +432,13 @@ body.help-site {
 
 .help-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-	gap: 14px;
-	margin-top: 16px;
+	grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+	gap: 12px;
+	margin-top: 12px;
 }
 
 .help-card {
-	padding: 16px;
+	padding: 14px;
 }
 
 .help-card .card-title {
