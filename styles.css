@@ -308,26 +308,39 @@ a:hover {
 	gap: 10px;
 	/* buttons inside each group stay close */
 }
+/* ── Action Buttons (List/Card + Open/Closed) ───────────────── */
 
-/* Match existing button style (card-link) */
 .action-btn {
-	padding: 9px 18px;
-	background: var(--teal);
-	color: #fff;
-	border-radius: 4px;
-	font-size: 0.95rem;
-	font-weight: 600;
-	border: none;
-	cursor: pointer;
-	transition: background 0.2s;
+  padding: 9px 18px;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
 }
 
-.action-btn:hover {
-	background: var(--teal-dark);
+/* Inactive state — softer teal family */
+.action-btn:not(.active) {
+  background: var(--teal-light);   /* pale teal */
+  color: var(--teal-dark);         /* dark teal text */
 }
 
+/* Hover on inactive buttons */
+.action-btn:not(.active):hover {
+  background: #cfeaea;             /* slightly darker pale teal */
+  color: var(--teal-dark);
+}
+
+/* Active state — your existing dark button color */
 .action-btn.active {
-	background: var(--teal);
+  background: var(--text-dark);
+  color: #fff;
+}
+
+/* Hover on active button */
+.action-btn.active:hover {
+  background: #000;                /* subtle darkening */
 }
 
 .fullwidth-embed iframe {
