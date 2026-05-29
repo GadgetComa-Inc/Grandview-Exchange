@@ -53,14 +53,8 @@
 
       <h2 class="section-title">Live Issue Tracker</h2>
 
-      <div class="fullwidth-embed" id="embed-container">
-        <!-- Default: List View + Open Issues -->
-        <iframe class="airtable-embed"
-          src="https://airtable.com/embed/appFAdIhnKyKmTkFF/shrdKbvEDYpXYVSe5"
-          frameborder="0"
-          height="650">
-        </iframe>
-      </div>
+ <div class="fullwidth-embed" id="embed-container"></div>
+
 
       <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 8px;">
         To view the complete details of the issue, click on the title (bold text) above the Description.
@@ -172,7 +166,7 @@
     const btnClosed = document.getElementById("btn-closed");
 
     // Embed URLs
-    const listOpen = "https://airtable.com/embed/appFAdIhnKyKmTkFF/shrdKbvEDYpXYVSe5";
+    const listOpen = "https://airtable.com/embed/appFAdIhnKyKmTkFF/shrdKbvEDYpXYVSe5?viewControls=off";
     const cardOpen = "https://airtable.com/embed/appFAdIhnKyKmTkFF/shrYLSUy3B6Dsctzf?viewControls=off";
 
     // Placeholder for closed issues (use open issues for now)
@@ -206,6 +200,9 @@
 
     btnOpen.onclick = () => activate(btnOpen, [btnOpen, btnClosed]);
     btnClosed.onclick = () => activate(btnClosed, [btnOpen, btnClosed]);
+    
+      // 🔹 Render initial state based on default active buttons
+  updateEmbed();
   </script>
 
 </body>
