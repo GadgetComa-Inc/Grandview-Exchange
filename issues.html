@@ -51,14 +51,11 @@
 
       </div>
 
-      <h2 class="section-title">Live Issue Tracker</h2>
+      <h2 class="section-title">Issue Tracker</h2>
+      <div id="view-description" style="text-align:center; margin-bottom: 16px;"></div>
 
  <div class="fullwidth-embed" id="embed-container"></div>
 
-
-      <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 8px;">
-        To view the complete details of the issue, click on the title (bold text) above the Description.
-      </p>
 
     </div>
   </section>
@@ -176,6 +173,7 @@
     function updateEmbed() {
       const isList = btnList.classList.contains("active");
       const isOpen = btnOpen.classList.contains("active");
+      updatedDescription();
 
       let url = "";
 
@@ -201,8 +199,24 @@
     btnOpen.onclick = () => activate(btnOpen, [btnOpen, btnClosed]);
     btnClosed.onclick = () => activate(btnClosed, [btnOpen, btnClosed]);
     
+    function updateDescription() {
+  const isList = btnList.classList.contains("active");
+  const isOpen = btnOpen.classList.contains("active");
+
+  const viewType = isOpen ? "Open Issues" : "Closed Issues";
+  const detailText = isList
+    ? "If any of the text in the list below appears truncated, click on the text to see all of the information."
+    : "To view the complete details of an issue, click on the title (bold text) above the Description.";
+
+  document.getElementById("view-description").innerHTML = `
+    <div style="font-weight:600; margin-bottom:4px;">Currently viewing ${viewType}</div>
+    <div style="font-size:0.95rem; color:var(--text-muted);">${detailText}</div>
+  `;
+}
+
       // 🔹 Render initial state based on default active buttons
   updateEmbed();
+  updateDescription();
   </script>
 
 </body>
