@@ -154,70 +154,71 @@
 
   <!-- SCRIPT FOR BUTTON LOGIC -->
   <script>
-    const embedContainer = document.getElementById("embed-container");
+  const embedContainer = document.getElementById("embed-container");
+  const viewDescription = document.getElementById("view-description");
 
-    // Buttons
-    const btnList = document.getElementById("btn-list");
-    const btnCard = document.getElementById("btn-card");
-    const btnOpen = document.getElementById("btn-open");
-    const btnClosed = document.getElementById("btn-closed");
+  // Buttons
+  const btnList = document.getElementById("btn-list");
+  const btnCard = document.getElementById("btn-card");
+  const btnOpen = document.getElementById("btn-open");
+  const btnClosed = document.getElementById("btn-closed");
 
-    // Embed URLs
-    const listOpen = "https://airtable.com/embed/appFAdIhnKyKmTkFF/shr2OBaErZw1ufrg2";
-    const cardOpen = "https://airtable.com/embed/appFAdIhnKyKmTkFF/shrYLSUy3B6Dsctzf";
+  // Embed URLs
+  const listOpen = "https://airtable.com/embed/appFAdIhnKyKmTkFF/shrdKbvEDYpXYVSe5";
+  const cardOpen = "https://airtable.com/embed/appFAdIhnKyKmTkFF/shrYLSUy3B6Dsctzf?viewControls=off";
 
-    // Placeholder for closed issues (use open issues for now)
-    const listClosed = "https://airtable.com/embed/appFAdIhnKyKmTkFF/shrkPfijCixCbrpTQ";
-    const cardClosed = "https://airtable.com/embed/appFAdIhnKyKmTkFF/shrzD1E4uTbM33Fvc";
+  // Placeholder for closed issues (can be updated later)
+  const listClosed = listOpen;
+  const cardClosed = cardOpen;
 
-    function updateEmbed() {
-      const isList = btnList.classList.contains("active");
-      const isOpen = btnOpen.classList.contains("active");
-      updatedDescription();
+  function updateDescription() {
+    const isList = btnList.classList.contains("active");
+    const isOpen = btnOpen.classList.contains("active");
 
-      let url = "";
+    const viewType = isOpen ? "Open Issues" : "Closed Issues";
+    const detailText = isList
+      ? "If any of the text in the list below appears truncated, click on the text to see all of the information."
+      : "To view the complete details of an issue, click on the title (bold text) above the Description.";
 
-      if (isList && isOpen) url = listOpen;
-      if (isList && !isOpen) url = listClosed;
-      if (!isList && isOpen) url = cardOpen;
-      if (!isList && !isOpen) url = cardClosed;
+    viewDescription.innerHTML = `
+      <div style="font-weight:600; margin-bottom:4px;">Currently viewing ${viewType}</div>
+      <div style="font-size:0.95rem; color:var(--text-muted);">${detailText}</div>
+    `;
+  }
 
-      embedContainer.innerHTML = `
-        <iframe class="airtable-embed" src="${url}" frameborder="0" height="650"></iframe>
-      `;
-    }
+  function updateEmbed() {
+    updateDescription();
 
-    function activate(btn, group) {
-      group.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      updateEmbed();
-    }
+    const isList = btnList.classList.contains("active");
+    const isOpen = btnOpen.classList.contains("active");
 
-    btnList.onclick = () => activate(btnList, [btnList, btnCard]);
-    btnCard.onclick = () => activate(btnCard, [btnList, btnCard]);
+    let url = "";
 
-    btnOpen.onclick = () => activate(btnOpen, [btnOpen, btnClosed]);
-    btnClosed.onclick = () => activate(btnClosed, [btnOpen, btnClosed]);
-    
-    function updateDescription() {
-  const isList = btnList.classList.contains("active");
-  const isOpen = btnOpen.classList.contains("active");
+    if (isList && isOpen) url = listOpen;
+    if (isList && !isOpen) url = listClosed;
+    if (!isList && isOpen) url = cardOpen;
+    if (!isList && !isOpen) url = cardClosed;
 
-  const viewType = isOpen ? "Open Issues" : "Closed Issues";
-  const detailText = isList
-    ? "If any of the text in the list below appears truncated, click on the text to see all of the information."
-    : "To view the complete details of an issue, click on the title (bold text) above the Description.";
+    embedContainer.innerHTML = `
+      <iframe class="airtable-embed" src="${url}" frameborder="0" height="650"></iframe>
+    `;
+  }
 
-  document.getElementById("view-description").innerHTML = `
-    <div style="font-weight:600; margin-bottom:4px;">Currently viewing ${viewType}</div>
-    <div style="font-size:0.95rem; color:var(--text-muted);">${detailText}</div>
-  `;
-}
+  function activate(btn, group) {
+    group.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    updateEmbed();
+  }
 
-      // 🔹 Render initial state based on default active buttons
+  btnList.onclick = () => activate(btnList, [btnList, btnCard]);
+  btnCard.onclick = () => activate(btnCard, [btnList, btnCard]);
+
+  btnOpen.onclick = () => activate(btnOpen, [btnOpen, btnClosed]);
+  btnClosed.onclick = () => activate(btnClosed, [btnOpen, btnClosed]);
+
+  // Initial render on page load
   updateEmbed();
-  updateDescription();
-  </script>
+</script>
 
 </body>
 </html>
