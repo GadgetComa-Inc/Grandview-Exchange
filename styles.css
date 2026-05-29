@@ -267,5 +267,5 @@ a:hover { text-decoration: underline; color: var(--teal-dark); }
   background: var(--teal-dark);
 }
 .action-btn.active {
-  background: var(--text-dark);
+  background: var(--text-light);
 }
