@@ -502,6 +502,9 @@ body.help-site {
 .help-glossary li {
 	break-inside: avoid;
 }
+.help-hero {
+  margin-bottom: 20px;
+}
 
 .help-footer {
 	text-align: center;
