@@ -511,6 +511,9 @@ body.help-site {
 	padding: 16px 12px 8px;
 	color: var(--text-muted);
 }
+.one-column {
+  grid-template-columns: 1fr !important;
+}
 
 @media (max-width: 800px) {
 	.help-layout {
