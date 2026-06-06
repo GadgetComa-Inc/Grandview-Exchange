@@ -514,6 +514,24 @@ body.help-site {
 .one-column {
   grid-template-columns: 1fr !important;
 }
+.one-column {
+  grid-template-columns: 1fr !important;
+}
+
+.card-row {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.card-left {
+  flex: 2;
+}
+
+.card-right {
+  flex: 1;
+  display: flex;
+  align-items: flex-start; /* top-aligned button */
+}
 
 @media (max-width: 800px) {
 	.help-layout {
