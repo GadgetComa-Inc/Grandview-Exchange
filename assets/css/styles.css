@@ -83,12 +83,10 @@ body {
   padding: 18px;
   /* reduced from 20px */
   box-shadow: var(--shadow-card);
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  /* centers button */
   text-align: left;
 }
 
