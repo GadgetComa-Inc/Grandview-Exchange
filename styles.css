@@ -544,6 +544,11 @@ body.help-site {
 	grid-template-columns: 1fr !important;
 }
 
+/* Extra spacing before "This is a good choice for you:" ONLY on this page */
+.help-grid.one-column .help-card h4 {
+  margin-top: 1.25rem; /* increase as needed */
+}
+
 @media (max-width: 800px) {
 	.help-layout {
 		display: block;
