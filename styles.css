@@ -575,8 +575,8 @@ body.help-site {
 
 /* Two-column layout for Help Center topic cards */
 .help-grid.two-column {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
+	display: grid !important;
+	grid-template-columns: 1fr 1fr !important;
 	gap: 2rem;
 }
 
@@ -609,7 +609,7 @@ body.help-site {
 	}
 
 	.help-grid.two-column {
-		grid-template-columns: 1fr;
+		grid-template-columns: 1fr !important;
 	}
 }
 
