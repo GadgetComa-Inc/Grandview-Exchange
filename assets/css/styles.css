@@ -108,6 +108,9 @@ small { font-size: 0.85rem; color: var(--text-muted); }
   border-radius: 8px;
   padding: 20px;
   box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* centers the button only */
 }
 
 .card__title {
@@ -120,6 +123,11 @@ small { font-size: 0.85rem; color: var(--text-muted); }
 .card__desc {
   color: var(--text-muted);
   margin-bottom: 16px;
+}
+
+.card__title,
+.card__desc {
+  align-self: stretch;   /* keeps text left-aligned */
 }
 
 .card__link {
@@ -144,6 +152,8 @@ small { font-size: 0.85rem; color: var(--text-muted); }
   color: #fff;
   font-weight: 600;
   transition: background 0.2s;
+  width: 200px;        /* consistent width */
+  text-align: center;  /*
 }
 
 .btn:hover {
