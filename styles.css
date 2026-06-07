@@ -174,6 +174,38 @@ a:hover {
 	gap: 10px;
 }
 
+.card-link-large {
+	display: inline-block;
+	width: 180px;
+	/* consistent width */
+	padding: 0.9rem 1rem;
+	/* taller button */
+	text-align: center;
+	/* centers text inside */
+}
+
+/* ── Card groups (more breathing room between rows) ──────── */
+.card-group {
+	margin-bottom: 34px;
+}
+
+.card-row {
+	display: flex;
+	gap: 1.5rem;
+}
+
+.card-left {
+	flex: 2;
+}
+
+.card-right {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	/* top-aligned button */
+}
+
 /* ── Calendar section ────────────────────────────────────────── */
 .calendar-section {
 	background: var(--bg-white);
@@ -195,11 +227,6 @@ a:hover {
 .calendar-embed iframe {
 	display: block;
 	border: none;
-}
-
-/* ── Card groups (more breathing room between rows) ──────── */
-.card-group {
-	margin-bottom: 34px;
 }
 
 /* ── Stronger group labels ───────────────────────────────── */
@@ -517,27 +544,6 @@ body.help-site {
 	grid-template-columns: 1fr !important;
 }
 
-.one-column {
-	grid-template-columns: 1fr !important;
-}
-
-.card-row {
-	display: flex;
-	gap: 1.5rem;
-}
-
-.card-left {
-	flex: 2;
-}
-
-.card-right {
-	flex: 1;
-	display: flex;
-	justify-content: center;
-	align-items: flex-start;
-	/* top-aligned button */
-}
-
 @media (max-width: 800px) {
 	.help-layout {
 		display: block;
@@ -590,6 +596,12 @@ body.help-site {
 	max-width: 1400px;
 	/* or 1600px */
 	margin: 0 auto;
+}
+
+.fullwidth-embed iframe {
+	width: 100%;
+	border: 1px solid #ccc;
+	background: transparent;
 }
 
 /* --- BUTTON GROUPS --- */
@@ -663,12 +675,4 @@ body.help-site {
 .action-btn.active:hover {
 	background: #08494c;
 	/* slightly darker teal-dark */
-}
-
-
-
-.fullwidth-embed iframe {
-	width: 100%;
-	border: 1px solid #ccc;
-	background: transparent;
 }
