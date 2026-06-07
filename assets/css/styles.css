@@ -124,6 +124,8 @@ body {
 
 .btn:hover {
   background: var(--teal-dark);
+  color: #fff;
+  text-decoration: none;
 }
 
 /* Card buttons (fixed width + centered + bottom aligned) */
@@ -142,6 +144,8 @@ body {
 
 .btn-card:hover {
   background: var(--teal-dark);
+  color: #fff;          /* keep text white on hover */
+  text-decoration: none;
 }
 
 /* Secondary button style (if needed) */
@@ -152,6 +156,8 @@ body {
 
 .btn--secondary:hover {
   background: #cfeaea;
+  color: var(--teal-dark);   /* keep text the same color */
+  text-decoration: none;
 }
 
 /* Active state */
