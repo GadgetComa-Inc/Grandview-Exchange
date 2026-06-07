@@ -27,7 +27,7 @@ body {
   background: var(--bg-page);
   margin: 0;
   padding: 0;
-  line-height: 1.4; /* reduced for tighter layout */
+  line-height: 1.1; /* reduced for tighter layout */
 }
 
 .container {
