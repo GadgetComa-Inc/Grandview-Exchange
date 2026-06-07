@@ -175,14 +175,14 @@ a:hover {
 }
 
 .card-link-large {
-	display: inline-block;
-	width: 180px;
-	/* consistent width */
-	padding: 0.9rem 1rem;
-	/* taller button */
-	text-align: center;
-	/* centers text inside */
+  display: inline-block;
+  width: 180px;
+  min-height: 3.6rem;     /* NEW: ensures enough height for two lines */
+  padding: 0.9rem 1rem;
+  text-align: center;
+  line-height: 1.3;       /* keeps multi-line text readable */
 }
+
 
 /* ── Card groups (more breathing room between rows) ──────── */
 .card-group {
