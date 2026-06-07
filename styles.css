@@ -573,6 +573,13 @@ body.help-site {
 	grid-template-columns: 1fr !important;
 }
 
+/* Two-column layout for Help Center topic cards */
+.help-grid.two-column {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 2rem;
+}
+
 /* Extra spacing before "This is a good choice for you:" ONLY on this page */
 .help-grid.one-column .help-card h4 {
 	margin-top: 1.25rem;
@@ -598,6 +605,10 @@ body.help-site {
 	}
 
 	.card-grid-2col {
+		grid-template-columns: 1fr;
+	}
+
+	.help-grid.two-column {
 		grid-template-columns: 1fr;
 	}
 }
