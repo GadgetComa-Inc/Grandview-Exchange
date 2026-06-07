@@ -99,9 +99,14 @@ body {
 }
 
 /* Tighten Getting Started heading */
-.card>h2 {
-  margin-top: 12px;
-  margin-bottom: 12px;
+.card h2 {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.card h3 {
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 
 .card__title {
@@ -125,7 +130,7 @@ body {
 
 /* Reduce space between card groups */
 .card .section {
-  margin: 16px;
+  margin: 4px 16px;
 }
 
 /* ─────────────────────────────────────────────
