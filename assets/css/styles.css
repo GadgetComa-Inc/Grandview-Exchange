@@ -27,7 +27,7 @@ body {
   background: var(--bg-page);
   margin: 0;
   padding: 0;
-  line-height: 1.1; /* reduced for tighter layout */
+  line-height: 1.4; /* reduced for tighter layout */
 }
 
 .container {
@@ -37,7 +37,7 @@ body {
 }
 
 .section {
-  margin: 20px 0; /* reduced vertical spacing */
+  margin: 32px 0; /* reduced vertical spacing */
 }
 
 /* ─────────────────────────────────────────────
@@ -55,11 +55,19 @@ body {
 ────────────────────────────────────────────── */
 .grid {
   display: grid;
-  gap: 10px;
+  gap: 20px;
 }
 
+/* Force equal-width columns */
 .grid--2col {
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 700px) {
+  .grid--2col {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ─────────────────────────────────────────────
@@ -69,7 +77,7 @@ body {
   background: var(--bg-white);
   border: 1px solid var(--border);
   border-radius: 8px;
-  padding: 10px; /* reduced from 20px */
+  padding: 14px; /* reduced from 20px */
   box-shadow: var(--shadow-card);
 
   display: flex;
@@ -77,6 +85,18 @@ body {
   justify-content: space-between;
   align-items: center; /* centers button */
   text-align: left;
+}
+
+/* Tighten Welcome heading */
+.card h1 {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+/* Tighten Getting Started heading */
+.card > h2 {
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 
 .card__title {
@@ -97,18 +117,26 @@ body {
   width: 100%; /* keeps text left-aligned */
 }
 
-/* Reduce spacing inside Getting Started card */
-.card > h2 {
-  margin-bottom: 12px; /* tighter */
-}
-
+/* Reduce space between card groups */
 .card .section {
-  margin: 24px 0; /* reduced spacing between rows */
+  margin: 16px 0;
 }
 
 /* ─────────────────────────────────────────────
    Buttons
 ────────────────────────────────────────────── */
+
+/* Remove all underlines from all button states */
+.btn,
+.btn:hover,
+.btn:focus,
+.btn:visited,
+.btn-card,
+.btn-card:hover,
+.btn-card:focus,
+.btn-card:visited {
+  text-decoration: none !important;
+}
 
 /* Standalone buttons (auto-size) */
 .btn {
@@ -125,7 +153,6 @@ body {
 .btn:hover {
   background: var(--teal-dark);
   color: #fff;
-  text-decoration: none;
 }
 
 /* Card buttons (fixed width + centered + bottom aligned) */
@@ -144,8 +171,7 @@ body {
 
 .btn-card:hover {
   background: var(--teal-dark);
-  color: #fff;          /* keep text white on hover */
-  text-decoration: none;
+  color: #fff;
 }
 
 /* Secondary button style (if needed) */
@@ -156,8 +182,7 @@ body {
 
 .btn--secondary:hover {
   background: #cfeaea;
-  color: var(--teal-dark);   /* keep text the same color */
-  text-decoration: none;
+  color: var(--teal-dark);
 }
 
 /* Active state */
