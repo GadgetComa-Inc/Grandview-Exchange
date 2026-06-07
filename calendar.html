@@ -6,64 +6,71 @@
   <title>The Grandview Community Calendar</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 
-<body>
+<body class="help-site">
 
-  <!-- HEADER -->
+  <!-- Site Banner -->
   <header class="site-header">
-    <img src="coverphoto.png" alt="Grandview Exchange — Connecting Our Community" />
+    <img src="/coverphoto.png" alt="Grandview Exchange Banner" />
   </header>
 
-  <!-- PAGE INTRO -->
+  <!-- Page Title -->
   <section class="section">
     <div class="container">
-      <h1 class="section-title">The Grandview Community Calendar</h1>
+      <div class="card">
+        <h1>The Grandview Community Calendar</h1>
+        <p>
+          This calendar shows upcoming activities, meetings, and events happening at The Grandview.
+          You can view it online, print it, or subscribe to it using your preferred device.
+        </p>
 
-      <p style="margin-bottom: 20px; font-size:1rem; color:var(--text-muted);">
-        Stay up to date with everything happening at The Grandview and across our clubs.
-      </p>
-
-    </div>
-  </section>
-
-  <!-- CALENDAR -->
-  <section class="calendar-section">
-    <div class="container">
-      <div class="calendar-embed" style="text-align: center;">
-          <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&mode=AGENDA&title=The%20Grandview%20Community%20Calendar&showTz=0&src=Z3JhbmR2aWV3ZXhjaGFuZ2VjYWxlbmRhckBnbWFpbC5jb20&color=%23039be5" style="display:block; margin:0 auto;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-          <div style="margin-top: 20px;">
-            <a class="card-link" href="print-schedule.html" target="_blank">Print Schedule</a>
-          </div>
+        <div style="text-align: center; margin-top: 16px;">
+          <a class="btn" href="Grandview-Calendar.pdf" target="_blank">Print Schedule →</a>
+        </div>
       </div>
-   </div>
-  </section>
-
-  <!-- SUBSCRIBE -->
-  <section class="subscribe-section">
-    <div class="container">
-
-      <p class="subscribe-intro">
-        Click the link below to add this calendar directly to your phone, tablet, or computer to receive automatic updates
-      </p>
-
-      <ul class="subscribe-list">
-        <li>
-          <span class="cal-label">📅 The Grandview Community Events</span>
-          <a href="webcal://calendar.google.com/calendar/ical/grandviewexchangecalendar%40gmail.com/public/basic.ics">Subscribe</a>
-        </li>
-      </ul>
-
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- Calendar Embed -->
+  <section class="section">
+    <div class="container">
+      <div class="card">
+        <h2>View the Calendar</h2>
+
+        <iframe
+          src="https://calendar.google.com/calendar/embed?src=grandviewexchange%40gmail.com&ctz=America%2FNew_York"
+          style="border: 0; width: 100%; height: 600px;"
+          frameborder="0"
+          scrolling="no">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subscribe Section -->
+  <section class="section">
+    <div class="container">
+      <div class="card">
+        <h2>Subscribe to the Calendar</h2>
+
+        <p>You can add the Grandview Community Calendar to your device so events appear automatically.</p>
+
+        <ul style="padding-left: 1.5em; margin-top: 8px;">
+          <li><a href="https://calendar.google.com/calendar/u/0?cid=grandviewexchange@gmail.com">Subscribe on Google Calendar</a></li>
+          <li><a href="webcal://calendar.google.com/calendar/ical/grandviewexchange%40gmail.com/public/basic.ics">Subscribe on Apple Calendar</a></li>
+          <li><a href="https://calendar.google.com/calendar/ical/grandviewexchange%40gmail.com/public/basic.ics">Subscribe on Outlook or Other Apps</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="site-footer">
     <p>
       © 2026 Grandview Exchange ·
-      The Grandview, Bethesda, MD ·
-      Questions? <a href="PLACEHOLDER_CONTACT_URL">Contact Us</a>
+      Questions? <a href="mailto:admin@grandviewexchange.com">Contact Us</a>
     </p>
   </footer>
 
