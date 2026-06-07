@@ -159,9 +159,7 @@ a:hover {
 	font-weight: 600;
 	transition: background 0.2s;
 	text-align: center;
-	width: 180px;
-	padding: 0.9rem 1rem;
-	text-align: center;
+	padding: 9px 18px;
 }
 
 .card-link:hover {
