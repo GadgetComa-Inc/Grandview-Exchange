@@ -6,14 +6,14 @@
   <title>The Grandview Community Calendar</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
 
 <body class="help-site">
 
   <!-- Site Banner -->
   <header class="site-header">
-    <img src="assets/img/coverphoto.png" alt="Grandview Exchange Banner" />
+    <img src="/assets/img/coverphoto.png" alt="Grandview Exchange Banner" />
   </header>
 
   <!-- Page Title -->
@@ -25,10 +25,6 @@
           This calendar shows upcoming activities, meetings, and events happening at The Grandview.
           You can view it online, print it, or subscribe to it using your preferred device.
         </p>
-
-        <div style="text-align: center; margin-top: 16px;">
-          <a class="btn" href="Grandview-Calendar.pdf" target="_blank">Print Schedule →</a>
-        </div>
       </div>
     </div>
   </section>
@@ -40,11 +36,17 @@
         <h2>View the Calendar</h2>
 
         <iframe
-          src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&showPrint=0&showTz=0&mode=AGENDA&src=Z3JhbmR2aWV3ZXhjaGFuZ2VjYWxlbmRhckBnbWFpbC5jb20&color=%23a9a9a9"
+          src="https://calendar.google.com/calendar/embed?src=grandviewexchange%40gmail.com&ctz=America%2FNew_York"
           style="border: 0; width: 100%; height: 600px;"
           frameborder="0"
           scrolling="no">
         </iframe>
+
+        <!-- Print Button Under Calendar -->
+        <div style="text-align: center; margin-top: 16px;">
+          <a class="btn" href="Grandview-Calendar.pdf" target="_blank">Print Schedule →</a>
+        </div>
+
       </div>
     </div>
   </section>
@@ -57,11 +59,25 @@
 
         <p>You can add the Grandview Community Calendar to your device so events appear automatically.</p>
 
-        <ul style="padding-left: 1.5em; margin-top: 8px;">
-          <li><a href="https://calendar.google.com/calendar/u/0?cid=grandviewexchange@gmail.com">Subscribe on Google Calendar</a></li>
-          <li><a href="webcal://calendar.google.com/calendar/ical/grandviewexchange%40gmail.com/public/basic.ics">Subscribe on Apple Calendar</a></li>
-          <li><a href="https://calendar.google.com/calendar/ical/grandviewexchange%40gmail.com/public/basic.ics">Subscribe on Outlook or Other Apps</a></li>
-        </ul>
+        <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 12px;">
+
+          <a class="btn-card"
+             href="https://calendar.google.com/calendar/u/0?cid=grandviewexchange@gmail.com">
+             Subscribe on Google Calendar
+          </a>
+
+          <a class="btn-card"
+             href="webcal://calendar.google.com/calendar/ical/grandviewexchange%40gmail.com/public/basic.ics">
+             Subscribe on Apple Calendar
+          </a>
+
+          <a class="btn-card"
+             href="https://calendar.google.com/calendar/ical/grandviewexchange%40gmail.com/public/basic.ics">
+             Subscribe on Outlook or Other Apps
+          </a>
+
+        </div>
+
       </div>
     </div>
   </section>
