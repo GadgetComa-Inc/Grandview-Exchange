@@ -1,11 +1,6 @@
 /* ─────────────────────────────────────────────
-   Minimal Design System – Grandview Exchange
-   Brand colors • Rounded corners • Subtle shadows
-   Unified grid • Unified cards • Unified buttons
-   Max width: 880px
+   Root Variables
 ────────────────────────────────────────────── */
-
-/* ---------- Color Palette ---------- */
 :root {
   --teal: #0d7377;
   --teal-dark: #0a5c60;
@@ -17,102 +12,71 @@
   --text-muted: #6b7c82;
 
   --border: #d0e0e1;
-  --bg-page: #f7fafa;
   --bg-white: #ffffff;
+  --bg-page: #f7fafa;
 
-  --shadow-card: 0 2px 6px rgba(0, 0, 0, 0.06);
-  --shadow-callout: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-card: 0 2px 6px rgba(0,0,0,0.06);
 }
 
-/* ---------- Reset ---------- */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+/* ─────────────────────────────────────────────
+   Global Layout
+────────────────────────────────────────────── */
 body {
   font-family: 'Source Sans 3', sans-serif;
-  font-size: 18px;
-  line-height: 1.7;
   color: var(--text-body);
   background: var(--bg-page);
+  margin: 0;
+  padding: 0;
+  line-height: 1.4; /* reduced for tighter layout */
 }
 
-a {
-  color: var(--teal);
-  text-decoration: none;
-}
-a:hover {
-  color: var(--teal-dark);
-  text-decoration: underline;
-}
-
-/* ---------- Layout ---------- */
 .container {
-  max-width: 880px;
+  max-width: 960px; /* increased from ~800px */
   margin: 0 auto;
   padding: 0 20px;
 }
 
 .section {
-  margin: 32px 0;
+  margin: 40px 0; /* reduced vertical spacing */
 }
 
-/* ---------- Typography ---------- */
-h1, h2, h3 {
-  font-family: 'Lora', serif;
-  color: var(--teal-dark);
+/* ─────────────────────────────────────────────
+   Header Image
+────────────────────────────────────────────── */
+.site-header img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
-h1 { font-size: 2rem; margin-bottom: 12px; }
-h2 { font-size: 1.5rem; margin-bottom: 10px; }
-h3 { font-size: 1.2rem; margin-bottom: 8px; }
-
-small { font-size: 0.85rem; color: var(--text-muted); }
-
-/* ---------- Page Header ---------- */
-.page-header {
-  margin: 32px 0 24px;
-}
-
-.page-header h1 {
-  margin: 8px 0;
-}
-
-.page-intro {
-  margin-top: 4px;
-  color: var(--text-muted);
-}
-
-/* ---------- Grid System ---------- */
+/* ─────────────────────────────────────────────
+   Grid System
+────────────────────────────────────────────── */
 .grid {
   display: grid;
-  gap: 24px;
+  gap: 20px;
 }
 
 .grid--2col {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
-.grid--1col {
-  grid-template-columns: 1fr;
-}
-
-/* ---------- Cards ---------- */
+/* ─────────────────────────────────────────────
+   Cards
+────────────────────────────────────────────── */
 .card {
   background: var(--bg-white);
   border: 1px solid var(--border);
   border-radius: 8px;
-  padding: 20px;
+  padding: 16px; /* reduced from 20px */
   box-shadow: var(--shadow-card);
+
   display: flex;
   flex-direction: column;
-  align-items: center;   /* centers the button only */
   justify-content: space-between;
-  text-align: left;   
+  align-items: center; /* centers button */
+  text-align: left;
 }
 
 .card__title {
@@ -129,24 +93,23 @@ small { font-size: 0.85rem; color: var(--text-muted); }
 
 .card__title,
 .card__desc {
-  align-self: stretch;   /* keeps text left-aligned */
-  width: 100%;  
+  align-self: stretch;
+  width: 100%; /* keeps text left-aligned */
 }
 
-.card__link {
-  display: inline-block;
-  padding: 10px 18px;
-  border-radius: 6px;
-  background: var(--teal);
-  color: #fff;
-  font-weight: 600;
-}
-.card__link:hover {
-  background: var(--teal-dark);
-  text-decoration: none;
+/* Reduce spacing inside Getting Started card */
+.card > h2 {
+  margin-bottom: 12px; /* tighter */
 }
 
-/* ---------- Buttons ---------- */
+.card .section {
+  margin: 24px 0; /* reduced spacing between rows */
+}
+
+/* ─────────────────────────────────────────────
+   Buttons
+────────────────────────────────────────────── */
+
 /* Standalone buttons (auto-size) */
 .btn {
   display: inline-block;
@@ -163,22 +126,10 @@ small { font-size: 0.85rem; color: var(--text-muted); }
   background: var(--teal-dark);
 }
 
-.btn--active {
-  background: var(--teal-dark);
-}
-
-.btn--secondary {
-  background: var(--teal-light);
-  color: var(--teal-dark);
-}
-.btn--secondary:hover {
-  background: #cfeaea;
-}
-
-/* Card buttons (fixed width + centered) */
+/* Card buttons (fixed width + centered + bottom aligned) */
 .btn-card {
   display: inline-block;
-  width: 240px;          /* wider, consistent */
+  width: 270px; /* wider so text never wraps */
   padding: 10px 18px;
   border-radius: 6px;
   background: var(--teal);
@@ -186,62 +137,39 @@ small { font-size: 0.85rem; color: var(--text-muted); }
   font-weight: 600;
   text-align: center;
   transition: background 0.2s;
-  margin-top: auto;      /* pushes button to bottom */
+  margin-top: auto; /* pushes button to bottom */
 }
 
 .btn-card:hover {
   background: var(--teal-dark);
 }
 
-/* ---------- Callouts ---------- */
-.callout {
-  padding: 20px;
-  border-radius: 8px;
-  background: var(--bg-white);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-callout);
+/* Secondary button style (if needed) */
+.btn--secondary {
+  background: var(--teal-light);
+  color: var(--teal-dark);
 }
 
-.callout--gold {
-  border-left: 4px solid var(--gold);
+.btn--secondary:hover {
+  background: #cfeaea;
 }
 
-/* ---------- Breadcrumb ---------- */
-.breadcrumb {
-  font-size: 0.9rem;
-  margin-bottom: 8px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+/* Active state */
+.btn--active {
+  background: var(--teal-dark);
 }
 
-.breadcrumb a {
-  color: var(--teal);
-}
-
-/* ---------- Footer ---------- */
+/* ─────────────────────────────────────────────
+   Footer
+────────────────────────────────────────────── */
 .site-footer {
-  background: var(--text-dark);
-  color: #9bb5b8;
-  font-size: 0.88rem;
   text-align: center;
-  padding: 22px 20px;
-  margin-top: 40px;
-  border-radius: 8px 8px 0 0;
+  padding: 20px 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
 }
 
 .site-footer a {
-  color: #7ecece;
-}
-
-/* ---------- Responsive ---------- */
-@media (max-width: 800px) {
-  .grid--2col {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 600px) {
-  body { font-size: 16px; }
-  h1 { font-size: 1.6rem; }
+  color: var(--teal-dark);
+  font-weight: 600;
 }
