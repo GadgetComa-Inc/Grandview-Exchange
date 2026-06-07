@@ -1,745 +1,216 @@
-/* ── Color palette (Groups.io inspired) ─────────────────────── */
+/* ─────────────────────────────────────────────
+   Minimal Design System – Grandview Exchange
+   Brand colors • Rounded corners • Subtle shadows
+   Unified grid • Unified cards • Unified buttons
+   Max width: 880px
+────────────────────────────────────────────── */
+
+/* ---------- Color Palette ---------- */
 :root {
-	--teal: #0d7377;
-	--teal-dark: #0a5c60;
-	--teal-light: #e6f4f4;
-	--gold: #c8922a;
-	--text-dark: #1a2e35;
-	--text-body: #3a4a50;
-	--text-muted: #6b7c82;
-	--border: #d0e0e1;
-	--bg-page: #f7fafa;
-	--bg-white: #ffffff;
-	--card-shadow: 0 2px 8px rgba(13, 115, 119, 0.10);
+  --teal: #0d7377;
+  --teal-dark: #0a5c60;
+  --teal-light: #e6f4f4;
+  --gold: #c8922a;
+
+  --text-dark: #1a2e35;
+  --text-body: #3a4a50;
+  --text-muted: #6b7c82;
+
+  --border: #d0e0e1;
+  --bg-page: #f7fafa;
+  --bg-white: #ffffff;
+
+  --shadow-card: 0 2px 6px rgba(0, 0, 0, 0.06);
+  --shadow-callout: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-/* ── Reset & base ────────────────────────────────────────────── */
+/* ---------- Reset ---------- */
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-	font-family: 'Source Sans 3', sans-serif;
-	font-size: 18px;
-	line-height: 1.7;
-	color: var(--text-body);
-	background: var(--bg-page);
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--text-body);
+  background: var(--bg-page);
 }
 
 a {
-	color: var(--teal);
-	text-decoration: none;
+  color: var(--teal);
+  text-decoration: none;
 }
-
 a:hover {
-	text-decoration: underline;
-	color: var(--teal-dark);
+  color: var(--teal-dark);
+  text-decoration: underline;
 }
 
-/* ── Layout container ────────────────────────────────────────── */
+/* ---------- Layout ---------- */
 .container {
-	max-width: 880px;
-	margin: 0 auto;
-	padding: 0 20px;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-/* ── Header image ────────────────────────────────────────────── */
-/* Image is 450x300. Display at natural size, centered, not stretched. */
-.site-header {
-	background: #0a5c60;
-	text-align: center;
-	padding: 16px 12px;
-}
-
-.site-header img {
-	display: inline-block;
-	max-width: 80%;
-	/* shrinks on very narrow screens   */
-	width: auto;
-	/* natural width (450px) otherwise  */
-	height: auto;
-	/* preserve aspect ratio            */
-}
-
-/* ── Welcome section ─────────────────────────────────────────── */
-.welcome {
-	background: var(--bg-white);
-	border-bottom: 3px solid var(--teal-light);
-	padding: 20px 0 16px;
-}
-
-.welcome h1 {
-	font-family: 'Lora', serif;
-	font-size: 2rem;
-	font-weight: 600;
-	color: var(--teal-dark);
-	margin-bottom: 14px;
-	text-align: center;
-}
-
-.welcome p {
-	font-size: 1.1rem;
-	color: var(--text-body);
-	max-width: 680px;
-	margin: 0 0 14px 0;
-}
-
-.welcome-section {
-	margin-bottom: 28px;
-}
-
-.welcome-section:last-child {
-	margin-bottom: 0;
-}
-
-
-/* ── Section titles ──────────────────────────────────────────── */
 .section {
-	padding: 12px 0;
+  margin: 32px 0;
 }
 
-.section-title {
-	font-family: 'Lora', serif;
-	font-size: 1.4rem;
-	font-weight: 600;
-	color: var(--teal-dark);
-	margin-bottom: 18px;
-	padding-bottom: 10px;
-	border-bottom: 2px solid var(--border);
+/* ---------- Typography ---------- */
+h1, h2, h3 {
+  font-family: 'Lora', serif;
+  color: var(--teal-dark);
 }
 
-/* ── Access cards ────────────────────────────────────────────── */
-.cards {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-	gap: 18px;
+h1 { font-size: 2rem; margin-bottom: 12px; }
+h2 { font-size: 1.5rem; margin-bottom: 10px; }
+h3 { font-size: 1.2rem; margin-bottom: 8px; }
+
+small { font-size: 0.85rem; color: var(--text-muted); }
+
+/* ---------- Page Header ---------- */
+.page-header {
+  margin: 32px 0 24px;
 }
 
+.page-header h1 {
+  margin: 8px 0;
+}
+
+.page-intro {
+  margin-top: 4px;
+  color: var(--text-muted);
+}
+
+/* ---------- Grid System ---------- */
+.grid {
+  display: grid;
+  gap: 24px;
+}
+
+.grid--2col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--1col {
+  grid-template-columns: 1fr;
+}
+
+/* ---------- Cards ---------- */
 .card {
-	background: var(--bg-white);
-	border: 1px solid var(--border);
-	border-top: 4px solid var(--teal);
-	border-radius: 6px;
-	padding: 22px 20px 20px;
-	box-shadow: var(--card-shadow);
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: var(--shadow-card);
 }
 
-.card-icon {
-	font-size: 1.6rem;
-	line-height: 1;
+.card__title {
+  font-family: 'Lora', serif;
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  margin-bottom: 8px;
 }
 
-.card-title {
-	font-family: 'Lora', serif;
-	font-size: 1.05rem;
-	font-weight: 600;
-	color: var(--text-dark);
+.card__desc {
+  color: var(--text-muted);
+  margin-bottom: 16px;
 }
 
-.card-desc {
-	font-size: 0.95rem;
-	color: var(--text-muted);
-	flex: 1;
+.card__link {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 6px;
+  background: var(--teal);
+  color: #fff;
+  font-weight: 600;
 }
-
-.card-link {
-	display: inline-block;
-	margin-top: 4px;
-	background: var(--teal);
-	color: #fff;
-	border-radius: 4px;
-	font-size: 0.95rem;
-	font-weight: 600;
-	transition: background 0.2s;
-	text-align: center;
-	padding: 9px 18px;
-}
-
-.card-link:hover {
-	background: var(--teal-dark);
-	text-decoration: none;
-	color: #fff;
-}
-
-.card-header {
-	display: flex;
-	align-items: center;
-	gap: 10px;
-}
-
-.card-link-large {
-	display: inline-block;
-	width: 180px;
-	min-height: 3.6rem;
-	/* NEW: ensures enough height for two lines */
-	padding: 0.9rem 1rem;
-	text-align: center;
-	line-height: 1.3;
-	/* keeps multi-line text readable */
-}
-
-
-/* ── Card groups (more breathing room between rows) ──────── */
-.card-group {
-	margin-bottom: 34px;
-}
-
-.card-row {
-	display: flex;
-	gap: 1.5rem;
-}
-
-.card-left {
-	flex: 2;
-}
-
-.card-right {
-	flex: 1;
-	display: flex;
-	justify-content: center;
-	align-items: flex-start;
-	/* top-aligned button */
-}
-
-/* ─────────────────────────────────────────────
-   Two‑column card grid for Help Center home page
-   ───────────────────────────────────────────── */
-
-.card-grid-2col {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	gap: 2rem;
-	margin-top: 1.5rem;
-}
-
-/* Ensure cards stretch nicely in a grid */
-.card-grid-2col .card {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
-
-/* Optional: tighten spacing inside cards for consistency */
-.card-grid-2col .card h3 {
-	margin-top: 0;
-}
-
-.card-grid-2col .card p {
-	margin-bottom: 0.75rem;
-}
-
-/* ── Calendar section ────────────────────────────────────────── */
-.calendar-section {
-	background: var(--bg-white);
-	border-top: 1px solid var(--border);
-	border-bottom: 1px solid var(--border);
-	padding: 24px 0;
-}
-
-.calendar-embed {
-	width: 100%;
-	overflow-x: auto;
-	/* scroll on narrow screens        */
-	background: var(--bg-white);
-	border: 0px;
-	padding: 4px;
-	margin-bottom: 10px;
-}
-
-.calendar-embed iframe {
-	display: block;
-	border: none;
-}
-
-/* ── Stronger group labels ───────────────────────────────── */
-.group-label {
-	font-size: 1.5rem;
-	font-weight: 700;
-	color: var(--teal-dark);
-	margin-bottom: 14px;
-}
-
-/* ── Subscribe links ─────────────────────────────────────────── */
-.subscribe-section {
-	padding: 36px 0 44px;
-}
-
-.subscribe-intro {
-	font-size: 1rem;
-	color: var(--text-muted);
-	margin-bottom: 18px;
-}
-
-.subscribe-list {
-	list-style: none;
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-}
-
-.subscribe-list li {
-	display: flex;
-	align-items: center;
-	gap: 12px;
-	background: var(--bg-white);
-	border: 1px solid var(--border);
-	border-left: 4px solid var(--gold);
-	border-radius: 5px;
-	padding: 13px 16px;
-	box-shadow: var(--card-shadow);
-}
-
-.subscribe-list .cal-label {
-	flex: 1;
-	font-weight: 600;
-	color: var(--text-dark);
-	font-size: 0.98rem;
-}
-
-.subscribe-list a {
-	font-size: 0.9rem;
-	font-weight: 600;
-	color: var(--teal);
-	white-space: nowrap;
-}
-
-.subscribe-list a:hover {
-	color: var(--teal-dark);
-}
-
-/* ── Help site refactor ────────────────────────────────────── */
-body.help-site {
-	background:
-		linear-gradient(180deg, rgba(13, 115, 119, 0.06), rgba(255, 255, 255, 0)),
-		var(--bg-page);
-}
-
-.help-shell {
-	max-width: 1100px;
-	margin: 0 auto;
-	padding: 24px 20px 40px;
-}
-
-.help-topbar {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 18px;
-	margin-bottom: 20px;
-	padding: 16px 18px;
-	background: rgba(255, 255, 255, 0.9);
-	border: 1px solid var(--border);
-	border-radius: 10px;
-	box-shadow: var(--card-shadow);
-	backdrop-filter: blur(2px);
-}
-
-.help-topbar h1 {
-	font-family: 'Lora', serif;
-	font-size: 1.5rem;
-	color: var(--teal-dark);
-}
-
-.help-topbar p {
-	color: var(--text-muted);
-	font-size: 0.95rem;
-}
-
-.help-breadcrumb {
-	display: inline-flex;
-	flex-wrap: wrap;
-	gap: 8px;
-	margin-bottom: 0;
-	font-size: 0.88rem;
-}
-
-.help-breadcrumb a,
-.help-back-link {
-	color: var(--teal);
-}
-
-.help-layout {
-	display: block;
+.card__link:hover {
+  background: var(--teal-dark);
+  text-decoration: none;
 }
 
-.help-hero-bottom {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 18px;
-	align-items: center;
-	margin: 18px 0 22px;
-	padding: 0 4px;
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 6px;
+  background: var(--teal);
+  color: #fff;
+  font-weight: 600;
+  transition: background 0.2s;
 }
 
-.help-inline-nav {
-	flex: 1 1 100%;
-	min-width: 220px;
+.btn:hover {
+  background: var(--teal-dark);
 }
 
-.help-inline-list {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 10px;
-	list-style: none;
-	margin: 0;
-	padding: 0;
+.btn--active {
+  background: var(--teal-dark);
 }
 
-.help-inline-list li {
-	margin: 0;
+.btn--secondary {
+  background: var(--teal-light);
+  color: var(--teal-dark);
 }
-
-.help-inline-list a {
-	display: inline-block;
-	padding: 9px 14px;
-	border-radius: 8px;
-	background: var(--bg-page);
-	border: 1px solid transparent;
-	color: var(--teal-dark);
-	font-size: 0.95rem;
-	font-weight: 600;
-}
-
-.help-inline-list a:hover {
-	background: var(--teal-light);
-	border-color: var(--teal-dark);
-	text-decoration: none;
-}
-
-.help-main {
-	display: flex;
-	flex-direction: column;
-	gap: 16px;
-}
-
-.help-hero,
-.help-section,
-.help-card,
-.help-callout,
-.help-glossary {
-	background: var(--bg-white);
-	border: 1px solid var(--border);
-	border-radius: 10px;
-	box-shadow: var(--card-shadow);
-}
-
-.help-hero {
-	padding: 20px 20px 16px;
-}
-
-.help-hero h1 {
-	font-family: 'Lora', serif;
-	font-size: 1.8rem;
-	color: var(--teal-dark);
-	margin-bottom: 8px;
-}
-
-.help-hero p {
-	color: var(--text-body);
-	margin-bottom: 12px;
-}
-
-.help-hero .help-meta {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 10px;
-	font-size: 0.84rem;
-	color: var(--text-muted);
-}
-
-.help-section {
-	padding: 18px 20px;
-}
-
-.help-section h2,
-.help-content h2,
-.help-content h3 {
-	font-family: 'Lora', serif;
-	color: var(--teal-dark);
-	margin-bottom: 8px;
-}
-
-.help-section h2 {
-	font-size: 1.35rem;
-	padding-bottom: 10px;
-	border-bottom: 2px solid var(--border);
-}
-
-.help-section p,
-.help-content p,
-.help-content li,
-.help-content blockquote {
-	margin-bottom: 12px;
-}
-
-.help-section ul,
-.help-content ul,
-.help-content ol {
-	padding-left: 1.5rem;
-	margin-bottom: 12px;
-}
-
-.help-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-	gap: 12px;
-	margin-top: 12px;
-}
-
-.help-card {
-	padding: 14px;
-}
-
-.help-card .card-title {
-	font-family: 'Lora', serif;
-	font-size: 1.05rem;
-	color: var(--text-dark);
-	margin-bottom: 8px;
-}
-
-.help-card .card-desc {
-	color: var(--text-muted);
-	margin-bottom: 12px;
-}
-
-.help-card .card-link {
-	display: inline-block;
-	padding: 8px 14px;
-	border-radius: 4px;
-	background: var(--teal);
-	color: #fff;
-	font-weight: 600;
-}
-
-.help-card .card-link:hover {
-	background: var(--teal-dark);
-	text-decoration: none;
-}
-
-.help-callout {
-	padding: 16px 18px;
-	border-left: 4px solid var(--gold);
-}
-
-.help-callout h3 {
-	font-family: 'Lora', serif;
-	color: var(--teal-dark);
-	margin-bottom: 8px;
-}
-
-.help-content h3 {
-	font-size: 1.05rem;
-	margin-top: 18px;
-}
-
-.help-content h4 {
-	font-family: 'Source Sans 3', sans-serif;
-	font-weight: 700;
-	color: var(--text-dark);
-	margin: 12px 0 8px;
-}
-
-.help-glossary {
-	padding: 18px 20px;
-}
-
-.help-glossary ul {
-	columns: 2;
-	column-gap: 20px;
-}
-
-.help-glossary li {
-	break-inside: avoid;
-}
-
-.help-hero {
-	margin-bottom: 20px;
-}
-
-.help-footer {
-	text-align: center;
-	padding: 16px 12px 8px;
-	color: var(--text-muted);
-}
-
-.one-column {
-	grid-template-columns: 1fr !important;
-}
-
-/* Two-column layout for Help Center topic cards */
-.help-grid.two-column {
-	display: grid !important;
-	grid-template-columns: 1fr 1fr !important;
-	gap: 2rem;
+.btn--secondary:hover {
+  background: #cfeaea;
 }
 
-/* Extra spacing before "This is a good choice for you:" ONLY on this page */
-.help-grid.one-column .help-card h4 {
-	margin-top: 1.25rem;
-	/* increase as needed */
+/* ---------- Callouts ---------- */
+.callout {
+  padding: 20px;
+  border-radius: 8px;
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-callout);
 }
-
-@media (max-width: 800px) {
-	.help-layout {
-		display: block;
-	}
-
-	.help-hero-bottom {
-		flex-direction: column;
-		align-items: stretch;
-	}
-
-	.help-inline-nav {
-		width: 100%;
-	}
-
-	.help-glossary ul {
-		columns: 1;
-	}
-
-	.card-grid-2col {
-		grid-template-columns: 1fr;
-	}
 
-	.help-grid.two-column {
-		grid-template-columns: 1fr !important;
-	}
+.callout--gold {
+  border-left: 4px solid var(--gold);
 }
 
-.card .button,
-.card-link a.button,
-.card-link a {
-	display: inline-block;
-	background-color: var(--teal);
-	color: white !important;
-	padding: 0.6rem 1.2rem;
-	border-radius: 6px;
-	text-decoration: none;
-	font-weight: 600;
+/* ---------- Breadcrumb ---------- */
+.breadcrumb {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-.card .button:hover,
-.card-link a:hover {
-	background-color: var(--teal-dark);
+.breadcrumb a {
+  color: var(--teal);
 }
 
-/* ── Footer ──────────────────────────────────────────────────── */
+/* ---------- Footer ---------- */
 .site-footer {
-	background: var(--text-dark);
-	color: #9bb5b8;
-	font-size: 0.88rem;
-	text-align: center;
-	padding: 22px 20px;
+  background: var(--text-dark);
+  color: #9bb5b8;
+  font-size: 0.88rem;
+  text-align: center;
+  padding: 22px 20px;
+  margin-top: 40px;
+  border-radius: 8px 8px 0 0;
 }
 
 .site-footer a {
-	color: #7ecece;
+  color: #7ecece;
 }
 
-/* ── Responsive tweaks ───────────────────────────────────────── */
+/* ---------- Responsive ---------- */
+@media (max-width: 800px) {
+  .grid--2col {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 600px) {
-	body {
-		font-size: 16px;
-	}
-
-	.welcome h1 {
-		font-size: 1.5rem;
-	}
-
-	.cards {
-		grid-template-columns: 1fr;
-	}
-}
-
-.fullwidth-embed {
-	width: 100%;
-	max-width: 1400px;
-	/* or 1600px */
-	margin: 0 auto;
-}
-
-.fullwidth-embed iframe {
-	width: 100%;
-	border: 1px solid #ccc;
-	background: transparent;
-}
-
-/* --- BUTTON GROUPS --- */
-.view-controls {
-	display: flex;
-	justify-content: center;
-	gap: 40px;
-	/* space between the two groups */
-	margin-bottom: 20px;
-	flex-wrap: wrap;
-}
-
-.button-group {
-	display: flex;
-	gap: 10px;
-	/* buttons inside each group stay close */
-}
-
-/* ── Action Buttons (List/Card + Open/Closed) ───────────────── */
-
-/* Inactive state — softer teal family */
-.action-btn:not(.active) {
-	background: var(--teal-light);
-	/* pale teal */
-	color: var(--teal-dark);
-	/* dark teal text */
-}
-
-/* Hover on inactive buttons */
-.action-btn:not(.active):hover {
-	background: #cfeaea;
-	/* slightly darker pale teal */
-	color: var(--teal-dark);
-}
-
-
-/* ── Action Buttons (List/Card + Open/Closed) ───────────────── */
-
-.action-btn {
-	padding: 9px 18px;
-	border-radius: 4px;
-	font-size: 0.95rem;
-	font-weight: 600;
-	border: none;
-	cursor: pointer;
-	transition: background 0.2s, color 0.2s;
-}
-
-/* Inactive state — softer teal family */
-.action-btn:not(.active) {
-	background: var(--teal-light);
-	/* pale teal */
-	color: var(--teal-dark);
-	/* dark teal text */
-}
-
-/* Hover on inactive buttons */
-.action-btn:not(.active):hover {
-	background: #cfeaea;
-	/* slightly darker pale teal */
-	color: var(--teal-dark);
-}
-
-/* Active state — teal-dark */
-.action-btn.active {
-	background: var(--teal-dark);
-	color: #fff;
-}
-
-/* Hover on active button */
-.action-btn.active:hover {
-	background: #08494c;
-	/* slightly darker teal-dark */
+  body { font-size: 16px; }
+  h1 { font-size: 1.6rem; }
 }
