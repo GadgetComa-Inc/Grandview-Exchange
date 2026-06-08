@@ -21,11 +21,19 @@
 
   <div class="help-shell">
 
-    <!-- GLOBAL BREADCRUMB -->
-    <nav class="breadcrumb">
-      <a href="/">Home</a> ›
-      <span>Training</span>
-    </nav>
+   <div id="site-nav"></div>
+
+    <script>
+      fetch('/includes/site-nav.html')
+        .then(r => r.text())
+        .then(html => {
+          document.getElementById('site-nav').innerHTML = html;
+
+          // Set the current page name automatically
+          const title = document.title.replace(' – Grandview Exchange', '');
+          document.querySelector('.current-page').textContent = title;
+        });
+    </script>
 
     <!-- HERO BOX -->
     <section class="section">
