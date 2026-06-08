@@ -117,6 +117,21 @@ body {
   margin-top: 6px;
 }
 
+/* Unified Hero Card Style (Homepage + Help Center) */
+.card.hero>h1:first-child {
+  font-family: 'Lora', serif;
+  font-weight: 600;
+  font-size: 1.9rem;
+  line-height: 1.25;
+  margin-top: 8px;
+  margin-bottom: 10px;
+}
+
+.card.hero {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
 /* ─────────────────────────────────────────────
    Buttons
 ────────────────────────────────────────────── */
@@ -223,27 +238,6 @@ body {
   width: 100%;
 }
 
-/* ─────────────────────────────────────────────
-   Help Center Home – Hero Box Spacing
-────────────────────────────────────────────── */
-
-/* Reduce top/bottom padding inside the hero card */
-.help-shell .card:first-of-type {
-  padding-top: 14px;
-  padding-bottom: 14px;
-}
-
-/* Reduce space between hero title and paragraph */
-.help-shell .card:first-of-type h1 {
-  margin-top: 6px;
-  margin-bottom: 8px;
-}
-
-/* Slightly tighten paragraph spacing */
-.help-shell .card:first-of-type p {
-  margin-top: 0;
-  margin-bottom: 6px;
-}
 
 /* ─────────────────────────────────────────────
    Help Topics Section – Header Spacing
