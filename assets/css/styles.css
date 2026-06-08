@@ -129,19 +129,19 @@ body {
 /* Title spacing */
 .card.hero > h1 {
   margin-top: 6px;
-  margin-bottom: 10px; /* ↓ tighter */
+  margin-bottom: 10px;
   line-height: 1.25;
 }
 
 /* Paragraph spacing */
 .card.hero > p {
   margin-top: 0;
-  margin-bottom: 10px; /* ↓ matches h1 spacing */
+  margin-bottom: 10px;
 }
 
 /* Button wrapper spacing */
 .card.hero .hero-actions {
-  margin-top: 10px; /* ↓ matches text spacing */
+  margin-top: 10px;
   text-align: center;
 }
 
