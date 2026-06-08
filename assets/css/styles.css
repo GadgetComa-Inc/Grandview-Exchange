@@ -230,12 +230,22 @@ body {
 }
 
 /* ─────────────────────────────────────────────
-   Global Navigation
-   ────────────────────────────────────────────── */
+   Global Navigation (Breadcrumbs + Buttons Row)
+   ───────────────────────────────────────────── */
+
+/* Container for breadcrumbs + right-aligned buttons */
+.site-nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 0 28px;   /* matches original breadcrumb spacing */
+}
+
+/* Breadcrumbs (left side) */
 .breadcrumb {
   font-size: 0.9rem;
   color: var(--text-muted);
-  margin: 16px 0 28px;
+  margin: 0;             /* reset old margin so row spacing controls layout */
 }
 
 .breadcrumb a {
@@ -253,11 +263,13 @@ body {
   font-weight: 600;
 }
 
-.nav-return {
-  margin: -8px 0 24px;
-  text-align: left;
+/* Right-side button group */
+.nav-buttons {
+  display: flex;
+  gap: 10px;             /* space between the two buttons */
 }
 
+/* Navigation buttons (Back to Home, Previous Page) */
 .btn--nav-return {
   background: var(--teal-light);
   color: var(--teal-dark);
@@ -266,11 +278,13 @@ body {
   border-radius: 6px;
   display: inline-block;
   font-size: 0.95rem;
+  white-space: nowrap;   /* prevents wrapping on small screens */
 }
 
 .btn--nav-return:hover {
   background: #cfeaea;
 }
+
 
 /* ─────────────────────────────────────────────
    Help Center – Shell & Layout
