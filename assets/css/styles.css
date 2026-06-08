@@ -224,6 +224,37 @@ body {
 }
 
 /* ─────────────────────────────────────────────
+   Help Center Home – Hero Box Spacing
+────────────────────────────────────────────── */
+
+/* Reduce top/bottom padding inside the hero card */
+.help-shell .card:first-of-type {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+/* Reduce space between hero title and paragraph */
+.help-shell .card:first-of-type h1 {
+  margin-top: 6px;
+  margin-bottom: 8px;
+}
+
+/* Slightly tighten paragraph spacing */
+.help-shell .card:first-of-type p {
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+
+/* ─────────────────────────────────────────────
+   Help Topics Section – Header Spacing
+────────────────────────────────────────────── */
+
+/* Add space beneath the "Help Topics" header */
+.help-shell .card h2 {
+  margin-bottom: 18px;
+}
+
+/* ─────────────────────────────────────────────
    Help Center – Grid System
 ────────────────────────────────────────────── */
 .help-grid.two-column {
