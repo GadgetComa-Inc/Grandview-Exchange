@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Help Center – Grandview Exchange</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
@@ -17,11 +20,20 @@
 
   <div class="help-shell">
 
-    <!-- Breadcrumb (GLOBAL) -->
-    <nav class="breadcrumb">
-      <a href="/">Home</a> ›
-      <span>Help Center</span>
-    </nav>
+    <div id="site-nav"></div>
+
+    <script>
+      fetch('/includes/site-nav.html')
+        .then(r => r.text())
+        .then(html => {
+          document.getElementById('site-nav').innerHTML = html;
+
+          // Set the current page name automatically
+          const title = document.title.replace(' – Grandview Exchange', '');
+          document.querySelector('.current-page').textContent = title;
+        });
+    </script>
+
 
     <!-- HERO BOX -->
     <section class="section">
@@ -55,7 +67,8 @@
             <div class="card">
               <div class="card__title">Finding & Logging In</div>
               <div class="card__desc">
-                Learn how to open Grandview Exchange from the app, your browser, or your email -- and what to do if you're asked to log in.
+                Learn how to open Grandview Exchange from the app, your browser, or your email -- and what to do if
+                you're asked to log in.
               </div>
               <a class="btn-card" href="finding-login.html">Start Here</a>
             </div>
@@ -64,7 +77,8 @@
             <div class="card">
               <div class="card__title">Reading, Posting & Replying</div>
               <div class="card__desc">
-                Step-by-step instructions for reading messages, posting new ones, replying, and adding photos or attachments.
+                Step-by-step instructions for reading messages, posting new ones, replying, and adding photos or
+                attachments.
               </div>
               <a class="btn-card" href="reading-posting-replying.html">Learn How to Communicate</a>
             </div>
@@ -73,7 +87,8 @@
             <div class="card">
               <div class="card__title">Navigation & Organization</div>
               <div class="card__desc">
-                Understand club subgroups and hashtags, how conversations are organized, and how to find what you're looking for.
+                Understand club subgroups and hashtags, how conversations are organized, and how to find what you're
+                looking for.
               </div>
               <a class="btn-card" href="navigation-and-organization.html">Explore Organization</a>
             </div>
@@ -82,7 +97,8 @@
             <div class="card">
               <div class="card__title">Email & Notification Settings</div>
               <div class="card__desc">
-                Control how many emails you receive, choose digest or summary formats, and adjust notifications for each group.
+                Control how many emails you receive, choose digest or summary formats, and adjust notifications for each
+                group.
               </div>
               <a class="btn-card" href="email-and-notification-settings.html">Manage Email Settings</a>
             </div>
@@ -100,7 +116,8 @@
             <div class="card">
               <div class="card__title">Support & Reference</div>
               <div class="card__desc">
-                Find community policies, the glossary, and learn how to get help if something isn’t working or you need more assistance.
+                Find community policies, the glossary, and learn how to get help if something isn’t working or you need
+                more assistance.
               </div>
               <a class="btn-card" href="support-and-reference.html">Get Help & Policies</a>
             </div>
@@ -115,4 +132,5 @@
   </div><!-- end help-shell -->
 
 </body>
+
 </html>

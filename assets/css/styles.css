@@ -230,8 +230,8 @@ body {
 }
 
 /* ─────────────────────────────────────────────
-   Global Breadcrumbs
-────────────────────────────────────────────── */
+   Global Navigation
+   ────────────────────────────────────────────── */
 .breadcrumb {
   font-size: 0.9rem;
   color: var(--text-muted);
@@ -251,6 +251,25 @@ body {
 .breadcrumb span {
   color: var(--text-dark);
   font-weight: 600;
+}
+
+.nav-return {
+  margin: -8px 0 24px;
+  text-align: left;
+}
+
+.btn--nav-return {
+  background: var(--teal-light);
+  color: var(--teal-dark);
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 6px;
+  display: inline-block;
+  font-size: 0.95rem;
+}
+
+.btn--nav-return:hover {
+  background: #cfeaea;
 }
 
 /* ─────────────────────────────────────────────
