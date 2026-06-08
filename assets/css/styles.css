@@ -201,6 +201,134 @@ body {
 }
 
 /* ─────────────────────────────────────────────
+   Global Breadcrumbs
+────────────────────────────────────────────── */
+.breadcrumb {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 16px 0 28px;
+}
+
+.breadcrumb a {
+  color: var(--teal-dark);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb span {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+/* ─────────────────────────────────────────────
+   Help Center – Shell & Layout
+────────────────────────────────────────────── */
+.help-shell {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.help-layout {
+  display: block;
+}
+
+.help-main {
+  width: 100%;
+}
+
+/* ─────────────────────────────────────────────
+   Help Center – Grid System
+────────────────────────────────────────────── */
+.help-grid.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.help-grid.one-column {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 700px) {
+  .help-grid.two-column {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   Help Center – Cards
+────────────────────────────────────────────── */
+.help-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+}
+
+.card-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.card-left {
+  flex: 2;
+}
+
+.card-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Titles & descriptions inside Help Center cards */
+.card-title,
+.help-card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.card-desc,
+.help-card-desc {
+  margin-bottom: 16px;
+  color: var(--text-body);
+}
+
+/* ─────────────────────────────────────────────
+   Help Center – Buttons (legacy compatibility)
+────────────────────────────────────────────── */
+.card-link {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 6px;
+  background: var(--teal);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.card-link:hover {
+  background: var(--teal-dark);
+}
+
+.card-link-large {
+  font-size: 1rem;
+}
+
+/* ─────────────────────────────────────────────
    Footer
 ────────────────────────────────────────────── */
 .site-footer {
