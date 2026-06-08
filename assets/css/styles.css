@@ -117,19 +117,32 @@ body {
   margin-top: 6px;
 }
 
-/* Unified Hero Card Style (Homepage + Help Center) */
-.card.hero>h1:first-child {
-  font-family: 'Lora', serif;
-  font-weight: 600;
-  font-size: 1.9rem;
-  line-height: 1.25;
-  margin-top: 8px;
-  margin-bottom: 10px;
-}
+/* ─────────────────────────────────────────────
+   Unified Hero Box Style (All Pages)
+────────────────────────────────────────────── */
 
 .card.hero {
   padding-top: 16px;
   padding-bottom: 16px;
+}
+
+/* Title spacing */
+.card.hero > h1 {
+  margin-top: 6px;
+  margin-bottom: 10px; /* ↓ tighter */
+  line-height: 1.25;
+}
+
+/* Paragraph spacing */
+.card.hero > p {
+  margin-top: 0;
+  margin-bottom: 10px; /* ↓ matches h1 spacing */
+}
+
+/* Button wrapper spacing */
+.card.hero .hero-actions {
+  margin-top: 10px; /* ↓ matches text spacing */
+  text-align: center;
 }
 
 /* ─────────────────────────────────────────────
