@@ -490,24 +490,23 @@ body {
 
 .sidebar-subscribe {
   display: block;
-  width: 100%;
-  max-width: 200px;      /* keeps buttons from getting too wide */
-  margin: 0 auto 10px;   /* centers the button */
+  max-width: 180px;        /* smaller, cleaner button width */
+  margin: 0 auto 10px;     /* centers the button */
+  padding: 8px 12px;       /* reduces button height */
+  font-size: 0.9rem;       /* slightly smaller text */
   text-align: center;
-  padding: 10px 14px;    /* smaller, cleaner button size */
-  font-size: 0.95rem;
 }
 
-/* Sidebar cards */
 .sidebar-card {
-  padding: 16px;
-  margin-top: 16px;
+  padding: 14px;           /* slightly smaller padding */
+  margin-top: 14px;        /* space between cards */
 }
 
-/* Center the card headings */
 .sidebar-card h3 {
   text-align: center;
-  margin-bottom: 12px;
+  margin-top: 4px;         /* very small top space */
+  margin-bottom: 10px;     /* slightly larger than card spacing */
+  font-size: 1.05rem;
 }
 
 /* Left-align radio buttons + checkboxes */
