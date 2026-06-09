@@ -360,7 +360,7 @@ body {
    Help Center – Shell & Layout
 ────────────────────────────────────────────── */
 .help-shell {
-  max-width: 960px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -436,16 +436,70 @@ body {
   font-size: 0.95rem;
 }
 
+/* Calendar layout */
+.calendar-layout {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 24px;
+  align-items: start;
+}
+
+/* Main calendar area */
+.calendar-main {
+  width: 100%;
+}
+
+/* Sidebar */
+.calendar-sidebar {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: var(--card-shadow);
+  padding: 16px;
+}
+
+.calendar-sidebar h3 {
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  color: var(--teal-dark);
+  margin-bottom: 8px;
+}
+
+.sidebar-section {
+  margin-bottom: 20px;
+}
+
+.sidebar-section label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+/* Full-width button */
+.btn.full-width {
+  width: 100%;
+}
+
+/* Responsive: stack sidebar under calendar */
+@media (max-width: 800px) {
+  .calendar-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Hide print-only elements on screen */
 .print-only {
   display: none;
 }
 
 @media print {
 
+  /* Hide everything by default */
   body * {
     visibility: hidden !important;
   }
 
+  /* Show heading and calendar */
   #print-heading,
   #print-heading *,
   #calendar,
@@ -453,6 +507,7 @@ body {
     visibility: visible !important;
   }
 
+  /* Position heading at top */
   #print-heading {
     display: block;
     position: absolute;
@@ -463,6 +518,7 @@ body {
     margin-bottom: 12px;
   }
 
+  /* Position calendar below heading */
   #calendar {
     position: absolute;
     top: 40px;
@@ -470,6 +526,7 @@ body {
     width: 100%;
   }
 
+  /* Cleaner print background */
   .fc {
     background: white !important;
   }
