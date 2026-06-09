@@ -150,63 +150,68 @@ body {
    (Scoped so it ONLY affects this page)
    ───────────────────────────────────────────── */
 
-.ways-card .card-row {
+.card.ways-card {
+  /* keep global card padding, border, shadow */
+  padding: 16px; /* slightly reduced but still a box */
+}
+
+.card.ways-card .card-row {
   display: flex;
   gap: 16px;
   align-items: flex-start;
-  padding: 6px 0; /* reduces vertical padding */
+  padding: 0; /* do NOT override outer card padding */
 }
 
-.ways-card .card-left {
+.card.ways-card .card-left {
   flex: 2;
   text-align: left;
 }
 
-.ways-card .card-right {
+.card.ways-card .card-right {
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* button stays at top */
+  align-items: flex-start;
   padding-top: 4px;
 }
 
 /* Tighter title spacing */
-.ways-card .card__title {
+.card.ways-card .card__title {
   margin-top: 0;
-  margin-bottom: 6px !important; /* overrides global 16px */
+  margin-bottom: 6px !important;
 }
 
 /* Tighter description spacing */
-.ways-card .card__desc {
+.card.ways-card .card__desc {
   margin-bottom: 8px !important;
   line-height: 1.25;
 }
 
 /* Tighter h4 spacing */
-.ways-card h4 {
+.card.ways-card h4 {
   margin: 8px 0 4px;
   line-height: 1.25;
 }
 
 /* Tighter list spacing */
-.ways-card ul {
+.card.ways-card ul {
   margin: 4px 0 8px;
   padding-left: 20px;
 }
 
-.ways-card ul li {
+.card.ways-card ul li {
   margin-bottom: 4px;
   line-height: 1.25;
 }
 
 /* Tighter paragraph spacing */
-.ways-card p {
+.card.ways-card p {
   margin: 6px 0;
   line-height: 1.25;
 }
 
 /* Center the button in the right column */
-.ways-card .card-right .btn-card {
+.card.ways-card .card-right .btn-card {
   margin-top: 0;
 }
 
