@@ -1,0 +1,62 @@
+/* ============================================
+   Components — Card System
+============================================ */
+
+/* ---- Base Card ---- */
+.card {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+/* ---- Card Content ---- */
+.card__title {
+  font-size: 1.2rem;
+  margin-bottom: var(--space-md);
+}
+
+.card__desc {
+  margin-bottom: var(--space-md);
+}
+
+/* ---- Hero Card ---- */
+.card--hero {
+  padding-top: var(--space-md);
+  padding-bottom: var(--space-md);
+}
+
+.card--hero > h1 {
+  margin-bottom: var(--space-sm);
+}
+
+.card--hero > p {
+  margin-bottom: var(--space-sm);
+}
+
+.card--hero .hero-actions {
+  margin-top: var(--space-sm);
+  text-align: center;
+}
+
+/* ---- Horizontal Card (Ways-to-Use) ---- */
+.card--horizontal .card__row {
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-start;
+}
+
+.card--horizontal .card__body {
+  flex: 2;
+}
+
+.card--horizontal .card__actions {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
