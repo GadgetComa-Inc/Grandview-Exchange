@@ -127,14 +127,14 @@ body {
 }
 
 /* Title spacing */
-.card.hero > h1 {
+.card.hero>h1 {
   margin-top: 6px;
   margin-bottom: 10px;
   line-height: 1.25;
 }
 
 /* Paragraph spacing */
-.card.hero > p {
+.card.hero>p {
   margin-top: 0;
   margin-bottom: 10px;
 }
@@ -152,14 +152,16 @@ body {
 
 .card.ways-card {
   /* keep global card padding, border, shadow */
-  padding: 16px; /* slightly reduced but still a box */
+  padding: 16px;
+  /* slightly reduced but still a box */
 }
 
 .card.ways-card .card-row {
   display: flex;
   gap: 16px;
   align-items: flex-start;
-  padding: 0; /* do NOT override outer card padding */
+  padding: 0;
+  /* do NOT override outer card padding */
 }
 
 .card.ways-card .card-left {
@@ -308,14 +310,16 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 16px 0 28px;   /* matches original breadcrumb spacing */
+  margin: 16px 0 28px;
+  /* matches original breadcrumb spacing */
 }
 
 /* Breadcrumbs (left side) */
 .breadcrumb {
   font-size: 0.9rem;
   color: var(--text-muted);
-  margin: 0;             /* reset old margin so row spacing controls layout */
+  margin: 0;
+  /* reset old margin so row spacing controls layout */
 }
 
 .breadcrumb a {
@@ -336,7 +340,8 @@ body {
 /* Right-side button group */
 .nav-buttons {
   display: flex;
-  gap: 10px;             /* space between the two buttons */
+  gap: 10px;
+  /* space between the two buttons */
 }
 
 /* Navigation buttons (Back to Home, Previous Page) */
@@ -348,7 +353,8 @@ body {
   border-radius: 6px;
   display: inline-block;
   font-size: 0.95rem;
-  white-space: nowrap;   /* prevents wrapping on small screens */
+  white-space: nowrap;
+  /* prevents wrapping on small screens */
 }
 
 .btn--nav-return:hover {
@@ -419,6 +425,10 @@ body {
   font-weight: 600;
 }
 
+/* ─────────────────────────────────────────────
+   MAIN CALENDAR AREA
+   (FullCalendar container)
+────────────────────────────────────────────── */
 #calendar {
   background: var(--bg-white);
   padding: 20px;
@@ -427,6 +437,7 @@ body {
   box-shadow: var(--card-shadow);
 }
 
+/* Legacy controls (kept for compatibility) */
 .calendar-controls button {
   margin-right: 8px;
 }
@@ -436,7 +447,10 @@ body {
   font-size: 0.95rem;
 }
 
-/* Calendar layout */
+
+/* ─────────────────────────────────────────────
+   LAYOUT: CALENDAR + SIDEBAR
+────────────────────────────────────────────── */
 .calendar-layout {
   display: grid;
   grid-template-columns: 1fr 260px;
@@ -444,12 +458,14 @@ body {
   align-items: start;
 }
 
-/* Main calendar area */
 .calendar-main {
   width: 100%;
 }
 
-/* Sidebar */
+
+/* ─────────────────────────────────────────────
+   SIDEBAR CONTAINER
+────────────────────────────────────────────── */
 .calendar-sidebar {
   background: var(--bg-white);
   border: 1px solid var(--border);
@@ -458,54 +474,23 @@ body {
   padding: 16px;
 }
 
-.calendar-sidebar h3 {
-  font-family: 'Lora', serif;
-  font-size: 1.1rem;
-  color: var(--teal-dark);
-  margin-bottom: 8px;
-}
 
-/* Make all sidebar buttons a consistent, smaller size */
-.calendar-sidebar .btn,
-.calendar-sidebar .btn-card {
-  width: 100%;
-  max-width: 200px;      /* keeps buttons from getting too wide */
-  margin: 0 auto 12px;   /* centers them */
-  display: block;
-  padding: 10px 14px;    /* smaller, cleaner button height */
-  font-size: 0.95rem;
-  text-align: center;
-}
-
-
-.sidebar-section {
-  margin-bottom: 20px;
-}
-
-.sidebar-section label {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 0.95rem;
-}
-
-.sidebar-subscribe {
-  display: block;
-  max-width: 180px;        /* smaller, cleaner button width */
-  margin: 0 auto 10px;     /* centers the button */
-  padding: 8px 12px;       /* reduces button height */
-  font-size: 0.9rem;       /* slightly smaller text */
-  text-align: center;
-}
-
+/* ─────────────────────────────────────────────
+   SIDEBAR CARDS
+────────────────────────────────────────────── */
 .sidebar-card {
-  padding: 14px;           /* slightly smaller padding */
-  margin-top: 14px;        /* space between cards */
+  padding: 14px;
+  /* tighter interior padding */
+  margin-top: 14px;
+  /* consistent spacing between cards */
 }
 
 .sidebar-card h3 {
   text-align: center;
-  margin-top: 4px;         /* very small top space */
-  margin-bottom: 10px;     /* slightly larger than card spacing */
+  margin-top: 4px;
+  /* minimal top space */
+  margin-bottom: 10px;
+  /* slightly larger than card spacing */
   font-size: 1.05rem;
 }
 
@@ -515,23 +500,55 @@ body {
   align-items: center;
   gap: 6px;
   text-align: left;
-  margin-bottom: 8px;
-  font-size: 0.95rem;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
 }
 
-/* Full-width button */
-.btn.full-width {
-  width: 100%;
+
+/* ─────────────────────────────────────────────
+   BUTTONS (Print + Subscribe)
+────────────────────────────────────────────── */
+
+/* Print button + any .btn inside sidebar */
+.calendar-sidebar .btn {
+  display: block;
+  max-width: 180px;
+  /* smaller, consistent width */
+  margin: 0 auto 14px;
+  /* centered */
+  padding: 8px 12px;
+  /* reduced height */
+  font-size: 0.9rem;
+  text-align: center;
 }
 
-/* Responsive: stack sidebar under calendar */
+/* Subscribe buttons */
+.sidebar-subscribe {
+  display: block;
+  max-width: 180px;
+  /* matches Print button */
+  margin: 0 auto 10px;
+  /* centered + spaced */
+  padding: 8px 12px;
+  /* reduced height */
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+
+/* ─────────────────────────────────────────────
+   RESPONSIVE BEHAVIOR
+────────────────────────────────────────────── */
 @media (max-width: 800px) {
   .calendar-layout {
     grid-template-columns: 1fr;
   }
 }
 
-/* Hide print-only elements on screen */
+
+/* ─────────────────────────────────────────────
+   PRINT STYLES
+────────────────────────────────────────────── */
 .print-only {
   display: none;
 }
@@ -543,7 +560,7 @@ body {
     visibility: hidden !important;
   }
 
-  /* Show heading and calendar */
+  /* Show only heading + calendar */
   #print-heading,
   #print-heading *,
   #calendar,
@@ -551,20 +568,20 @@ body {
     visibility: visible !important;
   }
 
-  /* Position heading at top */
+  /* Centered print heading */
   #print-heading {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 12px;
-  text-align: center;
-}
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-align: center;
+  }
 
-  /* Position calendar below heading */
+  /* Calendar positioned below heading */
   #calendar {
     position: absolute;
     top: 40px;
