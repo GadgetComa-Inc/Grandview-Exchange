@@ -1,0 +1,58 @@
+/* ============================================
+   Components -- Buttons
+============================================ */
+
+/* ---- Base Button ---- */
+.btn {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 6px;
+  background: var(--teal);
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none !important;
+  transition: background 0.2s;
+}
+
+.btn:hover {
+  background: var(--teal-dark);
+}
+
+/* ---- Button Modifiers ---- */
+.btn--secondary {
+  background: var(--teal-light);
+  color: var(--teal-dark);
+}
+
+.btn--secondary:hover {
+  background: #cfeaea;
+}
+
+.btn--disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.btn--active {
+  background: var(--teal-dark);
+}
+
+/* ---- Card Button (Fixed Width) ---- */
+.btn--card {
+  width: 270px;
+  margin-top: auto;
+}
+
+/* ---- Navigation Button ---- */
+.btn--nav {
+  background: var(--teal-light);
+  color: var(--teal-dark);
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.btn--nav:hover {
+  background: #cfeaea;
+}

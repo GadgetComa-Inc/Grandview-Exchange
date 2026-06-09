@@ -2,154 +2,133 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Ways to Use Grandview Exchange – Grandview Exchange</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css">
+	<meta charset="UTF-8">
+	<title>Getting Started – Grandview Exchange</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/styles.css">
+	<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 
-<body class="help-site">
+<body class="help-site page--ways-to-use">
 
-  <!-- Site Banner -->
-  <header class="site-header">
-    <img src="assets/img/coverphoto.png" alt="Grandview Exchange Banner">
-  </header>
+	<!-- Site Banner -->
+	<header class="site-header">
+		<img src="/coverphoto.png" alt="Grandview Exchange Banner">
+	</header>
 
-  <div class="help-shell">
+	<div class="container">
 
-    <!-- GLOBAL NAV INCLUDE -->
-    <div id="site-nav"></div>
-    <script>
-      fetch('/includes/site-nav.html')
-        .then(r => r.text())
-        .then(html => {
-          document.getElementById('site-nav').innerHTML = html;
-          const title = document.title.replace(' – Grandview Exchange', '');
-          document.querySelector('.current-page').textContent = title;
-        });
-    </script>
+		<div class="site-nav-row">
+			<div class="breadcrumb">
+				<a href="/help-center-home.html">Help Center</a> › <span>Getting Started</span>
+			</div>
+			<div class="nav-buttons">
+				<a href="/help-center-home.html" class="btn btn--nav">Back to Help Center</a>
+			</div>
+		</div>
+		<section class="section">
+			<div class="card card--hero">
+				<h1>Ways to Use Grandview Exchange</h1>
+				<p>Here are some of the most common things residents do on Grandview Exchange, along with quick examples to help you get started.</p>
+			</div>
+		</section>
+		<section class="section">
+			<div class="card card--horizontal">
+				<div class="card__row">
 
-    <!-- HERO BOX -->
-    <section class="section">
-      <div class="container">
-        <div class="card hero">
-          <h1>Choose How You Want to Use Grandview Exchange</h1>
-          <p>
-            You can use Grandview Exchange in three different ways -- the Groups.io app on your phone or tablet,
-            your favorite web browser on any device, or your email. Each one works well -- the best choice depends
-            on what device you like to use and how you prefer to read and send messages.
-          </p>
-        </div>
-      </div>
-    </section>
+					<div class="card__body">
+						<h3 class="card__title">Ask a Question</h3>
+						<p class="card__desc">Residents often post questions about services, recommendations, or community information.</p>
 
-    <!-- ACCESS METHOD CARDS -->
-    <section class="section">
-      <div class="container">
+						<h4>Examples:</h4>
+						<ul>
+							<li>“Does anyone know the schedule for the shuttle this week?”</li>
+							<li>“Who do I contact for a maintenance request?”</li>
+							<li>“Any recommendations for a nearby dentist?”</li>
+						</ul>
+					</div>
 
-        <div class="card">
-          <h2>Choose One of the Methods Described Below</h2>
+					<div class="card__actions">
+						<a href="/help-center-home.html#posting" class="btn btn--card">How to Post</a>
+					</div>
 
-          <div class="help-grid one-column">
+				</div>
+			</div>
+		</section>
+		<section class="section">
+			<div class="card card--horizontal">
+				<div class="card__row">
 
-            <!-- APP -->
-            <div class="ways-card">
-              <div class="card-row">
+					<div class="card__body">
+						<h3 class="card__title">Share Something Useful</h3>
+						<p class="card__desc">Residents share tips, reminders, and helpful information with neighbors.</p>
 
-                <div class="card-left">
-                  <h3 class="card__title">Use the Groups.io App</h3>
+						<h4>Examples:</h4>
+						<ul>
+							<li>“The package room is very busy today — expect a short wait.”</li>
+							<li>“The pool heater is being repaired this afternoon.”</li>
+							<li>“The local pharmacy is offering flu shots this week.”</li>
+						</ul>
+					</div>
 
-                  <div class="card__desc">
-                    The Groups.io app lets you read and post messages on your phone or tablet. Once installed,
-                    it stays signed in and is easy to open anytime.
-                  </div>
+					<div class="card__actions">
+						<a href="/help-center-home.html#posting" class="btn btn--card">Learn How</a>
+					</div>
 
-                  <h4>This is a good choice for you:</h4>
-                  <ul>
-                    <li>If you use a phone or tablet frequently</li>
-                    <li>If you like opening an app from your home screen</li>
-                    <li>If you want something that stays signed in and ready</li>
-                  </ul>
+				</div>
+			</div>
+		</section>
+		<section class="section">
+			<div class="card card--horizontal">
+				<div class="card__row">
 
-                  <p><strong>Drawback:</strong> If you prefer a larger screen, the app may feel a bit small.</p>
-                </div>
+					<div class="card__body">
+						<h3 class="card__title">Buy, Sell, or Give Away Items</h3>
+						<p class="card__desc">Residents frequently post items they no longer need or items they’re looking for.</p>
 
-                <div class="card-right">
-                  <a class="btn-card" href="#">Get Started With the App</a>
-                </div>
+						<h4>Examples:</h4>
+						<ul>
+							<li>“Free: set of wine glasses — pickup in the lobby.”</li>
+							<li>“Looking for a small bookshelf for my den.”</li>
+							<li>“Selling a gently used desk chair.”</li>
+						</ul>
+					</div>
 
-              </div>
-            </div>
+					<div class="card__actions">
+						<a href="/help-center-home.html#posting" class="btn btn--card">Post an Item</a>
+					</div>
 
-            <!-- BROWSER -->
-            <div class="ways-card">
-              <div class="card-row">
+				</div>
+			</div>
+		</section>
+		<section class="section">
+			<div class="card card--horizontal">
+				<div class="card__row">
 
-                <div class="card-left">
-                  <h3 class="card__title">Use Your Favorite Browser</h3>
+					<div class="card__body">
+						<h3 class="card__title">Join a Club or Activity</h3>
+						<p class="card__desc">Many clubs and interest groups use Grandview Exchange to coordinate meetings and share updates.</p>
 
-                  <div class="card__desc">
-                    Using a browser gives you the full Grandview Exchange website on a larger screen.
-                    This is the easiest way to read messages and explore the site.
-                  </div>
+						<h4>Examples:</h4>
+						<ul>
+							<li>Book Club announcements</li>
+							<li>Walking Group schedules</li>
+							<li>Mahjong or Bridge meetups</li>
+						</ul>
+					</div>
 
-                  <h4>This is a good choice for you:</h4>
-                  <ul>
-                    <li>If you like using a computer or tablet with a larger screen</li>
-                    <li>If you prefer seeing more information at once</li>
-                    <li>If you’re comfortable clicking links or using bookmarks</li>
-                  </ul>
+					<div class="card__actions">
+						<a href="/help-center-home.html#subgroups" class="btn btn--card">Explore Subgroups</a>
+					</div>
 
-                  <p><strong>Drawback:</strong> You may need to type the website address or use a bookmark.</p>
-                </div>
+				</div>
+			</div>
+		</section>
+	</div> <!-- end .container -->
 
-                <div class="card-right">
-                  <a class="btn-card" href="#">Get Started With Your Browser</a>
-                </div>
-
-              </div>
-            </div>
-
-            <!-- EMAIL -->
-            <div class="ways-card">
-              <div class="card-row">
-
-                <div class="card-left">
-                  <h3 class="card__title">Use Your Email</h3>
-
-                  <div class="card__desc">
-                    You can receive Grandview Exchange messages directly in your email inbox and reply just like any
-                    other email.
-                  </div>
-
-                  <h4>This is a good choice for you:</h4>
-                  <ul>
-                    <li>If you already read email every day</li>
-                    <li>If you prefer everything to come directly to your inbox</li>
-                    <li>If you want to reply just like any other email</li>
-                  </ul>
-
-                  <p><strong>Drawback:</strong> It’s harder to browse older messages or explore groups.</p>
-                </div>
-
-                <div class="card-right">
-                  <a class="btn-card" href="#">Get Started With Email</a>
-                </div>
-
-              </div>
-            </div>
-
-          </div><!-- end help-grid -->
-
-        </div><!-- end card -->
-
-      </div>
-    </section>
-
-  </div><!-- end help-shell -->
+	<footer class="site-footer">
+		<p>Need help? Visit the <a href="/help-center-home.html">Help Center</a> for more information.</p>
+	</footer>
 
 </body>
 
