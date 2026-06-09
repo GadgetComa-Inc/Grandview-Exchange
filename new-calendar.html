@@ -1,0 +1,83 @@
+<h2>View the Calendar</h2>
+
+<!-- FILTER BAR -->
+<div class="calendar-filters" style="margin-bottom: 16px;">
+  <label><input type="checkbox" class="cal-toggle" data-cal="grandview" checked> Grandview Events</label>
+  <label><input type="checkbox" class="cal-toggle" data-cal="itclub" checked> Computer/IT Club</label>
+  <label><input type="checkbox" class="cal-toggle" data-cal="mahjongg" checked> Mah Jongg Club</label>
+</div>
+
+<!-- VIEW BUTTONS -->
+<div class="calendar-controls" style="margin-bottom: 16px;">
+  <button id="view-agenda" class="btn">Agenda</button>
+  <button id="view-week" class="btn">Week</button>
+  <button id="view-month" class="btn">Month</button>
+  <button id="print-calendar" class="btn" style="float:right;">Print</button>
+</div>
+
+<!-- CALENDAR CONTAINER -->
+<div id="calendar"></div>
+
+<!-- FULLCALENDAR SCRIPTS -->
+<link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fullcalendar/icalendar@6.1.10/index.global.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  const calendarEl = document.getElementById('calendar');
+
+  const calendar = new FullCalendar.Calendar(calendarEl, {
+    initialView: 'listMonth',   // Default = Agenda
+    height: 'auto',
+    headerToolbar: false,
+    eventSources: [
+      {
+        id: 'grandview',
+        url: 'https://calendar.google.com/calendar/ical/grandviewexchangecalendar%40gmail.com/public/basic.ics',
+        format: 'ics',
+        color: '#0d7377'
+      },
+      {
+        id: 'itclub',
+        url: 'https://calendar.google.com/calendar/ical/d4bcf6eb1219625344c2a4ce5c6df668079606cc68376546e709d00b95b51235%40group.calendar.google.com/public/basic.ics',
+        format: 'ics',
+        color: '#c8922a'
+      },
+      {
+        id: 'mahjongg',
+        url: 'https://calendar.google.com/calendar/ical/0600556da20bf5b6a09423771a1b4648fcd42be6eb2d89ec5af163985a07b65a%40group.calendar.google.com/public/basic.ics',
+        format: 'ics',
+        color: '#6b7c82'
+      }
+    ]
+  });
+
+  calendar.render();
+
+  // FILTER TOGGLES
+  document.querySelectorAll('.cal-toggle').forEach(cb => {
+    cb.addEventListener('change', function () {
+      const id = this.dataset.cal;
+      if (this.checked) {
+        calendar.getEventSourceById(id).refetch();
+      } else {
+        calendar.getEventSourceById(id).remove();
+      }
+    });
+  });
+
+  // VIEW SWITCHING
+  document.getElementById('view-agenda').onclick = () => calendar.changeView('listMonth');
+  document.getElementById('view-week').onclick = () => calendar.changeView('timeGridWeek');
+  document.getElementById('view-month').onclick = () => calendar.changeView('dayGridMonth');
+
+  // PRINT BUTTON
+  document.getElementById('print-calendar').onclick = () => {
+    calendar.changeView('listMonth');
+    setTimeout(() => window.print(), 200);
+  };
+
+});
+</script>
