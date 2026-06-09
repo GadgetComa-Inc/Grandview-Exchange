@@ -2,150 +2,134 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<title>Help Center – Grandview Exchange</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="/styles.css">
-	<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Help Center – Grandview Exchange</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
-<body class="help-site page--help-center-home">
+<body class="help-site">
 
-	<!-- Site Banner -->
-	<header class="site-header">
-		<img src="/coverphoto.png" alt="Grandview Exchange Banner">
-	</header>
+  <!-- Site Banner -->
+  <header class="site-header">
+    <img src="assets/img/coverphoto.png" alt="Grandview Exchange Banner">
+  </header>
 
-	<div class="container">
+  <div class="site-shell">
 
-		<div class="site-nav-row">
-			<div class="breadcrumb">
-				<a href="/index.html">Home</a> › <span>Help Center</span>
-			</div>
-		</div>
-		<section class="section">
-			<div class="card card--hero">
-				<h1>Grandview Exchange Help Center</h1>
-				<p>Everything you need to learn how to use Grandview Exchange — from logging in to posting messages to joining subgroups.</p>
-			</div>
-		</section>
-		<section class="section" id="getting-started">
-			<h2>Getting Started</h2>
+    <div id="site-nav"></div>
 
-			<div class="grid grid--2col">
+    <script>
+      fetch('/includes/site-nav.html')
+        .then(r => r.text())
+        .then(html => {
+          document.getElementById('site-nav').innerHTML = html;
 
-				<div class="card">
-					<h3 class="card__title">Finding the Site & Logging In</h3>
-					<p class="card__desc">Learn how to access Grandview Exchange and sign in on any device.</p>
-					<a href="/finding-login.html" class="btn btn--card">View Guide</a>
-				</div>
+          // Set the current page name automatically
+          const title = document.title.replace(' – Grandview Exchange', '');
+          document.querySelector('.current-page').textContent = title;
+        });
+    </script>
 
-				<div class="card">
-					<h3 class="card__title">Create Your Profile</h3>
-					<p class="card__desc">Tell your neighbors a little about yourself by setting up your profile.</p>
-					<a href="/Create Your Profile.html" class="btn btn--card">View Guide</a>
-				</div>
 
-				<div class="card">
-					<h3 class="card__title">Update Your MyErickson Profile</h3>
-					<p class="card__desc">Keep your MyErickson information up to date.</p>
-					<a href="/How to Update Your MyErickson Profile.html" class="btn btn--card">View Guide</a>
-				</div>
+    <!-- HERO BOX -->
+    <section class="section">
+      <div class="container">
+        <div class="card hero">
+          <h1>Grandview Exchange Help Center</h1>
+          <p>Your guide to getting started, finding your way around, and making the most of our online community.</p>
+        </div>
+      </div>
+    </section>
 
-				<div class="card">
-					<h3 class="card__title">Ways to Use Grandview Exchange</h3>
-					<p class="card__desc">See examples of how residents use the site every day.</p>
-					<a href="/ways-to-use.html" class="btn btn--card">Explore Examples</a>
-				</div>
+    <!-- HELP TOPICS BOX -->
+    <section class="section">
+      <div class="container">
 
-			</div>
-		</section>
-		<section class="section" id="posting">
-			<h2>Posting Messages</h2>
+        <div class="card">
+          <h2>Help Topics</h2>
 
-			<div class="grid grid--2col">
+          <div class="help-grid two-column">
 
-				<div class="card">
-					<h3 class="card__title">How to Post a New Message</h3>
-					<p class="card__desc">Share announcements, questions, or items for sale.</p>
-					<a href="/How to Post a New Message.html" class="btn btn--card">View Guide</a>
-				</div>
+            <!-- CHOOSE HOW YOU WANT TO USE -->
+            <div class="card">
+              <div class="card__title">Choose How You Want to Use Grandview Exchange</div>
+              <div class="card__desc">
+                Pick the way you prefer to use Grandview Exchange -- the app, a web browser, or your email.
+              </div>
+              <a class="btn-card" href="ways-to-use.html">See Your Options</a>
+            </div>
 
-				<div class="card">
-					<h3 class="card__title">How to Reply to a Message</h3>
-					<p class="card__desc">Join conversations and respond to your neighbors.</p>
-					<a href="/How to Reply to a Message.html" class="btn btn--card">View Guide</a>
-				</div>
+            <!-- FINDING & LOGGING IN -->
+            <div class="card">
+              <div class="card__title">Finding & Logging In</div>
+              <div class="card__desc">
+                Learn how to open Grandview Exchange from the app, your browser, or your email -- and what to do if
+                you're asked to log in.
+              </div>
+              <a class="btn-card" href="finding-login.html">Start Here</a>
+            </div>
 
-				<div class="card">
-					<h3 class="card__title">How to Attach Photos or Files</h3>
-					<p class="card__desc">Share images or documents with your posts.</p>
-					<a href="/How to Attach a Photo or File to a Message.html" class="btn btn--card">View Guide</a>
-				</div>
+            <!-- READING, POSTING & REPLYING -->
+            <div class="card">
+              <div class="card__title">Reading, Posting & Replying</div>
+              <div class="card__desc">
+                Step-by-step instructions for reading messages, posting new ones, replying, and adding photos or
+                attachments.
+              </div>
+              <a class="btn-card" href="reading-posting-replying.html">Learn How to Communicate</a>
+            </div>
 
-				<div class="card">
-					<h3 class="card__title">Change How Many Emails You Receive</h3>
-					<p class="card__desc">Control how often you get email updates.</p>
-					<a href="/How to Change How Many Emails You Receive.html" class="btn btn--card">View Guide</a>
-				</div>
+            <!-- NAVIGATION & ORGANIZATION -->
+            <div class="card">
+              <div class="card__title">Navigation & Organization</div>
+              <div class="card__desc">
+                Understand club subgroups and hashtags, how conversations are organized, and how to find what you're
+                looking for.
+              </div>
+              <a class="btn-card" href="navigation-and-organization.html">Explore Organization</a>
+            </div>
 
-			</div>
-		</section>
-		<section class="section" id="subgroups">
-			<h2>Subgroups & Clubs</h2>
+            <!-- EMAIL & NOTIFICATION SETTINGS -->
+            <div class="card">
+              <div class="card__title">Email & Notification Settings</div>
+              <div class="card__desc">
+                Control how many emails you receive, choose digest or summary formats, and adjust notifications for each
+                group.
+              </div>
+              <a class="btn-card" href="email-and-notification-settings.html">Manage Email Settings</a>
+            </div>
 
-			<div class="grid grid--2col">
+            <!-- ACCOUNT SETTINGS -->
+            <div class="card">
+              <div class="card__title">Account Settings</div>
+              <div class="card__desc">
+                Update your profile, change your password, and manage your Groups.io account information.
+              </div>
+              <a class="btn-card" href="account-settings.html">Update Your Account</a>
+            </div>
 
-				<div class="card">
-					<h3 class="card__title">List of Subgroups</h3>
-					<p class="card__desc">See all subgroups and categories available on Grandview Exchange.</p>
-					<a href="/List of Subgroups and Categories.html" class="btn btn--card">View List</a>
-				</div>
+            <!-- SUPPORT & REFERENCE -->
+            <div class="card">
+              <div class="card__title">Support & Reference</div>
+              <div class="card__desc">
+                Find community policies, the glossary, and learn how to get help if something isn’t working or you need
+                more assistance.
+              </div>
+              <a class="btn-card" href="support-and-reference.html">Get Help & Policies</a>
+            </div>
 
-				<div class="card">
-					<h3 class="card__title">Grandview Clubs</h3>
-					<p class="card__desc">Explore clubs and activities happening at The Grandview.</p>
-					<a href="/Grandview Clubs.html" class="btn btn--card">View Clubs</a>
-				</div>
+          </div><!-- end help-grid -->
 
-			</div>
-		</section>
-		<section class="section">
-			<h2>Adding Grandview Exchange to Your Device</h2>
+        </div><!-- end card -->
 
-			<div class="grid grid--2col">
+      </div>
+    </section>
 
-				<div class="card">
-					<h3 class="card__title">Add to iPhone or iPad</h3>
-					<p class="card__desc">Create a shortcut on your Home Screen.</p>
-					<a href="/How to Add Grandview Exchange to the Home Screen or Desktop on Apple Devices.html" class="btn btn--card">View Guide</a>
-				</div>
-
-				<div class="card">
-					<h3 class="card__title">Add to Android</h3>
-					<p class="card__desc">Add a shortcut using Chrome.</p>
-					<a href="/How to Add Grandview Exchange to the Home Screen on Android Devices.html" class="btn btn--card">View Guide</a>
-				</div>
-
-				<div class="card">
-					<h3 class="card__title">Add to Windows Desktop</h3>
-					<p class="card__desc">Create a desktop shortcut from your browser.</p>
-					<a href="/How to Add Grandview Exchange to the Desktop on Windows Devices.html" class="btn btn--card">View Guide</a>
-				</div>
-
-				<div class="card">
-					<h3 class="card__title">Favorite in Safari</h3>
-					<p class="card__desc">Save Grandview Exchange as a Safari Favorite.</p>
-					<a href="/How to Favorite Grandview Exchange on Apple Devices.html" class="btn btn--card">View Guide</a>
-				</div>
-
-			</div>
-		</section>
-	</div> <!-- end .container -->
-
-	<footer class="site-footer">
-		<p>Looking for something else? Visit the <a href="/index.html">Grandview Exchange Home</a>.</p>
-	</footer>
+  </div><!-- end site-shell -->
 
 </body>
 

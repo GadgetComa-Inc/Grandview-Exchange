@@ -1,67 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="UTF-8">
-	<title>Grandview Exchange</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grandview Exchange Welcome Center</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 
-<body class="help-site page--index">
+<body>
 
-	<!-- Site Banner -->
-	<header class="site-header">
-		<img src="/coverphoto.png" alt="Grandview Exchange Banner">
-	</header>
+  <!-- HEADER IMAGE -->
+  <header class="site-header">
+    <img src="assets/img/coverphoto.png" alt="Grandview Exchange — Connecting Our Community" />
+  </header>
 
-	<div class="container">
-		<section class="section">
-			<div class="card card--hero">
-				<h1>Welcome to Grandview Exchange</h1>
-				<p>Your online community for staying connected, sharing information, and discovering what’s happening at The Grandview.</p>
+  <!-- HERO BOX -->
+  <section class="section">
+    <div class="container">
+      <div class="card hero">
+        <h1>Grandview Exchange Welcome Center</h1>
+        <p>
+          This site is your starting point for learning how to use Grandview Exchange — our community’s online
+          gathering place where residents share news, join conversations, explore club activities, and stay connected.
+        </p>
+        <p>
+          Inside the Welcome Center, you’ll find simple step‑by‑step guides to help you get started, choose how you
+          want to access Grandview Exchange, log in, and learn the basics of reading, posting, and replying.
+        </p>
 
-				<div class="hero-actions">
-					<a href="/help-center-home.html" class="btn btn--primary">Visit the Help Center</a>
-				</div>
-			</div>
-		</section>
-		<section class="section">
-			<div class="grid grid--2col">
+        <!-- RESTORED CALENDAR BUTTON -->
+        <div class="hero-actions">
+          <a class="btn" href="calendar.html">View The Grandview Community Calendar →</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-				<div class="card">
-					<h3 class="card__title">Getting Started</h3>
-					<p class="card__desc">Learn how to log in, update your profile, and find your way around the community.</p>
-					<a href="/help-center-home.html#getting-started" class="btn btn--card">Start Here</a>
-				</div>
+  <!-- START HERE: GUIDED ONBOARDING -->
+  <section class="section">
+    <div class="container">
 
-				<div class="card">
-					<h3 class="card__title">Posting Messages</h3>
-					<p class="card__desc">Share announcements, ask questions, or join conversations with your neighbors.</p>
-					<a href="/help-center-home.html#posting" class="btn btn--card">Learn How</a>
-				</div>
+      <div class="card">
+        <h2>Start Here</h2>
+        <p style="margin-bottom: 16px;">
+          New to Grandview Exchange? Follow these simple steps to get started.
+        </p>
 
-				<div class="card">
-					<h3 class="card__title">Using Subgroups</h3>
-					<p class="card__desc">Explore topic‑specific spaces for clubs, activities, and interests.</p>
-					<a href="/help-center-home.html#subgroups" class="btn btn--card">Browse Subgroups</a>
-				</div>
+        <div class="grid grid--2col">
 
-				<div class="card">
-					<h3 class="card__title">Community Calendar</h3>
-					<p class="card__desc">See upcoming events, activities, and important dates at The Grandview.</p>
-					<a href="/calendar.html" class="btn btn--card">View Calendar</a>
-				</div>
+          <!-- STEP 1 -->
+          <div class="card">
+            <div class="card__title">1. Register for an Account</div>
+            <div class="card__desc">
+              If you’re new to Grandview Exchange, create your free account to join the community.
+            </div>
+            <a class="btn-card" target="_blank"
+               href="https://docs.google.com/forms/d/e/1FAIpQLSdtetperz0gnDC_JVtYIEM75UegW_C1uANZG1yHtHxAY-OyXQ/viewform">
+               Register Now
+            </a>
+          </div>
 
-			</div>
-		</section>
-	</div> <!-- end .container -->
+          <!-- STEP 2 -->
+          <div class="card">
+            <div class="card__title">2. Choose How You Want to Use Grandview Exchange</div>
+            <div class="card__desc">
+              Decide whether you want to use the Groups.io app, your web browser, or your email.
+            </div>
+            <a class="btn-card" href="ways-to-use.html">View Your Options</a>
+          </div>
 
-	<footer class="site-footer">
-		<p>Questions? Visit the <a href="/help-center-home.html">Help Center</a> for more information.</p>
-	</footer>
+          <!-- STEP 3 -->
+          <div class="card">
+            <div class="card__title">3. Find the Site & Log In</div>
+            <div class="card__desc">
+              Learn how to get to Grandview Exchange, check your login status, and sign in.
+            </div>
+            <a class="btn-card" href="finding-login.html">How to Log In</a>
+          </div>
+
+          <!-- STEP 4 -->
+          <div class="card">
+            <div class="card__title">4. Learn How to Read, Post & Reply</div>
+            <div class="card__desc">
+              Understand how to read messages, post new ones, and reply to others.
+            </div>
+            <a class="btn-card" href="help-center/doing-things/reading-posting-replying.html">Learn the Basics</a>
+          </div>
+
+        </div>
+
+        <!-- UNIVERSAL BUTTON -->
+        <div style="margin-top: 20px; text-align: center;">
+          <a class="btn" href="https://grandviewexchange.groups.io/g/Home" target="_blank">
+            Open the Grandview Exchange Website →
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LEARN MORE -->
+  <section class="section">
+    <div class="container">
+
+      <div class="card">
+        <h2>Learn More</h2>
+
+        <!-- ROW: LEARNING -->
+        <div class="section">
+          <h3 class="group_label">Learning</h3>
+
+          <div class="grid grid--2col">
+
+            <!-- HELP CENTER FIRST -->
+            <div class="card">
+              <div class="card__title">📖 View the Help Center</div>
+              <div class="card__desc">
+                Browse the new HTML help center with organized guidance, navigation, and reference pages.
+              </div>
+              <a class="btn-card" href="help-center-home.html">Open Help Center</a>
+            </div>
+
+            <!-- TRAINING SECOND -->
+            <div class="card">
+              <div class="card__title">🎓 Sign Up for Training</div>
+              <div class="card__desc">
+                Join a free orientation session to learn how to use Grandview Exchange with confidence.
+              </div>
+              <a class="btn-card" href="https://grandviewexchange.com/training.html">Sign Up for Training</a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ROW: SUPPORT -->
+        <div class="section">
+          <h3 class="group_label">Support</h3>
+
+          <div class="grid grid--2col">
+
+            <div class="card">
+              <div class="card__title">🤖 Open Issues</div>
+              <div class="card__desc">
+                View the list of issues, problems, and enhancement requests for Grandview Exchange.
+              </div>
+              <a class="btn-card" href="https://grandviewexchange.com/issues.html">View the Issues List</a>
+            </div>
+
+            <div class="card">
+              <div class="card__title">📌 Community Guidelines</div>
+              <div class="card__desc">
+                Review posting guidelines and best practices to help keep Grandview Exchange welcoming, helpful, and easy for everyone to use.
+              </div>
+              <a class="btn-card" href="https://grandviewexchange.com/help-center/support/policies.html">View Guidelines</a>
+            </div>
+
+          </div>
+        </div>
+
+      </div> <!-- end Learn More card -->
+
+    </div>
+  </section>
+
+  <!-- MYERICKSON -->
+  <section class="section">
+    <div class="container">
+      <h2>MyErickson</h2>
+
+      <p>My Erickson is an app designed for residents to enhance their daily living experiences within the community. With this app, you can:</p>
+
+      <ul style="padding-left: 2.5em;">
+        <li>View dining menus and make dinner reservations.</li>
+        <li>Learn about the General Services department and submit work orders electronically.</li>
+        <li>Access staff and resident directory information.</li>
+        <li>Check daily activities and, in some communities, register to participate in events.</li>
+      </ul>
+
+      <p style="margin-top: 18px;">
+        <em>Please note that Grandview Exchange and MyErickson are not connected in any way. Grandview Exchange is run by residents, reservists, and Priority List members. MyErickson is owned and managed by Erickson.</em>
+      </p>
+
+      <div style="margin-top: 18px; text-align: center;">
+        <a class="btn" href="https://myerickson.erickson.com/" target="_blank">Go to MyErickson →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>
+      © 2026 Grandview Exchange ·
+      Questions? <a href="mailto:admin@grandviewexchange.com?subject=Questions%20about%20Grandview%20Exchange">Contact Us</a>
+    </p>
+  </footer>
 
 </body>
-
 </html>

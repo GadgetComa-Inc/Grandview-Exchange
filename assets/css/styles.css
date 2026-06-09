@@ -127,14 +127,14 @@ body {
 }
 
 /* Title spacing */
-.card.hero > h1 {
+.card.hero>h1 {
   margin-top: 6px;
   margin-bottom: 10px;
   line-height: 1.25;
 }
 
 /* Paragraph spacing */
-.card.hero > p {
+.card.hero>p {
   margin-top: 0;
   margin-bottom: 10px;
 }
@@ -150,63 +150,70 @@ body {
    (Scoped so it ONLY affects this page)
    ───────────────────────────────────────────── */
 
-.ways-card .card-row {
+.card.ways-card {
+  /* keep global card padding, border, shadow */
+  padding: 16px;
+  /* slightly reduced but still a box */
+}
+
+.card.ways-card .card-row {
   display: flex;
   gap: 16px;
   align-items: flex-start;
-  padding: 6px 0; /* reduces vertical padding */
+  padding: 0;
+  /* do NOT override outer card padding */
 }
 
-.ways-card .card-left {
+.card.ways-card .card-left {
   flex: 2;
   text-align: left;
 }
 
-.ways-card .card-right {
+.card.ways-card .card-right {
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* button stays at top */
+  align-items: flex-start;
   padding-top: 4px;
 }
 
 /* Tighter title spacing */
-.ways-card .card__title {
+.card.ways-card .card__title {
   margin-top: 0;
-  margin-bottom: 6px !important; /* overrides global 16px */
+  margin-bottom: 6px !important;
 }
 
 /* Tighter description spacing */
-.ways-card .card__desc {
+.card.ways-card .card__desc {
   margin-bottom: 8px !important;
   line-height: 1.25;
 }
 
 /* Tighter h4 spacing */
-.ways-card h4 {
+.card.ways-card h4 {
   margin: 8px 0 4px;
   line-height: 1.25;
 }
 
 /* Tighter list spacing */
-.ways-card ul {
+.card.ways-card ul {
   margin: 4px 0 8px;
   padding-left: 20px;
 }
 
-.ways-card ul li {
+.card.ways-card ul li {
   margin-bottom: 4px;
   line-height: 1.25;
 }
 
 /* Tighter paragraph spacing */
-.ways-card p {
+.card.ways-card p {
   margin: 6px 0;
   line-height: 1.25;
 }
 
 /* Center the button in the right column */
-.ways-card .card-right .btn-card {
+.card.ways-card .card-right .btn-card {
   margin-top: 0;
 }
 
@@ -303,14 +310,16 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 16px 0 28px;   /* matches original breadcrumb spacing */
+  margin: 16px 0 28px;
+  /* matches original breadcrumb spacing */
 }
 
 /* Breadcrumbs (left side) */
 .breadcrumb {
   font-size: 0.9rem;
   color: var(--text-muted);
-  margin: 0;             /* reset old margin so row spacing controls layout */
+  margin: 0;
+  /* reset old margin so row spacing controls layout */
 }
 
 .breadcrumb a {
@@ -331,7 +340,8 @@ body {
 /* Right-side button group */
 .nav-buttons {
   display: flex;
-  gap: 10px;             /* space between the two buttons */
+  gap: 10px;
+  /* space between the two buttons */
 }
 
 /* Navigation buttons (Back to Home, Previous Page) */
@@ -343,7 +353,8 @@ body {
   border-radius: 6px;
   display: inline-block;
   font-size: 0.95rem;
-  white-space: nowrap;   /* prevents wrapping on small screens */
+  white-space: nowrap;
+  /* prevents wrapping on small screens */
 }
 
 .btn--nav-return:hover {
@@ -352,10 +363,10 @@ body {
 
 
 /* ─────────────────────────────────────────────
-   Help Center – Shell & Layout
+   Global – Shell & Layout
 ────────────────────────────────────────────── */
-.help-shell {
-  max-width: 960px;
+.site-shell {
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -374,7 +385,7 @@ body {
 ────────────────────────────────────────────── */
 
 /* Add space beneath the "Help Topics" header */
-.help-shell .card h2 {
+.site-shell .card h2 {
   margin-bottom: 18px;
 }
 
@@ -412,4 +423,174 @@ body {
 .site-footer a {
   color: var(--teal-dark);
   font-weight: 600;
+}
+
+/* ─────────────────────────────────────────────
+   MAIN CALENDAR AREA
+   (FullCalendar container)
+────────────────────────────────────────────── */
+#calendar {
+  background: var(--bg-white);
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: var(--card-shadow);
+}
+
+/* Legacy controls (kept for compatibility) */
+.calendar-controls button {
+  margin-right: 8px;
+}
+
+.calendar-filters label {
+  margin-right: 16px;
+  font-size: 0.95rem;
+}
+
+
+/* ─────────────────────────────────────────────
+   LAYOUT: CALENDAR + SIDEBAR
+────────────────────────────────────────────── */
+.calendar-layout {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 24px;
+  align-items: start;
+}
+
+.calendar-main {
+  width: 100%;
+}
+
+
+/* ─────────────────────────────────────────────
+   SIDEBAR CONTAINER
+────────────────────────────────────────────── */
+.calendar-sidebar {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: var(--card-shadow);
+  padding: 16px;
+}
+
+
+/* ─────────────────────────────────────────────
+   SIDEBAR CARDS
+────────────────────────────────────────────── */
+.sidebar-card {
+  padding: 14px;
+  /* tighter interior padding */
+  margin-top: 14px;
+  /* consistent spacing between cards */
+}
+
+.sidebar-card h3 {
+  text-align: center;
+  margin-top: 4px;
+  /* minimal top space */
+  margin-bottom: 10px;
+  /* slightly larger than card spacing */
+  font-size: 1.05rem;
+}
+
+/* Left-align radio buttons + checkboxes */
+.sidebar-card label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-align: left;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+}
+
+
+/* ─────────────────────────────────────────────
+   BUTTONS (Print + Subscribe)
+────────────────────────────────────────────── */
+
+/* Print button + any .btn inside sidebar */
+.calendar-sidebar .btn {
+  display: block;
+  max-width: 180px;
+  /* smaller, consistent width */
+  margin: 0 auto 14px;
+  /* centered */
+  padding: 8px 12px;
+  /* reduced height */
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Subscribe buttons */
+.sidebar-subscribe {
+  display: block;
+  max-width: 180px;
+  /* matches Print button */
+  margin: 0 auto 10px;
+  /* centered + spaced */
+  padding: 8px 12px;
+  /* reduced height */
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+
+/* ─────────────────────────────────────────────
+   RESPONSIVE BEHAVIOR
+────────────────────────────────────────────── */
+@media (max-width: 800px) {
+  .calendar-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ─────────────────────────────────────────────
+   PRINT STYLES
+────────────────────────────────────────────── */
+.print-only {
+  display: none;
+}
+
+@media print {
+
+  /* Hide everything by default */
+  body * {
+    visibility: hidden !important;
+  }
+
+  /* Show only heading + calendar */
+  #print-heading,
+  #print-heading *,
+  #calendar,
+  #calendar * {
+    visibility: visible !important;
+  }
+
+  /* Centered print heading */
+  #print-heading {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  /* Calendar positioned below heading */
+  #calendar {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+  }
+
+  /* Cleaner print background */
+  .fc {
+    background: white !important;
+  }
 }
