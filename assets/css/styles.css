@@ -475,6 +475,34 @@ body {
   font-size: 0.95rem;
 }
 
+.sidebar-subscribe {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  text-align: center;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+}
+
+/* Sidebar cards */
+.sidebar-card {
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.sidebar-card h3 {
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  color: var(--teal-dark);
+  margin-bottom: 10px;
+}
+
+.sidebar-card label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
 /* Full-width button */
 .btn.full-width {
   width: 100%;

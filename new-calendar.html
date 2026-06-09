@@ -59,56 +59,46 @@
             <!-- SIDEBAR -->
             <aside class="calendar-sidebar">
 
-              <div class="sidebar-section">
-                <button id="print-calendar" class="btn full-width">Print</button>
-              </div>
+              <!-- PRINT BUTTON -->
+              <button id="print-calendar" class="btn full-width">Print</button>
 
-              <div class="sidebar-section">
+              <!-- VIEW OPTIONS CARD -->
+              <div class="card sidebar-card">
                 <h3>View</h3>
                 <label><input type="radio" name="view" value="listMonth" checked> Agenda</label>
                 <label><input type="radio" name="view" value="timeGridWeek"> Week</label>
                 <label><input type="radio" name="view" value="dayGridMonth"> Month</label>
               </div>
 
-              <div class="sidebar-section">
+              <!-- CALENDAR CHECKBOXES CARD -->
+              <div class="card sidebar-card">
                 <h3>Calendars</h3>
                 <label><input type="checkbox" class="cal-toggle" data-cal="grandview" checked> Grandview Events</label>
                 <label><input type="checkbox" class="cal-toggle" data-cal="itclub" checked> Computer/IT Club</label>
                 <label><input type="checkbox" class="cal-toggle" data-cal="mahjongg" checked> Mah Jongg Club</label>
               </div>
 
+              <!-- SUBSCRIBE BUTTONS CARD -->
+              <div class="card sidebar-card">
+                <h3>Subscribe</h3>
+
+                <a class="btn-card sidebar-subscribe"
+                   href="https://calendar.google.com/calendar/u/0?cid=grandviewexchangecalendar@gmail.com">
+                   Google Calendar
+                </a>
+
+                <a class="btn-card sidebar-subscribe"
+                   href="webcal://calendar.google.com/calendar/ical/grandviewexchangecalendar%40gmail.com/public/basic.ics">
+                   Apple Calendar
+                </a>
+
+                <a class="btn-card sidebar-subscribe"
+                   href="https://calendar.google.com/calendar/ical/grandviewexchangecalendar%40gmail.com/public/basic.ics">
+                   Outlook / Other
+                </a>
+              </div>
+
             </aside>
-
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- SUBSCRIBE BOX -->
-    <section class="section">
-      <div class="container">
-        <div class="card">
-          <h2>Subscribe to the Calendar</h2>
-
-          <p>You can add the Grandview Community Calendar to your device so events appear automatically.</p>
-
-          <div class="vertical-button-stack">
-
-            <a class="btn-card"
-               href="https://calendar.google.com/calendar/u/0?cid=grandviewexchangecalendar@gmail.com">
-               Subscribe on Google Calendar
-            </a>
-
-            <a class="btn-card"
-               href="webcal://calendar.google.com/calendar/ical/grandviewexchangecalendar%40gmail.com/public/basic.ics">
-               Subscribe on Apple Calendar
-            </a>
-
-            <a class="btn-card"
-               href="https://calendar.google.com/calendar/ical/grandviewexchangecalendar%40gmail.com/public/basic.ics">
-               Subscribe on Outlook or Other Apps
-            </a>
 
           </div>
 
@@ -132,29 +122,31 @@
 
       const calendarEl = document.getElementById('calendar');
 
+      /* Event source definitions for re-adding sources dynamically */
+      const eventSourceConfigs = {
+        grandview: {
+          id: 'grandview',
+          googleCalendarId: 'grandviewexchangecalendar@gmail.com',
+          color: '#0d7377'
+        },
+        itclub: {
+          id: 'itclub',
+          googleCalendarId: 'd4bcf6eb1219625344c2a4ce5c6df668079606cc68376546e709d00b95b51235@group.calendar.google.com',
+          color: '#c8922a'
+        },
+        mahjongg: {
+          id: 'mahjongg',
+          googleCalendarId: '0600556da20bf5b6a09423771a1b4648fcd42be6eb2d89ec5af163985a07b65a@group.calendar.google.com',
+          color: '#6b7c82'
+        }
+      };
+
       const calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'listMonth',
         height: 'auto',
         headerToolbar: false,
         googleCalendarApiKey: 'AIzaSyAkm3pk9TEvD2qZekyq8Exw99k4WYmPK3E',
-
-        eventSources: [
-          {
-            id: 'grandview',
-            googleCalendarId: 'grandviewexchangecalendar@gmail.com',
-            color: '#0d7377'
-          },
-          {
-            id: 'itclub',
-            googleCalendarId: 'd4bcf6eb1219625344c2a4ce5c6df668079606cc68376546e709d00b95b51235@group.calendar.google.com',
-            color: '#c8922a'
-          },
-          {
-            id: 'mahjongg',
-            googleCalendarId: '0600556da20bf5b6a09423771a1b4648fcd42be6eb2d89ec5af163985a07b65a@group.calendar.google.com',
-            color: '#6b7c82'
-          }
-        ]
+        eventSources: Object.values(eventSourceConfigs)
       });
 
       calendar.render();
@@ -170,11 +162,14 @@
       document.querySelectorAll('.cal-toggle').forEach(cb => {
         cb.addEventListener('change', function () {
           const id = this.dataset.cal;
-          const source = calendar.getEventSourceById(id);
+          const existing = calendar.getEventSourceById(id);
+
           if (this.checked) {
-            source.refetch();
+            if (!existing) {
+              calendar.addEventSource(eventSourceConfigs[id]);
+            }
           } else {
-            source.remove();
+            if (existing) existing.remove();
           }
         });
       });
