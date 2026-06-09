@@ -6,7 +6,7 @@
   <title>Grandview Exchange Welcome Center</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 
 <body>
@@ -19,21 +19,26 @@
   <!-- HERO BOX -->
   <section class="section">
     <div class="container">
-      <div class="card hero">
-        <h1>Grandview Exchange Welcome Center</h1>
-        <p>
-          This site is your starting point for learning how to use Grandview Exchange — our community’s online
-          gathering place where residents share news, join conversations, explore club activities, and stay connected.
-        </p>
-        <p>
-          Inside the Welcome Center, you’ll find simple step‑by‑step guides to help you get started, choose how you
-          want to access Grandview Exchange, log in, and learn the basics of reading, posting, and replying.
-        </p>
+      <div class="card card--hero">
 
-        <!-- RESTORED CALENDAR BUTTON -->
-        <div class="hero-actions">
+        <div class="card__body">
+          <h1>Grandview Exchange Welcome Center</h1>
+
+          <p>
+            This site is your starting point for learning how to use Grandview Exchange — our community’s online
+            gathering place where residents share news, join conversations, explore club activities, and stay connected.
+          </p>
+
+          <p>
+            Inside the Welcome Center, you’ll find simple step‑by‑step guides to help you get started, choose how you
+            want to access Grandview Exchange, log in, and learn the basics of reading, posting, and replying.
+          </p>
+        </div>
+
+        <div class="card__actions card__actions--center">
           <a class="btn" href="calendar.html">View The Grandview Community Calendar →</a>
         </div>
+
       </div>
     </div>
   </section>
@@ -43,56 +48,77 @@
     <div class="container">
 
       <div class="card">
-        <h2>Start Here</h2>
-        <p style="margin-bottom: 16px;">
-          New to Grandview Exchange? Follow these simple steps to get started.
-        </p>
+
+        <div class="card__body card__body--center">
+          <h2>Start Here</h2>
+          <p>New to Grandview Exchange? Follow these simple steps to get started.</p>
+        </div>
 
         <div class="grid grid--2col">
 
           <!-- STEP 1 -->
           <div class="card">
-            <div class="card__title">1. Register for an Account</div>
-            <div class="card__desc">
-              If you’re new to Grandview Exchange, create your free account to join the community.
+            <div class="card__body">
+              <div class="card__title">1. Register for an Account</div>
+              <div class="card__desc">
+                If you’re new to Grandview Exchange, create your free account to join the community.
+              </div>
             </div>
-            <a class="btn-card" target="_blank"
-               href="https://docs.google.com/forms/d/e/1FAIpQLSdtetperz0gnDC_JVtYIEM75UegW_C1uANZG1yHtHxAY-OyXQ/viewform">
-               Register Now
-            </a>
+
+            <div class="card__actions card__actions--center">
+              <a class="btn btn--card" target="_blank"
+                 href="https://docs.google.com/forms/d/e/1FAIpQLSdtetperz0gnDC_JVtYIEM75UegW_C1uANZG1yHtHxAY-OyXQ/viewform">
+                 Register Now
+              </a>
+            </div>
           </div>
 
           <!-- STEP 2 -->
           <div class="card">
-            <div class="card__title">2. Choose How You Want to Use Grandview Exchange</div>
-            <div class="card__desc">
-              Decide whether you want to use the Groups.io app, your web browser, or your email.
+            <div class="card__body">
+              <div class="card__title">2. Choose How You Want to Use Grandview Exchange</div>
+              <div class="card__desc">
+                Decide whether you want to use the Groups.io app, your web browser, or your email.
+              </div>
             </div>
-            <a class="btn-card" href="ways-to-use.html">View Your Options</a>
+
+            <div class="card__actions card__actions--center">
+              <a class="btn btn--card" href="ways-to-use.html">View Your Options</a>
+            </div>
           </div>
 
           <!-- STEP 3 -->
           <div class="card">
-            <div class="card__title">3. Find the Site & Log In</div>
-            <div class="card__desc">
-              Learn how to get to Grandview Exchange, check your login status, and sign in.
+            <div class="card__body">
+              <div class="card__title">3. Find the Site & Log In</div>
+              <div class="card__desc">
+                Learn how to get to Grandview Exchange, check your login status, and sign in.
+              </div>
             </div>
-            <a class="btn-card" href="finding-login.html">How to Log In</a>
+
+            <div class="card__actions card__actions--center">
+              <a class="btn btn--card" href="finding-login.html">How to Log In</a>
+            </div>
           </div>
 
           <!-- STEP 4 -->
           <div class="card">
-            <div class="card__title">4. Learn How to Read, Post & Reply</div>
-            <div class="card__desc">
-              Understand how to read messages, post new ones, and reply to others.
+            <div class="card__body">
+              <div class="card__title">4. Learn How to Read, Post & Reply</div>
+              <div class="card__desc">
+                Understand how to read messages, post new ones, and reply to others.
+              </div>
             </div>
-            <a class="btn-card" href="help-center/doing-things/reading-posting-replying.html">Learn the Basics</a>
+
+            <div class="card__actions card__actions--center">
+              <a class="btn btn--card" href="help-center/doing-things/reading-posting-replying.html">Learn the Basics</a>
+            </div>
           </div>
 
         </div>
 
         <!-- UNIVERSAL BUTTON -->
-        <div style="margin-top: 20px; text-align: center;">
+        <div class="card__actions card__actions--center" style="margin-top: 20px;">
           <a class="btn" href="https://grandviewexchange.groups.io/g/Home" target="_blank">
             Open the Grandview Exchange Website →
           </a>
@@ -108,7 +134,10 @@
     <div class="container">
 
       <div class="card">
-        <h2>Learn More</h2>
+
+        <div class="card__body card__body--center">
+          <h2>Learn More</h2>
+        </div>
 
         <!-- ROW: LEARNING -->
         <div class="section">
@@ -118,20 +147,30 @@
 
             <!-- HELP CENTER FIRST -->
             <div class="card">
-              <div class="card__title">📖 View the Help Center</div>
-              <div class="card__desc">
-                Browse the new HTML help center with organized guidance, navigation, and reference pages.
+              <div class="card__body">
+                <div class="card__title">📖 View the Help Center</div>
+                <div class="card__desc">
+                  Browse the new HTML help center with organized guidance, navigation, and reference pages.
+                </div>
               </div>
-              <a class="btn-card" href="help-center-home.html">Open Help Center</a>
+
+              <div class="card__actions card__actions--center">
+                <a class="btn btn--card" href="help-center-home.html">Open Help Center</a>
+              </div>
             </div>
 
             <!-- TRAINING SECOND -->
             <div class="card">
-              <div class="card__title">🎓 Sign Up for Training</div>
-              <div class="card__desc">
-                Join a free orientation session to learn how to use Grandview Exchange with confidence.
+              <div class="card__body">
+                <div class="card__title">🎓 Sign Up for Training</div>
+                <div class="card__desc">
+                  Join a free orientation session to learn how to use Grandview Exchange with confidence.
+                </div>
               </div>
-              <a class="btn-card" href="https://grandviewexchange.com/training.html">Sign Up for Training</a>
+
+              <div class="card__actions card__actions--center">
+                <a class="btn btn--card" href="https://grandviewexchange.com/training.html">Sign Up for Training</a>
+              </div>
             </div>
 
           </div>
@@ -144,19 +183,29 @@
           <div class="grid grid--2col">
 
             <div class="card">
-              <div class="card__title">🤖 Open Issues</div>
-              <div class="card__desc">
-                View the list of issues, problems, and enhancement requests for Grandview Exchange.
+              <div class="card__body">
+                <div class="card__title">🤖 Open Issues</div>
+                <div class="card__desc">
+                  View the list of issues, problems, and enhancement requests for Grandview Exchange.
+                </div>
               </div>
-              <a class="btn-card" href="https://grandviewexchange.com/issues.html">View the Issues List</a>
+
+              <div class="card__actions card__actions--center">
+                <a class="btn btn--card" href="https://grandviewexchange.com/issues.html">View the Issues List</a>
+              </div>
             </div>
 
             <div class="card">
-              <div class="card__title">📌 Community Guidelines</div>
-              <div class="card__desc">
-                Review posting guidelines and best practices to help keep Grandview Exchange welcoming, helpful, and easy for everyone to use.
+              <div class="card__body">
+                <div class="card__title">📌 Community Guidelines</div>
+                <div class="card__desc">
+                  Review posting guidelines and best practices to help keep Grandview Exchange welcoming, helpful, and easy for everyone to use.
+                </div>
               </div>
-              <a class="btn-card" href="https://grandviewexchange.com/help-center/support/policies.html">View Guidelines</a>
+
+              <div class="card__actions card__actions--center">
+                <a class="btn btn--card" href="https://grandviewexchange.com/help-center/support/policies.html">View Guidelines</a>
+              </div>
             </div>
 
           </div>
@@ -185,7 +234,7 @@
         <em>Please note that Grandview Exchange and MyErickson are not connected in any way. Grandview Exchange is run by residents, reservists, and Priority List members. MyErickson is owned and managed by Erickson.</em>
       </p>
 
-      <div style="margin-top: 18px; text-align: center;">
+      <div class="card__actions card__actions--center" style="margin-top: 18px;">
         <a class="btn" href="https://myerickson.erickson.com/" target="_blank">Go to MyErickson →</a>
       </div>
     </div>
