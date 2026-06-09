@@ -418,3 +418,59 @@ body {
   color: var(--teal-dark);
   font-weight: 600;
 }
+
+#calendar {
+  background: var(--bg-white);
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: var(--card-shadow);
+}
+
+.calendar-controls button {
+  margin-right: 8px;
+}
+
+.calendar-filters label {
+  margin-right: 16px;
+  font-size: 0.95rem;
+}
+
+.print-only {
+  display: none;
+}
+
+@media print {
+
+  body * {
+    visibility: hidden !important;
+  }
+
+  #print-heading,
+  #print-heading *,
+  #calendar,
+  #calendar * {
+    visibility: visible !important;
+  }
+
+  #print-heading {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  #calendar {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+  }
+
+  .fc {
+    background: white !important;
+  }
+}

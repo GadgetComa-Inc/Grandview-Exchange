@@ -1,193 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Grandview Community Calendar</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Grandview Community Calendar</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
 
-  <!-- FullCalendar (Google API version) -->
-  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/google-calendar@6.1.10/index.global.min.js"></script>
+    <!-- FullCalendar (Google API version) -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/main.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/google-calendar@6.1.10/index.global.min.js"></script>
 
-  <style>
-    /* Minor adjustments to match your design system */
-    #calendar {
-      background: var(--bg-white);
-      padding: 20px;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      box-shadow: var(--card-shadow);
-    }
-    .calendar-controls button {
-      margin-right: 8px;
-    }
-    .calendar-filters label {
-      margin-right: 16px;
-      font-size: 0.95rem;
-    }
-  </style>
 </head>
 
 <body class="help-site">
 
-  <!-- Site Banner -->
-  <header class="site-header">
-    <img src="assets/img/coverphoto.png" alt="Grandview Exchange Banner" />
-  </header>
+    <!-- Site Banner -->
+    <header class="site-header">
+        <img src="assets/img/coverphoto.png" alt="Grandview Exchange Banner" />
+    </header>
 
-  <div class="help-shell">
+    <div class="help-shell">
 
-    <!-- Breadcrumb -->
-    <nav class="breadcrumb">
-      <a href="/">Home</a> ›
-      <span>Community Calendar</span>
-    </nav>
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb">
+            <a href="/">Home</a> ›
+            <span>Community Calendar</span>
+        </nav>
 
-    <!-- HERO BOX -->
-    <section class="section">
-      <div class="container">
-        <div class="card hero">
-          <h1>The Grandview Community Calendar</h1>
-          <p>
-            This calendar shows upcoming activities, meetings, and events happening at The Grandview.
-            You can view it online, print it, or subscribe to it using your preferred device.
-          </p>
-        </div>
-      </div>
-    </section>
+        <!-- HERO BOX -->
+        <section class="section">
+            <div class="container">
+                <div class="card hero">
+                    <h1>The Grandview Community Calendar</h1>
+                    <p>
+                        This calendar shows upcoming activities, meetings, and events happening at The Grandview.
+                        You can view it online, print it, or subscribe to it using your preferred device.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-    <!-- VIEW CALENDAR BOX -->
-    <section class="section">
-      <div class="container">
-        <div class="card">
-          <h2>View the Calendar</h2>
+        <!-- VIEW CALENDAR BOX -->
+        <section class="section">
+            <div class="container">
+                <div class="card">
+                    <h2>View the Calendar</h2>
 
-          <!-- FILTER BAR -->
-          <div class="calendar-filters" style="margin-bottom: 16px;">
-            <label><input type="checkbox" class="cal-toggle" data-cal="grandview" checked> Grandview Events</label>
-            <label><input type="checkbox" class="cal-toggle" data-cal="itclub" checked> Computer/IT Club</label>
-            <label><input type="checkbox" class="cal-toggle" data-cal="mahjongg" checked> Mah Jongg Club</label>
-          </div>
+                    <!-- FILTER BAR -->
+                    <div class="calendar-filters" style="margin-bottom: 16px;">
+                        <label><input type="checkbox" class="cal-toggle" data-cal="grandview" checked> Grandview
+                            Events</label>
+                        <label><input type="checkbox" class="cal-toggle" data-cal="itclub" checked> Computer/IT
+                            Club</label>
+                        <label><input type="checkbox" class="cal-toggle" data-cal="mahjongg" checked> Mah Jongg
+                            Club</label>
+                    </div>
 
-          <!-- VIEW BUTTONS -->
-          <div class="calendar-controls" style="margin-bottom: 16px;">
-            <button id="view-agenda" class="btn">Agenda</button>
-            <button id="view-week" class="btn">Week</button>
-            <button id="view-month" class="btn">Month</button>
-            <button id="print-calendar" class="btn" style="float:right;">Print</button>
-          </div>
+                    <!-- VIEW BUTTONS -->
+                    <div class="calendar-controls" style="margin-bottom: 16px;">
+                        <button id="view-agenda" class="btn">Agenda</button>
+                        <button id="view-week" class="btn">Week</button>
+                        <button id="view-month" class="btn">Month</button>
+                        <button id="print-calendar" class="btn" style="float:right;">Print</button>
+                    </div>
 
-          <!-- CALENDAR -->
-          <div id="calendar"></div>
+                    <!-- CALENDAR -->
+                    <div id="calendar"></div>
 
-        </div>
-      </div>
-    </section>
+                </div>
+            </div>
+        </section>
 
-    <!-- SUBSCRIBE BOX -->
-    <section class="section">
-      <div class="container">
-        <div class="card">
-          <h2>Subscribe to the Calendar</h2>
+        <!-- SUBSCRIBE BOX -->
+        <section class="section">
+            <div class="container">
+                <div class="card">
+                    <h2>Subscribe to the Calendar</h2>
 
-          <p>You can add the Grandview Community Calendar to your device so events appear automatically.</p>
+                    <p>You can add the Grandview Community Calendar to your device so events appear automatically.</p>
 
-          <div class="vertical-button-stack">
+                    <div class="vertical-button-stack">
 
-            <a class="btn-card"
-               href="https://calendar.google.com/calendar/u/0?cid=grandviewexchangecalendar@gmail.com">
-               Subscribe on Google Calendar
-            </a>
+                        <a class="btn-card"
+                            href="https://calendar.google.com/calendar/u/0?cid=grandviewexchangecalendar@gmail.com">
+                            Subscribe on Google Calendar
+                        </a>
 
-            <a class="btn-card"
-               href="webcal://calendar.google.com/calendar/ical/grandviewexchangecalendar%40gmail.com/public/basic.ics">
-               Subscribe on Apple Calendar
-            </a>
+                        <a class="btn-card"
+                            href="webcal://calendar.google.com/calendar/ical/grandviewexchangecalendar%40gmail.com/public/basic.ics">
+                            Subscribe on Apple Calendar
+                        </a>
 
-            <a class="btn-card"
-               href="https://calendar.google.com/calendar/ical/grandviewexchangecalendar%40gmail.com/public/basic.ics">
-               Subscribe on Outlook or Other Apps
-            </a>
+                        <a class="btn-card"
+                            href="https://calendar.google.com/calendar/ical/grandviewexchangecalendar%40gmail.com/public/basic.ics">
+                            Subscribe on Outlook or Other Apps
+                        </a>
 
-          </div>
+                    </div>
 
-        </div>
-      </div>
-    </section>
+                </div>
+            </div>
+        </section>
 
-  </div>
+    </div>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <p>
-      © 2026 Grandview Exchange ·
-      Questions? <a href="mailto:admin@grandviewexchange.com">Contact Us</a>
-    </p>
-  </footer>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>
+            © 2026 Grandview Exchange ·
+            Questions? <a href="mailto:admin@grandviewexchange.com">Contact Us</a>
+        </p>
+    </footer>
 
-  <!-- FULLCALENDAR SCRIPT -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    <!-- FULLCALENDAR SCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
 
-      const calendarEl = document.getElementById('calendar');
+            const calendarEl = document.getElementById('calendar');
 
-      const calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'listMonth',
-        height: 'auto',
-        headerToolbar: false,
-        googleCalendarApiKey: 'AIzaSyAkm3pk9TEvD2qZekyq8Exw99k4WYmPK3E',
+            const calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'listMonth',
+                height: 'auto',
+                headerToolbar: false,
+                googleCalendarApiKey: 'AIzaSyAkm3pk9TEvD2qZekyq8Exw99k4WYmPK3E',
 
-        eventSources: [
-          {
-            id: 'grandview',
-            googleCalendarId: 'grandviewexchangecalendar@gmail.com',
-            color: '#0d7377'
-          },
-          {
-            id: 'itclub',
-            googleCalendarId: 'd4bcf6eb1219625344c2a4ce5c6df668079606cc68376546e709d00b95b51235@group.calendar.google.com',
-            color: '#c8922a'
-          },
-          {
-            id: 'mahjongg',
-            googleCalendarId: '0600556da20bf5b6a09423771a1b4648fcd42be6eb2d89ec5af163985a07b65a@group.calendar.google.com',
-            color: '#6b7c82'
-          }
-        ]
-      });
+                eventSources: [
+                    {
+                        id: 'grandview',
+                        googleCalendarId: 'grandviewexchangecalendar@gmail.com',
+                        color: '#0d7377'
+                    },
+                    {
+                        id: 'itclub',
+                        googleCalendarId: 'd4bcf6eb1219625344c2a4ce5c6df668079606cc68376546e709d00b95b51235@group.calendar.google.com',
+                        color: '#c8922a'
+                    },
+                    {
+                        id: 'mahjongg',
+                        googleCalendarId: '0600556da20bf5b6a09423771a1b4648fcd42be6eb2d89ec5af163985a07b65a@group.calendar.google.com',
+                        color: '#6b7c82'
+                    }
+                ]
+            });
 
-      calendar.render();
+            calendar.render();
 
-      // FILTERS
-      document.querySelectorAll('.cal-toggle').forEach(cb => {
-        cb.addEventListener('change', function () {
-          const id = this.dataset.cal;
-          const source = calendar.getEventSourceById(id);
-          if (this.checked) {
-            source.refetch();
-          } else {
-            source.remove();
-          }
+            // FILTERS
+            document.querySelectorAll('.cal-toggle').forEach(cb => {
+                cb.addEventListener('change', function () {
+                    const id = this.dataset.cal;
+                    const source = calendar.getEventSourceById(id);
+                    if (this.checked) {
+                        source.refetch();
+                    } else {
+                        source.remove();
+                    }
+                });
+            });
+
+            // VIEW SWITCHING
+            document.getElementById('view-agenda').onclick = () => calendar.changeView('listMonth');
+            document.getElementById('view-week').onclick = () => calendar.changeView('timeGridWeek');
+            document.getElementById('view-month').onclick = () => calendar.changeView('dayGridMonth');
+
+            // PRINT
+            document.getElementById('print-calendar').onclick = () => {
+                calendar.changeView('listMonth');
+                setTimeout(() => window.print(), 200);
+            };
+
         });
-      });
-
-      // VIEW SWITCHING
-      document.getElementById('view-agenda').onclick = () => calendar.changeView('listMonth');
-      document.getElementById('view-week').onclick = () => calendar.changeView('timeGridWeek');
-      document.getElementById('view-month').onclick = () => calendar.changeView('dayGridMonth');
-
-      // PRINT
-      document.getElementById('print-calendar').onclick = () => {
-        calendar.changeView('listMonth');
-        setTimeout(() => window.print(), 200);
-      };
-
-    });
-  </script>
+    </script>
 
 </body>
+
 </html>
