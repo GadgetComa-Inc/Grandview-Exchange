@@ -537,14 +537,16 @@ body {
 
   /* Position heading at top */
   #print-heading {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 12px;
-  }
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-align: center;
+}
 
   /* Position calendar below heading */
   #calendar {
