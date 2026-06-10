@@ -185,3 +185,16 @@
   margin: 0 auto var(--space-sm);          /* center + spacing */
   display: block;
 }
+
+/* Match spacing of other sidebar cards */
+.sidebar-card .sidebar-title {
+  margin-bottom: 8px; /* same as View and Calendars cards */
+}
+
+/* Description spacing tightened */
+.sidebar-card .sidebar-description {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}

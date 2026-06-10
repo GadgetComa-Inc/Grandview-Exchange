@@ -177,9 +177,12 @@
 }
 
 /* Stack the Print + Subscribe buttons with spacing */
+/* Ensure buttons use standard button styling */
 .actions-stack .btn {
   width: 100%;
   margin-bottom: 10px;
+  font-size: 1rem; /* standard button font size */
+  padding: 10px 16px; /* matches your .btn sizing */
 }
 
 .actions-stack .btn:last-child {
