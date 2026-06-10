@@ -179,3 +179,9 @@
   gap: var(--space-sm); /* slightly bigger spacing */
 }
 
+/* Fix subscribe button width to match Print button */
+.sidebar-card .sidebar-content .btn {
+  width: calc(100% - 2 * var(--space-md)); /* match card padding */
+  margin: 0 auto var(--space-sm);          /* center + spacing */
+  display: block;
+}
