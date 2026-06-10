@@ -81,7 +81,8 @@
           <div class="card sidebar-card">
             <h3 class="sidebar-title">Take It With You</h3>
             <p class="sidebar-description">
-              You can print your calendar or subscribe to have it show up in your Google, Apple, or Microsoft calendar app.
+              You can print your calendar or subscribe to have it show up in your Google, Apple, or Microsoft calendar
+              app.
             </p>
 
             <div class="sidebar-content actions-stack">
@@ -243,6 +244,17 @@
           next: 'Next >'
         },
 
+        viewDidMount: function (info) {
+          const toolbar = document.querySelector('.fc-header-toolbar');
+
+          if (!toolbar) return;
+
+          if (info.view.type === 'listMonth') {
+            toolbar.style.display = 'none';
+          } else {
+            toolbar.style.display = 'flex';
+          }
+        },
 
         googleCalendarApiKey: 'AIzaSyAkm3pk9TEvD2qZekyq8Exw99k4WYmPK3E',
         eventSources: Object.values(eventSourceConfigs),
