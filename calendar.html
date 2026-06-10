@@ -129,145 +129,165 @@
     </p>
   </footer>
 
-<!-- FULLCALENDAR SCRIPT -->
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
 
-    const calendarEl = document.getElementById('calendar');
+  <!-- FULLCALENDAR SCRIPT -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
 
-    const eventSourceConfigs = {
-      grandview: {
-        id: 'grandview',
-        googleCalendarId: 'grandviewexchangecalendar@gmail.com',
-        color: '#0d7377'
-      },
-      bocce: {
-        id: 'bocce',
-        googleCalendarId: 'b4c130c3e917691e68fec55c696619fef0d8ebffbf6a9cada933dfb24cd7eabd@group.calendar.google.com',
-        color: '#2a5b8a'
-      },
-      caregiver: {
-        id: 'caregiver',
-        googleCalendarId: 'cc70e98ddc6a791a08c5a2579b0454a4a3ef0f32b63278f826458a491121c90e@group.calendar.google.com',
-        color: '#b84a4a'
-      },
-      fitness: {
-        id: 'fitness',
-        googleCalendarId: '6414f0cca63a5a4e8d8b0af9e9bdf0c4fa6137d48b2e498b9629646cd0eba3c9@group.calendar.google.com',
-        color: '#3f7d4e'
-      },
-      itclub: {
-        id: 'itclub',
-        googleCalendarId: 'd4bcf6eb1219625344c2a4ce5c6df668079606cc68376546e709d00b95b51235@group.calendar.google.com',
-        color: '#c8922a'
-      },
-      mahjongg: {
-        id: 'mahjongg',
-        googleCalendarId: '0600556da20bf5b6a09423771a1b4648fcd42be6eb2d89ec5af163985a07b65a@group.calendar.google.com',
-        color: '#6b7c82'
-      },
-      ressvcs: {
-        id: 'ressvcs',
-        googleCalendarId: '0e4ab0bc0f1e58403601174fa8dc8978346a80fbd2db6e9af8e5736ce68621fd@group.calendar.google.com',
-        color: '#7a4f8e'
-      },
-      speaker: {
-        id: 'speaker',
-        googleCalendarId: '3d2cea04a3553108cd39768aa1fe619f854ffa34dac90c0206c395c7d2b91f2b@group.calendar.google.com',
-        color: '#d07a32'
-      },
-      tvclub: {
-        id: 'tvclub',
-        googleCalendarId: '1a4620164a980e3cf9adbacc780e5451b5635ccf0bd2c61bea93146ee8c99926@group.calendar.google.com',
-        color: '#4a6f7c'
-      }
-    };
+      const calendarEl = document.getElementById('calendar');
 
-    const calendar = new FullCalendar.Calendar(calendarEl, {
-      initialView: 'listMonth',
-      height: 'auto',
-      headerToolbar: false,
-      googleCalendarApiKey: 'AIzaSyAkm3pk9TEvD2qZekyq8Exw99k4WYmPK3E',
-      eventSources: Object.values(eventSourceConfigs),
+      const eventSourceConfigs = {
+        grandview: {
+          id: 'grandview',
+          googleCalendarId: 'grandviewexchangecalendar@gmail.com',
+          color: '#0d7377'
+        },
+        bocce: {
+          id: 'bocce',
+          googleCalendarId: 'b4c130c3e917691e68fec55c696619fef0d8ebffbf6a9cada933dfb24cd7eabd@group.calendar.google.com',
+          color: '#2a5b8a'
+        },
+        caregiver: {
+          id: 'caregiver',
+          googleCalendarId: 'cc70e98ddc6a791a08c5a2579b0454a4a3ef0f32b63278f826458a491121c90e@group.calendar.google.com',
+          color: '#b84a4a'
+        },
+        fitness: {
+          id: 'fitness',
+          googleCalendarId: '6414f0cca63a5a4e8d8b0af9e9bdf0c4fa6137d48b2e498b9629646cd0eba3c9@group.calendar.google.com',
+          color: '#3f7d4e'
+        },
+        itclub: {
+          id: 'itclub',
+          googleCalendarId: 'd4bcf6eb1219625344c2a4ce5c6df668079606cc68376546e709d00b95b51235@group.calendar.google.com',
+          color: '#c8922a'
+        },
+        mahjongg: {
+          id: 'mahjongg',
+          googleCalendarId: '0600556da20bf5b6a09423771a1b4648fcd42be6eb2d89ec5af163985a07b65a@group.calendar.google.com',
+          color: '#6b7c82'
+        },
+        ressvcs: {
+          id: 'ressvcs',
+          googleCalendarId: '0e4ab0bc0f1e58403601174fa8dc8978346a80fbd2db6e9af8e5736ce68621fd@group.calendar.google.com',
+          color: '#7a4f8e'
+        },
+        speaker: {
+          id: 'speaker',
+          googleCalendarId: '3d2cea04a3553108cd39768aa1fe619f854ffa34dac90c0206c395c7d2b91f2b@group.calendar.google.com',
+          color: '#d07a32'
+        },
+        tvclub: {
+          id: 'tvclub',
+          googleCalendarId: '1a4620164a980e3cf9adbacc780e5451b5635ccf0bd2c61bea93146ee8c99926@group.calendar.google.com',
+          color: '#4a6f7c'
+        }
+      };
 
-      /* ⭐ MODAL POPUP EVENT HANDLER ⭐ */
-      eventClick: function(info) {
-        info.jsEvent.preventDefault(); // stop Google redirect
+      const calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'listMonth',
+        height: 'auto',
 
-        const event = info.event;
+        /* ⭐ RESTORE NAVIGATION CONTROLS ⭐ */
+        headerToolbar: {
+          left: 'prev,next today',
+          center: 'title',
+          right: ''
+        },
 
-        // Fill modal fields
-        document.getElementById('modalTitle').textContent = event.title;
+        googleCalendarApiKey: 'AIzaSyAkm3pk9TEvD2qZekyq8Exw99k4WYmPK3E',
+        eventSources: Object.values(eventSourceConfigs),
 
-        const start = event.start;
-        const dateOptions = {
-          weekday: 'long',
-          month: 'long',
-          day: 'numeric',
-          hour: 'numeric',
-          minute: '2-digit'
-        };
-        document.getElementById('modalDate').textContent =
-          start.toLocaleString('en-US', dateOptions);
+        /* ⭐ MODAL POPUP EVENT HANDLER ⭐ */
+        eventClick: function (info) {
+          info.jsEvent.preventDefault(); // stop Google redirect
 
-        document.getElementById('modalLocation').textContent =
-          event.extendedProps.location
-            ? `Location: ${event.extendedProps.location}`
-            : '';
+          const event = info.event;
 
-        document.getElementById('modalDescription').textContent =
-          event.extendedProps.description || '';
+          // Title
+          document.getElementById('modalTitle').textContent = event.title;
 
-        // Google Calendar link (optional)
-        document.getElementById('modalGoogleLink').href = event.url || '#';
+          // Date formatting
+          const start = event.start;
+          const dateOptions = {
+            weekday: 'long',
+            month: 'long',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: '2-digit'
+          };
+          document.getElementById('modalDate').textContent =
+            start.toLocaleString('en-US', dateOptions);
 
-        // Show modal
-        document.getElementById('eventModal').style.display = 'flex';
-      }
-    });
+          // Location
+          document.getElementById('modalLocation').textContent =
+            event.extendedProps.location
+              ? `Location: ${event.extendedProps.location}`
+              : '';
 
-    calendar.render();
+          /* ⭐ DESCRIPTION WITH CLICKABLE LINKS ⭐ */
+          let desc = event.extendedProps.description || "";
 
-    /* VIEW SWITCHING */
-    document.querySelectorAll('input[name="view"]').forEach(radio => {
-      radio.addEventListener('change', () => {
-        calendar.changeView(radio.value);
-      });
-    });
+          // Convert plain URLs into clickable links
+          desc = desc.replace(
+            /(https?:\/\/[^\s]+)/g,
+            '<a href="$1" target="_blank" rel="noopener">$1</a>'
+          );
 
-    /* CALENDAR TOGGLES */
-    document.querySelectorAll('.cal-toggle').forEach(cb => {
-      cb.addEventListener('change', function () {
-        const id = this.dataset.cal;
-        const existing = calendar.getEventSourceById(id);
+          // Allow only <a> tags, strip everything else
+          desc = desc
+            .replace(/<(?!\/?a(?=>|\s.*>))\/?.*?>/g, "")
+            .replace(/\n/g, "<br>");
 
-        if (this.checked) {
-          if (!existing) calendar.addEventSource(eventSourceConfigs[id]);
-        } else {
-          if (existing) existing.remove();
+          document.getElementById('modalDescription').innerHTML = desc;
+
+          // Show modal
+          document.getElementById('eventModal').style.display = 'flex';
         }
       });
-    });
 
-    /* PRINT */
-    document.getElementById('print-calendar').onclick = () => {
-      calendar.changeView('listMonth');
-      setTimeout(() => window.print(), 200);
-    };
+      calendar.render();
 
-    /* ⭐ MODAL CLOSE BEHAVIOR ⭐ */
-    document.getElementById('modalClose').onclick = () => {
-      document.getElementById('eventModal').style.display = 'none';
-    };
+      /* VIEW SWITCHING */
+      document.querySelectorAll('input[name="view"]').forEach(radio => {
+        radio.addEventListener('change', () => {
+          calendar.changeView(radio.value);
+        });
+      });
 
-    document.getElementById('eventModal').onclick = (e) => {
-      if (e.target.id === 'eventModal') {
+      /* CALENDAR TOGGLES */
+      document.querySelectorAll('.cal-toggle').forEach(cb => {
+        cb.addEventListener('change', function () {
+          const id = this.dataset.cal;
+          const existing = calendar.getEventSourceById(id);
+
+          if (this.checked) {
+            if (!existing) calendar.addEventSource(eventSourceConfigs[id]);
+          } else {
+            if (existing) existing.remove();
+          }
+        });
+      });
+
+      /* PRINT */
+      document.getElementById('print-calendar').onclick = () => {
+        calendar.changeView('listMonth');
+        setTimeout(() => window.print(), 200);
+      };
+
+      /* ⭐ MODAL CLOSE BEHAVIOR ⭐ */
+      document.getElementById('modalClose').onclick = () => {
         document.getElementById('eventModal').style.display = 'none';
-      }
-    };
+      };
 
-  });
-</script>
+      document.getElementById('eventModal').onclick = (e) => {
+        if (e.target.id === 'eventModal') {
+          document.getElementById('eventModal').style.display = 'none';
+        }
+      };
+
+    });
+  </script>
 
   <!-- EVENT DETAILS MODAL -->
   <div id="eventModal" class="modal-overlay" style="display:none;">
@@ -279,9 +299,6 @@
       <p id="modalLocation"></p>
       <p id="modalDescription"></p>
 
-      <div class="modal-actions">
-        <a id="modalGoogleLink" class="btn" target="_blank">View in Google Calendar</a>
-      </div>
     </div>
   </div>
 
