@@ -155,6 +155,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 20px;
+  flex-direction: row;
 }
 
 /* Horizontal radio buttons */
@@ -170,8 +171,7 @@
 #subscribeNow {
   display: block;
   margin: 0 auto;
-  font-size: 1.05rem;
-  padding: 10px 20px;
+  width: auto;
   font-family: var(--font-body, "Source Sans 3", sans-serif);
 }
 
