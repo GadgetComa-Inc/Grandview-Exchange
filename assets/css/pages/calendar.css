@@ -70,3 +70,29 @@
   margin-top: var(--space-md);
   text-align: center;
 }
+
+/* Style FullCalendar navigation buttons to match site buttons */
+.fc .fc-button {
+  background: var(--teal);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.fc .fc-button:hover {
+  background: var(--teal-dark);
+}
+
+.fc .fc-button:disabled {
+  background: var(--border);
+  color: var(--text-muted);
+  cursor: default;
+}
+
+.fc-header-toolbar {
+  margin-bottom: var(--space-md);
+}
