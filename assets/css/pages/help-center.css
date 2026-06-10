@@ -23,10 +23,11 @@
   background: var(--bg-white);
   border: 1px solid var(--border);
   border-radius: 8px;
-  padding: var(--space-lg);
+  padding: var(--space-lg) !important; /* override global .card */
   box-shadow: var(--shadow-card);
   display: flex;
   flex-direction: column;
+  justify-content: space-between; /* ensures button sits at bottom */
 }
 
 /* Help Center Card Title */
@@ -34,17 +35,19 @@
   font-family: 'Lora', serif;
   font-size: 1.05rem;
   color: var(--text-dark);
-  margin-bottom: 8px;
+  margin-bottom: var(--space-xs) !important;
 }
 
 /* Help Center Card Description */
 .help-card-desc {
   color: var(--text-muted);
-  margin-bottom: 12px;
+  margin-bottom: var(--space-sm) !important; /* tighter spacing */
 }
 
 /* Help Center Card Link Button */
-.help-card-link {
+.help-card-link,
+.help-card .btn,
+.help-card .btn-card {
   display: inline-block;
   padding: 8px 14px;
   border-radius: 4px;
@@ -52,30 +55,27 @@
   color: #fff;
   font-weight: 600;
   text-decoration: none;
+  margin-top: auto; /* pushes button to bottom */
 }
 
-.help-card-link:hover {
+.help-card-link:hover,
+.help-card .btn:hover,
+.help-card .btn-card:hover {
   background: var(--teal-dark);
 }
 
 /* ---- Help Center Grid (2-column) ---- */
 .help-grid-2col {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  margin-top: 1.5rem;
-}
-
-.help-grid-2col .help-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: var(--space-lg) !important;
+  margin-top: var(--space-md) !important;
 }
 
 /* ---- Help Center Row Layout ---- */
 .help-row {
   display: flex;
-  gap: 1.5rem;
+  gap: var(--space-lg);
 }
 
 .help-left {

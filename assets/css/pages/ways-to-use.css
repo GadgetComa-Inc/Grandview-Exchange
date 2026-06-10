@@ -2,61 +2,57 @@
    Page -- Ways to Use Grandview Exchange
 ============================================ */
 
-/* ---- Horizontal Card Layout ---- */
-.page-ways-to-use .card-horizontal .card-row {
-  display: flex;
-  gap: var(--space-md);
-  align-items: flex-start;
-}
+.page-ways-to-use {
 
-.page-ways-to-use .card-horizontal .card-body {
-  flex: 2;
-}
+  /* --------------------------------------------
+     HORIZONTAL CARD LAYOUT (new system)
+  -------------------------------------------- */
 
-.page-ways-to-use .card-horizontal .card-actions {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
+  /* Two-column layout for each method card */
+  .card {
+    display: flex;
+    gap: var(--space-lg);
+    align-items: flex-start;
+    padding: var(--space-lg);
+  }
 
-/* ---- Row Layout ---- */
-.page-ways-to-use .card-row {
-  display: flex;
-  gap: 1.5rem;
-}
+  /* Left column: text */
+  .card-body {
+    flex: 2;
+  }
 
-.page-ways-to-use .card-left {
-  flex: 2;
-}
+  /* Right column: button */
+  .card-actions {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
 
-.page-ways-to-use .card-right {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
+  /* --------------------------------------------
+     TYPOGRAPHY & SPACING
+  -------------------------------------------- */
 
-/* ---- Typography & Spacing Overrides ---- */
-.page-ways-to-use .card-horizontal .card-title {
-  margin-bottom: var(--space-sm);
-}
+  .card-title {
+    margin-bottom: var(--space-sm);
+  }
 
-.page-ways-to-use .card-horizontal .card-desc {
-  margin-bottom: var(--space-sm);
-  line-height: 1.25;
-}
+  .card-desc {
+    margin-bottom: var(--space-sm);
+    line-height: 1.25;
+  }
 
-.page-ways-to-use .card-horizontal h4 {
-  margin: var(--space-sm) 0 var(--space-xs);
-}
+  .page-ways-to-use h4 {
+    margin: var(--space-sm) 0 var(--space-xs);
+  }
 
-.page-ways-to-use .card-horizontal ul {
-  margin: var(--space-xs) 0 var(--space-sm);
-  padding-left: 20px;
-}
+  .page-ways-to-use ul {
+    margin: var(--space-xs) 0 var(--space-sm);
+    padding-left: 20px;
+  }
 
-.page-ways-to-use .card-horizontal li {
-  margin-bottom: var(--space-xs);
-  line-height: 1.25;
+  .page-ways-to-use li {
+    margin-bottom: var(--space-xs);
+    line-height: 1.25;
+  }
 }

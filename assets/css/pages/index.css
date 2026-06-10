@@ -8,12 +8,13 @@
      HERO
   -------------------------------------------- */
 
-  /* Left-align hero text */
-  .card-hero {
-    text-align: left;
+  /* Force left alignment even when card-body-center is present */
+  .card-hero,
+  .card-hero .card-body,
+  .card-hero .card-body-center {
+    text-align: left !important;
   }
 
-  /* Reduce spacing between hero paragraphs */
   .card-hero p {
     margin-bottom: var(--space-sm);
   }
@@ -22,24 +23,21 @@
      START HERE & LEARN MORE — TITLE SPACING
   -------------------------------------------- */
 
-  /* Reduce space between section title (h2) and the cards */
-  .card-light .card-body-center {
-    margin-bottom: var(--space-sm);
+  .card-light > .card-body.card-body-center {
+    margin-bottom: var(--space-sm) !important;
   }
 
-  /* Reduce spacing under Start Here title */
   .card-light h2 + p {
-    margin-top: var(--space-sm);
-    margin-bottom: var(--space-md);
+    margin-top: var(--space-sm) !important;
+    margin-bottom: var(--space-md) !important;
   }
 
   /* --------------------------------------------
      SECTION SPACING INSIDE CARD-LIGHT
   -------------------------------------------- */
 
-  /* Reduce space between Learning and Support sections */
   .card-light .section {
-    margin: var(--space-md) 0;
+    margin: var(--space-md) 0 !important;
   }
 
   /* --------------------------------------------
@@ -48,35 +46,32 @@
 
   /* Reduce space between card text and button */
   .card .card-desc {
-    margin-bottom: var(--space-xs);
+    margin-bottom: var(--space-xs) !important;
   }
 
-  /* Reduce padding inside cards so buttons sit lower */
+  /* Reduce padding inside cards */
   .card {
-    padding: var(--space-md);
+    padding: var(--space-md) !important;
   }
 
-  /* Reduce padding inside card-body */
-  .card-body {
-    padding-bottom: var(--space-sm);
+  .card .card-body {
+    padding-bottom: var(--space-sm) !important;
   }
 
-  /* Remove any inherited min-height so cards shrink naturally */
+  /* Remove inherited min-height */
   .grid-2col .card {
-    min-height: auto;
+    min-height: auto !important;
   }
 
   /* --------------------------------------------
      BOTTOM SPACING OF CARD-LIGHT BOXES
   -------------------------------------------- */
 
-  /* Match bottom spacing of Learn More to Start Here */
   .card-light:last-of-type {
-    padding-bottom: var(--space-xl);
+    padding-bottom: var(--space-xl) !important;
   }
 
-  /* Ensure consistent bottom spacing after the last row of cards */
   .card-light .card-actions:last-child {
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-lg) !important;
   }
 }
