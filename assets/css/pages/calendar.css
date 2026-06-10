@@ -132,3 +132,49 @@
 .modal-section {
   margin: 16px 0;
 }
+
+/* Center modal title */
+#subscribeModal .modal-card h3 {
+  text-align: center;
+  font-family: var(--font-body, "Source Sans 3", sans-serif);
+  margin-bottom: 20px;
+}
+
+/* Increase dropdown font size + spacing */
+#subscribeModal .modal-select {
+  font-size: 1.05rem;
+  padding: 10px;
+  margin-top: 8px;
+  margin-bottom: 24px; /* more space before next section */
+  font-family: var(--font-body, "Source Sans 3", sans-serif);
+}
+
+/* Add spacing between sections */
+#subscribeModal .modal-section {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  font-family: var(--font-body, "Source Sans 3", sans-serif);
+}
+
+/* Lay out radio buttons horizontally */
+#subscribeModal .modal-section label {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 20px;
+  font-size: 1rem;
+  font-family: var(--font-body, "Source Sans 3", sans-serif);
+}
+
+/* Center the Subscribe button */
+#subscribeNow {
+  display: block;
+  margin: 0 auto;
+  font-size: 1.05rem; /* larger button text */
+  padding: 10px 20px;
+  font-family: var(--font-body, "Source Sans 3", sans-serif);
+}
+
+/* Ensure modal uses standard site font */
+#subscribeModal .modal-card {
+  font-family: var(--font-body, "Source Sans 3", sans-serif);
+}
