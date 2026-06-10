@@ -28,11 +28,12 @@
     width: 100%;
   }
 }
+
 /* Modal overlay */
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.55);
+  background: rgba(0, 0, 0, 0.55);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,7 +47,7 @@
   border-radius: 12px;
   max-width: 500px;
   width: 90%;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
   position: relative;
 }
 
@@ -88,7 +89,8 @@
 /* Make Previous and Next buttons the same width */
 .fc .fc-prev-button,
 .fc .fc-next-button {
-  min-width: 120px !important;   /* adjust to taste */
+  min-width: 120px !important;
+  /* adjust to taste */
   text-align: center !important;
   justify-content: center !important;
   display: inline-flex !important;
@@ -137,7 +139,8 @@
   font-size: 1.05rem;
   padding: 10px;
   margin-top: 8px;
-  margin-bottom: 24px; /* space before radio section */
+  margin-bottom: 24px;
+  /* space before radio section */
   border-radius: 6px;
   border: 1px solid var(--border);
   font-family: var(--font-body, "Source Sans 3", sans-serif);
@@ -148,6 +151,10 @@
   margin-top: 24px;
   margin-bottom: 24px;
   font-family: var(--font-body, "Source Sans 3", sans-serif);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
 }
 
 /* Horizontal radio buttons */
@@ -181,8 +188,10 @@
 .actions-stack .btn {
   width: 100%;
   margin-bottom: 10px;
-  font-size: 1rem; /* standard button font size */
-  padding: 10px 16px; /* matches your .btn sizing */
+  font-size: 1rem;
+  /* standard button font size */
+  padding: 10px 16px;
+  /* matches your .btn sizing */
 }
 
 .actions-stack .btn:last-child {
