@@ -5,7 +5,7 @@
 /* ---- Base Card ---- */
 .card {
   background: var(--bg-white);
-  border: 1px solid var(--border);
+  border: none;
   border-radius: 8px;
   padding: var(--space-md); /* unified compact spacing */
   box-shadow: var(--shadow-card);
@@ -19,6 +19,12 @@
   font-size: 1.2rem;
   margin-bottom: var(--space-xs); /* tighter global spacing */
 }
+
+.card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
 
 .card-desc {
   margin-bottom: var(--space-xs); /* consistent with design system */
