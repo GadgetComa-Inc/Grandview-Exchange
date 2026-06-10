@@ -15,48 +15,143 @@
 }
 
 /* ---- Card Content ---- */
-.card__title {
+.card-title {
   font-size: 1.2rem;
   margin-bottom: var(--space-md);
 }
 
-.card__desc {
+.card-desc {
   margin-bottom: var(--space-md);
+  color: var(--text-body);
+  flex: 1;
+}
+
+/* ---- Homepage Card Body (new) ---- */
+.card-body {
+  margin-bottom: var(--space-lg);
+}
+
+.card-body-center {
+  text-align: center;
+}
+
+/* ---- Homepage Card Actions (new) ---- */
+.card-actions {
+  margin-top: auto;
+  display: flex;
+}
+
+.card-actions-center {
+  justify-content: center;
+}
+
+/* ---- Light Wrapper Card (Start Here, Learn More) ---- */
+.card-light {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: var(--space-xl);
 }
 
 /* ---- Hero Card ---- */
-.card--hero {
+.card-hero {
+  text-align: center;
   padding-top: var(--space-md);
   padding-bottom: var(--space-md);
 }
 
-.card--hero > h1 {
+.card-hero h1 {
   margin-bottom: var(--space-sm);
 }
 
-.card--hero > p {
+.card-hero p {
   margin-bottom: var(--space-sm);
-}
-
-.card--hero .hero-actions {
-  margin-top: var(--space-sm);
-  text-align: center;
 }
 
 /* ---- Horizontal Card (Ways-to-Use) ---- */
-.card--horizontal .card__row {
+.card-horizontal .card-row {
   display: flex;
   gap: var(--space-md);
   align-items: flex-start;
 }
 
-.card--horizontal .card__body {
+.card-horizontal .card-body {
   flex: 2;
 }
 
-.card--horizontal .card__actions {
+.card-horizontal .card-actions {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: flex-start;
+}
+
+/* ---- Help Center Cards (existing) ---- */
+.help-card {
+  padding: 14px;
+}
+
+.help-card .card-title {
+  font-family: 'Lora', serif;
+  font-size: 1.05rem;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.help-card .card-desc {
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.help-card .card-link {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 4px;
+  background: var(--teal);
+  color: #fff;
+  font-weight: 600;
+}
+
+.help-card .card-link:hover {
+  background: var(--teal-dark);
+  text-decoration: none;
+}
+
+/* ---- Card Row Layout (existing) ---- */
+.card-row {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.card-left {
+  flex: 2;
+}
+
+.card-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* ---- Two-column Card Grid (Help Center) ---- */
+.card-grid-2col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.card-grid-2col .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-grid-2col .card h3 {
+  margin-top: 0;
+}
+
+.card-grid-2col .card p {
+  margin-bottom: 0.75rem;
 }

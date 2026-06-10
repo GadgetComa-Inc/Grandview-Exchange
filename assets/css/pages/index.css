@@ -1,0 +1,19 @@
+/* ============================================
+   Page -- Index (Homepage)
+============================================ */
+
+/* Reduce spacing between hero paragraphs */
+.card-hero p {
+  margin-bottom: var(--space-sm);
+}
+
+/* Reduce spacing under Start Here title */
+.card-light h2 + p {
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+/* Match bottom spacing of Learn More to Start Here */
+.card-light:last-of-type {
+  padding-bottom: var(--space-xl);
+}

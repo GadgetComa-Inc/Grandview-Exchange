@@ -20,39 +20,45 @@
 }
 
 /* ---- Button Modifiers ---- */
-.btn--secondary {
+.btn-secondary {
   background: var(--teal-light);
   color: var(--teal-dark);
 }
 
-.btn--secondary:hover {
+.btn-secondary:hover {
   background: #cfeaea;
 }
 
-.btn--disabled {
+.btn-disabled {
   opacity: 0.55;
   cursor: not-allowed;
   pointer-events: none;
 }
 
-.btn--active {
+.btn-active {
   background: var(--teal-dark);
 }
 
 /* ---- Card Button (Fixed Width) ---- */
-.btn--card {
+.btn-card {
   width: 270px;
   margin-top: auto;
 }
 
 /* ---- Navigation Button ---- */
-.btn--nav {
+.btn-nav {
   background: var(--teal-light);
   color: var(--teal-dark);
   font-size: 0.95rem;
   white-space: nowrap;
 }
 
-.btn--nav:hover {
+.btn-nav:hover {
   background: #cfeaea;
+}
+
+/* ---- Homepage: Center fixed-width card buttons ---- */
+.card-actions .btn-card {
+  margin-left: auto;
+  margin-right: auto;
 }

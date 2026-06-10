@@ -2,25 +2,25 @@
    Page -- Ways to Use Grandview Exchange
 ============================================ */
 
-.page--ways-to-use .card--horizontal .card__title {
+.page-ways-to-use .card-horizontal .card-title {
   margin-bottom: var(--space-sm);
 }
 
-.page--ways-to-use .card--horizontal .card__desc {
+.page-ways-to-use .card-horizontal .card-desc {
   margin-bottom: var(--space-sm);
   line-height: 1.25;
 }
 
-.page--ways-to-use .card--horizontal h4 {
+.page-ways-to-use .card-horizontal h4 {
   margin: var(--space-sm) 0 var(--space-xs);
 }
 
-.page--ways-to-use .card--horizontal ul {
+.page-ways-to-use .card-horizontal ul {
   margin: var(--space-xs) 0 var(--space-sm);
   padding-left: 20px;
 }
 
-.page--ways-to-use .card--horizontal li {
+.page-ways-to-use .card-horizontal li {
   margin-bottom: var(--space-xs);
   line-height: 1.25;
 }

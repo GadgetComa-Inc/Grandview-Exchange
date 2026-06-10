@@ -10,4 +10,5 @@
 
 /* Page‑specific overrides */
 @import url("pages/ways-to-use.css");
+@import url("pages/index.css");
 /* Add more page files here as needed */

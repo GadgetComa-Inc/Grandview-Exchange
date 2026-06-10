@@ -60,10 +60,6 @@ h4 { font-size: 1.1rem; }
   padding: 0 var(--space-md);
 }
 
-.section {
-  margin: var(--space-xl) 0;
-}
-
 /* ---- Header & Footer ---- */
 .site-header img {
   width: 100%;
