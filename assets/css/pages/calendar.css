@@ -120,43 +120,37 @@
   margin-bottom: var(--space-md);
 }
 
-/* Subscribe modal styling */
-.modal-select {
-  width: 100%;
-  padding: 8px;
-  margin: 8px 0 16px 0;
-  border-radius: 6px;
-  border: 1px solid var(--border);
-}
-
-.modal-section {
-  margin: 16px 0;
+/* Ensure modal uses standard site font */
+#subscribeModal .modal-card {
+  font-family: var(--font-body, "Source Sans 3", sans-serif);
 }
 
 /* Center modal title */
 #subscribeModal .modal-card h3 {
   text-align: center;
-  font-family: var(--font-body, "Source Sans 3", sans-serif);
   margin-bottom: 20px;
 }
 
-/* Increase dropdown font size + spacing */
+/* Dropdown styling (merged + cleaned) */
 #subscribeModal .modal-select {
+  width: 100%;
   font-size: 1.05rem;
   padding: 10px;
   margin-top: 8px;
-  margin-bottom: 24px; /* more space before next section */
+  margin-bottom: 24px; /* space before radio section */
+  border-radius: 6px;
+  border: 1px solid var(--border);
   font-family: var(--font-body, "Source Sans 3", sans-serif);
 }
 
-/* Add spacing between sections */
+/* Section spacing (merged) */
 #subscribeModal .modal-section {
   margin-top: 24px;
   margin-bottom: 24px;
   font-family: var(--font-body, "Source Sans 3", sans-serif);
 }
 
-/* Lay out radio buttons horizontally */
+/* Horizontal radio buttons */
 #subscribeModal .modal-section label {
   display: inline-flex;
   align-items: center;
@@ -165,17 +159,12 @@
   font-family: var(--font-body, "Source Sans 3", sans-serif);
 }
 
-/* Center the Subscribe button */
+/* Center the Subscribe button + increase size */
 #subscribeNow {
   display: block;
   margin: 0 auto;
-  font-size: 1.05rem; /* larger button text */
+  font-size: 1.05rem;
   padding: 10px 20px;
-  font-family: var(--font-body, "Source Sans 3", sans-serif);
-}
-
-/* Ensure modal uses standard site font */
-#subscribeModal .modal-card {
   font-family: var(--font-body, "Source Sans 3", sans-serif);
 }
 
