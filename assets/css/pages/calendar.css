@@ -197,3 +197,8 @@
 .actions-stack .btn:last-child {
   margin-bottom: 0;
 }
+
+/* Temporarily hide the Previous Page button on the calendar page */
+.btn-nav-return {
+  display: none !important;
+}
