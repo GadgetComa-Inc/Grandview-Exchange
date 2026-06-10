@@ -6,13 +6,12 @@
   <title>The Grandview Community Calendar</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/main.css" />
 
-  <!-- FullCalendar (Google API version) -->
+  <!-- FullCalendar -->
   <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/main.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/google-calendar@6.1.10/index.global.min.js"></script>
-
 </head>
 
 <body class="help-site">
@@ -32,77 +31,79 @@
 
     <!-- HERO BOX -->
     <section class="section">
-      <div class="container">
-        <div class="card hero">
-          <h1>The Grandview Community Calendar</h1>
-          <p>
-            This calendar shows upcoming activities, meetings, and events happening at The Grandview.
-            You can view it online, print it, or subscribe to it using your preferred device.
-          </p>
-        </div>
+      <div class="card card-hero">
+        <h1>The Grandview Community Calendar</h1>
+        <p>
+          This calendar shows upcoming activities, meetings, and events happening at The Grandview.
+          You can view it online, print it, or subscribe to it using your preferred device.
+        </p>
       </div>
     </section>
 
     <!-- CALENDAR + SIDEBAR LAYOUT -->
     <section class="section">
-      <div class="container">
-        <div class="card">
+      <div class="layout-2col">
 
-          <div class="calendar-layout">
+        <!-- SIDEBAR (separate box) -->
+        <aside class="sidebar">
 
-            <!-- MAIN CALENDAR AREA -->
-            <div class="calendar-main">
-              <h2 id="print-heading" class="print-only">Grandview Community Calendar</h2>
-              <div id="calendar"></div>
+          <!-- SELECT VIEW -->
+          <div class="card sidebar-card">
+            <h3 class="sidebar-title">Select View</h3>
+            <div class="sidebar-content">
+              <label><input type="radio" name="view" value="listMonth" checked> Agenda</label>
+              <label><input type="radio" name="view" value="timeGridWeek"> Week</label>
+              <label><input type="radio" name="view" value="dayGridMonth"> Month</label>
             </div>
-
-            <!-- SIDEBAR -->
-            <aside class="calendar-sidebar">
-
-              <!-- PRINT BUTTON -->
-              <button id="print-calendar" class="btn full-width">Print</button>
-
-              <!-- VIEW OPTIONS CARD -->
-              <div class="card sidebar-card">
-                <h3>View</h3>
-                <label><input type="radio" name="view" value="listMonth" checked> Agenda</label>
-                <label><input type="radio" name="view" value="timeGridWeek"> Week</label>
-                <label><input type="radio" name="view" value="dayGridMonth"> Month</label>
-              </div>
-
-              <!-- CALENDAR CHECKBOXES CARD -->
-              <div class="card sidebar-card">
-                <h3>Calendars</h3>
-                <label><input type="checkbox" class="cal-toggle" data-cal="grandview" checked> Grandview Events</label>
-                <label><input type="checkbox" class="cal-toggle" data-cal="itclub" checked> Computer/IT Club</label>
-                <label><input type="checkbox" class="cal-toggle" data-cal="mahjongg" checked> Mah Jongg Club</label>
-              </div>
-
-              <!-- SUBSCRIBE BUTTONS CARD -->
-              <div class="card sidebar-card">
-                <h3>Subscribe</h3>
-
-                <a class="btn-card sidebar-subscribe"
-                   href="https://calendar.google.com/calendar/u/0?cid=grandviewexchangecalendar@gmail.com">
-                   Google Calendar
-                </a>
-
-                <a class="btn-card sidebar-subscribe"
-                   href="webcal://calendar.google.com/calendar/ical/grandviewexchangecalendar%40gmail.com/public/basic.ics">
-                   Apple Calendar
-                </a>
-
-                <a class="btn-card sidebar-subscribe"
-                   href="https://calendar.google.com/calendar/ical/grandviewexchangecalendar%40gmail.com/public/basic.ics">
-                   Outlook / Other
-                </a>
-              </div>
-
-            </aside>
-
           </div>
 
+          <!-- SHOW CALENDARS -->
+          <div class="card sidebar-card">
+            <h3 class="sidebar-title">Show Calendars</h3>
+            <div class="sidebar-content">
+              <label><input type="checkbox" class="cal-toggle" data-cal="grandview" checked> Grandview Events</label>
+              <label><input type="checkbox" class="cal-toggle" data-cal="itclub" checked> Computer/IT Club</label>
+              <label><input type="checkbox" class="cal-toggle" data-cal="mahjongg" checked> Mah Jongg Club</label>
+            </div>
+          </div>
+
+          <!-- PRINT BOX -->
+          <div class="card sidebar-card">
+            <h3 class="sidebar-title">Print</h3>
+            <div class="sidebar-content">
+              <button id="print-calendar" class="btn btn-card">Print Calendar</button>
+            </div>
+          </div>
+
+          <!-- SUBSCRIBE -->
+          <div class="card sidebar-card">
+            <h3 class="sidebar-title">Subscribe</h3>
+            <a class="btn-card"
+               href="https://calendar.google.com/calendar/u/0?cid=grandviewexchangecalendar@gmail.com">
+               Google Calendar
+            </a>
+
+            <a class="btn-card"
+               href="webcal://calendar.google.com/calendar/ical/grandviewexchangecalendar%40gmail.com/public/basic.ics">
+               Apple Calendar
+            </a>
+
+            <a class="btn-card"
+               href="https://calendar.google.com/calendar/ical/grandviewexchangecalendar%40gmail.com/public/basic.ics">
+               Outlook / Other
+            </a>
+          </div>
+
+        </aside>
+
+        <!-- MAIN CALENDAR AREA -->
+        <div class="main-content">
+          <div class="card">
+            <h2 id="print-heading" class="print-only">Grandview Community Calendar</h2>
+            <div id="calendar"></div>
+          </div>
         </div>
+
       </div>
     </section>
 
@@ -122,7 +123,6 @@
 
       const calendarEl = document.getElementById('calendar');
 
-      /* Event source definitions for re-adding sources dynamically */
       const eventSourceConfigs = {
         grandview: {
           id: 'grandview',
@@ -151,30 +151,25 @@
 
       calendar.render();
 
-      // VIEW SWITCHING (radio buttons)
       document.querySelectorAll('input[name="view"]').forEach(radio => {
         radio.addEventListener('change', () => {
           calendar.changeView(radio.value);
         });
       });
 
-      // FILTERS (auto-update)
       document.querySelectorAll('.cal-toggle').forEach(cb => {
         cb.addEventListener('change', function () {
           const id = this.dataset.cal;
           const existing = calendar.getEventSourceById(id);
 
           if (this.checked) {
-            if (!existing) {
-              calendar.addEventSource(eventSourceConfigs[id]);
-            }
+            if (!existing) calendar.addEventSource(eventSourceConfigs[id]);
           } else {
             if (existing) existing.remove();
           }
         });
       });
 
-      // PRINT
       document.getElementById('print-calendar').onclick = () => {
         calendar.changeView('listMonth');
         setTimeout(() => window.print(), 200);
