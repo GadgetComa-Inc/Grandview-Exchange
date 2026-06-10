@@ -2,57 +2,10 @@
    Page -- Ways to Use Grandview Exchange
 ============================================ */
 
-.page-ways-to-use {
+/* No card overrides */
+/* No spacing overrides */
+/* No typography overrides */
+/* No layout overrides */
 
-  /* --------------------------------------------
-     HORIZONTAL CARD LAYOUT (new system)
-  -------------------------------------------- */
-
-  /* Two-column layout for each method card */
-  .card {
-    display: flex;
-    gap: var(--space-lg);
-    align-items: flex-start;
-    padding: var(--space-lg);
-  }
-
-  /* Left column: text */
-  .card-body {
-    flex: 2;
-  }
-
-  /* Right column: button */
-  .card-actions {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-  }
-
-  /* --------------------------------------------
-     TYPOGRAPHY & SPACING
-  -------------------------------------------- */
-
-  .card-title {
-    margin-bottom: var(--space-sm);
-  }
-
-  .card-desc {
-    margin-bottom: var(--space-sm);
-    line-height: 1.25;
-  }
-
-  .page-ways-to-use h4 {
-    margin: var(--space-sm) 0 var(--space-xs);
-  }
-
-  .page-ways-to-use ul {
-    margin: var(--space-xs) 0 var(--space-sm);
-    padding-left: 20px;
-  }
-
-  .page-ways-to-use li {
-    margin-bottom: var(--space-xs);
-    line-height: 1.25;
-  }
-}
+/* Page-specific styles only (if any) */
+.page-ways-to-use { }

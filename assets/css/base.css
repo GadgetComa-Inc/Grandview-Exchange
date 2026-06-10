@@ -53,9 +53,25 @@ h2 { font-size: 1.6rem; }
 h3 { font-size: 1.3rem; }
 h4 { font-size: 1.1rem; }
 
-/* ---- Layout Wrappers ---- */
-.container {
-  max-width: 960px;
+/* Global content spacing */
+h4 {
+  margin: var(--space-sm) 0 var(--space-xs);
+  font-weight: 600;
+}
+
+ul {
+  margin: var(--space-xs) 0 var(--space-sm);
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: var(--space-xs);
+  line-height: 1.25;
+}
+
+/* ---- Global Layout Wrapper ---- */
+.site-shell {
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 var(--space-md);
 }

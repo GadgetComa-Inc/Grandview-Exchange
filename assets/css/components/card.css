@@ -7,7 +7,7 @@
   background: var(--bg-white);
   border: 1px solid var(--border);
   border-radius: 8px;
-  padding: var(--space-lg);
+  padding: var(--space-md); /* unified compact spacing */
   box-shadow: var(--shadow-card);
   display: flex;
   flex-direction: column;
@@ -17,18 +17,18 @@
 /* ---- Card Content ---- */
 .card-title {
   font-size: 1.2rem;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-xs); /* tighter global spacing */
 }
 
 .card-desc {
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-xs); /* consistent with design system */
   color: var(--text-body);
   flex: 1;
 }
 
 /* ---- Card Body ---- */
 .card-body {
-  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-xs); /* replaces old margin-bottom */
 }
 
 .card-body-center {
@@ -41,6 +41,12 @@
   display: flex;
 }
 
+.card-actions .btn-card {
+  width: 270px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .card-actions-center {
   justify-content: center;
 }
@@ -50,20 +56,44 @@
   background: var(--bg-white);
   border: 1px solid var(--border);
   border-radius: 10px;
-  padding: var(--space-xl);
+  padding: var(--space-lg); /* reduced from space-xl */
 }
 
-/* ---- Hero Card ---- */
+/* ============================================
+   Horizontal Card Layout (Global Component)
+============================================ */
+
+.card-horizontal {
+  display: flex;
+  gap: var(--space-lg);
+  align-items: flex-start;
+}
+
+.card-horizontal .card-body {
+  flex: 2;
+}
+
+.card-horizontal .card-actions {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* ============================================
+   Global Hero Box (shared by all pages)
+============================================ */
+
 .card-hero {
-  text-align: center;
-  padding-top: var(--space-md);
-  padding-bottom: var(--space-md);
+  padding: var(--space-md); /* compact top + bottom */
 }
 
 .card-hero h1 {
-  margin-bottom: var(--space-sm);
+  text-align: center;        /* titles centered everywhere */
+  margin-bottom: var(--space-xs);
 }
 
 .card-hero p {
-  margin-bottom: var(--space-sm);
+  margin: 0;                 /* no cumulative spacing */
+  text-align: left;          /* consistent across all pages */
 }
