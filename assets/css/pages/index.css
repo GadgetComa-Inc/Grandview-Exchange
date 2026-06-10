@@ -2,12 +2,16 @@
    Page -- Index (Homepage)
 ============================================ */
 
-/* Scope all rules to the homepage */
 .page-index {
 
   /* --------------------------------------------
      HERO
   -------------------------------------------- */
+
+  /* Left-align hero text */
+  .card-hero {
+    text-align: left;
+  }
 
   /* Reduce spacing between hero paragraphs */
   .card-hero p {
@@ -20,13 +24,13 @@
 
   /* Reduce space between section title (h2) and the cards */
   .card-light .card-body-center {
-    margin-bottom: var(--space-sm); /* tighter than default */
+    margin-bottom: var(--space-sm);
   }
 
-  /* Reduce spacing under Start Here title (your original rule) */
+  /* Reduce spacing under Start Here title */
   .card-light h2 + p {
     margin-top: var(--space-sm);
-    margin-bottom: var(--space-md); /* was space-lg — tightened */
+    margin-bottom: var(--space-md);
   }
 
   /* --------------------------------------------
@@ -35,7 +39,7 @@
 
   /* Reduce space between Learning and Support sections */
   .card-light .section {
-    margin: var(--space-md) 0; /* was space-xl */
+    margin: var(--space-md) 0;
   }
 
   /* --------------------------------------------
@@ -44,7 +48,22 @@
 
   /* Reduce space between card text and button */
   .card .card-desc {
-    margin-bottom: var(--space-sm); /* was space-md */
+    margin-bottom: var(--space-xs);
+  }
+
+  /* Reduce padding inside cards so buttons sit lower */
+  .card {
+    padding: var(--space-md);
+  }
+
+  /* Reduce padding inside card-body */
+  .card-body {
+    padding-bottom: var(--space-sm);
+  }
+
+  /* Remove any inherited min-height so cards shrink naturally */
+  .grid-2col .card {
+    min-height: auto;
   }
 
   /* --------------------------------------------
