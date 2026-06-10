@@ -178,3 +178,21 @@
 #subscribeModal .modal-card {
   font-family: var(--font-body, "Source Sans 3", sans-serif);
 }
+
+/* Description under the card title */
+.sidebar-description {
+  font-size: 0.95rem;
+  color: var(--text-body);
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+/* Stack the Print + Subscribe buttons with spacing */
+.actions-stack .btn {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.actions-stack .btn:last-child {
+  margin-bottom: 0;
+}
