@@ -71,26 +71,34 @@
   text-align: center;
 }
 
-/* Style FullCalendar navigation buttons to match site buttons */
-.fc .fc-button {
-  background: var(--teal);
-  color: white;
-  border: none;
-  border-radius: 6px;
-  padding: 6px 14px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
+/* Override FullCalendar button styles */
+.fc .fc-button,
+.fc .fc-button-primary,
+.fc .fc-prev-button,
+.fc .fc-next-button {
+  background-color: var(--teal) !important;
+  border: none !important;
+  color: white !important;
+  font-weight: 600 !important;
+  border-radius: 6px !important;
+  padding: 6px 14px !important;
+  box-shadow: none !important;
 }
 
-.fc .fc-button:hover {
-  background: var(--teal-dark);
+.fc .fc-button:hover,
+.fc .fc-button-primary:hover {
+  background-color: var(--teal-dark) !important;
 }
 
 .fc .fc-button:disabled {
-  background: var(--border);
-  color: var(--text-muted);
-  cursor: default;
+  background-color: var(--border) !important;
+  color: var(--text-muted) !important;
+}
+
+/* Ensure Next button aligns right */
+.fc-header-toolbar .fc-toolbar-chunk:last-child {
+  justify-content: flex-end;
+  display: flex;
 }
 
 .fc-header-toolbar {
