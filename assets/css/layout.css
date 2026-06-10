@@ -148,3 +148,8 @@
   display: block;
   margin-bottom: var(--space-xs);
 }
+
+.sidebar-card .btn {
+  display: block;
+  margin-bottom: var(--space-xs);
+}

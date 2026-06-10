@@ -1,0 +1,30 @@
+@media print {
+
+  /* Hide everything */
+  body * {
+    visibility: hidden;
+  }
+
+  /* Show only the calendar and its heading */
+  #print-heading,
+  #print-heading *,
+  #calendar,
+  #calendar * {
+    visibility: visible;
+  }
+
+  /* Position them at the top of the printed page */
+  #print-heading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-bottom: var(--space-sm);
+  }
+
+  #calendar {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+  }
+}
