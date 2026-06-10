@@ -148,7 +148,14 @@
 
   .sidebar {
     order: 2;
+    display: flex;
+    flex-direction: column;
+    height: 100%
   }
+
+  .layout-grid {
+  align-items: stretch;
+}
 
   .main-content {
     order: 1;
