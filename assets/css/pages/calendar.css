@@ -85,6 +85,15 @@
   box-shadow: none !important;
 }
 
+/* Make Previous and Next buttons the same width */
+.fc .fc-prev-button,
+.fc .fc-next-button {
+  min-width: 120px !important;   /* adjust to taste */
+  text-align: center !important;
+  justify-content: center !important;
+  display: inline-flex !important;
+}
+
 .fc .fc-button:hover,
 .fc .fc-button-primary:hover {
   background-color: var(--teal-dark) !important;
@@ -99,6 +108,12 @@
 .fc-header-toolbar .fc-toolbar-chunk:last-child {
   justify-content: flex-end;
   display: flex;
+}
+
+.fc-header-toolbar .fc-toolbar-chunk:nth-child(2) {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .fc-header-toolbar {
