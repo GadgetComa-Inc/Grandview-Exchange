@@ -2,6 +2,42 @@
    Page -- Ways to Use Grandview Exchange
 ============================================ */
 
+/* ---- Horizontal Card Layout ---- */
+.page-ways-to-use .card-horizontal .card-row {
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-start;
+}
+
+.page-ways-to-use .card-horizontal .card-body {
+  flex: 2;
+}
+
+.page-ways-to-use .card-horizontal .card-actions {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* ---- Row Layout ---- */
+.page-ways-to-use .card-row {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.page-ways-to-use .card-left {
+  flex: 2;
+}
+
+.page-ways-to-use .card-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* ---- Typography & Spacing Overrides ---- */
 .page-ways-to-use .card-horizontal .card-title {
   margin-bottom: var(--space-sm);
 }

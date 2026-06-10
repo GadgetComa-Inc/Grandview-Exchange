@@ -22,19 +22,6 @@
   }
 }
 
-/* ---- Help Center Shell ---- */
-.help-site { background: var(--bg-page); }
-
-.help-shell {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 var(--space-md);
-}
-
-.help-main {
-  width: 100%;
-}
-
 /* ---- Navigation Row (Breadcrumb + Buttons) ---- */
 .site-nav-row {
   display: flex;
