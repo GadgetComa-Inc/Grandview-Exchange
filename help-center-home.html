@@ -5,10 +5,9 @@
   <meta charset="UTF-8">
   <title>Help Center – Grandview Exchange</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
 <body class="help-site">
@@ -18,8 +17,9 @@
     <img src="assets/img/coverphoto.png" alt="Grandview Exchange Banner">
   </header>
 
-  <div class="site-shell">
+  <div class="help-shell">
 
+    <!-- NAVIGATION (loaded dynamically) -->
     <div id="site-nav"></div>
 
     <script>
@@ -28,108 +28,104 @@
         .then(html => {
           document.getElementById('site-nav').innerHTML = html;
 
-          // Set the current page name automatically
           const title = document.title.replace(' – Grandview Exchange', '');
           document.querySelector('.current-page').textContent = title;
         });
     </script>
 
-
     <!-- HERO BOX -->
     <section class="section">
       <div class="container">
-        <div class="card hero">
+        <div class="card card-hero">
           <h1>Grandview Exchange Help Center</h1>
           <p>Your guide to getting started, finding your way around, and making the most of our online community.</p>
         </div>
       </div>
     </section>
 
-    <!-- HELP TOPICS BOX -->
+    <!-- HELP TOPICS -->
     <section class="section">
       <div class="container">
 
-        <div class="card">
-          <h2>Help Topics</h2>
+        <div class="card card-light">
 
-          <div class="help-grid two-column">
+          <div class="card-body card-body-center">
+            <h2>Help Topics</h2>
+          </div>
+
+          <div class="help-grid-2col">
 
             <!-- CHOOSE HOW YOU WANT TO USE -->
-            <div class="card">
-              <div class="card__title">Choose How You Want to Use Grandview Exchange</div>
-              <div class="card__desc">
-                Pick the way you prefer to use Grandview Exchange -- the app, a web browser, or your email.
+            <div class="help-card">
+              <div class="help-card-title">Choose How You Want to Use Grandview Exchange</div>
+              <div class="help-card-desc">
+                Pick the way you prefer to use Grandview Exchange — the app, a web browser, or your email.
               </div>
-              <a class="btn-card" href="ways-to-use.html">See Your Options</a>
+              <a class="btn btn-card" href="ways-to-use.html">See Your Options</a>
             </div>
 
             <!-- FINDING & LOGGING IN -->
-            <div class="card">
-              <div class="card__title">Finding & Logging In</div>
-              <div class="card__desc">
-                Learn how to open Grandview Exchange from the app, your browser, or your email -- and what to do if
-                you're asked to log in.
+            <div class="help-card">
+              <div class="help-card-title">Finding & Logging In</div>
+              <div class="help-card-desc">
+                Learn how to open Grandview Exchange from the app, your browser, or your email — and what to do if you're asked to log in.
               </div>
-              <a class="btn-card" href="finding-login.html">Start Here</a>
+              <a class="btn btn-card" href="finding-login.html">Start Here</a>
             </div>
 
             <!-- READING, POSTING & REPLYING -->
-            <div class="card">
-              <div class="card__title">Reading, Posting & Replying</div>
-              <div class="card__desc">
-                Step-by-step instructions for reading messages, posting new ones, replying, and adding photos or
-                attachments.
+            <div class="help-card">
+              <div class="help-card-title">Reading, Posting & Replying</div>
+              <div class="help-card-desc">
+                Step-by-step instructions for reading messages, posting new ones, replying, and adding photos or attachments.
               </div>
-              <a class="btn-card" href="reading-posting-replying.html">Learn How to Communicate</a>
+              <a class="btn btn-card" href="help-center/doing-things/reading-posting-replying.html">Learn the Basics</a>
             </div>
 
             <!-- NAVIGATION & ORGANIZATION -->
-            <div class="card">
-              <div class="card__title">Navigation & Organization</div>
-              <div class="card__desc">
-                Understand club subgroups and hashtags, how conversations are organized, and how to find what you're
-                looking for.
+            <div class="help-card">
+              <div class="help-card-title">Navigation & Organization</div>
+              <div class="help-card-desc">
+                Understand club subgroups and hashtags, how conversations are organized, and how to find what you're looking for.
               </div>
-              <a class="btn-card" href="navigation-and-organization.html">Explore Organization</a>
+              <a class="btn btn-card" href="help-center/navigation/navigation-and-organization.html">Explore Organization</a>
             </div>
 
             <!-- EMAIL & NOTIFICATION SETTINGS -->
-            <div class="card">
-              <div class="card__title">Email & Notification Settings</div>
-              <div class="card__desc">
-                Control how many emails you receive, choose digest or summary formats, and adjust notifications for each
-                group.
+            <div class="help-card">
+              <div class="help-card-title">Email & Notification Settings</div>
+              <div class="help-card-desc">
+                Control how many emails you receive, choose digest or summary formats, and adjust notifications for each group.
               </div>
-              <a class="btn-card" href="email-and-notification-settings.html">Manage Email Settings</a>
+              <a class="btn btn-card" href="help-center/settings/email-and-notification-settings.html">Manage Email Settings</a>
             </div>
 
             <!-- ACCOUNT SETTINGS -->
-            <div class="card">
-              <div class="card__title">Account Settings</div>
-              <div class="card__desc">
+            <div class="help-card">
+              <div class="help-card-title">Account Settings</div>
+              <div class="help-card-desc">
                 Update your profile, change your password, and manage your Groups.io account information.
               </div>
-              <a class="btn-card" href="account-settings.html">Update Your Account</a>
+              <a class="btn btn-card" href="help-center/settings/account-settings.html">Update Your Account</a>
             </div>
 
             <!-- SUPPORT & REFERENCE -->
-            <div class="card">
-              <div class="card__title">Support & Reference</div>
-              <div class="card__desc">
-                Find community policies, the glossary, and learn how to get help if something isn’t working or you need
-                more assistance.
+            <div class="help-card">
+              <div class="help-card-title">Support & Reference</div>
+              <div class="help-card-desc">
+                Find community policies, the glossary, and learn how to get help if something isn’t working or you need more assistance.
               </div>
-              <a class="btn-card" href="support-and-reference.html">Get Help & Policies</a>
+              <a class="btn btn-card" href="help-center/support/support-and-reference.html">Get Help & Policies</a>
             </div>
 
-          </div><!-- end help-grid -->
+          </div><!-- end help-grid-2col -->
 
-        </div><!-- end card -->
+        </div><!-- end card-light -->
 
       </div>
     </section>
 
-  </div><!-- end site-shell -->
+  </div><!-- end help-shell -->
 
 </body>
 

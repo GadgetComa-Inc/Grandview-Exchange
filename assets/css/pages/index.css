@@ -2,18 +2,62 @@
    Page -- Index (Homepage)
 ============================================ */
 
-/* Reduce spacing between hero paragraphs */
-.card-hero p {
-  margin-bottom: var(--space-sm);
-}
+/* Scope all rules to the homepage */
+.page-index {
 
-/* Reduce spacing under Start Here title */
-.card-light h2 + p {
-  margin-top: var(--space-sm);
-  margin-bottom: var(--space-lg);
-}
+  /* --------------------------------------------
+     HERO
+  -------------------------------------------- */
 
-/* Match bottom spacing of Learn More to Start Here */
-.card-light:last-of-type {
-  padding-bottom: var(--space-xl);
+  /* Reduce spacing between hero paragraphs */
+  .card-hero p {
+    margin-bottom: var(--space-sm);
+  }
+
+  /* --------------------------------------------
+     START HERE & LEARN MORE — TITLE SPACING
+  -------------------------------------------- */
+
+  /* Reduce space between section title (h2) and the cards */
+  .card-light .card-body-center {
+    margin-bottom: var(--space-sm); /* tighter than default */
+  }
+
+  /* Reduce spacing under Start Here title (your original rule) */
+  .card-light h2 + p {
+    margin-top: var(--space-sm);
+    margin-bottom: var(--space-md); /* was space-lg — tightened */
+  }
+
+  /* --------------------------------------------
+     SECTION SPACING INSIDE CARD-LIGHT
+  -------------------------------------------- */
+
+  /* Reduce space between Learning and Support sections */
+  .card-light .section {
+    margin: var(--space-md) 0; /* was space-xl */
+  }
+
+  /* --------------------------------------------
+     CARD INTERNAL SPACING
+  -------------------------------------------- */
+
+  /* Reduce space between card text and button */
+  .card .card-desc {
+    margin-bottom: var(--space-sm); /* was space-md */
+  }
+
+  /* --------------------------------------------
+     BOTTOM SPACING OF CARD-LIGHT BOXES
+  -------------------------------------------- */
+
+  /* Match bottom spacing of Learn More to Start Here */
+  .card-light:last-of-type {
+    padding-bottom: var(--space-xl);
+  }
+
+  /* Ensure consistent bottom spacing after the last row of cards */
+  .card-light .card-actions:last-child {
+    margin-bottom: var(--space-lg);
+  }
 }
