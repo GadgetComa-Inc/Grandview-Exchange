@@ -21,8 +21,9 @@
 
 /* ---- Button Modifiers ---- */
 .btn-secondary {
-  background: var(--teal-light);
-  color: var(--teal-dark);
+  background: white;
+  border: 1px solid var(--teal);
+  color: var(--teal);
 }
 
 .btn-secondary:hover {
