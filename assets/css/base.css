@@ -24,6 +24,7 @@
   --space-md: 16px;
   --space-lg: 24px;
   --space-xl: 32px;
+  --content-width: 1050px;
 }
 
 /* ---- Global Reset ---- */
@@ -42,16 +43,30 @@ img {
 }
 
 /* ---- Typography ---- */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   color: var(--text-dark);
   margin: 0 0 var(--space-sm);
   line-height: 1.25;
 }
 
-h1 { font-size: 2rem; }
-h2 { font-size: 1.6rem; }
-h3 { font-size: 1.3rem; }
-h4 { font-size: 1.1rem; }
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+h4 {
+  font-size: 1.1rem;
+}
 
 /* Global content spacing */
 h4 {
@@ -71,23 +86,26 @@ li {
 
 /* ---- Global Layout Wrapper ---- */
 .site-shell {
-  max-width: 1300px;
+  max-width: var(--content-width);
   margin: 0 auto;
   padding: 0 var(--space-md);
 }
 
 /* ---- Header & Footer ---- */
 .site-header img {
-  width: 60%;          /* shrink to 60% of original width */
-  height: auto;        /* keep aspect ratio */
+  width: 100%;
+  max-width: var(--content-width);
+  height: auto;
   display: block;
-  margin: 0 auto;      /* center the image */
-  max-width: 100%;     /* prevent overflow on small screens */
+  margin: 0 auto;
 }
 
+
 .site-header {
-  background: var(--bg-page); /* keep your teal-tinted background */
-  padding: var(--space-lg) 0; /* increase vertical breathing room */
+  background: var(--bg-page);
+  /* keep your teal-tinted background */
+  padding: var(--space-lg) 0;
+  /* increase vertical breathing room */
   text-align: center;
 }
 
