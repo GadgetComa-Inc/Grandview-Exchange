@@ -11,7 +11,6 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/main.css" />
 
-  <!-- FullCalendar -->
   <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/main.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/google-calendar@6.1.10/index.global.min.js"></script>
@@ -19,117 +18,103 @@
 
 <body class="help-site">
 
-  <!-- Site Banner -->
   <header class="site-header">
     <img src="assets/img/coverphoto.png" alt="Grandview Exchange Banner" />
   </header>
 
   <div class="site-shell">
 
-    <!-- NAVIGATION (loaded dynamically) -->
     <div id="site-nav"></div>
-
     <script>
       fetch('/includes/site-nav.html')
         .then(r => r.text())
         .then(html => {
           document.getElementById('site-nav').innerHTML = html;
-
           const title = document.title.replace(' – Grandview Exchange', '');
           document.querySelector('.current-page').textContent = title;
         });
     </script>
 
-    <!-- HERO BOX -->
-    <section class="section">
-      <div class="card card-hero">
-        <h1>The Grandview Community Calendar</h1>
-        <p>
-          This calendar shows upcoming activities, meetings, and events happening at The Grandview.
-          You can view it online, print it, or subscribe to it so events will show up on your Google, Apple, or
-          Microsoft calendar.
-        </p>
-      </div>
+    <section class="page-intro-summary" style="margin-bottom: var(--space-xl);">
+      <h1>The Grandview Community Calendar</h1>
+      <p class="lead-text">
+        This calendar shows upcoming activities, meetings, and events happening at The Grandview.
+      </p>
+      <p>
+        You can view it online, print it, or subscribe to it so events will show up on your Google, Apple, or
+        Microsoft calendar.
+      </p>
     </section>
 
-    <!-- CALENDAR + SIDEBAR LAYOUT -->
-    <section class="section">
-      <div class="layout-2col">
+    <div class="main-layout-wrapper">
 
-        <!-- SIDEBAR (separate box) -->
-        <aside class="calendar-sidebar sidebar-box">
-
-          <!-- SELECT VIEW -->
-          <div class="card sidebar-card">
-            <h3 class="sidebar-title">Select View</h3>
-            <div class="sidebar-content">
-              <label><input type="radio" name="view" value="listMonth" checked> Agenda</label>
-              <label><input type="radio" name="view" value="timeGridWeek"> Week</label>
-              <label><input type="radio" name="view" value="dayGridMonth"> Month</label>
-            </div>
-          </div>
-
-          <!-- SHOW CALENDARS -->
-          <div class="card sidebar-card">
-            <h3 class="sidebar-title">Show Calendars</h3>
-            <div class="sidebar-content">
-              <label><input type="checkbox" class="cal-toggle" data-cal="grandview" checked> Grandview Events</label>
-              <label><input type="checkbox" class="cal-toggle" data-cal="bocce" checked> Bocce Club</label>
-              <label><input type="checkbox" class="cal-toggle" data-cal="caregiver" checked> Caregiver Support</label>
-              <label><input type="checkbox" class="cal-toggle" data-cal="fitness" checked> Fitness</label>
-              <label><input type="checkbox" class="cal-toggle" data-cal="itclub" checked> Computer/IT Club</label>
-              <label><input type="checkbox" class="cal-toggle" data-cal="mahjongg" checked> Mah Jongg Club</label>
-              <label><input type="checkbox" class="cal-toggle" data-cal="ressvcs" checked> Resident Services</label>
-              <label><input type="checkbox" class="cal-toggle" data-cal="speaker" checked> Speaker Presentation</label>
-              <label><input type="checkbox" class="cal-toggle" data-cal="tvclub" checked> TV Club</label>
-            </div>
-          </div>
-
-          <!-- TAKE IT WITH YOU -->
-          <div class="card sidebar-card">
-            <h3 class="sidebar-title">Take It With You</h3>
-            <p class="sidebar-description">
-              You can print your calendar or subscribe to have it show up in your Google, Apple, or Microsoft calendar
-              app.
-            </p>
-
-            <div class="sidebar-content actions-stack">
-              <button id="print-calendar" class="btn">Print</button>
-              <button id="open-subscribe-modal" class="btn">Subscribe</button>
-            </div>
-          </div>
-
-        </aside>
-
-        <!-- MAIN CALENDAR AREA -->
-        <div class="main-content">
-          <div class="card">
-            <h2 id="print-heading" class="print-only">Grandview Community Calendar</h2>
-            <div id="calendar"></div>
+      <aside class="site-sidebar">
+        
+        <div class="sidebar-item">
+          <h3 class="sidebar-item-title">Select View</h3>
+          <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px;">
+            <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px;"><input type="radio" name="view" value="listMonth" checked> Agenda</label>
+            <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px;"><input type="radio" name="view" value="timeGridWeek"> Week</label>
+            <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px;"><input type="radio" name="view" value="dayGridMonth"> Month</label>
           </div>
         </div>
 
-      </div>
-    </section>
+        <div class="sidebar-item">
+          <h3 class="sidebar-item-title">Show Calendars</h3>
+          <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px;">
+            <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px;"><input type="checkbox" class="cal-toggle" data-cal="grandview" checked> Grandview Events</label>
+            <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px;"><input type="checkbox" class="cal-toggle" data-cal="bocce" checked> Bocce Club</label>
+            <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px;"><input type="checkbox" class="cal-toggle" data-cal="caregiver" checked> Caregiver Support</label>
+            <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px;"><input type="checkbox" class="cal-toggle" data-cal="fitness" checked> Fitness</label>
+            <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px;"><input type="checkbox" class="cal-toggle" data-cal="itclub" checked> Computer/IT Club</label>
+            <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px;"><input type="checkbox" class="cal-toggle" data-cal="mahjongg" checked> Mah Jongg Club</label>
+            <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px;"><input type="checkbox" class="cal-toggle" data-cal="ressvcs" checked> Resident Services</label>
+            <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px;"><input type="checkbox" class="cal-toggle" data-cal="speaker" checked> Speaker Presentation</label>
+            <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px;"><input type="checkbox" class="cal-toggle" data-cal="tvclub" checked> TV Club</label>
+          </div>
+        </div>
 
-  </div>
+        <div class="sidebar-item">
+          <h3 class="sidebar-item-title">Take It With You</h3>
+          <p class="sidebar-desc" style="margin-bottom: var(--space-md);">
+            You can print your calendar or subscribe to have it show up in your Google, Apple, or Microsoft calendar app.
+          </p>
 
-  <!-- Footer -->
-  <footer class="site-footer">
+          <div class="actions-stack">
+            <button id="print-calendar" class="btn btn-secondary" style="width: 100%; margin-bottom: 12px; padding: 12px; font-size: 1rem; font-weight: 600;">
+              🖨️ Print Calendar
+            </button>
+            <button id="open-subscribe-modal" class="btn" style="width: 100%; padding: 12px; font-size: 1rem; font-weight: 600;">
+              📅 Subscribe
+            </button>
+          </div>
+        </div>
+
+      </aside>
+
+      <main class="main-content-area">
+        <div class="card" style="padding: var(--space-lg);">
+          <h2 id="print-heading" class="print-only" style="font-family: 'Lora', serif; margin-bottom: var(--space-md);">
+            Grandview Community Calendar
+          </h2>
+          <div id="calendar"></div>
+        </div>
+      </main>
+
+    </div></div><footer class="site-footer">
     <p>
       © 2026 Grandview Exchange ·
       Questions? <a href="mailto:admin@grandviewexchange.com">Contact Us</a>
     </p>
   </footer>
 
-  <!-- FULLCALENDAR SCRIPT -->
+
   <script>
     document.addEventListener('DOMContentLoaded', function () {
 
       /* ------------------------------
-   SUBSCRIBE MODAL LOGIC
---------------------------------*/
-
+         SUBSCRIBE MODAL LOGIC
+      --------------------------------*/
       const subscribeModal = document.getElementById('subscribeModal');
       const openSubscribeModal = document.getElementById('open-subscribe-modal');
       const closeSubscribeModal = document.getElementById('subscribeModalClose');
@@ -178,7 +163,6 @@
 
         window.open(url, '_blank');
 
-        // Ask user if they want to subscribe to another
         setTimeout(() => {
           const again = confirm("Subscription added. Would you like to subscribe to another calendar?");
           if (!again) {
@@ -188,6 +172,9 @@
       };
 
 
+      /* ------------------------------
+         FULLCALENDAR MOUNTING ENGINE
+      --------------------------------*/
       const calendarEl = document.getElementById('calendar');
 
       const eventSourceConfigs = {
@@ -254,7 +241,6 @@
 
         viewDidMount: function (info) {
           const toolbar = document.querySelector('.fc-header-toolbar');
-
           if (!toolbar) return;
 
           if (info.view.type === 'listMonth') {
@@ -269,13 +255,10 @@
 
         eventClick: function (info) {
           info.jsEvent.preventDefault();
-
           const event = info.event;
 
-          // Title
           document.getElementById('modalTitle').textContent = event.title;
 
-          // Date
           const start = event.start;
           const dateOptions = {
             weekday: 'long',
@@ -284,51 +267,37 @@
             hour: 'numeric',
             minute: '2-digit'
           };
-          document.getElementById('modalDate').textContent =
-            start.toLocaleString('en-US', dateOptions);
+          document.getElementById('modalDate').textContent = start.toLocaleString('en-US', dateOptions);
 
-          // Location
           document.getElementById('modalLocation').textContent =
-            event.extendedProps.location
-              ? `Location: ${event.extendedProps.location}`
-              : '';
+            event.extendedProps.location ? `Location: ${event.extendedProps.location}` : '';
 
-          // Description with proper links
           let desc = event.extendedProps.description || "";
-
-          // Basic sanitization: remove script/style blocks
           desc = desc.replace(/<(script|style)[^>]*>[\s\S]*?<\/(script|style)>/gi, '');
 
           if (desc.includes('<a ')) {
-            // Description already contains HTML links – keep as HTML
             desc = desc.replace(/\n/g, '<br>');
           } else {
-            // Plain text: convert URLs to links
             desc = desc
-              .replace(
-                /(https?:\/\/[^\s]+)/g,
-                '<a href="$1" target="_blank" rel="noopener">$1</a>'
-              )
+              .replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>')
               .replace(/\n/g, '<br>');
           }
 
           document.getElementById('modalDescription').innerHTML = desc;
-
-          // Show modal
           document.getElementById('eventModal').style.display = 'flex';
         }
       });
 
       calendar.render();
 
-      // View switching
+      // View switching radio setup
       document.querySelectorAll('input[name="view"]').forEach(radio => {
         radio.addEventListener('change', () => {
           calendar.changeView(radio.value);
         });
       });
 
-      // Calendar toggles
+      // Calendar checkbox filter setup
       document.querySelectorAll('.cal-toggle').forEach(cb => {
         cb.addEventListener('change', function () {
           const id = this.dataset.cal;
@@ -342,13 +311,13 @@
         });
       });
 
-      // Print
+      // Print operational command
       document.getElementById('print-calendar').onclick = () => {
         calendar.changeView('listMonth');
         setTimeout(() => window.print(), 200);
       };
 
-      // Modal close behavior
+      // General Event Modal close triggers
       document.getElementById('modalClose').onclick = () => {
         document.getElementById('eventModal').style.display = 'none';
       };
@@ -362,52 +331,61 @@
     });
   </script>
 
-  <!-- EVENT DETAILS MODAL -->
   <div id="eventModal" class="modal-overlay" style="display:none;">
     <div class="modal-card">
       <button class="modal-close" id="modalClose">×</button>
-
-      <h3 id="modalTitle"></h3>
-      <p id="modalDate"></p>
-      <p id="modalLocation"></p>
-      <p id="modalDescription"></p>
-
+      <h3 id="modalTitle" style="font-family: 'Lora', serif; margin-bottom: 8px;"></h3>
+      <p id="modalDate" style="font-size: 1rem; color: var(--text-dark); margin-bottom: 6px;"></p>
+      <p id="modalLocation" style="font-size: 1rem; font-weight: 600; color: var(--text-dark); margin-bottom: 12px;"></p>
+      <p id="modalDescription" style="line-height: 1.5; color: var(--text-body);"></p>
     </div>
   </div>
 
-  <!-- SUBSCRIBE MODAL -->
   <div id="subscribeModal" class="modal-overlay" style="display:none;">
     <div class="modal-card">
       <button class="modal-close" id="subscribeModalClose">×</button>
 
-      <h3>Subscribe to Grandview Calendars</h3>
+      <h3 style="font-family: 'Lora', serif; font-size: 1.4rem; color: var(--text-dark); margin-bottom: 16px;">
+        Subscribe to Grandview Calendars
+      </h3>
 
-      <!-- Calendar selection -->
-      <label for="calendarSelect"><strong>Select a calendar:</strong></label>
-      <select id="calendarSelect" class="modal-select">
-        <option value="grandview">Grandview Events</option>
-        <option value="bocce">Bocce</option>
-        <option value="caregiver">Caregiver Support</option>
-        <option value="fitness">Fitness</option>
-        <option value="itclub">Computer/IT Club</option>
-        <option value="mahjongg">Mah Jongg Club</option>
-        <option value="ressvcs">Resident Services</option>
-        <option value="speaker">Speaker Series</option>
-        <option value="tvclub">TV Club</option>
-      </select>
-
-      <!-- Platform selection -->
-      <div class="modal-section">
-        <strong>Choose your calendar app:</strong><br>
-        <label><input type="radio" name="subPlatform" value="google" checked> Google Calendar</label><br>
-        <label><input type="radio" name="subPlatform" value="apple"> Apple Calendar</label><br>
-        <label><input type="radio" name="subPlatform" value="outlook"> Outlook / Other</label>
+      <div style="margin-bottom: var(--space-md);">
+        <label for="calendarSelect" style="display: block; margin-bottom: 6px; color: var(--text-dark);">
+          <strong>Select a calendar:</strong>
+        </label>
+        <select id="calendarSelect" class="modal-select" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid var(--border); font-size: 1rem;">
+          <option value="grandview">Grandview Events</option>
+          <option value="bocce">Bocce</option>
+          <option value="caregiver">Caregiver Support</option>
+          <option value="fitness">Fitness</option>
+          <option value="itclub">Computer/IT Club</option>
+          <option value="mahjongg">Mah Jongg Club</option>
+          <option value="ressvcs">Resident Services</option>
+          <option value="speaker">Speaker Series</option>
+          <option value="tvclub">TV Club</option>
+        </select>
       </div>
 
-      <button id="subscribeNow" class="btn">Subscribe</button>
+      <div class="modal-section" style="margin: 20px 0;">
+        <strong style="display: block; margin-bottom: 8px; color: var(--text-dark);">Choose your calendar app:</strong>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px;">
+            <input type="radio" name="subPlatform" value="google" checked> Google Calendar
+          </label>
+          <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px;">
+            <input type="radio" name="subPlatform" value="apple"> Apple Calendar
+          </label>
+          <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px;">
+            <input type="radio" name="subPlatform" value="outlook"> Outlook / Other
+          </label>
+        </div>
+      </div>
+
+      <button id="subscribeNow" class="btn" style="display: block; margin: var(--space-lg) auto 0; padding: 10px 24px;">
+        Subscribe
+      </button>
     </div>
   </div>
 
 </body>
-
 </html>
