@@ -1,8 +1,11 @@
-/* ============================================
-   Layout -- Grid, Shell, Navigation
-============================================ */
+/* ============================================================
+   GLOBAL LAYOUT SYSTEM
+   Grid, Navigation, Sections, Two-Column Layout
+============================================================ */
 
-/* ---- Unified Grid System ---- */
+/* ------------------------------
+   Grid System
+------------------------------ */
 .grid {
   display: grid;
   gap: var(--space-lg);
@@ -22,7 +25,9 @@
   }
 }
 
-/* ---- Navigation Row (Breadcrumb + Buttons) ---- */
+/* ------------------------------
+   Navigation Row (Breadcrumb + Buttons)
+------------------------------ */
 .site-nav-row {
   display: flex;
   justify-content: space-between;
@@ -76,18 +81,15 @@
   display: inline-block;
   font-size: 0.95rem;
   white-space: nowrap;
-  /* prevents wrapping on small screens */
 }
 
 .btn-nav-return:hover {
   background: #cfeaea;
 }
 
-
-/* ============================================
-   Layout -- Sections & Headings
-============================================ */
-
+/* ------------------------------
+   Sections & Headings
+------------------------------ */
 .section {
   margin: var(--space-xl) 0;
 }
@@ -101,39 +103,142 @@
   margin-bottom: var(--space-sm);
 }
 
+.section-block {
+  margin-bottom: var(--space-lg);
+}
+
+.section-block h2 {
+  margin-bottom: var(--space-sm);
+}
+
 /* Reduce spacing between stacked sections inside light cards */
-.card-light .section + .section {
+.card-light .section+.section {
   margin-top: var(--space-lg);
 }
 
-/* ============================================
-   Global Two-Column Layout with Sidebar
-============================================ */
-
-.layout-2col {
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: var(--space-lg);
-  align-items: start;
+/* NEW: Unified section description spacing */
+.section-desc {
+  margin-bottom: var(--space-sm);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-body);
+  text-align: center;
 }
 
-/* Sidebar always in its own card */
+.section-desc+.grid {
+  margin-top: var(--space-sm);
+}
+
+/* ------------------------------
+   Two-Column Layout (Sidebar + Main Content)
+------------------------------ */
+.layout-2col {
+  display: flex;
+  gap: var(--space-lg);
+  align-items: stretch;
+  /* ensures sidebar aligns with card grid */
+}
+
+/* Sidebar column */
 .sidebar {
   display: flex;
   flex-direction: column;
   gap: var(--space-lg);
+  flex: 0 0 260px;
+  /* narrower sidebar */
+  padding-top: 0;
 }
 
-.sidebar .card {
-  padding: var(--space-md);
+/* Remove old sidebar card wrappers */
+.sidebar>.card {
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
 }
 
-.sidebar .btn,
-.sidebar .btn-card {
-  width: 100%;
+/* Sidebar outer box styled like main cards */
+.sidebar-box {
+  background: var(--card-bg-tint, #ffffff);
+  border-radius: 10px;
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  height: 100%;
+  justify-content: flex-start;
+  margin-top: 0;
+  /* aligns with Start Here cards */
 }
 
-/* Main content area */
+/* Sidebar heading (outside the box) */
+.sidebar-heading {
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+/* Sidebar item titles */
+.sidebar-item-title {
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin: 0 0 var(--space-xs) 0;
+  text-align: center;
+}
+
+/* Sidebar description */
+.sidebar-desc {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--text-body);
+}
+
+.sidebar-intro {
+  font-size: 1rem;                 /* match section-desc */
+  line-height: 1.5;                /* match section-desc */
+  color: var(--text-body);
+  text-align: center;
+  margin: var(--space-sm) 0 var(--space-md);
+}
+
+/* Each link block */
+.sidebar-item {
+  padding-bottom: var(--space-md);
+  margin-bottom: var(--space-md);
+  border-bottom: 1px solid var(--border);
+}
+
+.sidebar-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Center only the link */
+.sidebar-link {
+  display: inline-block;
+  margin: 0 auto;
+  color: var(--teal-dark);
+  font-weight: 600;
+  text-decoration: none;
+  text-decoration: underline;
+  /* NEW */
+  text-underline-offset: 3px;
+  /* NEW */
+}
+
+.sidebar-link:hover {
+  color: var(--teal);                       /* NEW: slight color shift */
+  text-decoration-thickness: 2px;           /* NEW: stronger underline */
+}
+
+/* Main content column */
 .main-content {
   display: flex;
   flex-direction: column;
@@ -143,65 +248,109 @@
 /* Responsive collapse */
 @media (max-width: 800px) {
   .layout-2col {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 
   .sidebar {
     order: 2;
-    display: flex;
-    flex-direction: column;
-    height: 100%
   }
-
-  .layout-grid {
-  align-items: stretch;
-}
 
   .main-content {
     order: 1;
   }
 }
-/* Sidebar card title centered, content left-aligned */
-.sidebar-card h3 {
-  text-align: center;
+
+.main-content>.card.card-light {
+  padding: 0;
+}
+
+/* ============================================================
+   CARD SYSTEM
+============================================================ */
+
+/* Base Card */
+.card {
+  background: var(--bg-white);
+  border: none;
+  border-radius: 8px;
+  padding: var(--space-md);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+/* Card Content */
+.card-title {
+  font-size: 1.2rem;
   margin-bottom: var(--space-sm);
 }
 
-.sidebar-card .sidebar-content,
-.sidebar-card label {
-  text-align: left;
-  display: block;
-  margin-bottom: var(--space-xs);
+.card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
 }
 
-.sidebar-card .btn {
-  display: block;
+.card-desc {
   margin-bottom: var(--space-xs);
+  color: var(--text-body);
+  flex: 1;
 }
 
-.sidebar-card .sidebar-content {
-  width: 100%;
+/* Card Body */
+.card-body {
+  padding-bottom: var(--space-xs);
+}
+
+/* Hero box still uses card-body-center */
+.card-light .card-body-center {
+  margin-bottom: var(--space-md);
+}
+
+/* Light Wrapper Card */
+.card-light {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: var(--space-lg);
+}
+
+/* Horizontal Cards */
+.card-horizontal {
   display: flex;
-  flex-direction: column;
-  gap: var(--space-sm); /* slightly bigger spacing */
+  gap: var(--space-lg);
+  align-items: flex-start;
 }
 
-/* Fix subscribe button width to match Print button */
-.sidebar-card .sidebar-content .btn {
-  width: calc(100% - 2 * var(--space-md)); /* match card padding */
-  margin: 0 auto var(--space-sm);          /* center + spacing */
-  display: block;
+.card-horizontal .card-body {
+  flex: 2;
 }
 
-/* Match spacing of other sidebar cards */
-.sidebar-card .sidebar-title {
-  margin-bottom: 8px; /* same as View and Calendars cards */
+.card-horizontal .card-actions {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-/* Description spacing tightened */
-.sidebar-card .sidebar-description {
-  margin-top: 0;
-  margin-bottom: 16px;
-  font-size: 0.95rem;
-  line-height: 1.4;
+.card-actions {
+  margin-top: auto;        /* anchors to bottom */
+  display: flex;
+  justify-content: center; /* centers the button */
+}
+
+
+/* Hero Card */
+.card-hero {
+  padding: var(--space-md);
+}
+
+.card-hero h1 {
+  text-align: center;
+  margin-bottom: var(--space-xs);
+}
+
+.card-hero p {
+  margin: 0;
+  text-align: left;
 }

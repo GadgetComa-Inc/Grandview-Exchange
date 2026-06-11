@@ -203,7 +203,18 @@
   display: none !important;
 }
 
-/* Calendar page sidebar width */
+.calendar-sidebar label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: var(--space-xs);
+}
+
+.calendar-sidebar h3 {
+  text-align: center;
+  margin-bottom: var(--space-sm);
+}
+
 .calendar-sidebar {
-  flex: 0 0 170px;   /* about 2/3 of 260px */
+  margin-top: var(--space-sm);
 }

@@ -1,12 +1,9 @@
 /* Global resets, typography */
 @import url("base.css");
 
-/* Layout system (grid, container, spacing) */
+/* Layout system (grid, container, spacing, cards) */
 @import url("layout.css");
-
-/* Components */
-@import url("components/button.css");
-@import url("components/card.css");
+@import url("button.css");
 
 /* Page‑specific overrides */
 @import url("pages/ways-to-use.css");
