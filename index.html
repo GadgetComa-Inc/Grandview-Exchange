@@ -10,183 +10,203 @@
 </head>
 <body class="page-index">
 
+  <!-- Universal Header Banner -->
   <header class="site-header">
     <img src="assets/img/coverphoto.png" alt="Grandview Exchange -- Connecting Our Community" />
   </header>
 
+  <!-- Global Content Shell -->
   <div class="site-shell">
 
+    <!-- Unified Dynamic Navigation Hook -->
     <div id="site-nav"></div>
     <script>
       fetch('/includes/site-nav.html')
         .then(r => r.text())
         .then(html => {
           document.getElementById('site-nav').innerHTML = html;
-
           const title = document.title.replace(' – Grandview Exchange', '');
           const currentPageElem = document.querySelector('.current-page');
           if (currentPageElem) currentPageElem.textContent = title;
         });
     </script>
 
+    <!-- Unboxed Descriptive Summary Header -->
     <section class="page-intro-summary">
       <h1>Grandview Exchange Welcome Center</h1>
       <p class="lead-text">
-        This site is your starting point for learning how to use Grandview Exchange -- our community’s online gathering place where residents share news, join conversations, explore club activities, and stay connected.
+        This site is your starting point for learning how to use Grandview Exchange -- our community’s online
+        gathering place where residents share news, join conversations, explore club activities, and stay connected[span_3](start_span)[span_3](end_span).
       </p>
       <p>
-        Inside the Welcome Center, you’ll find simple step‑by‑step guides to help you get started, choose how you want to access Grandview Exchange, log in, and learn the basics of reading, posting, and replying.
+        Inside the Welcome Center, you’ll find simple step‑by‑step guides to help you get started, choose how you
+        want to access Grandview Exchange, log in, and learn the basics of reading, posting, and replying.
       </p>
     </section>
 
+    <!-- Primary Responsive Grid Framework -->
     <div class="main-layout-wrapper">
 
+      <!-- Unboxed Navigation Sidebar -->
       <aside class="site-sidebar">
-        <div class="sidebar-block">
-          <h3>Links</h3>
-          <p class="sidebar-note">More useful links.</p>
-          
-          <div class="vertical-button-stack" style="margin-top: var(--space-md); gap: var(--space-md);">
-            <div class="sidebar-item">
-              <h4 style="margin: 0 0 var(--space-xs); color: var(--text-dark);">Grandview Community Calendar</h4>
-              <p class="sidebar-note" style="margin-bottom: var(--space-xs);">
-                A calendar showing upcoming events and activities in the Grandview community.
-              </p>
-              <a class="breadcrumb" style="color: var(--teal); font-weight: 600;" href="calendar.html">Open Calendar</a>
-            </div>
+        <h2 class="sidebar-heading">Links</h2>
+        <p class="sidebar-intro">More useful links[span_4](start_span)[span_4](end_span).</p>
 
-            <div class="sidebar-item" style="border-top: 1px solid var(--border); padding-top: var(--space-md);">
-              <h4 style="margin: 0 0 var(--space-xs); color: var(--text-dark);">Grandview Exchange Website</h4>
-              <p class="sidebar-note" style="margin-bottom: var(--space-xs);">
-                Visit the Grandview Exchange website.
-              </p>
-              <a class="breadcrumb" style="color: var(--teal); font-weight: 600;" href="https://grandviewexchange.groups.io/g/Home" target="_blank">Visit Website</a>
-            </div>
+        <div class="sidebar-item">
+          <h3 class="sidebar-item-title">Grandview Community Calendar</h3>
+          <p class="sidebar-desc">
+            A calendar showing upcoming events and activities in the Grandview community[span_5](start_span)[span_5](end_span).
+          </p>
+          <a class="sidebar-link" href="calendar.html">Open Calendar[span_6](start_span)[span_6](end_span)</a>
+        </div>
 
-            <div class="sidebar-item" style="border-top: 1px solid var(--border); padding-top: var(--space-md);">
-              <h4 style="margin: 0 0 var(--space-xs); color: var(--text-dark);">MyErickson</h4>
-              <p class="sidebar-note" style="margin-bottom: var(--space-xs);">
-                MyErickson is an app designed for residents to enhance their daily living experiences within the community.
-                <br><em style="font-size: 0.85rem; color: var(--text-muted);">Please note that Grandview Exchange and MyErickson are not connected in any way.</em>
-              </p>
-              <a class="breadcrumb" style="color: var(--teal); font-weight: 600;" href="https://myerickson.erickson.com/" target="_blank">Go to MyErickson</a>
-            </div>
-          </div>
+        <div class="sidebar-item">
+          <h3 class="sidebar-item-title">Grandview Exchange Website</h3>
+          <p class="sidebar-desc">
+            Visit the Grandview Exchange website[span_7](start_span)[span_7](end_span).
+          </p>
+          <a class="sidebar-link" href="https://grandviewexchange.groups.io/g/Home" target="_blank">
+            Visit Website[span_8](start_span)[span_8](end_span)
+          </a>
+        </div>
+
+        <div class="sidebar-item">
+          <h3 class="sidebar-item-title">MyErickson</h3>
+          <p class="sidebar-desc">
+            MyErickson is an app designed for residents to enhance their daily living experiences within the community[span_9](start_span)[span_9](end_span).
+            <em>Please note that Grandview Exchange and MyErickson are not connected in any way[span_10](start_span)[span_10](end_span).</em>
+          </p>
+          <a class="sidebar-link" href="https://myerickson.erickson.com/" target="_blank">
+            Go to MyErickson[span_11](start_span)[span_11](end_span)
+          </a>
         </div>
       </aside>
 
+      <!-- Main Action Panels Workspace -->
       <main class="main-content-area">
 
+        <!-- START HERE WORKFLOW -->
         <section class="section-block">
-          <h2 style="font-family: 'Lora', serif; border-bottom: 2px solid var(--border); padding-bottom: var(--space-xs); margin-bottom: var(--space-xs);">Start Here</h2>
-          <p style="color: var(--text-muted); margin-bottom: var(--space-lg);">New to Grandview Exchange? Follow these simple steps to get started.</p>
+          <h2>Start Here[span_12](start_span)[span_12](end_span)</h2>
+          <p class="section-desc">New to Grandview Exchange? Follow these simple steps to get started[span_13](start_span)[span_13](end_span).</p>
 
           <div class="grid grid-2col">
 
+            <!-- STEP 1 -->
             <div class="card">
               <div class="card-body">
-                <div class="card-title" style="font-weight: 600;">1. Register for an Account</div>
+                <div class="card-title">1. Register for an Account[span_14](start_span)[span_14](end_span)</div>
                 <div class="card-desc">
-                  If you’re new to Grandview Exchange, create your free account to join the community.
+                  If you’re new to Grandview Exchange, create your free account to join the community[span_15](start_span)[span_15](end_span).
                 </div>
               </div>
-              <div class="card-actions card-actions-center">
+              <div class="card-actions-center">
                 <a class="btn btn-card" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdtetperz0gnDC_JVtYIEM75UegW_C1uANZG1yHtHxAY-OyXQ/viewform">
-                  Register Now
+                  Register Now[span_16](start_span)[span_16](end_span)
                 </a>
               </div>
             </div>
 
+            <!-- STEP 2 -->
             <div class="card">
               <div class="card-body">
-                <div class="card-title" style="font-weight: 600;">2. Choose How You Want to Use Grandview Exchange</div>
+                <div class="card-title">2. Choose How to Use the Site</div>
                 <div class="card-desc">
-                  Decide whether you want to use the Groups.io app, your web browser, or your email.
+                  Decide whether you want to use the Groups.io app, your web browser, or your email[span_17](start_span)[span_17](end_span).
                 </div>
               </div>
-              <div class="card-actions card-actions-center">
-                <a class="btn btn-card" href="ways-to-use.html">View Your Options</a>
+              <div class="card-actions-center">
+                <a class="btn btn-card" href="ways-to-use.html">View Your Options[span_18](start_span)[span_18](end_span)</a>
               </div>
             </div>
 
+            <!-- STEP 3 -->
             <div class="card">
               <div class="card-body">
-                <div class="card-title" style="font-weight: 600;">3. Find the Site & Log In</div>
+                <div class="card-title">3. Find the Site & Log In[span_19](start_span)[span_19](end_span)</div>
                 <div class="card-desc">
-                  Learn how to get to Grandview Exchange, check your login status, and sign in.
+                  Learn how to get to Grandview Exchange, check your login status, and sign in[span_20](start_span)[span_20](end_span).
                 </div>
               </div>
-              <div class="card-actions card-actions-center">
-                <a class="btn btn-card" href="finding-login.html">How to Log In</a>
+              <div class="card-actions-center">
+                <a class="btn btn-card" href="finding-login.html">How to Log In[span_21](start_span)[span_21](end_span)</a>
               </div>
             </div>
 
+            <!-- STEP 4 -->
             <div class="card">
               <div class="card-body">
-                <div class="card-title" style="font-weight: 600;">4. Learn How to Read, Post & Reply</div>
+                <div class="card-title">4. Learn to Read, Post & Reply</div>
                 <div class="card-desc">
-                  Understand how to read messages, post new ones, and reply to others.
+                  Understand how to read messages, post new ones, and reply to others[span_22](start_span)[span_22](end_span).
                 </div>
               </div>
-              <div class="card-actions card-actions-center">
-                <a class="btn btn-card" href="help-center/doing-things/reading-posting-replying.html">Learn the Basics</a>
+              <div class="card-actions-center">
+                <a class="btn btn-card" href="help-center/doing-things/reading-posting-replying.html">
+                  Learn the Basics[span_23](start_span)[span_23](end_span)
+                </a>
               </div>
             </div>
 
           </div>
         </section>
 
-        <section class="section-block" style="margin-top: var(--space-xl);">
-          <h2 style="font-family: 'Lora', serif; border-bottom: 2px solid var(--border); padding-bottom: var(--space-xs); margin-bottom: var(--space-xs);">What's Next?</h2>
-          <p style="color: var(--text-muted); margin-bottom: var(--space-lg);">Here are some additional resources to continue your Grandview Exchange journey.</p>
+        <!-- WHAT'S NEXT REFERENCES -->
+        <section class="section-block">
+          <h2>What's Next?[span_24](start_span)[span_24](end_span)</h2>
+          <p class="section-desc">Here are some additional resources to continue your Grandview Exchange journey[span_25](start_span)[span_25](end_span).</p>
 
           <div class="grid grid-2col">
 
+            <!-- HELP CENTER -->
             <div class="card">
               <div class="card-body">
-                <div class="card-title" style="font-weight: 600;">📖 View the Help Center</div>
+                <div class="card-title">📖 View the Help Center[span_26](start_span)[span_26](end_span)</div>
                 <div class="card-desc">
-                  Browse the new HTML help center with organized guidance, navigation, and reference pages.
+                  Browse the new HTML help center with organized guidance, navigation, and reference pages[span_27](start_span)[span_27](end_span).
                 </div>
               </div>
-              <div class="card-actions card-actions-center">
-                <a class="btn btn-card" href="help-center-home.html">Open Help Center</a>
+              <div class="card-actions-center">
+                <a class="btn btn-card" href="help-center-home.html">Open Help Center[span_28](start_span)[span_28](end_span)</a>
               </div>
             </div>
 
+            <!-- TRAINING -->
             <div class="card">
               <div class="card-body">
-                <div class="card-title" style="font-weight: 600;">🎓 Sign Up for Training</div>
+                <div class="card-title">🎓 Sign Up for Training[span_29](start_span)[span_29](end_span)</div>
                 <div class="card-desc">
-                  Join a free orientation session to learn how to use Grandview Exchange with confidence.
+                  Join a free orientation session to learn how to use Grandview Exchange with confidence[span_30](start_span)[span_30](end_span).
                 </div>
               </div>
-              <div class="card-actions card-actions-center">
-                <a class="btn btn-card" href="training.html">Sign Up for Training</a>
+              <div class="card-actions-center">
+                <a class="btn btn-card" href="training.html">Sign Up for Training[span_31](start_span)[span_31](end_span)</a>
               </div>
             </div>
 
+            <!-- OPEN ISSUES -->
             <div class="card">
               <div class="card-body">
-                <div class="card-title" style="font-weight: 600;">🤖 Open Issues</div>
+                <div class="card-title">🤖 Open Issues[span_32](start_span)[span_32](end_span)</div>
                 <div class="card-desc">
-                  View the list of issues, problems, and enhancement requests for Grandview Exchange.
+                  View the list of issues, problems, and enhancement requests for Grandview Exchange[span_33](start_span)[span_33](end_span).
                 </div>
               </div>
-              <div class="card-actions card-actions-center">
-                <a class="btn btn-card" href="issues.html">View the Issues List</a>
+              <div class="card-actions-center">
+                <a class="btn btn-card" href="issues.html">View the Issues List[span_34](start_span)[span_34](end_span)</a>
               </div>
             </div>
 
+            <!-- GUIDELINES -->
             <div class="card">
               <div class="card-body">
-                <div class="card-title" style="font-weight: 600;">📌 Community Guidelines</div>
+                <div class="card-title">📌 Community Guidelines[span_35](start_span)[span_35](end_span)</div>
                 <div class="card-desc">
-                  Review posting guidelines and best practices to help keep Grandview Exchange welcoming, helpful, and easy for everyone to use.
+                  Review posting guidelines and best practices to help keep Grandview Exchange welcoming, helpful, and easy for everyone to use[span_36](start_span)[span_36](end_span).
                 </div>
               </div>
-              <div class="card-actions card-actions-center">
-                <a class="btn btn-card" href="help-center/support/policies.html">View Guidelines</a>
+              <div class="card-actions-center">
+                <a class="btn btn-card" href="help-center/support/policies.html">View Guidelines[span_37](start_span)[span_37](end_span)</a>
               </div>
             </div>
 
@@ -194,10 +214,15 @@
         </section>
 
       </main>
-    </div></div><footer class="site-footer">
+    </div><!-- end main-layout-wrapper -->
+
+  </div><!-- end site-shell -->
+
+  <!-- Universal Footer -->
+  <footer class="site-footer">
     <p>
       © 2026 Grandview Exchange ·
-      Questions? <a href="mailto:admin@grandviewexchange.com?subject=Questions%20about%20Grandview%20Exchange">Contact Us</a>
+      Questions? <a href="mailto:admin@grandviewexchange.com?subject=Questions%20about%20Grandview%20Exchange">Contact Us</a>[span_38](start_span)[span_38](end_span)
     </p>
   </footer>
 

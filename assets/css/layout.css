@@ -4,11 +4,11 @@
 ============================================================ */
 
 /* ------------------------------
-   Grid System
+   Grid System (Clear, spacious grids)
 ------------------------------ */
 .grid {
   display: grid;
-  gap: var(--space-lg);
+  gap: var(--space-xl); /* Generous breathing room between content choices */
 }
 
 .grid-1col {
@@ -19,50 +19,10 @@
   grid-template-columns: 1fr 1fr;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 750px) {
   .grid-2col {
     grid-template-columns: 1fr;
   }
-}
-
-/* ------------------------------
-   Navigation Row (Breadcrumb + Buttons)
------------------------------- */
-.site-nav-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: var(--space-md) 0 var(--space-xl);
-}
-
-.breadcrumb {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-}
-
-.breadcrumb a {
-  color: var(--teal-dark);
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.breadcrumb a:hover {
-  text-decoration: underline;
-}
-
-.breadcrumb span {
-  color: var(--text-dark);
-  font-weight: 600;
-}
-
-.nav-buttons {
-  display: flex;
-  gap: var(--space-sm);
-}
-
-.btn-nav {
-  background: var(--teal-light);
-  color: var(--teal-dark);
 }
 
 /* ---- Structural Shell ---- */
@@ -73,26 +33,71 @@
 }
 
 /* ------------------------------
-   NEW: Reusable Two-Column Frame 
-   (Unboxed sidebar layout used across the site)
+   Two-Column Frame Layout 
+   (Unboxed sidebar, semantic whitespace layout)
 ------------------------------ */
 .main-layout-wrapper {
   display: grid;
-  grid-template-columns: 260px 1fr;
+  grid-template-columns: 280px 1fr; /* Slightly wider sidebar for senior legibility */
   gap: var(--space-xl);
-  margin-top: var(--space-md);
+  margin-top: var(--space-xl);
   align-items: start;
 }
 
+/* Unboxed, typography-first sidebar architecture */
 .site-sidebar {
   display: flex;
   flex-direction: column;
-  gap: var(--space-lg);
+  gap: var(--space-xl);
+  padding-right: var(--space-md);
 }
 
-.sidebar-note {
+.sidebar-heading {
+  font-family: 'Lora', serif;
+  font-size: 1.6rem;
+  color: var(--text-dark);
+  margin-bottom: var(--space-xs);
+}
+
+.sidebar-intro {
+  font-size: 1rem;
+  color: var(--text-body);
+  margin-bottom: var(--space-md);
+  line-height: 1.5;
+}
+
+/* Content blocks inside sidebar -- separated by pure whitespace instead of borders */
+.sidebar-item {
+  margin-bottom: var(--space-lg);
+}
+
+.sidebar-item-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: var(--space-xs);
+}
+
+.sidebar-desc {
   font-size: 0.95rem;
   line-height: 1.5;
+  color: var(--text-body);
+  margin-bottom: var(--space-sm);
+}
+
+/* Secondary Action: Subtle text link with a clear, offset underline target */
+.sidebar-link {
+  display: inline-block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--teal-dark);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.2s;
+}
+
+.sidebar-link:hover {
+  color: var(--teal);
 }
 
 .main-content-area {
@@ -102,123 +107,96 @@
 }
 
 /* ------------------------------
-   NEW: Unboxed Typography/Intro Focus Component
+   Unboxed Typography Intro / Hero Segment
 ------------------------------ */
+.page-intro-summary {
+  margin-bottom: var(--space-md);
+}
+
 .page-intro-summary h1 {
   font-family: 'Lora', serif;
-  font-size: 2.2rem;
+  font-size: 2.4rem; /* Crisp, easily readable size scale */
   color: var(--text-dark);
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-md);
 }
 
 .page-intro-summary .lead-text {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   line-height: 1.6;
+  color: var(--text-dark);
   margin-bottom: var(--space-md);
 }
 
 .page-intro-summary p {
   font-size: 1.05rem;
   line-height: 1.6;
+  color: var(--text-body);
 }
 
 /* ------------------------------
-   Responsive Layout Breakpoint
+   Section Blocks (Start Here, What's Next)
 ------------------------------ */
-@media (max-width: 850px) {
-  .main-layout-wrapper {
-    grid-template-columns: 1fr;
-    gap: var(--space-lg);
-  }
+.section-block {
+  margin-bottom: var(--space-xl);
+}
+
+/* Clean heading separation using whitespace hierarchy instead of lines */
+.section-block h2 {
+  font-family: 'Lora', serif;
+  font-size: 1.8rem;
+  color: var(--text-dark);
+  margin-bottom: var(--space-xs);
+}
+
+.section-desc {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-lg);
 }
 
 /* ------------------------------------------------------------
-   CARD SYSTEM
+   CARD SYSTEM (White cards on slightly tinted canvas background)
 ============================================================ */
-
-/* Base Card */
 .card {
-  background: var(--bg-white);
-  border: none;
+  background: var(--bg-white); /* High contrast surface */
+  border: none; /* No stark borders */
   border-radius: 8px;
-  padding: var(--space-md);
-  box-shadow: var(--shadow-card);
+  padding: var(--space-lg); /* Generous padding inside cards */
+  box-shadow: var(--shadow-card); /* Soft drop shadow creates depth without drawing lines */
   display: flex;
   flex-direction: column;
   text-align: left;
 }
 
-/* Card Content */
 .card-title {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-dark);
   margin-bottom: var(--space-sm);
 }
 
-.card h3 {
-  font-size: 1.1rem;
-  margin-bottom: 8px;
-}
-
 .card-desc {
-  margin-bottom: var(--space-xs);
+  font-size: 1rem;
+  line-height: 1.5;
   color: var(--text-body);
-  flex: 1;
+  flex: 1; /* Pushes the button area uniformly to the bottom */
+  margin-bottom: var(--space-lg);
 }
 
-/* Card Body */
-.card-body {
-  padding-bottom: var(--space-xs);
-}
-
-/* Hero box still uses card-body-center */
-.card-light .card-body-center {
-  margin-bottom: var(--space-md);
-}
-
-/* Light Wrapper Card */
-.card-light {
-  background: var(--bg-white);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: var(--space-lg);
-}
-
-/* Horizontal Cards */
-.card-horizontal {
-  display: flex;
-  gap: var(--space-lg);
-  align-items: flex-start;
-}
-
-.card-horizontal .card-body {
-  flex: 2;
-}
-
-.card-horizontal .card-actions {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-self: center;
-}
-
-@media (max-width: 650px) {
-  .card-horizontal {
-    flex-direction: column;
-    gap: var(--space-md);
-  }
-  .card-horizontal .card-actions {
-    width: 100%;
-    justify-content: center;
-  }
-}
-
-/* Card Action Layouts */
-.card-actions {
-  margin-top: var(--space-md);
-  display: flex;
-  gap: var(--space-sm);
-}
-
+/* Primary Action Target: Centers true button elements cleanly */
 .card-actions-center {
+  display: flex;
   justify-content: center;
+  width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 850px) {
+  .main-layout-wrapper {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+  .site-sidebar {
+    padding-right: 0;
+  }
 }
