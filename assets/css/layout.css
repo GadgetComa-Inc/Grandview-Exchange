@@ -104,18 +104,20 @@
 }
 
 /* Reduce spacing between stacked sections inside light cards */
-.card-light .section+.section {
+.card-light .section + .section {
   margin-top: var(--space-lg);
 }
 
-/* More space above What's Next */
-.section-block h2 {
-  margin-top: var(--space-lg);
+/* NEW: Unified section description spacing */
+.section-desc {
+  margin-bottom: var(--space-sm);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-body);
+  text-align: center;
 }
 
-/* Less space between paragraph and cards */
-.section-block>.card-body-center+.section,
-.section-block>.card-body-center+.grid {
+.section-desc + .grid {
   margin-top: var(--space-sm);
 }
 
@@ -124,9 +126,8 @@
 ------------------------------ */
 .layout-2col {
   display: flex;
-  grid-template-columns: 300px 1fr;
   gap: var(--space-lg);
-  align-items: stretch;
+  align-items: stretch; /* ensures sidebar aligns with card grid */
 }
 
 /* Sidebar column */
@@ -134,127 +135,17 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-lg);
-  flex: 0 0 260px;
+  flex: 0 0 260px; /* narrower sidebar */
+  padding-top: 0;
 }
 
-.sidebar .card {
-  padding: var(--space-md);
-}
-
-.sidebar .btn,
-.sidebar .btn-card {
-  width: 100%;
-}
-
-/* Main content column */
-.main-content {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-lg);
-}
-
-/* Responsive collapse */
-@media (max-width: 800px) {
-  .layout-2col {
-    grid-template-columns: 1fr;
-  }
-
-  .sidebar {
-    order: 2;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-
-  .layout-grid {
-    align-items: stretch;
-  }
-
-  .main-content {
-    order: 1;
-  }
-}
-
-.main-content>.card.card-light {
-  padding: 0;
-}
-
-/* Remove outer sidebar wrapper card styling */
-.sidebar>.card {
+/* Remove old sidebar card wrappers */
+.sidebar > .card {
   background: none;
   border: none;
   box-shadow: none;
   padding: 0;
 }
-
-/* Sidebar buttons become text links */
-.sidebar .btn,
-.sidebar .btn-card {
-  background: none;
-  border: none;
-  padding: 0;
-  color: var(--teal-dark);
-  font-weight: 600;
-  text-align: left;
-  width: auto;
-}
-
-.sidebar .btn:hover,
-.sidebar .btn-card:hover {
-  text-decoration: underline;
-}
-
-/* Sidebar item spacing after removing card boxes */
-.sidebar .sidebar-card {
-  margin-bottom: var(--space-lg);
-}
-
-/* ------------------------------
-   Sidebar Card Formatting
------------------------------- */
-.sidebar-card h3 {
-  text-align: center;
-  margin-bottom: var(--space-sm);
-}
-
-.sidebar-card .sidebar-content,
-.sidebar-card label {
-  text-align: left;
-  display: block;
-  margin-bottom: var(--space-xs);
-}
-
-.sidebar-card .btn {
-  display: block;
-  margin-bottom: var(--space-xs);
-}
-
-.sidebar-card .sidebar-content {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-}
-
-/* Match Print/Subscribe button width */
-.sidebar-card .sidebar-content .btn {
-  width: calc(100% - 2 * var(--space-md));
-  margin: 0 auto var(--space-sm);
-  display: block;
-}
-
-/* Title spacing */
-.sidebar-card .sidebar-title {
-  margin-bottom: 8px;
-}
-
-.sidebar-desc {
-  margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.4;
-  color: var(--text-body);
-}
-
 
 /* Sidebar outer box styled like main cards */
 .sidebar-box {
@@ -267,15 +158,33 @@
   gap: var(--space-lg);
   height: 100%;
   justify-content: flex-start;
-  margin-top: var(--space-md);
+  margin-top: 0; /* aligns with Start Here cards */
 }
 
-/* Sidebar heading matches main section headings */
+/* Sidebar heading (outside the box) */
 .sidebar-heading {
   font-size: 1.6rem;
   font-weight: 600;
   text-align: center;
   margin-bottom: var(--space-lg);
+}
+
+/* Sidebar item titles */
+.sidebar-item-title {
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin: 0 0 var(--space-xs) 0;
+  text-align: left;
+}
+
+/* Sidebar description */
+.sidebar-desc {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--text-body);
 }
 
 /* Each link block */
@@ -285,11 +194,10 @@
   gap: var(--space-sm);
 }
 
+/* Center only the link */
 .sidebar-link {
   display: inline-block;
-  /* makes centering possible */
   margin: 0 auto;
-  /* centers the link itself */
   color: var(--teal-dark);
   font-weight: 600;
   text-decoration: none;
@@ -299,14 +207,37 @@
   text-decoration: underline;
 }
 
+/* Main content column */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+/* Responsive collapse */
+@media (max-width: 800px) {
+  .layout-2col {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    order: 2;
+  }
+
+  .main-content {
+    order: 1;
+  }
+}
+
+.main-content > .card.card-light {
+  padding: 0;
+}
+
 /* ============================================================
    CARD SYSTEM
-   Base Card, Light Card, Hero Card, Horizontal Cards
 ============================================================ */
 
-/* ------------------------------
-   Base Card
------------------------------- */
+/* Base Card */
 .card {
   background: var(--bg-white);
   border: none;
@@ -318,9 +249,7 @@
   text-align: left;
 }
 
-/* ------------------------------
-   Card Content
------------------------------- */
+/* Card Content */
 .card-title {
   font-size: 1.2rem;
   margin-bottom: var(--space-xs);
@@ -337,38 +266,17 @@
   flex: 1;
 }
 
-/* ------------------------------
-   Card Body
------------------------------- */
+/* Card Body */
 .card-body {
   padding-bottom: var(--space-xs);
 }
 
-.card-body-center {
-  text-align: center;
+/* Hero box still uses card-body-center */
+.card-light .card-body-center {
+  margin-bottom: var(--space-md);
 }
 
-/* ------------------------------
-   Card Actions
------------------------------- */
-.card-actions {
-  margin-top: auto;
-  display: flex;
-}
-
-.card-actions .btn-card {
-  width: 270px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.card-actions-center {
-  justify-content: center;
-}
-
-/* ------------------------------
-   Light Wrapper Card
------------------------------- */
+/* Light Wrapper Card */
 .card-light {
   background: var(--bg-white);
   border: 1px solid var(--border);
@@ -376,18 +284,7 @@
   padding: var(--space-lg);
 }
 
-.card-light .card-body-center {
-  margin-bottom: var(--space-md);
-}
-
-.card-light .section {
-  margin-top: var(--space-lg);
-}
-
-
-/* ------------------------------
-   Horizontal Card Layout
------------------------------- */
+/* Horizontal Cards */
 .card-horizontal {
   display: flex;
   gap: var(--space-lg);
@@ -405,9 +302,7 @@
   align-items: flex-start;
 }
 
-/* ------------------------------
-   Hero Card
------------------------------- */
+/* Hero Card */
 .card-hero {
   padding: var(--space-md);
 }
