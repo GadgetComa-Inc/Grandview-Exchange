@@ -1,6 +1,7 @@
-/* ============================================
-   Layout -- Grid, Shell, Navigation
-============================================ */
+/* ============================================================
+   GLOBAL LAYOUT SYSTEM
+   Grid, Shell, Navigation, Sections, Two-Column Layout
+============================================================ */
 
 /* ---- Unified Grid System ---- */
 .grid {
@@ -76,18 +77,13 @@
   display: inline-block;
   font-size: 0.95rem;
   white-space: nowrap;
-  /* prevents wrapping on small screens */
 }
 
 .btn-nav-return:hover {
   background: #cfeaea;
 }
 
-
-/* ============================================
-   Layout -- Sections & Headings
-============================================ */
-
+/* ---- Sections & Headings ---- */
 .section {
   margin: var(--space-xl) 0;
 }
@@ -106,10 +102,7 @@
   margin-top: var(--space-lg);
 }
 
-/* ============================================
-   Global Two-Column Layout with Sidebar
-============================================ */
-
+/* ---- Global Two-Column Layout with Sidebar ---- */
 .layout-2col {
   display: grid;
   grid-template-columns: 300px 1fr;
@@ -117,7 +110,6 @@
   align-items: start;
 }
 
-/* Sidebar always in its own card */
 .sidebar {
   display: flex;
   flex-direction: column;
@@ -133,7 +125,6 @@
   width: 100%;
 }
 
-/* Main content area */
 .main-content {
   display: flex;
   flex-direction: column;
@@ -150,18 +141,19 @@
     order: 2;
     display: flex;
     flex-direction: column;
-    height: 100%
+    height: 100%;
   }
 
   .layout-grid {
-  align-items: stretch;
-}
+    align-items: stretch;
+  }
 
   .main-content {
     order: 1;
   }
 }
-/* Sidebar card title centered, content left-aligned */
+
+/* ---- Sidebar Card Formatting ---- */
 .sidebar-card h3 {
   text-align: center;
   margin-bottom: var(--space-sm);
@@ -183,19 +175,19 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm); /* slightly bigger spacing */
+  gap: var(--space-sm);
 }
 
 /* Fix subscribe button width to match Print button */
 .sidebar-card .sidebar-content .btn {
-  width: calc(100% - 2 * var(--space-md)); /* match card padding */
-  margin: 0 auto var(--space-sm);          /* center + spacing */
+  width: calc(100% - 2 * var(--space-md));
+  margin: 0 auto var(--space-sm);
   display: block;
 }
 
 /* Match spacing of other sidebar cards */
 .sidebar-card .sidebar-title {
-  margin-bottom: 8px; /* same as View and Calendars cards */
+  margin-bottom: 8px;
 }
 
 /* Description spacing tightened */
@@ -204,4 +196,104 @@
   margin-bottom: 16px;
   font-size: 0.95rem;
   line-height: 1.4;
+}
+
+
+/* ============================================================
+   CARD SYSTEM (Base Card, Light Card, Hero Card, Horizontal)
+============================================================ */
+
+/* ---- Base Card ---- */
+.card {
+  background: var(--bg-white);
+  border: none;
+  border-radius: 8px;
+  padding: var(--space-md);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+/* ---- Card Content ---- */
+.card-title {
+  font-size: 1.2rem;
+  margin-bottom: var(--space-xs);
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.card-desc {
+  margin-bottom: var(--space-xs);
+  color: var(--text-body);
+  flex: 1;
+}
+
+/* ---- Card Body ---- */
+.card-body {
+  padding-bottom: var(--space-xs);
+}
+
+.card-body-center {
+  text-align: center;
+}
+
+/* ---- Card Actions ---- */
+.card-actions {
+  margin-top: auto;
+  display: flex;
+}
+
+.card-actions .btn-card {
+  width: 270px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-actions-center {
+  justify-content: center;
+}
+
+/* ---- Light Wrapper Card ---- */
+.card-light {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: var(--space-lg);
+}
+
+/* ---- Horizontal Card Layout ---- */
+.card-horizontal {
+  display: flex;
+  gap: var(--space-lg);
+  align-items: flex-start;
+}
+
+.card-horizontal .card-body {
+  flex: 2;
+}
+
+.card-horizontal .card-actions {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* ---- Global Hero Box ---- */
+.card-hero {
+  padding: var(--space-md);
+}
+
+.card-hero h1 {
+  text-align: center;
+  margin-bottom: var(--space-xs);
+}
+
+.card-hero p {
+  margin: 0;
+  text-align: left;
 }
