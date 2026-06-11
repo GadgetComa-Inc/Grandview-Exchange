@@ -78,8 +78,17 @@ li {
 
 /* ---- Header & Footer ---- */
 .site-header img {
-  width: 100%;
-  height: auto;
+  width: 60%;          /* shrink to 60% of original width */
+  height: auto;        /* keep aspect ratio */
+  display: block;
+  margin: 0 auto;      /* center the image */
+  max-width: 100%;     /* prevent overflow on small screens */
+}
+
+.site-header {
+  background: var(--bg-page); /* or your teal-tinted background */
+  padding: var(--space-md) 0; /* optional: adds breathing room */
+  text-align: center;         /* ensures centering consistency */
 }
 
 .site-footer {
