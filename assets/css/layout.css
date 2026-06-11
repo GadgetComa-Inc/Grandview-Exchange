@@ -108,14 +108,25 @@
   margin-top: var(--space-lg);
 }
 
+/* More space above What's Next */
+.section-block h2 {
+  margin-top: var(--space-lg);
+}
+
+/* Less space between paragraph and cards */
+.section-block > .card-body-center + .section,
+.section-block > .card-body-center + .grid {
+  margin-top: var(--space-md);
+}
+
 /* ------------------------------
    Two-Column Layout (Sidebar + Main Content)
 ------------------------------ */
 .layout-2col {
-  display: grid;
+  display: flex;
   grid-template-columns: 300px 1fr;
   gap: var(--space-lg);
-  align-items: start;
+  align-items: stretch;
 }
 
 /* Sidebar column */
@@ -236,14 +247,53 @@
   margin-bottom: 8px;
 }
 
-/* Description spacing */
-.sidebar-card .sidebar-description {
-  margin-top: 0;
-  margin-bottom: 16px;
+.sidebar-desc {
+  margin: 0;
   font-size: 0.95rem;
   line-height: 1.4;
+  color: var(--text-body);
 }
 
+
+/* Sidebar outer box styled like main cards */
+.sidebar-box {
+  background: var(--card-bg-tint, #ffffff);
+  border-radius: 10px;
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  height: 100%;
+  justify-content: flex-start;
+}
+
+/* Sidebar heading matches main section headings */
+.sidebar-heading {
+  font-size: 1.6rem; /* same as h2 */
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+/* Each link block */
+.sidebar-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.sidebar-link {
+  display: inline-block;  /* makes centering possible */
+  margin: 0 auto;         /* centers the link itself */
+  color: var(--teal-dark);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.sidebar-link:hover {
+  text-decoration: underline;
+}
 
 /* ============================================================
    CARD SYSTEM
