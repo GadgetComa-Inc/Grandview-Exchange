@@ -202,3 +202,8 @@
 .btn-nav-return {
   display: none !important;
 }
+
+/* Calendar page sidebar width */
+.calendar-sidebar {
+  flex: 0 0 170px;   /* about 2/3 of 260px */
+}
