@@ -103,8 +103,16 @@
   margin-bottom: var(--space-sm);
 }
 
+.section-block {
+  margin-bottom: var(--space-lg);
+}
+
+.section-block h2 {
+  margin-bottom: var(--space-sm);
+}
+
 /* Reduce spacing between stacked sections inside light cards */
-.card-light .section + .section {
+.card-light .section+.section {
   margin-top: var(--space-lg);
 }
 
@@ -117,7 +125,7 @@
   text-align: center;
 }
 
-.section-desc + .grid {
+.section-desc+.grid {
   margin-top: var(--space-sm);
 }
 
@@ -127,7 +135,8 @@
 .layout-2col {
   display: flex;
   gap: var(--space-lg);
-  align-items: stretch; /* ensures sidebar aligns with card grid */
+  align-items: stretch;
+  /* ensures sidebar aligns with card grid */
 }
 
 /* Sidebar column */
@@ -135,12 +144,13 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-lg);
-  flex: 0 0 260px; /* narrower sidebar */
+  flex: 0 0 260px;
+  /* narrower sidebar */
   padding-top: 0;
 }
 
 /* Remove old sidebar card wrappers */
-.sidebar > .card {
+.sidebar>.card {
   background: none;
   border: none;
   box-shadow: none;
@@ -158,7 +168,8 @@
   gap: var(--space-lg);
   height: 100%;
   justify-content: flex-start;
-  margin-top: 0; /* aligns with Start Here cards */
+  margin-top: 0;
+  /* aligns with Start Here cards */
 }
 
 /* Sidebar heading (outside the box) */
@@ -166,6 +177,7 @@
   font-size: 1.6rem;
   font-weight: 600;
   text-align: center;
+  margin-top: var(--space-sm);
   margin-bottom: var(--space-lg);
 }
 
@@ -176,7 +188,7 @@
   font-weight: 600;
   color: var(--text-dark);
   margin: 0 0 var(--space-xs) 0;
-  text-align: left;
+  text-align: center;
 }
 
 /* Sidebar description */
@@ -187,11 +199,27 @@
   color: var(--text-body);
 }
 
+.sidebar-intro {
+  text-align: center;
+  margin: -var(--space-sm) 0 var(--space-md);
+  color: var(--text-body);
+  font-size: 0.95rem;
+}
+
 /* Each link block */
 .sidebar-item {
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
+  padding-bottom: var(--space-md);
+  margin-bottom: var(--space-md);
+  border-bottom: 1px solid var(--border);
+}
+
+.sidebar-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 /* Center only the link */
@@ -201,10 +229,15 @@
   color: var(--teal-dark);
   font-weight: 600;
   text-decoration: none;
+  text-decoration: underline;
+  /* NEW */
+  text-underline-offset: 3px;
+  /* NEW */
 }
 
 .sidebar-link:hover {
-  text-decoration: underline;
+  color: var(--teal);                       /* NEW: slight color shift */
+  text-decoration-thickness: 2px;           /* NEW: stronger underline */
 }
 
 /* Main content column */
@@ -229,7 +262,7 @@
   }
 }
 
-.main-content > .card.card-light {
+.main-content>.card.card-light {
   padding: 0;
 }
 
@@ -252,7 +285,7 @@
 /* Card Content */
 .card-title {
   font-size: 1.2rem;
-  margin-bottom: var(--space-xs);
+  margin-bottom: var(--space-sm);
 }
 
 .card h3 {
@@ -301,6 +334,13 @@
   justify-content: center;
   align-items: flex-start;
 }
+
+.card-actions {
+  margin-top: auto;        /* anchors to bottom */
+  display: flex;
+  justify-content: center; /* centers the button */
+}
+
 
 /* Hero Card */
 .card-hero {

@@ -46,3 +46,9 @@
   gap: 12px;
   margin-top: 12px;
 }
+
+/* All card buttons same width and centered */
+.btn-card {
+  width: 270px;
+  text-align: center;
+}
