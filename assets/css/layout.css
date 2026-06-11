@@ -163,6 +163,40 @@
   }
 }
 
+.main-content > .card.card-light {
+  padding: 0;
+}
+
+/* Remove outer sidebar wrapper card styling */
+.sidebar > .card {
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+/* Sidebar buttons become text links */
+.sidebar .btn,
+.sidebar .btn-card {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--teal-dark);
+  font-weight: 600;
+  text-align: left;
+  width: auto;
+}
+
+.sidebar .btn:hover,
+.sidebar .btn-card:hover {
+  text-decoration: underline;
+}
+
+/* Sidebar item spacing after removing card boxes */
+.sidebar .sidebar-card {
+  margin-bottom: var(--space-lg);
+}
+
 /* ------------------------------
    Sidebar Card Formatting
 ------------------------------ */
@@ -287,6 +321,15 @@
   border-radius: 10px;
   padding: var(--space-lg);
 }
+
+.card-light .card-body-center {
+  margin-bottom: var(--space-md);
+}
+
+.card-light .section {
+  margin-top: var(--space-lg);
+}
+
 
 /* ------------------------------
    Horizontal Card Layout
