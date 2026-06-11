@@ -200,17 +200,15 @@
 }
 
 .sidebar-intro {
-  text-align: center;
-  margin: -var(--space-sm) 0 var(--space-md);
+  font-size: 1rem;                 /* match section-desc */
+  line-height: 1.5;                /* match section-desc */
   color: var(--text-body);
-  font-size: 0.95rem;
+  text-align: center;
+  margin: var(--space-sm) 0 var(--space-md);
 }
 
 /* Each link block */
 .sidebar-item {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
   padding-bottom: var(--space-md);
   margin-bottom: var(--space-md);
   border-bottom: 1px solid var(--border);
