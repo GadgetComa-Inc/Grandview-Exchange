@@ -1,14 +1,12 @@
 /* ============================================================
    GLOBAL LAYOUT SYSTEM
-   Grid, Navigation, Sections, Two-Column Layout
+   Grid, Shell, Layout wrappers, and Content Cards
 ============================================================ */
 
-/* ------------------------------
-   Grid System (Clear, spacious grids)
------------------------------- */
+/* ---- Grid Utilities ---- */
 .grid {
   display: grid;
-  gap: var(--space-xl); /* Generous breathing room between content choices */
+  gap: var(--space-lg);
 }
 
 .grid-1col {
@@ -16,10 +14,12 @@
 }
 
 .grid-2col {
+  display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
 }
 
-@media (max-width: 750px) {
+@media (max-width: 768px) {
   .grid-2col {
     grid-template-columns: 1fr;
   }
@@ -32,144 +32,38 @@
   padding: 0 var(--space-md);
 }
 
-/* ------------------------------
-   Two-Column Frame Layout 
-   (Unboxed sidebar, semantic whitespace layout)
------------------------------- */
+/* ---- Balanced Two-Column Structural Frame ---- */
 .main-layout-wrapper {
   display: grid;
-  grid-template-columns: 280px 1fr; /* Slightly wider sidebar for senior legibility */
+  grid-template-columns: 260px 1fr;
   gap: var(--space-xl);
   margin-top: var(--space-xl);
   align-items: start;
 }
 
-/* Unboxed, typography-first sidebar architecture */
-.site-sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xl);
-  padding-right: var(--space-md);
-}
-
-.sidebar-heading {
-  font-family: 'Lora', serif;
-  font-size: 1.6rem;
-  color: var(--text-dark);
-  margin-bottom: var(--space-xs);
-}
-
-.sidebar-intro {
-  font-size: 1rem;
-  color: var(--text-body);
-  margin-bottom: var(--space-md);
-  line-height: 1.5;
-}
-
-/* Content blocks inside sidebar -- separated by pure whitespace instead of borders */
-.sidebar-item {
-  margin-bottom: var(--space-lg);
-}
-
-.sidebar-item-title {
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: var(--text-dark);
-  margin-bottom: var(--space-xs);
-}
-
-.sidebar-desc {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: var(--text-body);
-  margin-bottom: var(--space-sm);
-}
-
-/* Secondary Action: Subtle text link with a clear, offset underline target */
-.sidebar-link {
-  display: inline-block;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--teal-dark);
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  transition: color 0.2s;
-}
-
-.sidebar-link:hover {
-  color: var(--teal);
-}
-
-.main-content-area {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xl);
-}
-
-/* ------------------------------
-   Unboxed Typography Intro / Hero Segment
------------------------------- */
-.page-intro-summary {
-  margin-bottom: var(--space-md);
-}
-
-.page-intro-summary h1 {
-  font-family: 'Lora', serif;
-  font-size: 2.4rem; /* Crisp, easily readable size scale */
-  color: var(--text-dark);
-  margin-bottom: var(--space-md);
-}
-
-.page-intro-summary .lead-text {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: var(--text-dark);
-  margin-bottom: var(--space-md);
-}
-
-.page-intro-summary p {
-  font-size: 1.05rem;
-  line-height: 1.6;
-  color: var(--text-body);
-}
-
-/* ------------------------------
-   Section Blocks (Start Here, What's Next)
------------------------------- */
-.section-block {
-  margin-bottom: var(--space-xl);
-}
-
-/* Clean heading separation using whitespace hierarchy instead of lines */
-.section-block h2 {
-  font-family: 'Lora', serif;
-  font-size: 1.8rem;
-  color: var(--text-dark);
-  margin-bottom: var(--space-xs);
-}
-
-.section-desc {
-  font-size: 1.05rem;
-  color: var(--text-muted);
-  margin-bottom: var(--space-lg);
+@media (max-width: 768px) {
+  .main-layout-wrapper {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ------------------------------------------------------------
-   CARD SYSTEM (White cards on slightly tinted canvas background)
+   CARD SYSTEM
+   White cards on a soft, tinted canvas background
 ============================================================ */
 .card {
-  background: var(--bg-white); /* High contrast surface */
-  border: none; /* No stark borders */
+  background: var(--bg-white);
+  border: none; /* Removed heavy border boxes */
   border-radius: 8px;
-  padding: var(--space-lg); /* Generous padding inside cards */
-  box-shadow: var(--shadow-card); /* Soft drop shadow creates depth without drawing lines */
+  padding: var(--space-lg);
   display: flex;
   flex-direction: column;
-  text-align: left;
+  justify-content: space-between;
+  box-shadow: var(--shadow-card); /* Soft depth cue instead of a line */
 }
 
 .card-title {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: var(--text-dark);
   margin-bottom: var(--space-sm);
@@ -177,26 +71,14 @@
 
 .card-desc {
   font-size: 1rem;
-  line-height: 1.5;
   color: var(--text-body);
-  flex: 1; /* Pushes the button area uniformly to the bottom */
+  line-height: 1.5;
   margin-bottom: var(--space-lg);
+  flex: 1; /* Pushes true buttons uniformly to the bottom baseline */
 }
 
-/* Primary Action Target: Centers true button elements cleanly */
 .card-actions-center {
   display: flex;
   justify-content: center;
   width: 100%;
-}
-
-/* Responsive adjustments */
-@media (max-width: 850px) {
-  .main-layout-wrapper {
-    grid-template-columns: 1fr;
-    gap: var(--space-xl);
-  }
-  .site-sidebar {
-    padding-right: 0;
-  }
 }

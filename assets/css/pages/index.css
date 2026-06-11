@@ -1,11 +1,90 @@
-/* ============================================
-   Page -- Index (Homepage)
-============================================ */
+/* ============================================================
+   Page -- Index (Homepage Specific Rules)
+============================================================ */
 
-.page-index {
+/* Homepage Introduction Header Block */
+.page-intro-summary {
+  margin-bottom: var(--space-md);
+}
 
-  /* Center the hero button (homepage-only difference) */
-  .card-hero .card-actions {
-    justify-content: center;
-  }
+.page-intro-summary h1 {
+  font-family: 'Lora', serif;
+  font-size: 2.2rem;
+  color: var(--text-dark);
+  margin-bottom: var(--space-md);
+}
+
+.page-intro-summary .lead-text {
+  font-size: 1.15rem;
+  line-height: 1.5;
+  color: var(--text-dark);
+  margin-bottom: var(--space-md);
+}
+
+/* Section Blocks (Start Here, What's Next) */
+.section-block {
+  margin-bottom: var(--space-xl);
+}
+
+.section-block h2 {
+  font-family: 'Lora', serif;
+  font-size: 1.75rem;
+  color: var(--text-dark);
+  margin: 0 0 var(--space-xs) 0;
+}
+
+.section-desc {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin: 0 0 var(--space-lg) 0;
+}
+
+/* Unboxed, Typography-First Sidebar Items */
+.site-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.sidebar-heading {
+  font-family: 'Lora', serif;
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  margin: 0 0 var(--space-sm) 0;
+}
+
+.sidebar-intro {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin: 0 0 var(--space-md) 0;
+}
+
+.sidebar-item {
+  margin-bottom: var(--space-sm);
+}
+
+.sidebar-item h3 {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  margin: 0 0 4px 0;
+  font-weight: 600;
+}
+
+.sidebar-item p {
+  font-size: 0.95rem;
+  color: var(--text-body);
+  margin: 0 0 var(--space-sm) 0;
+}
+
+/* Secondary Action Links */
+.sidebar-link {
+  font-size: 0.95rem;
+  color: var(--teal);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 500;
+}
+
+.sidebar-link:hover {
+  color: var(--teal-dark);
 }
