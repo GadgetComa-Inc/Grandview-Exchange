@@ -1,9 +1,11 @@
 /* ============================================================
    GLOBAL LAYOUT SYSTEM
-   Grid, Shell, Navigation, Sections, Two-Column Layout
+   Grid, Navigation, Sections, Two-Column Layout
 ============================================================ */
 
-/* ---- Unified Grid System ---- */
+/* ------------------------------
+   Grid System
+------------------------------ */
 .grid {
   display: grid;
   gap: var(--space-lg);
@@ -23,7 +25,9 @@
   }
 }
 
-/* ---- Navigation Row (Breadcrumb + Buttons) ---- */
+/* ------------------------------
+   Navigation Row (Breadcrumb + Buttons)
+------------------------------ */
 .site-nav-row {
   display: flex;
   justify-content: space-between;
@@ -83,7 +87,9 @@
   background: #cfeaea;
 }
 
-/* ---- Sections & Headings ---- */
+/* ------------------------------
+   Sections & Headings
+------------------------------ */
 .section {
   margin: var(--space-xl) 0;
 }
@@ -102,7 +108,9 @@
   margin-top: var(--space-lg);
 }
 
-/* ---- Global Two-Column Layout with Sidebar ---- */
+/* ------------------------------
+   Two-Column Layout (Sidebar + Main Content)
+------------------------------ */
 .layout-2col {
   display: grid;
   grid-template-columns: 300px 1fr;
@@ -110,6 +118,7 @@
   align-items: start;
 }
 
+/* Sidebar column */
 .sidebar {
   display: flex;
   flex-direction: column;
@@ -125,6 +134,7 @@
   width: 100%;
 }
 
+/* Main content column */
 .main-content {
   display: flex;
   flex-direction: column;
@@ -153,7 +163,9 @@
   }
 }
 
-/* ---- Sidebar Card Formatting ---- */
+/* ------------------------------
+   Sidebar Card Formatting
+------------------------------ */
 .sidebar-card h3 {
   text-align: center;
   margin-bottom: var(--space-sm);
@@ -178,19 +190,19 @@
   gap: var(--space-sm);
 }
 
-/* Fix subscribe button width to match Print button */
+/* Match Print/Subscribe button width */
 .sidebar-card .sidebar-content .btn {
   width: calc(100% - 2 * var(--space-md));
   margin: 0 auto var(--space-sm);
   display: block;
 }
 
-/* Match spacing of other sidebar cards */
+/* Title spacing */
 .sidebar-card .sidebar-title {
   margin-bottom: 8px;
 }
 
-/* Description spacing tightened */
+/* Description spacing */
 .sidebar-card .sidebar-description {
   margin-top: 0;
   margin-bottom: 16px;
@@ -200,10 +212,13 @@
 
 
 /* ============================================================
-   CARD SYSTEM (Base Card, Light Card, Hero Card, Horizontal)
+   CARD SYSTEM
+   Base Card, Light Card, Hero Card, Horizontal Cards
 ============================================================ */
 
-/* ---- Base Card ---- */
+/* ------------------------------
+   Base Card
+------------------------------ */
 .card {
   background: var(--bg-white);
   border: none;
@@ -215,7 +230,9 @@
   text-align: left;
 }
 
-/* ---- Card Content ---- */
+/* ------------------------------
+   Card Content
+------------------------------ */
 .card-title {
   font-size: 1.2rem;
   margin-bottom: var(--space-xs);
@@ -232,7 +249,9 @@
   flex: 1;
 }
 
-/* ---- Card Body ---- */
+/* ------------------------------
+   Card Body
+------------------------------ */
 .card-body {
   padding-bottom: var(--space-xs);
 }
@@ -241,7 +260,9 @@
   text-align: center;
 }
 
-/* ---- Card Actions ---- */
+/* ------------------------------
+   Card Actions
+------------------------------ */
 .card-actions {
   margin-top: auto;
   display: flex;
@@ -257,7 +278,9 @@
   justify-content: center;
 }
 
-/* ---- Light Wrapper Card ---- */
+/* ------------------------------
+   Light Wrapper Card
+------------------------------ */
 .card-light {
   background: var(--bg-white);
   border: 1px solid var(--border);
@@ -265,7 +288,9 @@
   padding: var(--space-lg);
 }
 
-/* ---- Horizontal Card Layout ---- */
+/* ------------------------------
+   Horizontal Card Layout
+------------------------------ */
 .card-horizontal {
   display: flex;
   gap: var(--space-lg);
@@ -283,7 +308,9 @@
   align-items: flex-start;
 }
 
-/* ---- Global Hero Box ---- */
+/* ------------------------------
+   Hero Card
+------------------------------ */
 .card-hero {
   padding: var(--space-md);
 }
