@@ -63,208 +63,76 @@
 .btn-nav {
   background: var(--teal-light);
   color: var(--teal-dark);
-  font-size: 0.95rem;
-  white-space: nowrap;
 }
 
-.btn-nav:hover {
-  background: #cfeaea;
-}
-
-/* Navigation buttons (Back to Home, Previous Page) */
-.btn-nav-return {
-  background: var(--teal-light);
-  color: var(--teal-dark);
-  font-weight: 600;
-  padding: 8px 14px;
-  border-radius: 6px;
-  display: inline-block;
-  font-size: 0.95rem;
-  white-space: nowrap;
-}
-
-.btn-nav-return:hover {
-  background: #cfeaea;
-}
-
-/* ------------------------------
-   Sections & Headings
------------------------------- */
-.section {
-  margin: var(--space-xl) 0;
-}
-
-.section h2 {
-  text-align: center;
-  margin-bottom: var(--space-md);
-}
-
-.section h3.group_label {
-  margin-bottom: var(--space-sm);
-}
-
-.section-block {
-  margin-bottom: var(--space-lg);
-}
-
-.section-block h2 {
-  margin-bottom: var(--space-sm);
-}
-
-/* Reduce spacing between stacked sections inside light cards */
-.card-light .section+.section {
-  margin-top: var(--space-lg);
-}
-
-/* NEW: Unified section description spacing */
-.section-desc {
-  margin-bottom: var(--space-sm);
-  font-size: 1rem;
-  line-height: 1.5;
-  color: var(--text-body);
-  text-align: center;
-}
-
-.section-desc+.grid {
-  margin-top: var(--space-sm);
-}
-
-/* ------------------------------
-   Two-Column Layout (Sidebar + Main Content)
------------------------------- */
-.layout-2col {
-  display: flex;
-  gap: var(--space-lg);
-  align-items: stretch;
-  /* ensures sidebar aligns with card grid */
-}
-
-/* Sidebar column */
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-lg);
-  flex: 0 0 260px;
-  /* narrower sidebar */
-  padding-top: 0;
-}
-
-/* Remove old sidebar card wrappers */
-.sidebar>.card {
-  background: none;
-  border: none;
-  box-shadow: none;
-  padding: 0;
-}
-
-/* Sidebar outer box styled like main cards */
-.sidebar-box {
-  background: var(--card-bg-tint, #ffffff);
-  border-radius: 10px;
-  padding: var(--space-lg);
-  box-shadow: var(--shadow-card);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-lg);
-  height: 100%;
-  justify-content: flex-start;
-  margin-top: 0;
-  /* aligns with Start Here cards */
-}
-
-/* Sidebar heading (outside the box) */
-.sidebar-heading {
-  font-size: 1.6rem;
-  font-weight: 600;
-  text-align: center;
-  margin-top: var(--space-sm);
-  margin-bottom: var(--space-lg);
-}
-
-/* Sidebar item titles */
-.sidebar-item-title {
-  font-family: 'Lora', serif;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--text-dark);
-  margin: 0 0 var(--space-xs) 0;
-  text-align: center;
-}
-
-/* Sidebar description */
-.sidebar-desc {
-  margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.4;
-  color: var(--text-body);
-}
-
-.sidebar-intro {
-  font-size: 1rem;                 /* match section-desc */
-  line-height: 1.5;                /* match section-desc */
-  color: var(--text-body);
-  text-align: center;
-  margin: var(--space-sm) 0 var(--space-md);
-}
-
-/* Each link block */
-.sidebar-item {
-  padding-bottom: var(--space-md);
-  margin-bottom: var(--space-md);
-  border-bottom: 1px solid var(--border);
-}
-
-.sidebar-item:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-/* Center only the link */
-.sidebar-link {
-  display: inline-block;
+/* ---- Structural Shell ---- */
+.site-shell {
+  max-width: var(--content-width);
   margin: 0 auto;
-  color: var(--teal-dark);
-  font-weight: 600;
-  text-decoration: none;
-  text-decoration: underline;
-  /* NEW */
-  text-underline-offset: 3px;
-  /* NEW */
+  padding: 0 var(--space-md);
 }
 
-.sidebar-link:hover {
-  color: var(--teal);                       /* NEW: slight color shift */
-  text-decoration-thickness: 2px;           /* NEW: stronger underline */
+/* ------------------------------
+   NEW: Reusable Two-Column Frame 
+   (Unboxed sidebar layout used across the site)
+------------------------------ */
+.main-layout-wrapper {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: var(--space-xl);
+  margin-top: var(--space-md);
+  align-items: start;
 }
 
-/* Main content column */
-.main-content {
+.site-sidebar {
   display: flex;
   flex-direction: column;
   gap: var(--space-lg);
 }
 
-/* Responsive collapse */
-@media (max-width: 800px) {
-  .layout-2col {
-    flex-direction: column;
-  }
+.sidebar-note {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
 
-  .sidebar {
-    order: 2;
-  }
+.main-content-area {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
 
-  .main-content {
-    order: 1;
+/* ------------------------------
+   NEW: Unboxed Typography/Intro Focus Component
+------------------------------ */
+.page-intro-summary h1 {
+  font-family: 'Lora', serif;
+  font-size: 2.2rem;
+  color: var(--text-dark);
+  margin-bottom: var(--space-sm);
+}
+
+.page-intro-summary .lead-text {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+}
+
+.page-intro-summary p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* ------------------------------
+   Responsive Layout Breakpoint
+------------------------------ */
+@media (max-width: 850px) {
+  .main-layout-wrapper {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
   }
 }
 
-.main-content>.card.card-light {
-  padding: 0;
-}
-
-/* ============================================================
+/* ------------------------------------------------------------
    CARD SYSTEM
 ============================================================ */
 
@@ -329,28 +197,28 @@
 .card-horizontal .card-actions {
   flex: 1;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: flex-end;
+  align-self: center;
 }
 
+@media (max-width: 650px) {
+  .card-horizontal {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+  .card-horizontal .card-actions {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Card Action Layouts */
 .card-actions {
-  margin-top: auto;        /* anchors to bottom */
+  margin-top: var(--space-md);
   display: flex;
-  justify-content: center; /* centers the button */
+  gap: var(--space-sm);
 }
 
-
-/* Hero Card */
-.card-hero {
-  padding: var(--space-md);
-}
-
-.card-hero h1 {
-  text-align: center;
-  margin-bottom: var(--space-xs);
-}
-
-.card-hero p {
-  margin: 0;
-  text-align: left;
+.card-actions-center {
+  justify-content: center;
 }
