@@ -86,10 +86,11 @@ li {
 }
 
 .site-header {
-  background: var(--bg-page); /* or your teal-tinted background */
-  padding: var(--space-md) 0; /* optional: adds breathing room */
-  text-align: center;         /* ensures centering consistency */
+  background: var(--bg-page); /* keep your teal-tinted background */
+  padding: var(--space-lg) 0; /* increase vertical breathing room */
+  text-align: center;
 }
+
 
 .site-footer {
   text-align: center;
