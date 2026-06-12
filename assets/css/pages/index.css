@@ -44,14 +44,17 @@
   margin: 0 0 var(--space-xl) 0;
 }
 
-/* ---- Unified Linear Row System (Single Column Layout) ---- */
+/* ---- Unified Linear Row System (Grid Sub-Layout Architecture) ---- */
 .section-item-row,
 .sidebar-item {
   padding: var(--space-lg) 0;
   border-top: 1px solid var(--border); /* Clean typography rule separation line */
-  display: flex;
-  flex-direction: column; /* Forces Title, Desc, and Link to remain in ONE clean column */
-  gap: var(--space-xs); /* Tight, uniform vertical spacing between elements */
+  
+  /* Switching to an explicit asymmetrical grid to anchor content slots */
+  display: grid;
+  grid-template-columns: 1fr max-content; 
+  column-gap: var(--space-xl);
+  row-gap: var(--space-xs);
 }
 
 /* Suppress the top border line for the very first item in any white box */
@@ -67,6 +70,14 @@
 }
 
 /* ---- Typography Elements ---- */
+/* Title and description occupy the left column slot, forcing the link right */
+.section-item-title,
+.sidebar-item h3,
+.section-item-desc,
+.sidebar-item p {
+  grid-column: 1;
+}
+
 .section-item-title,
 .sidebar-item h3 {
   font-size: 1.25rem;
@@ -93,27 +104,26 @@
   font-style: italic;
 }
 
-/* ---- Action Links (Left-aligned text, positioned close to the right edge) ---- */
+/* ---- Action Links (Strictly Left-Aligned, Flushed Right) ---- */
 .section-item-action,
 .sidebar-link {
+  grid-column: 2; /* Lock into the right-hand column slot */
+  grid-row: 1 / span 3; /* Allows the link to vertically align nicely alongside text contents */
+  align-self: end; /* Drops to the bottom row boundary level */
+  text-align: left; /* Confirms text is left-to-right readable */
+  
   font-size: 1rem;
   color: var(--teal);
   text-decoration: underline;
   text-underline-offset: 4px;
   font-weight: 600;
   
-  /* Layout Tweaks: Shrunk space above the link per your request */
-  margin-top: var(--space-sm); 
+  /* Micro spacing adjustment from the bottom layout baseline */
+  margin-bottom: 2px;
   
-  /* Alignment Fix: Pushes to the exact right edge while keeping text left-aligned */
-  margin-left: auto; 
-  align-self: flex-end;
-  text-align: left;
-  
-  /* Replaces the heavy hardcoded footprint with an open, text-bound layout width */
-  max-width: 240px;
-  width: 100%;
-  display: inline-block;
+  /* Establishes a matching alignment block column footprint */
+  width: 175px; 
+  white-space: nowrap;
 }
 
 .section-item-action:hover,
@@ -123,10 +133,17 @@
 
 /* ---- Responsive Fallback for Smaller Screens / Mobile Tablets ---- */
 @media (max-width: 768px) {
+  .section-item-row,
+  .sidebar-item {
+    display: flex;
+    flex-direction: column; /* Reverts back to natural stacked behavior on phone screens */
+    gap: var(--space-xs);
+  }
+  
   .section-item-action,
   .sidebar-link {
-    align-self: flex-start; /* Snaps links back to the left margin on mobile for natural reading layout */
-    margin-left: 0; /* Reset automatic right-push on small screens */
-    max-width: none;
+    align-self: flex-start; /* Snaps links back to the left margin on mobile */
+    margin-top: var(--space-xs);
+    width: auto;
   }
 }
