@@ -112,8 +112,7 @@
   
   /* TWEAK 3: The Magic Fix. Flawlessly centers the links in any block width */
   align-self: center; 
-  text-align: center;
-  
+    
   display: inline-block;
   transition: color 0.2s ease, text-underline-offset 0.2s ease;
 }
@@ -124,12 +123,11 @@
   text-underline-offset: 7px; /* Elegant hover effect to imply motion/clickability */
 }
 
-/* ---- Responsive Fallback for Smaller Screens / Mobile Tablets ---- */
-@media (max-width: 768px) {
-  .section-item-action,
-  .sidebar-link {
-    /* Keep them centered on mobile as well since it translates perfectly to vertical viewports */
-    align-self: center; 
-    margin-top: var(--space-sm);
-  }
+/* ---- Reusable Footnote / Clarification Comments ---- */
+.footnote-text {
+  font-size: 1.15rem; /* Matches your 1.15rem site standard */
+  color: var(--text-muted);
+  font-style: italic;
+  display: block;
+  margin-top: var(--space-xs);
 }

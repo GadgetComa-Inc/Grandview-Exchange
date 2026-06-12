@@ -32,10 +32,10 @@
   padding: 0 var(--space-md);
 }
 
-/* ---- Balanced Two-Column Structural Frame (Sidebar on Right) ---- */
+/* ---- Balanced Two-Column Structural Frame ---- */
 .main-layout-wrapper {
   display: grid;
-  /* MODIFIED: Main area (1fr) is now first on the left, Sidebar (320px) is second on the right */
+  /* Track 1 (Main Content) gets the flexible space, Track 2 (Sidebar) gets 320px */
   grid-template-columns: 1fr 320px; 
   gap: var(--space-xl);
   margin-top: var(--space-xl);
@@ -53,7 +53,6 @@
    CARD SYSTEM
    White cards on a soft, tinted canvas background
 ============================================================ */
-/* Clean up any old card definitions to stop the right-side layout overflow */
 .card {
   background: transparent;
   padding: 0;
@@ -77,23 +76,19 @@
 .main-content-area {
   flex: 1;
   min-width: 0;
-  /* ADDED: Explicitly locks main action column into the first grid track (left side) */
-  grid-column: 1; 
 }
 
 /* Sidebar Column baseline rules */
 .site-sidebar {
   width: 260px;
   flex-shrink: 0;
-  /* ADDED: Explicitly locks the links directory box into the second grid track (right side) */
-  grid-column: 2; 
 }
 
 /* Subtle vertical divider to anchor the links column on desktop */
 @media (min-width: 769px) {
   .site-sidebar {
-    /* MODIFIED: Swapped left border to right border to follow layout shift direction */
-    border-right: 1px solid var(--border); 
+    /* Since sidebar is on the right, the divider draws on its left edge */
+    border-left: 1px solid var(--border);
     padding-left: var(--space-lg);
   }
 }
@@ -102,12 +97,6 @@
   .site-sidebar {
     width: 100%;
     padding-left: 0;
-  }
-  
-  /* ADDED: Mobile grid track fallback reset so layouts stack naturally on narrow viewports */
-  .main-content-area,
-  .site-sidebar {
-    grid-column: auto;
   }
 }
 
