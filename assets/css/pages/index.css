@@ -14,10 +14,16 @@
   margin-bottom: var(--space-md);
 }
 
-.page-intro-summary .lead-text {
+/* Consolidated all main body and introduction paragraphs to 1.15rem */
+.page-intro-summary .lead-text,
+.page-intro-summary p {
   font-size: 1.15rem;
   line-height: 1.5;
   color: var(--text-dark);
+  margin-bottom: var(--space-md);
+}
+
+.page-intro-summary p:last-of-type {
   margin-bottom: 0;
 }
 
@@ -33,7 +39,7 @@
 /* ---- Standardized Introductions / Sub-text ---- */
 .section-desc,
 .sidebar-intro {
-  font-size: 1.05rem;
+  font-size: 1.15rem; /* Standardized to 1.15rem */
   color: var(--text-muted);
   margin: 0 0 var(--space-xl) 0;
 }
@@ -69,15 +75,25 @@
   margin: 0;
 }
 
+/* Standardized row descriptions and helper text to 1.15rem */
 .section-item-desc,
-.sidebar-item p {
-  font-size: 1rem;
+.sidebar-item p,
+.sidebar-item p em {
+  font-size: 1.15rem !important; /* Forces all description paragraphs and italicized notes to match */
   color: var(--text-body);
   line-height: 1.5;
   margin: 0;
 }
 
-/* ---- Action Links (Stacked at bottom, aligned toward the right) ---- */
+/* Secondary styling override to keep the MyErickson note visually distinct without shrinking it */
+.sidebar-item p em {
+  color: var(--text-muted);
+  display: block;
+  margin-top: var(--space-xs);
+  font-style: italic;
+}
+
+/* ---- Action Links (Left-aligned text, positioned near the right baseline) ---- */
 .section-item-action,
 .sidebar-link {
   font-size: 1rem;
@@ -85,11 +101,17 @@
   text-decoration: underline;
   text-underline-offset: 4px;
   font-weight: 600;
-  margin-top: var(--space-xs); /* Gives separation below the description text */
   
-  /* The Magic Alignment Fix: */
-  align-self: flex-end; /* Pushes the entire link element over to the right side of the card */
-  text-align: left; /* Keeps the text left-aligned inside its block container */
+  /* Layout Tweaks: Expanded space above the link */
+  margin-top: var(--space-md); 
+  
+  /* Alignment Fix: Anchored to the right block edge, but strictly left-aligned text */
+  align-self: flex-end; 
+  text-align: left;
+  
+  /* Sets up a predictable visual footprint on the right side of the card layout */
+  width: 220px; 
+  display: inline-block;
 }
 
 .section-item-action:hover,
@@ -101,6 +123,8 @@
 @media (max-width: 768px) {
   .section-item-action,
   .sidebar-link {
-    align-self: flex-start; /* Snaps links back to the left on mobile for natural reading layout */
+    align-self: flex-start; /* Snaps links back to the left margin on mobile for natural reading layout */
+    width: auto; /* Restores natural text width bounds */
+    margin-top: var(--space-xs); /* Reduces vertical gap slightly for small screens */
   }
 }
