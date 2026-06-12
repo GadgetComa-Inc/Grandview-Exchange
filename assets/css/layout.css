@@ -35,7 +35,7 @@
 /* Find the .site-header block in layout.css and update it to this: */
 .site-header {
   max-width: var(--content-width);
-  margin: 0 auto var(--space-xl) auto; /* Increased global spacing below the header image */
+  margin: 0 auto; /* Increased global spacing below the header image */
   padding: 0 var(--space-md);
 }
 
@@ -116,4 +116,11 @@
   padding: var(--space-xl);
   margin-bottom: var(--space-xl);
   box-shadow: var(--shadow-card);
+}
+
+#site-nav {
+  max-width: var(--content-width);
+  /* Balanced top and bottom margin automatically centers the bar */
+  margin: var(--space-lg) auto; 
+  padding: 0 var(--space-md);
 }
