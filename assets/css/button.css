@@ -5,14 +5,15 @@
 /* ---- Base Button ---- */
 .btn {
   display: inline-block;
-  padding: var(--space-sm) var(--space-md);
+  padding: var(--space-sm) var(--space-lg);
   border-radius: 6px;
   background: var(--teal);
   color: #fff;
   font-weight: 600;
   text-align: center;
   text-decoration: none !important;
-  transition: background 0.2s;
+  font-size: 1.15rem;
+  transition: background 0.2s, transform 0.1s ease;
 }
 
 .btn:hover {
@@ -27,7 +28,7 @@
 }
 
 .btn-secondary:hover {
-  background: #cfeaea;
+  background: var(--teal-light);
 }
 
 .btn-disabled {
@@ -43,12 +44,7 @@
 .vertical-button-stack {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-top: 12px;
-}
-
-/* All card buttons same width and centered */
-.btn-card {
-  width: 270px;
-  text-align: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+  align-items: center;
 }

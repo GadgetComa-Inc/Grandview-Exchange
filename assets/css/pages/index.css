@@ -3,96 +3,51 @@
 ============================================================ */
 
 /* ---- Homepage Introduction Header Block ---- */
-.page-intro-summary {
-  margin-bottom: var(--space-xl);
-}
-
 .page-intro-summary h1 {
   font-family: 'Lora', serif;
-  font-size: 2.2rem;
-  color: var(--text-dark);
   margin-bottom: var(--space-md);
 }
 
-/* Consolidated all main body and introduction paragraphs to 1.15rem */
-.page-intro-summary .lead-text,
-.page-intro-summary p {
-  font-size: 1.15rem;
-  line-height: 1.5;
-  color: var(--text-dark);
-  margin-bottom: var(--space-md);
-}
-
-.page-intro-summary p:last-of-type {
-  margin-bottom: 0;
-}
-
-/* ---- Standardized Main Headings (Unified Font & Size) ---- */
+/* ---- Standardized Main Headings (Unified Typography) ---- */
 .section-block h2,
 .sidebar-heading {
   font-family: 'Lora', serif;
-  font-size: 1.75rem; /* Exactly matched across all three white panel containers */
-  color: var(--text-dark);
   margin: 0 0 var(--space-xs) 0;
 }
 
 /* ---- Standardized Introductions / Sub-text ---- */
 .section-desc,
 .sidebar-intro {
-  font-size: 1.15rem; /* Standardized to 1.15rem */
   color: var(--text-muted);
   margin: 0 0 var(--space-xl) 0;
 }
 
-/* ---- Unified Linear Row System (TRUE Single Column Layout) ---- */
+/* ---- Unified Linear Row System (Single Column Stack) ---- */
 .section-item-row,
 .sidebar-item {
   padding: var(--space-lg) 0;
-  border-top: 1px solid var(--border); /* Clean typography rule separation line */
-  
-  /* Restored to a strict single-column stacked architecture */
+  border-top: 1px solid var(--border); 
   display: flex;
   flex-direction: column; 
-  gap: var(--space-xs); /* Tight, uniform vertical spacing between stacked elements */
+  gap: var(--space-xs); 
 }
 
-/* Suppress the top border line for the very first item in any white box */
 .section-item-row:first-of-type,
 .sidebar-item:first-of-type {
   border-top: none;
   padding-top: 0;
 }
 
-/* Clear bottom margins since spacing is now handled uniformly by row padding */
-.sidebar-item {
-  margin-bottom: 0;
-}
-
-/* ---- Typography Elements ---- */
+/* ---- Typography Custom Overrides ---- */
 .section-item-title,
 .sidebar-item h3 {
-  font-size: 1.25rem;
   font-weight: 600;
-  color: var(--text-dark);
   margin: 0;
 }
 
-/* Standardized row descriptions and helper text to 1.15rem */
 .section-item-desc,
-.sidebar-item p,
-.sidebar-item p em {
-  font-size: 1.15rem !important; /* Forces all description paragraphs and italicized notes to match */
-  color: var(--text-body);
-  line-height: 1.5;
+.sidebar-item p {
   margin: 0;
-}
-
-/* Secondary styling override to keep the MyErickson note visually distinct without shrinking it */
-.sidebar-item p em {
-  color: var(--text-muted);
-  display: block;
-  margin-top: var(--space-xs);
-  font-style: italic;
 }
 
 /* ---- Action Links (Centered, Enhanced, and Highly Prominent) ---- */
@@ -102,17 +57,12 @@
   text-decoration: underline;
   text-underline-offset: 5px;
   font-weight: 600;
-  
-  /* TWEAK 1: Increased size to match descriptions, with crisp text styling */
   font-size: 1.15rem; 
   letter-spacing: 0.02em; 
-  
-  /* TWEAK 2: Added a bit more space above the link for clean separation */
   margin-top: var(--space-md); 
   
-  /* TWEAK 3: The Magic Fix. Flawlessly centers the links in any block width */
+  /* Centralization footprint alignment properties */
   align-self: center; 
-    
   display: inline-block;
   transition: color 0.2s ease, text-underline-offset 0.2s ease;
 }
@@ -120,12 +70,12 @@
 .section-item-action:hover,
 .sidebar-link:hover {
   color: var(--teal-dark);
-  text-underline-offset: 7px; /* Elegant hover effect to imply motion/clickability */
+  text-underline-offset: 7px; 
 }
 
 /* ---- Reusable Footnote / Clarification Comments ---- */
 .footnote-text {
-  font-size: 1.15rem; /* Matches your 1.15rem site standard */
+  font-size: 1.15rem; 
   color: var(--text-muted);
   font-style: italic;
   display: block;

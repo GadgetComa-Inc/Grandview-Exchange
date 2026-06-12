@@ -35,7 +35,7 @@
 /* ---- Balanced Two-Column Structural Frame ---- */
 .main-layout-wrapper {
   display: grid;
-  /* Track 1 (Main Content) gets the flexible space, Track 2 (Sidebar) gets 320px */
+  /* Left Content track gets flexible space, Right Sidebar track gets 320px */
   grid-template-columns: 1fr 320px; 
   gap: var(--space-xl);
   margin-top: var(--space-xl);
@@ -50,8 +50,7 @@
 }
 
 /* ------------------------------------------------------------
-   CARD SYSTEM
-   White cards on a soft, tinted canvas background
+   CARD SYSTEM & CONTAINERS
 ============================================================ */
 .card {
   background: transparent;
@@ -61,33 +60,31 @@
 }
 
 .card-title {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 600;
   color: var(--text-dark);
 }
 
 .card-desc {
-  font-size: 1rem;
+  font-size: 1.15rem;
   color: var(--text-body);
   line-height: 1.5;
 }
 
-/* Main content area expands to fill left-over space */
+/* Main content area expands to fill left-side track grid space */
 .main-content-area {
   flex: 1;
   min-width: 0;
 }
 
-/* Sidebar Column baseline rules */
+/* Sidebar layout track base configuration rules */
 .site-sidebar {
-  width: 260px;
-  flex-shrink: 0;
+  width: 100%;
 }
 
-/* Subtle vertical divider to anchor the links column on desktop */
+/* Vertical structural layout divider on desktop viewports */
 @media (min-width: 769px) {
   .site-sidebar {
-    /* Since sidebar is on the right, the divider draws on its left edge */
     border-left: 1px solid var(--border);
     padding-left: var(--space-lg);
   }
@@ -95,7 +92,6 @@
 
 @media (max-width: 768px) {
   .site-sidebar {
-    width: 100%;
     padding-left: 0;
   }
 }
