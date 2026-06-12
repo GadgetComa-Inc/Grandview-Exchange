@@ -35,7 +35,8 @@
         });
     </script>
 
-    <section class="page-intro-summary" style="margin-bottom: var(--space-xl);">
+    <!-- Standardized Introduction Header Block Layout -->
+    <section class="page-intro-summary">
       <h1>The Grandview Community Calendar</h1>
       <p class="lead-text">
         This calendar shows upcoming activities, meetings, and events happening at The Grandview.
@@ -46,12 +47,24 @@
       </p>
     </section>
 
+    <!-- Balanced Two-Column Structural Shell Wrapper (Flex/Grid) -->
     <div class="main-layout-wrapper">
 
+      <!-- Column Track 1: Main Content Container Frame (Aligned Left) -->
+      <main class="main-content-area">
+        <div class="section-block">
+          <h2 id="print-heading" class="print-only">
+            Grandview Community Calendar
+          </h2>
+          <div id="calendar"></div>
+        </div>
+      </main>
+
+      <!-- Column Track 2: Sidebar Container Frame (Aligned Right) -->
       <aside class="site-sidebar">
         
         <div class="sidebar-item">
-          <h3 class="sidebar-item-title">Select View</h3>
+          <h3 class="sidebar-heading">Select View</h3>
           <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px;">
             <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px;"><input type="radio" name="view" value="listMonth" checked> Agenda</label>
             <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px;"><input type="radio" name="view" value="timeGridWeek"> Week</label>
@@ -60,7 +73,7 @@
         </div>
 
         <div class="sidebar-item">
-          <h3 class="sidebar-item-title">Show Calendars</h3>
+          <h3 class="sidebar-heading">Show Calendars</h3>
           <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px;">
             <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px;"><input type="checkbox" class="cal-toggle" data-cal="grandview" checked> Grandview Events</label>
             <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px;"><input type="checkbox" class="cal-toggle" data-cal="bocce" checked> Bocce Club</label>
@@ -74,34 +87,25 @@
           </div>
         </div>
 
+        <!-- Take It With You Block (Refactored to look like an index page link row) -->
         <div class="sidebar-item">
-          <h3 class="sidebar-item-title">Take It With You</h3>
-          <p class="sidebar-desc" style="margin-bottom: var(--space-md);">
+          <h3 class="sidebar-heading">Take It With You</h3>
+          <p>
             You can print your calendar or subscribe to have it show up in your Google, Apple, or Microsoft calendar app.
           </p>
 
-          <div class="actions-stack">
-            <button id="print-calendar" class="btn btn-secondary" style="width: 100%; margin-bottom: 12px; padding: 12px; font-size: 1rem; font-weight: 600;">
-              🖨️ Print Calendar
-            </button>
-            <button id="open-subscribe-modal" class="btn" style="width: 100%; padding: 12px; font-size: 1rem; font-weight: 600;">
-              📅 Subscribe
-            </button>
+          <div style="display: flex; flex-direction: column; gap: var(--space-xs); margin-top: var(--space-sm);">
+            <a href="#" id="print-calendar" class="sidebar-link">🖨️ Print Calendar →</a>
+            <a href="#" id="open-subscribe-modal" class="sidebar-link">📅 Subscribe to Live Feed →</a>
           </div>
         </div>
 
       </aside>
 
-      <main class="main-content-area">
-        <div class="card" style="padding: var(--space-lg);">
-          <h2 id="print-heading" class="print-only" style="font-family: 'Lora', serif; margin-bottom: var(--space-md);">
-            Grandview Community Calendar
-          </h2>
-          <div id="calendar"></div>
-        </div>
-      </main>
+    </div>
+  </div>
 
-    </div></div><footer class="site-footer">
+  <footer class="site-footer">
     <p>
       © 2026 Grandview Exchange ·
       Questions? <a href="mailto:admin@grandviewexchange.com">Contact Us</a>
@@ -119,7 +123,8 @@
       const openSubscribeModal = document.getElementById('open-subscribe-modal');
       const closeSubscribeModal = document.getElementById('subscribeModalClose');
 
-      openSubscribeModal.onclick = () => {
+      openSubscribeModal.onclick = (e) => {
+        e.preventDefault();
         subscribeModal.style.display = 'flex';
       };
 
@@ -312,7 +317,8 @@
       });
 
       // Print operational command
-      document.getElementById('print-calendar').onclick = () => {
+      document.getElementById('print-calendar').onclick = (e) => {
+        e.preventDefault();
         calendar.changeView('listMonth');
         setTimeout(() => window.print(), 200);
       };
