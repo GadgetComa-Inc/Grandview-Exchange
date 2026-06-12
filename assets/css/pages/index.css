@@ -1,23 +1,40 @@
 /* ============================================================
-   Page -- Index (Homepage Specific Rules)
+   Page -- Index (Homepage & Structural Shared Rules)
 ============================================================ */
 
 /* ---- Homepage Introduction Header Block ---- */
 .page-intro-summary h1 {
   font-family: 'Lora', serif;
+  font-size: 2.2rem;
+  color: var(--text-dark);
   margin-bottom: var(--space-md);
+}
+
+.page-intro-summary .lead-text,
+.page-intro-summary p {
+  font-size: 1.15rem;
+  line-height: 1.5;
+  color: var(--text-dark);
+  margin-bottom: var(--space-md);
+}
+
+.page-intro-summary p:last-of-type {
+  margin-bottom: 0;
 }
 
 /* ---- Standardized Main Headings (Unified Typography) ---- */
 .section-block h2,
 .sidebar-heading {
   font-family: 'Lora', serif;
+  font-size: 1.75rem; /* Exactly matched across panel containers */
+  color: var(--text-dark);
   margin: 0 0 var(--space-xs) 0;
 }
 
 /* ---- Standardized Introductions / Sub-text ---- */
 .section-desc,
 .sidebar-intro {
+  font-size: 1.15rem;
   color: var(--text-muted);
   margin: 0 0 var(--space-xl) 0;
 }
@@ -32,8 +49,21 @@
   gap: var(--space-xs); 
 }
 
-.section-item-row:first-of-type,
-.sidebar-item:first-of-type {
+/* FIXED: Specific sibling overrides to ensure that when a .sidebar-item 
+   comes immediately after descriptive header text, its top padding/borders 
+   do not collapse or swallow the .sidebar-intro's margin space.
+*/
+.section-item-row:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.sidebar-heading + .sidebar-item,
+.sidebar-intro + .sidebar-item {
+  border-top: 1px solid var(--border);
+}
+
+.main-layout-wrapper aside > .sidebar-item:first-child {
   border-top: none;
   padding-top: 0;
 }
@@ -41,13 +71,26 @@
 /* ---- Typography Custom Overrides ---- */
 .section-item-title,
 .sidebar-item h3 {
+  font-size: 1.3rem;
   font-weight: 600;
+  color: var(--text-dark);
   margin: 0;
 }
 
 .section-item-desc,
 .sidebar-item p {
+  font-size: 1.15rem !important; /* Standardizes body content to crisp 1.15rem */
+  color: var(--text-body);
+  line-height: 1.5;
   margin: 0;
+}
+
+/* Secondary styling override to keep the MyErickson note visually distinct */
+.sidebar-item p em {
+  color: var(--text-muted);
+  display: block;
+  margin-top: var(--space-xs);
+  font-style: italic;
 }
 
 /* ---- Action Links (Centered, Enhanced, and Highly Prominent) ---- */
@@ -60,8 +103,6 @@
   font-size: 1.15rem; 
   letter-spacing: 0.02em; 
   margin-top: var(--space-md); 
-  
-  /* Centralization footprint alignment properties */
   align-self: center; 
   display: inline-block;
   transition: color 0.2s ease, text-underline-offset 0.2s ease;
@@ -70,14 +111,5 @@
 .section-item-action:hover,
 .sidebar-link:hover {
   color: var(--teal-dark);
-  text-underline-offset: 7px; 
-}
-
-/* ---- Reusable Footnote / Clarification Comments ---- */
-.footnote-text {
-  font-size: 1.15rem; 
-  color: var(--text-muted);
-  font-style: italic;
-  display: block;
-  margin-top: var(--space-xs);
+  text-underline-offset: 7px;
 }
