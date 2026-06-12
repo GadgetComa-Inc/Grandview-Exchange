@@ -32,6 +32,19 @@
   padding: 0 var(--space-md);
 }
 
+/* Find the .site-header block in layout.css and update it to this: */
+.site-header {
+  max-width: var(--content-width);
+  margin: 0 auto var(--space-xl) auto; /* Increased global spacing below the header image */
+  padding: 0 var(--space-md);
+}
+
+.site-header img {
+  width: 100%;
+  height: auto; /* Maintains native aspect ratio beautifully */
+  display: block;
+}
+
 /* ---- Balanced Two-Column Structural Frame ---- */
 .main-layout-wrapper {
   display: grid;
