@@ -38,81 +38,83 @@
   margin: 0 0 var(--space-xl) 0;
 }
 
-/* ---- Main Area: Linear Row Architecture (Replaces inner cards/grids) ---- */
-.section-item-row {
+/* ---- Main & Sidebar Area: Unified Horizontal Row Architecture ---- */
+.section-item-row,
+.sidebar-item {
   padding: var(--space-lg) 0;
-  border-top: 1px solid var(--border); /* Elegant, thin separation line between entries */
+  border-top: 1px solid var(--border); /* Clean typography rule separation line applied to all blocks */
   display: flex;
-  flex-direction: column;
-  gap: var(--space-xs);
+  flex-direction: row; /* Aligns content side-by-side on desktop */
+  justify-content: space-between; /* Spreads description to left, link to right */
+  align-items: center; /* Vertically centers the text link with the text block */
+  gap: var(--space-xl);
 }
 
-/* Suppress the border line for the first item directly under the header description */
-.section-item-row:first-of-type {
+/* Suppress the top border line for the very first item in any white box */
+.section-item-row:first-of-type,
+.sidebar-item:first-of-type {
   border-top: none;
   padding-top: 0;
 }
 
-.section-item-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--text-dark);
-  margin: 0;
+/* Clear bottom margins since spacing is now handled uniformly by row padding */
+.sidebar-item {
+  margin-bottom: 0;
 }
 
-.section-item-desc {
+/* Outer wrapper wrapping the text group to prevent them from stretching awkwardly */
+.section-item-row > div:first-child,
+.sidebar-item > div:first-child {
+  flex: 1; /* Allows text content to take up the maximum comfortable left-side width */
+}
+
+/* ---- Typography Elements ---- */
+.section-item-title,
+.sidebar-item h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin: 0 0 4px 0;
+}
+
+.section-item-desc,
+.sidebar-item p {
   font-size: 1rem;
   color: var(--text-body);
   line-height: 1.5;
-  margin: 0 0 var(--space-sm) 0;
+  margin: 0;
 }
 
-/* Inline typography links instead of clunky, rigid full-width buttons */
-.section-item-action {
+/* ---- Action Links (Left-aligned, resting on the right side of the container) ---- */
+.section-item-action,
+.sidebar-link {
   font-size: 1rem;
   color: var(--teal);
   text-decoration: underline;
   text-underline-offset: 4px;
   font-weight: 600;
-  align-self: flex-start; /* Restricts click boundaries strictly to text width */
+  white-space: nowrap; /* Prevents the link text from wrapping onto two lines */
+  text-align: left; /* Ensures left-alignment inside its own bounded area */
+  min-width: 180px; /* Gives the link a stable, predictable footprint on the right */
 }
 
-.section-item-action:hover {
-  color: var(--teal-dark);
-}
-
-/* ---- Sidebar Area: Directory Item Padding & Spacing ---- */
-.sidebar-item {
-  margin-bottom: var(--space-lg);
-}
-
-.sidebar-item:last-of-type {
-  margin-bottom: 0;
-}
-
-.sidebar-item h3 {
-  font-size: 1.15rem;
-  color: var(--text-dark);
-  margin: 0 0 6px 0;
-  font-weight: 600;
-}
-
-.sidebar-item p {
-  font-size: 0.95rem;
-  color: var(--text-body);
-  line-height: 1.45;
-  margin: 0 0 var(--space-xs) 0;
-}
-
-/* Typographic links inside the sidebar container */
-.sidebar-link {
-  font-size: 0.95rem;
-  color: var(--teal);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  font-weight: 600;
-}
-
+.section-item-action:hover,
 .sidebar-link:hover {
   color: var(--teal-dark);
+}
+
+/* ---- Responsive Fallback for Smaller Screens / Tablets ---- */
+@media (max-width: 900px) {
+  .section-item-row,
+  .sidebar-item {
+    flex-direction: column; /* Stack vertically on small mobile screens */
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+  
+  .section-item-action,
+  .sidebar-link {
+    min-width: auto;
+    padding-top: var(--space-xs);
+  }
 }

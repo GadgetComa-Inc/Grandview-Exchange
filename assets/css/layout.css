@@ -35,7 +35,7 @@
 /* ---- Balanced Two-Column Structural Frame ---- */
 .main-layout-wrapper {
   display: grid;
-  grid-template-columns: 280px 1fr; /* Explicit column width for standard balance */
+  grid-template-columns: 320px 1fr; /* Explicit column width for standard balance */
   gap: var(--space-xl);
   margin-top: var(--space-xl);
   align-items: start;
