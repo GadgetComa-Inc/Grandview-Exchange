@@ -2,7 +2,7 @@
    Page -- Index (Homepage Specific Rules)
 ============================================================ */
 
-/* Homepage Introduction Header Block */
+/* ---- Homepage Introduction Header Block ---- */
 .page-intro-summary {
   margin-bottom: var(--space-xl);
 }
@@ -21,73 +21,33 @@
   margin-bottom: 0;
 }
 
-/* Section Blocks (Start Here, What's Next) */
-.section-block h2 {
+/* ---- Standardized Main Headings (Unified Font & Size) ---- */
+.section-block h2,
+.sidebar-heading {
   font-family: 'Lora', serif;
-  font-size: 1.75rem;
+  font-size: 1.75rem; /* Exactly matched across all three white panel containers */
   color: var(--text-dark);
   margin: 0 0 var(--space-xs) 0;
 }
 
-.section-desc {
+/* ---- Standardized Introductions / Sub-text ---- */
+.section-desc,
+.sidebar-intro {
   font-size: 1.05rem;
   color: var(--text-muted);
   margin: 0 0 var(--space-xl) 0;
 }
 
-.sidebar-heading {
-  font-family: 'Lora', serif;
-  font-size: 1.5rem;
-  color: var(--text-dark);
-  margin: 0 0 var(--space-sm) 0;
-}
-
-.sidebar-intro {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  margin: 0 0 var(--space-md) 0;
-}
-
-.sidebar-item {
-  margin-bottom: var(--space-sm);
-}
-
-.sidebar-item h3 {
-  font-size: 1.1rem;
-  color: var(--text-dark);
-  margin: 0 0 4px 0;
-  font-weight: 600;
-}
-
-.sidebar-item p {
-  font-size: 0.95rem;
-  color: var(--text-body);
-  margin: 0 0 var(--space-sm) 0;
-}
-
-/* Secondary Action Links */
-.sidebar-link {
-  font-size: 0.95rem;
-  color: var(--teal);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  font-weight: 500;
-}
-
-.sidebar-link:hover {
-  color: var(--teal-dark);
-}
-
-/* Distinct rows inside the floating white cards */
+/* ---- Main Area: Linear Row Architecture (Replaces inner cards/grids) ---- */
 .section-item-row {
   padding: var(--space-lg) 0;
-  border-top: 1px solid var(--border); /* Clean typography rule separation line */
+  border-top: 1px solid var(--border); /* Elegant, thin separation line between entries */
   display: flex;
   flex-direction: column;
   gap: var(--space-xs);
 }
 
-/* Suppress the border line for the first row item directly beneath a card description */
+/* Suppress the border line for the first item directly under the header description */
 .section-item-row:first-of-type {
   border-top: none;
   padding-top: 0;
@@ -107,16 +67,52 @@
   margin: 0 0 var(--space-sm) 0;
 }
 
-/* Inline actions styled as legible typographic text-links */
+/* Inline typography links instead of clunky, rigid full-width buttons */
 .section-item-action {
   font-size: 1rem;
   color: var(--teal);
   text-decoration: underline;
   text-underline-offset: 4px;
   font-weight: 600;
-  align-self: flex-start; /* Restricts the click target area to the text width */
+  align-self: flex-start; /* Restricts click boundaries strictly to text width */
 }
 
 .section-item-action:hover {
+  color: var(--teal-dark);
+}
+
+/* ---- Sidebar Area: Directory Item Padding & Spacing ---- */
+.sidebar-item {
+  margin-bottom: var(--space-lg);
+}
+
+.sidebar-item:last-of-type {
+  margin-bottom: 0;
+}
+
+.sidebar-item h3 {
+  font-size: 1.15rem;
+  color: var(--text-dark);
+  margin: 0 0 6px 0;
+  font-weight: 600;
+}
+
+.sidebar-item p {
+  font-size: 0.95rem;
+  color: var(--text-body);
+  line-height: 1.45;
+  margin: 0 0 var(--space-xs) 0;
+}
+
+/* Typographic links inside the sidebar container */
+.sidebar-link {
+  font-size: 0.95rem;
+  color: var(--teal);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+}
+
+.sidebar-link:hover {
   color: var(--teal-dark);
 }

@@ -34,7 +34,8 @@
 
 /* ---- Balanced Two-Column Structural Frame ---- */
 .main-layout-wrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: 280px 1fr; /* Explicit column width for standard balance */
   gap: var(--space-xl);
   margin-top: var(--space-xl);
   align-items: start;
@@ -42,18 +43,21 @@
 
 @media (max-width: 768px) {
   .main-layout-wrapper {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     gap: var(--space-lg);
   }
 }
+
 /* ------------------------------------------------------------
    CARD SYSTEM
    White cards on a soft, tinted canvas background
 ============================================================ */
+/* Clean up any old card definitions to stop the right-side layout overflow */
 .card {
-  background: var(--bg-white);
-  border-radius: 8px;
-  padding: var(--space-lg);
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+  border-radius: 0;
 }
 
 .card-title {
@@ -95,11 +99,11 @@
   }
 }
 
-/* The New Unified White Floating Section Card (Start Here / What's Next) */
+/* ---- Unified Structural Component Block ---- */
 .section-block {
   background: var(--bg-white);
   border-radius: 8px;
   padding: var(--space-xl);
   margin-bottom: var(--space-xl);
-  box-shadow: var(--shadow-card); /* Soft depth cue instead of box borders */
+  box-shadow: var(--shadow-card);
 }
