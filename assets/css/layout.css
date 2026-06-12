@@ -32,10 +32,11 @@
   padding: 0 var(--space-md);
 }
 
-/* ---- Balanced Two-Column Structural Frame ---- */
+/* ---- Balanced Two-Column Structural Frame (Sidebar on Right) ---- */
 .main-layout-wrapper {
   display: grid;
-  grid-template-columns: 320px 1fr; /* Explicit column width for standard balance */
+  /* MODIFIED: Main area (1fr) is now first on the left, Sidebar (320px) is second on the right */
+  grid-template-columns: 1fr 320px; 
   gap: var(--space-xl);
   margin-top: var(--space-xl);
   align-items: start;
@@ -76,18 +77,23 @@
 .main-content-area {
   flex: 1;
   min-width: 0;
+  /* ADDED: Explicitly locks main action column into the first grid track (left side) */
+  grid-column: 1; 
 }
 
 /* Sidebar Column baseline rules */
 .site-sidebar {
   width: 260px;
   flex-shrink: 0;
+  /* ADDED: Explicitly locks the links directory box into the second grid track (right side) */
+  grid-column: 2; 
 }
 
 /* Subtle vertical divider to anchor the links column on desktop */
 @media (min-width: 769px) {
   .site-sidebar {
-    border-left: 1px solid var(--border);
+    /* MODIFIED: Swapped left border to right border to follow layout shift direction */
+    border-right: 1px solid var(--border); 
     padding-left: var(--space-lg);
   }
 }
@@ -96,6 +102,12 @@
   .site-sidebar {
     width: 100%;
     padding-left: 0;
+  }
+  
+  /* ADDED: Mobile grid track fallback reset so layouts stack naturally on narrow viewports */
+  .main-content-area,
+  .site-sidebar {
+    grid-column: auto;
   }
 }
 
