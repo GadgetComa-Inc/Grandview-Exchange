@@ -44,17 +44,16 @@
   margin: 0 0 var(--space-xl) 0;
 }
 
-/* ---- Unified Linear Row System (Grid Sub-Layout Architecture) ---- */
+/* ---- Unified Linear Row System (TRUE Single Column Layout) ---- */
 .section-item-row,
 .sidebar-item {
   padding: var(--space-lg) 0;
   border-top: 1px solid var(--border); /* Clean typography rule separation line */
   
-  /* Switching to an explicit asymmetrical grid to anchor content slots */
-  display: grid;
-  grid-template-columns: 1fr max-content; 
-  column-gap: var(--space-xl);
-  row-gap: var(--space-xs);
+  /* Restored to a strict single-column stacked architecture */
+  display: flex;
+  flex-direction: column; 
+  gap: var(--space-xs); /* Tight, uniform vertical spacing between stacked elements */
 }
 
 /* Suppress the top border line for the very first item in any white box */
@@ -70,14 +69,6 @@
 }
 
 /* ---- Typography Elements ---- */
-/* Title and description occupy the left column slot, forcing the link right */
-.section-item-title,
-.sidebar-item h3,
-.section-item-desc,
-.sidebar-item p {
-  grid-column: 1;
-}
-
 .section-item-title,
 .sidebar-item h3 {
   font-size: 1.25rem;
@@ -104,26 +95,25 @@
   font-style: italic;
 }
 
-/* ---- Action Links (Strictly Left-Aligned, Flushed Right) ---- */
+/* ---- Action Links (Strictly Left-Aligned, Positioned on the Right Edge) ---- */
 .section-item-action,
 .sidebar-link {
-  grid-column: 2; /* Lock into the right-hand column slot */
-  grid-row: 1 / span 3; /* Allows the link to vertically align nicely alongside text contents */
-  align-self: end; /* Drops to the bottom row boundary level */
-  text-align: left; /* Confirms text is left-to-right readable */
-  
   font-size: 1rem;
   color: var(--teal);
   text-decoration: underline;
   text-underline-offset: 4px;
   font-weight: 600;
   
-  /* Micro spacing adjustment from the bottom layout baseline */
-  margin-bottom: 2px;
+  /* Space above the link */
+  margin-top: var(--space-xs); 
   
-  /* Establishes a matching alignment block column footprint */
-  width: 175px; 
-  white-space: nowrap;
+  /* The Magic Fix: Keeps the text left-aligned, but positions the block on the right edge */
+  align-self: flex-end; 
+  text-align: left;
+  
+  /* Creates a fixed container window so all link texts share a uniform left-alignment edge */
+  width: 200px; 
+  display: inline-block;
 }
 
 .section-item-action:hover,
@@ -133,17 +123,9 @@
 
 /* ---- Responsive Fallback for Smaller Screens / Mobile Tablets ---- */
 @media (max-width: 768px) {
-  .section-item-row,
-  .sidebar-item {
-    display: flex;
-    flex-direction: column; /* Reverts back to natural stacked behavior on phone screens */
-    gap: var(--space-xs);
-  }
-  
   .section-item-action,
   .sidebar-link {
     align-self: flex-start; /* Snaps links back to the left margin on mobile */
-    margin-top: var(--space-xs);
     width: auto;
   }
 }
