@@ -1,49 +1,29 @@
 /* ============================================================
-   Page -- Index (Homepage & Structural Shared Rules)
+   Page -- Index (Homepage Specific Rules)
 ============================================================ */
 
 /* ---- Homepage Introduction Header Block ---- */
-/* UPDATE: Add layout spacing rules to the wrapper container itself */
+/* UPDATED: Outer container spacing matches layout.css nav centering rules */
 .page-intro-summary {
   margin-top: var(--space-sm);
-  /* Keeps the heading text grounded safely in place */
   margin-bottom: var(--space-xl);
-  /* Retains the clean separation above the columns */
 }
 
 .page-intro-summary h1 {
   font-family: 'Lora', serif;
-  font-size: 2.2rem;
-  color: var(--text-dark);
   margin-bottom: var(--space-md);
 }
 
-.page-intro-summary .lead-text,
-.page-intro-summary p {
-  font-size: 1.15rem;
-  line-height: 1.5;
-  color: var(--text-dark);
-  margin-bottom: var(--space-md);
-}
-
-.page-intro-summary p:last-of-type {
-  margin-bottom: 0;
-}
-
-/* ---- Standardized Main Headings (Unified Typography) ---- */
+/* ---- Standardized Main Headings (Unified Font & Size) ---- */
 .section-block h2,
 .sidebar-heading {
   font-family: 'Lora', serif;
-  font-size: 1.75rem;
-  /* Exactly matched across panel containers */
-  color: var(--text-dark);
   margin: 0 0 var(--space-xs) 0;
 }
 
 /* ---- Standardized Introductions / Sub-text ---- */
 .section-desc,
 .sidebar-intro {
-  font-size: 1.15rem;
   color: var(--text-muted);
   margin: 0 0 var(--space-xl) 0;
 }
@@ -52,55 +32,43 @@
 .section-item-row,
 .sidebar-item {
   padding: var(--space-lg) 0;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--border); 
   display: flex;
-  flex-direction: column;
-  gap: var(--space-xs);
+  flex-direction: column; 
+  gap: var(--space-xs); 
 }
 
-/* FIXED: Specific sibling overrides to ensure that when a .sidebar-item 
-   comes immediately after descriptive header text, its top padding/borders 
-   do not collapse or swallow the .sidebar-intro's margin space.
-*/
-.section-item-row:first-of-type {
-  border-top: none;
-  padding-top: 0;
-}
-
-.sidebar-heading+.sidebar-item,
-.sidebar-intro+.sidebar-item {
+/* FIXED: Enforces the top border divider on rows that sit directly 
+   beneath an intro paragraph, ensuring the headers are separated 
+   from content rows in both the main cards and the sidebar. */
+.section-desc + .section-item-row,
+.sidebar-intro + .sidebar-item {
   border-top: 1px solid var(--border);
 }
 
-.main-layout-wrapper aside>.sidebar-item:first-child {
+.section-item-row:first-of-type,
+.sidebar-item:first-of-type {
   border-top: none;
   padding-top: 0;
+}
+
+/* Override the first-of-type rule if the element follows a description banner */
+.section-desc + .section-item-row:first-of-type,
+.sidebar-intro + .sidebar-item:first-of-type {
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-lg);
 }
 
 /* ---- Typography Custom Overrides ---- */
 .section-item-title,
 .sidebar-item h3 {
-  font-size: 1.3rem;
   font-weight: 600;
-  color: var(--text-dark);
   margin: 0;
 }
 
 .section-item-desc,
 .sidebar-item p {
-  font-size: 1.15rem !important;
-  /* Standardizes body content to crisp 1.15rem */
-  color: var(--text-body);
-  line-height: 1.5;
   margin: 0;
-}
-
-/* Secondary styling override to keep the MyErickson note visually distinct */
-.sidebar-item p em {
-  color: var(--text-muted);
-  display: block;
-  margin-top: var(--space-xs);
-  font-style: italic;
 }
 
 /* ---- Action Links (Centered, Enhanced, and Highly Prominent) ---- */
@@ -110,10 +78,10 @@
   text-decoration: underline;
   text-underline-offset: 5px;
   font-weight: 600;
-  font-size: 1.15rem;
-  letter-spacing: 0.02em;
-  margin-top: var(--space-md);
-  align-self: center;
+  font-size: 1.15rem; 
+  letter-spacing: 0.02em; 
+  margin-top: var(--space-md); 
+  align-self: center; 
   display: inline-block;
   transition: color 0.2s ease, text-underline-offset 0.2s ease;
 }
