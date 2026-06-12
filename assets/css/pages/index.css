@@ -93,7 +93,7 @@
   font-style: italic;
 }
 
-/* ---- Action Links (Left-aligned text, positioned near the right baseline) ---- */
+/* ---- Action Links (Left-aligned text, positioned close to the right edge) ---- */
 .section-item-action,
 .sidebar-link {
   font-size: 1rem;
@@ -102,15 +102,17 @@
   text-underline-offset: 4px;
   font-weight: 600;
   
-  /* Layout Tweaks: Expanded space above the link */
-  margin-top: var(--space-md); 
+  /* Layout Tweaks: Shrunk space above the link per your request */
+  margin-top: var(--space-sm); 
   
-  /* Alignment Fix: Anchored to the right block edge, but strictly left-aligned text */
-  align-self: flex-end; 
+  /* Alignment Fix: Pushes to the exact right edge while keeping text left-aligned */
+  margin-left: auto; 
+  align-self: flex-end;
   text-align: left;
   
-  /* Sets up a predictable visual footprint on the right side of the card layout */
-  width: 220px; 
+  /* Replaces the heavy hardcoded footprint with an open, text-bound layout width */
+  max-width: 240px;
+  width: 100%;
   display: inline-block;
 }
 
@@ -124,7 +126,7 @@
   .section-item-action,
   .sidebar-link {
     align-self: flex-start; /* Snaps links back to the left margin on mobile for natural reading layout */
-    width: auto; /* Restores natural text width bounds */
-    margin-top: var(--space-xs); /* Reduces vertical gap slightly for small screens */
+    margin-left: 0; /* Reset automatic right-push on small screens */
+    max-width: none;
   }
 }
