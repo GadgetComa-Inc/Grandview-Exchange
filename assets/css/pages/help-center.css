@@ -2,29 +2,27 @@
    Page -- Help Center Home Dashboard Fixes
 ============================================================ */
 
-/* Force the horizontal content border divider to render on both columns[span_0](start_span)[span_0](end_span) */
+/* Force the horizontal content border divider to render on both columns */
 .help-dashboard-area .section-desc + .grid-2col .section-item-row {
   border-top: 1px solid var(--border);
   padding-top: var(--space-lg);
   margin-top: 0;
 }
 
-/* Use internal grid structures to tie the columns to a matching horizontal baseline */
+/* Reverted: Drop internal grid rows and let text content flow naturally */
 .help-dashboard-area .section-item-row {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  gap: var(--space-xs); /* Keeps the title, description, and link packed tightly together */
-  height: 100%;
+  display: block;
+  height: auto;
 }
 
-/* Force the description text block to take up the flexible middle track */
+/* Eliminate bottom margin from description to control spacing precisely via the link */
 .help-dashboard-area .section-item-desc {
   margin-bottom: 0;
 }
 
-/* Snap the action link directly to the tight bottom baseline of the grid track */
+/* Apply a clean, consistent 24px space directly between the text and the link */
 .help-dashboard-area .section-item-action {
   display: inline-block;
-  margin-top: var(--space-sm);
+  margin-top: var(--space-lg);
   padding-top: 0;
 }
