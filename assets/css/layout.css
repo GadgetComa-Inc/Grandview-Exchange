@@ -118,11 +118,68 @@
   box-shadow: var(--shadow-card);
 }
 
+/* ============================================================
+   GLOBAL NAVIGATION BAR (Breadcrumbs & Action Buttons)
+============================================================ */
 #site-nav {
   max-width: var(--content-width);
   /* Balanced top and bottom margin automatically centers the bar */
   margin: var(--space-lg) auto; 
   padding: 0 var(--space-md);
+}
+
+/* Aligns breadcrumbs to the left and your return button to the right */
+.site-nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Base styles for the breadcrumb text link string */
+.breadcrumb {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1.15rem;
+  color: var(--text-body);
+}
+
+.breadcrumb a {
+  color: var(--teal);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* Container for your right-aligned button track */
+.nav-buttons {
+  display: flex;
+  align-items: center;
+}
+
+/* Reconciled: Light, tinted button with smooth rounded corners */
+.btn-nav-return {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  text-decoration: none;
+  
+  /* Tinted box styling */
+  background-color: rgba(0, 0, 0, 0.05); 
+  border-radius: 6px; 
+  
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+/* Gentle hover shift for focus interaction */
+.btn-nav-return:hover {
+  background-color: rgba(0, 0, 0, 0.09);
+  color: var(--text-dark);
+  text-decoration: none;
 }
 
 /* ============================================================

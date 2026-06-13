@@ -1,12 +1,22 @@
-/* ============================================
-   Page -- Help Center
-============================================ */
+/* ============================================================
+   Page -- Help Center Home Dashboard Fixes
+============================================================ */
 
-/* Page layout wrappers */
-.help-site {
-  background: var(--bg-page);
+/* Force the horizontal content border divider to render on both columns */
+.help-dashboard-area .section-desc + .grid-2col .section-item-row {
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-lg);
+  margin-top: 0;
 }
 
-.help-main {
-  width: 100%;
+/* Ensure action links snap cleanly to the bottom of cards with variable text heights */
+.help-dashboard-area .section-item-row {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.help-dashboard-area .section-item-action {
+  margin-top: auto;
+  padding-top: var(--space-md);
 }
