@@ -32,10 +32,9 @@
   padding: 0 var(--space-md);
 }
 
-/* Find the .site-header block in layout.css and update it to this: */
 .site-header {
   max-width: var(--content-width);
-  margin: 0 auto; /* Increased global spacing below the header image */
+  margin: 0 auto; /* Spacing below the header image */
   padding: 0 var(--space-md);
 }
 
@@ -123,43 +122,43 @@
 ============================================================ */
 #site-nav {
   max-width: var(--content-width);
-  /* Balanced top and bottom margin automatically centers the bar */
   margin: var(--space-lg) auto; 
   padding: 0 var(--space-md);
+  width: 100%;
 }
 
-/* Aligns breadcrumbs to the left and your return button to the right */
-.site-nav-row {
-  display: flex;
+/* Enforces the inner injected layout container to space out to the edges */
+#site-nav .site-nav-row {
+  display: flex !important;
   justify-content: space-between;
   align-items: center;
   width: 100%;
 }
 
 /* Base styles for the breadcrumb text link string */
-.breadcrumb {
+#site-nav .breadcrumb {
   font-family: 'Source Sans 3', sans-serif;
   font-size: 1.15rem;
   color: var(--text-body);
 }
 
-.breadcrumb a {
+#site-nav .breadcrumb a {
   color: var(--teal);
   text-decoration: none;
 }
 
-.breadcrumb a:hover {
+#site-nav .breadcrumb a:hover {
   text-decoration: underline;
 }
 
 /* Container for your right-aligned button track */
-.nav-buttons {
+#site-nav .nav-buttons {
   display: flex;
   align-items: center;
 }
 
 /* Reconciled: Light, tinted button with smooth rounded corners */
-.btn-nav-return {
+#site-nav .btn-nav-return {
   display: inline-block;
   padding: 0.4rem 0.8rem;
   font-family: 'Source Sans 3', sans-serif;
@@ -176,7 +175,7 @@
 }
 
 /* Gentle hover shift for focus interaction */
-.btn-nav-return:hover {
+#site-nav .btn-nav-return:hover {
   background-color: rgba(0, 0, 0, 0.09);
   color: var(--text-dark);
   text-decoration: none;
@@ -186,7 +185,7 @@
    GLOBAL FOOTER SYSTEM
 ============================================================ */
 .site-footer {
-  text-align: center;         /* Enforces perfect horizontal center on all pages */
+  text-align: center;         /* Enforces horizontal center on all pages */
   padding: var(--space-xl) 0;  /* Standard visual breathing room at page bottom */
   border-top: 1px solid var(--border);
   width: 100%;
