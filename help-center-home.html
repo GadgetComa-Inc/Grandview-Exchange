@@ -12,145 +12,127 @@
 
 <body class="help-site">
 
-	<!-- Site Banner -->
 	<header class="site-header">
 		<img src="assets/img/coverphoto.png" alt="Grandview Exchange Banner">
 	</header>
 
 	<div class="site-shell">
 
-		<!-- NAVIGATION (loaded dynamically) -->
 		<div id="site-nav"></div>
-
 		<script>
 			fetch('/includes/site-nav.html')
 				.then(r => r.text())
 				.then(html => {
 					document.getElementById('site-nav').innerHTML = html;
-
 					const title = document.title.replace(' – Grandview Exchange', '');
 					document.querySelector('.current-page').textContent = title;
 				});
 		</script>
 
-		<!-- HERO BOX -->
-		<section class="section">
-			<div class="card card-hero">
-				<h1>Grandview Exchange Help Center</h1>
-				<p>Your guide to getting started, finding your way around, and making the most of our online community.</p>
-			</div>
+		<section class="page-intro-summary">
+			<h1>Grandview Exchange Help Center</h1>
+			<p class="lead-text">
+				Your guide to getting started, finding your way around, and making the most of our online community.
+			</p>
 		</section>
 
-		<!-- HELP TOPICS -->
-		<section class="section">
+		<main class="main-content-area help-dashboard-area">
 
-			<div class="card card-light">
+			<section class="section-block">
+				<h2>Getting Online</h2>
+				<p class="section-desc">Initial configuration steps to choose your access method and sign into the community hub.</p>
+				
+				<div class="grid grid-2col">
+					<div class="section-item-row">
+						<h3 class="section-item-title">Choose How You Want to Use the Site</h3>
+						<div class="section-item-desc">
+							Pick the way you prefer to use Grandview Exchange — the mobile app, a web browser on your computer, or directly through your email.
+						</div>
+						<a class="section-item-action" href="ways-to-use.html">See Your Options →</a>
+					</div>
 
-				<div class="card-body card-body-center">
-					<h2>Help Topics</h2>
+					<div class="section-item-row">
+						<h3 class="section-item-title">Finding the Site & Logging In</h3>
+						<div class="section-item-desc">
+							Learn how to open Grandview Exchange depending on your access method and find out what to do if you are asked to log in.
+						</div>
+						<a class="section-item-action" href="finding-login.html">Start Here →</a>
+					</div>
 				</div>
+			</section>
+
+			<section class="section-block">
+				<h2>Using Grandview Exchange</h2>
+				<p class="section-desc">Step-by-step documentation for participating in groups, viewing logs, and formatting interactions.</p>
 
 				<div class="grid grid-2col">
-
-					<!-- CHOOSE HOW YOU WANT TO USE -->
-					<div class="card">
-						<div class="card-body">
-							<div class="card-title">Choose How You Want to Use Grandview Exchange</div>
-							<div class="card-desc">
-								Pick the way you prefer to use Grandview Exchange — the app, a web browser, or your email.
-							</div>
+					<div class="section-item-row">
+						<h3 class="section-item-title">Reading, Posting & Replying</h3>
+						<div class="section-item-desc">
+							Step-by-step instructions for viewing current updates, posting new messages, sending replies, and managing media attachments.
 						</div>
-						<div class="card-actions card-actions-center">
-							<a class="btn btn-card" href="ways-to-use.html">See Your Options</a>
-						</div>
+						<a class="section-item-action" href="help-center/doing-things/reading-posting-replying.html">Learn the Basics →</a>
 					</div>
 
-					<!-- FINDING & LOGGING IN -->
-					<div class="card">
-						<div class="card-body">
-							<div class="card-title">Finding & Logging In</div>
-							<div class="card-desc">
-								Learn how to open Grandview Exchange from the app, your browser, or your email — and what to do if you're asked to log in.
-							</div>
+					<div class="section-item-row">
+						<h3 class="section-item-title">Navigation & Organization</h3>
+						<div class="section-item-desc">
+							Understand community club subgroups, message filtering tags, how conversations are threaded, and how to find messages.
 						</div>
-						<div class="card-actions card-actions-center">
-							<a class="btn btn-card" href="finding-login.html">Start Here</a>
+						<a class="section-item-action" href="help-center/navigation/navigation-and-organization.html">Explore Organization →</a>
+					</div>
+				</div>
+			</section>
+
+			<section class="section-block">
+				<h2>Your Account & Settings</h2>
+				<p class="section-desc">Manage notification frequency thresholds, digest modes, and personalize your member profile.</p>
+
+				<div class="grid grid-2col">
+					<div class="section-item-row">
+						<h3 class="section-item-title">Email & Notification Settings</h3>
+						<div class="section-item-desc">
+							Control how many emails you receive from subgroups, choose comprehensive digest options, or choose notifications.
 						</div>
+						<a class="section-item-action" href="help-center/settings/email-and-notification-settings.html">Manage Email Settings →</a>
 					</div>
 
-					<!-- READING, POSTING & REPLYING -->
-					<div class="card">
-						<div class="card-body">
-							<div class="card-title">Reading, Posting & Replying</div>
-							<div class="card-desc">
-								Step-by-step instructions for reading messages, posting new ones, replying, and adding photos or attachments.
-							</div>
+					<div class="section-item-row">
+						<h3 class="section-item-title">Account Settings</h3>
+						<div class="section-item-desc">
+							Update your password parameters, edit personal identification profiles, and manage system preferences.
 						</div>
-						<div class="card-actions card-actions-center">
-							<a class="btn btn-card" href="help-center/doing-things/reading-posting-replying.html">Learn the Basics</a>
+						<a class="section-item-action" href="help-center/settings/account-settings.html">Update Your Account →</a>
+					</div>
+				</div>
+			</section>
+
+			<section class="section-block">
+				<h2>Help & Policies</h2>
+				<p class="section-desc">Get technical support assistance or view community participation documentation guides.</p>
+
+				<div class="grid grid-2col">
+					<div class="section-item-row">
+						<h3 class="section-item-title">Need More Help</h3>
+						<div class="section-item-desc">
+							Having trouble or running into technical problems? Find who to contact and learn how to get assistance when things aren't working.
 						</div>
+						<a class="section-item-action" href="help-center/support/get-help.html">Get Support →</a>
 					</div>
 
-					<!-- NAVIGATION & ORGANIZATION -->
-					<div class="card">
-						<div class="card-body">
-							<div class="card-title">Navigation & Organization</div>
-							<div class="card-desc">
-								Understand club subgroups and hashtags, how conversations are organized, and how to find what you're looking for.
-							</div>
+					<div class="section-item-row">
+						<h3 class="section-item-title">Policies and Rules</h3>
+						<div class="section-item-desc">
+							Review our community charter guidelines, residential code of conduct rules, policies, and the complete glossary terms.
 						</div>
-						<div class="card-actions card-actions-center">
-							<a class="btn btn-card" href="help-center/navigation/navigation-and-organization.html">Explore Organization</a>
-						</div>
+						<a class="section-item-action" href="help-center/support/policies-and-rules.html">View Policies →</a>
 					</div>
+				</div>
+			</section>
 
-					<!-- EMAIL & NOTIFICATION SETTINGS -->
-					<div class="card">
-						<div class="card-body">
-							<div class="card-title">Email & Notification Settings</div>
-							<div class="card-desc">
-								Control how many emails you receive, choose digest or summary formats, and adjust notifications for each group.
-							</div>
-						</div>
-						<div class="card-actions card-actions-center">
-							<a class="btn btn-card" href="help-center/settings/email-and-notification-settings.html">Manage Email Settings</a>
-						</div>
-					</div>
+		</main>
 
-					<!-- ACCOUNT SETTINGS -->
-					<div class="card">
-						<div class="card-body">
-							<div class="card-title">Account Settings</div>
-							<div class="card-desc">
-								Update your profile, change your password, and manage your Groups.io account information.
-							</div>
-						</div>
-						<div class="card-actions card-actions-center">
-							<a class="btn btn-card" href="help-center/settings/account-settings.html">Update Your Account</a>
-						</div>
-					</div>
-
-					<!-- SUPPORT & REFERENCE -->
-					<div class="card">
-						<div class="card-body">
-							<div class="card-title">Support & Reference</div>
-							<div class="card-desc">
-								Find community policies, the glossary, and learn how to get help if something isn’t working or you need more assistance.
-							</div>
-						</div>
-						<div class="card-actions card-actions-center">
-							<a class="btn btn-card" href="help-center/support/support-and-reference.html">Get Help & Policies</a>
-						</div>
-					</div>
-
-				</div><!-- end grid -->
-
-			</div><!-- end card-light -->
-
-		</section>
-
-	</div><!-- end site-shell -->
-	<footer class="site-footer">
+	</div><footer class="site-footer">
 		<p>
 			© 2026 Grandview Exchange ·
 			Questions? <a href="mailto:admin@grandviewexchange.com">Contact Us</a>
