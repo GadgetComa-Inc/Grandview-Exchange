@@ -6,7 +6,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>The Grandview Community Calendar</title>
 
-	<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap"
+		rel="stylesheet" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 
 	<link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/main.min.css" rel="stylesheet">
@@ -22,21 +24,34 @@
 
 	<div class="site-shell">
 
+		<!-- GLOBAL NAV INCLUDE -->
 		<div id="site-nav"></div>
 		<script>
 			fetch('/includes/site-nav.html')
 				.then(r => r.text())
 				.then(html => {
 					document.getElementById('site-nav').innerHTML = html;
-					const title = document.title.replace(' – Grandview Exchange', '');
+					const title = document.title.replace(' – Grandview Exchange', '').replace(' Help', '');
 					document.querySelector('.current-page').textContent = title;
+
+					// Hook up the action link to step back in browser history safely
+					const prevLink = document.getElementById('nav-back-link');
+					if (prevLink) {
+						prevLink.addEventListener('click', (e) => {
+							if (document.referrer.includes(window.location.hostname)) {
+								e.preventDefault();
+								window.history.back();
+							}
+						});
+					}
 				});
 		</script>
-
+		
 		<section class="page-intro-summary">
 			<h1>The Grandview Community Calendar</h1>
 			<p class="lead-text">
-				This calendar shows upcoming activities, meetings, and events happening at The Grandview. You can view it online, print it, or subscribe to it so events will show up on your Google, Apple, or
+				This calendar shows upcoming activities, meetings, and events happening at The Grandview. You can view
+				it online, print it, or subscribe to it so events will show up on your Google, Apple, or
 				Microsoft calendar.
 			</p>
 		</section>
@@ -56,38 +71,75 @@
 
 				<div class="sidebar-item">
 					<h3>Select View</h3>
-					<div style="display: flex; flex-direction: column; gap: var(--space-sm); margin-top: var(--space-xs);">
-						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;">
-							<input type="radio" name="view" value="listMonth" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Agenda
+					<div
+						style="display: flex; flex-direction: column; gap: var(--space-sm); margin-top: var(--space-xs);">
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;">
+							<input type="radio" name="view" value="listMonth" checked
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> Agenda
 						</label>
-						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;">
-							<input type="radio" name="view" value="timeGridWeek" style="width: 16px; height: 16px; accent-color: var(--teal);"> Week
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;">
+							<input type="radio" name="view" value="timeGridWeek"
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> Week
 						</label>
-						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;">
-							<input type="radio" name="view" value="dayGridMonth" style="width: 16px; height: 16px; accent-color: var(--teal);"> Month
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;">
+							<input type="radio" name="view" value="dayGridMonth"
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> Month
 						</label>
 					</div>
 				</div>
 
 				<div class="sidebar-item">
 					<h3>Show Calendars</h3>
-					<div style="display: flex; flex-direction: column; gap: var(--space-sm); margin-top: var(--space-xs);">
-						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="grandview" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Grandview Events</label>
-						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="bocce" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Bocce Club</label>
-						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="caregiver" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Caregiver Support</label>
-						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="fitness" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Fitness</label>
-						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="itclub" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Computer/IT Club</label>
-						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="mahjongg" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Mah Jongg Club</label>
-						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="ressvcs" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Resident Services</label>
-						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="speaker" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Speaker Presentation</label>
-						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="tvclub" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> TV Club</label>
+					<div
+						style="display: flex; flex-direction: column; gap: var(--space-sm); margin-top: var(--space-xs);">
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
+								type="checkbox" class="cal-toggle" data-cal="grandview" checked
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> Grandview Events</label>
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
+								type="checkbox" class="cal-toggle" data-cal="bocce" checked
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> Bocce Club</label>
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
+								type="checkbox" class="cal-toggle" data-cal="caregiver" checked
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> Caregiver Support</label>
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
+								type="checkbox" class="cal-toggle" data-cal="fitness" checked
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> Fitness</label>
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
+								type="checkbox" class="cal-toggle" data-cal="itclub" checked
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> Computer/IT Club</label>
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
+								type="checkbox" class="cal-toggle" data-cal="mahjongg" checked
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> Mah Jongg Club</label>
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
+								type="checkbox" class="cal-toggle" data-cal="ressvcs" checked
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> Resident Services</label>
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
+								type="checkbox" class="cal-toggle" data-cal="speaker" checked
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> Speaker
+							Presentation</label>
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
+								type="checkbox" class="cal-toggle" data-cal="tvclub" checked
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> TV Club</label>
 					</div>
 				</div>
 
 				<div class="sidebar-item">
 					<h3>Take It With You</h3>
 					<p>
-						You can print your calendar or subscribe to have it show up in your Google, Apple, or Microsoft calendar app.
+						You can print your calendar or subscribe to have it show up in your Google, Apple, or Microsoft
+						calendar app.
 					</p>
 					<a href="#" id="print-calendar" class="sidebar-link">🖨️ Print Calendar →</a>
 					<a href="#" id="open-subscribe-modal" class="sidebar-link">📅 Subscribe →</a>
@@ -109,7 +161,7 @@
 
 
 	<script>
-		document.addEventListener('DOMContentLoaded', function() {
+		document.addEventListener('DOMContentLoaded', function () {
 
 			/* ------------------------------
 			   SUBSCRIBE MODAL LOGIC
@@ -238,7 +290,7 @@
 					next: 'Next >'
 				},
 
-				viewDidMount: function(info) {
+				viewDidMount: function (info) {
 					const toolbar = document.querySelector('.fc-header-toolbar');
 					if (!toolbar) return;
 
@@ -252,7 +304,7 @@
 				googleCalendarApiKey: 'AIzaSyAkm3pk9TEvD2qZekyq8Exw99k4WYmPK3E',
 				eventSources: Object.values(eventSourceConfigs),
 
-				eventClick: function(info) {
+				eventClick: function (info) {
 					info.jsEvent.preventDefault();
 					const event = info.event;
 
@@ -296,7 +348,7 @@
 			});
 
 			document.querySelectorAll('.cal-toggle').forEach(cb => {
-				cb.addEventListener('change', function() {
+				cb.addEventListener('change', function () {
 					const id = this.dataset.cal;
 					const existing = calendar.getEventSourceById(id);
 
@@ -332,7 +384,8 @@
 			<button class="modal-close" id="modalClose">×</button>
 			<h3 id="modalTitle" style="font-family: 'Lora', serif; margin-bottom: 8px;"></h3>
 			<p id="modalDate" style="font-size: 1rem; color: var(--text-dark); margin-bottom: 6px;"></p>
-			<p id="modalLocation" style="font-size: 1rem; font-weight: 600; color: var(--text-dark); margin-bottom: 12px;"></p>
+			<p id="modalLocation"
+				style="font-size: 1rem; font-weight: 600; color: var(--text-dark); margin-bottom: 12px;"></p>
 			<p id="modalDescription" style="line-height: 1.5; color: var(--text-body);"></p>
 		</div>
 	</div>
@@ -349,7 +402,8 @@
 				<label for="calendarSelect" style="display: block; margin-bottom: 6px; color: var(--text-dark);">
 					<strong>Select a calendar:</strong>
 				</label>
-				<select id="calendarSelect" class="modal-select" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid var(--border); font-size: 1rem;">
+				<select id="calendarSelect" class="modal-select"
+					style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid var(--border); font-size: 1rem;">
 					<option value="grandview">Grandview Events</option>
 					<option value="bocce">Bocce</option>
 					<option value="caregiver">Caregiver Support</option>
@@ -363,21 +417,29 @@
 			</div>
 
 			<div class="modal-section" style="margin: 20px 0;">
-				<strong style="display: block; margin-bottom: 8px; color: var(--text-dark);">Choose your calendar app:</strong>
+				<strong style="display: block; margin-bottom: 8px; color: var(--text-dark);">Choose your calendar
+					app:</strong>
 				<div style="display: flex; flex-direction: column; gap: 8px;">
-					<label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">
-						<input type="radio" name="subPlatform" value="google" checked style="accent-color: var(--teal);"> Google Calendar
+					<label
+						style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">
+						<input type="radio" name="subPlatform" value="google" checked
+							style="accent-color: var(--teal);"> Google Calendar
 					</label>
-					<label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">
-						<input type="radio" name="subPlatform" value="apple" style="accent-color: var(--teal);"> Apple Calendar
+					<label
+						style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">
+						<input type="radio" name="subPlatform" value="apple" style="accent-color: var(--teal);"> Apple
+						Calendar
 					</label>
-					<label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">
-						<input type="radio" name="subPlatform" value="outlook" style="accent-color: var(--teal);"> Outlook / Other
+					<label
+						style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">
+						<input type="radio" name="subPlatform" value="outlook" style="accent-color: var(--teal);">
+						Outlook / Other
 					</label>
 				</div>
 			</div>
 
-			<button id="subscribeNow" class="btn" style="display: block; margin: var(--space-lg) auto 0; padding: 10px 24px;">
+			<button id="subscribeNow" class="btn"
+				style="display: block; margin: var(--space-lg) auto 0; padding: 10px 24px;">
 				Subscribe
 			</button>
 		</div>

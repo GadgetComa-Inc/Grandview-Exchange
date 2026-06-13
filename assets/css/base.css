@@ -85,3 +85,30 @@ ul {
 li {
   margin-bottom: var(--space-xs);
 }
+
+/* ============================================================
+   BREADCRUMB UTILITY ACTIONS
+============================================================ */
+.breadcrumb-container {
+  margin-bottom: var(--space-md);
+}
+
+.btn-prev-page {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.05); /* Soft, subtle ambient tint background */
+  border-radius: var(--radius-sm, 6px);   /* Matches standard card layout radius */
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+/* Clear focus and hover interaction styles */
+.btn-prev-page:hover {
+  background-color: rgba(0, 0, 0, 0.09); /* Deepens slightly on cursor focus */
+  color: var(--text-dark);
+  text-decoration: none;
+}
