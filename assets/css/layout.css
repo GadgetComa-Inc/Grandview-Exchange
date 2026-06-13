@@ -124,3 +124,19 @@
   margin: var(--space-lg) auto; 
   padding: 0 var(--space-md);
 }
+
+/* ============================================================
+   GLOBAL FOOTER SYSTEM
+============================================================ */
+.site-footer {
+  text-align: center;         /* Enforces perfect horizontal center on all pages */
+  padding: var(--space-xl) 0;  /* Standard visual breathing room at page bottom */
+  border-top: 1px solid var(--border);
+  width: 100%;
+}
+
+.site-footer p {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  margin: 0;
+}

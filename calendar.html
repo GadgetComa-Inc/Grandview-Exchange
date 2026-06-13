@@ -2,386 +2,387 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Grandview Community Calendar</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>The Grandview Community Calendar</title>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/main.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="assets/css/main.css" />
 
-  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/main.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/google-calendar@6.1.10/index.global.min.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/main.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@fullcalendar/google-calendar@6.1.10/index.global.min.js"></script>
 </head>
 
 <body class="help-site">
 
-  <header class="site-header">
-    <img src="assets/img/coverphoto.png" alt="Grandview Exchange Banner" />
-  </header>
+	<header class="site-header">
+		<img src="assets/img/coverphoto.png" alt="Grandview Exchange Banner" />
+	</header>
 
-  <div class="site-shell">
+	<div class="site-shell">
 
-    <div id="site-nav"></div>
-    <script>
-      fetch('/includes/site-nav.html')
-        .then(r => r.text())
-        .then(html => {
-          document.getElementById('site-nav').innerHTML = html;
-          const title = document.title.replace(' – Grandview Exchange', '');
-          document.querySelector('.current-page').textContent = title;
-        });
-    </script>
+		<div id="site-nav"></div>
+		<script>
+			fetch('/includes/site-nav.html')
+				.then(r => r.text())
+				.then(html => {
+					document.getElementById('site-nav').innerHTML = html;
+					const title = document.title.replace(' – Grandview Exchange', '');
+					document.querySelector('.current-page').textContent = title;
+				});
+		</script>
 
-    <section class="page-intro-summary">
-      <h1>The Grandview Community Calendar</h1>
-      <p class="lead-text">
-        This calendar shows upcoming activities, meetings, and events happening at The Grandview. You can view it online, print it, or subscribe to it so events will show up on your Google, Apple, or
-        Microsoft calendar.
-      </p>
-    </section>
+		<section class="page-intro-summary">
+			<h1>The Grandview Community Calendar</h1>
+			<p class="lead-text">
+				This calendar shows upcoming activities, meetings, and events happening at The Grandview. You can view it online, print it, or subscribe to it so events will show up on your Google, Apple, or
+				Microsoft calendar.
+			</p>
+		</section>
 
-    <div class="main-layout-wrapper">
+		<div class="main-layout-wrapper">
 
-      <main class="main-content-area">
-        <div class="section-block">
-          <div id="calendar"></div>
-        </div>
-      </main>
+			<main class="main-content-area">
+				<div class="section-block">
+					<div id="calendar"></div>
+				</div>
+			</main>
 
-      <aside class="site-sidebar section-block">
-        
-        <h2 class="sidebar-heading">Options</h2>
-        <p class="sidebar-intro">Choose a calendar view and what events to include.</p>
+			<aside class="site-sidebar section-block">
 
-        <div class="sidebar-item">
-          <h3>Select View</h3>
-          <div style="display: flex; flex-direction: column; gap: var(--space-sm); margin-top: var(--space-xs);">
-            <label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;">
-              <input type="radio" name="view" value="listMonth" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Agenda
-            </label>
-            <label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;">
-              <input type="radio" name="view" value="timeGridWeek" style="width: 16px; height: 16px; accent-color: var(--teal);"> Week
-            </label>
-            <label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;">
-              <input type="radio" name="view" value="dayGridMonth" style="width: 16px; height: 16px; accent-color: var(--teal);"> Month
-            </label>
-          </div>
-        </div>
+				<h2 class="sidebar-heading">Options</h2>
+				<p class="sidebar-intro">Choose a calendar view and what events to include.</p>
 
-        <div class="sidebar-item">
-          <h3>Show Calendars</h3>
-          <div style="display: flex; flex-direction: column; gap: var(--space-sm); margin-top: var(--space-xs);">
-            <label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="grandview" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Grandview Events</label>
-            <label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="bocce" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Bocce Club</label>
-            <label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="caregiver" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Caregiver Support</label>
-            <label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="fitness" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Fitness</label>
-            <label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="itclub" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Computer/IT Club</label>
-            <label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="mahjongg" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Mah Jongg Club</label>
-            <label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="ressvcs" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Resident Services</label>
-            <label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="speaker" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Speaker Presentation</label>
-            <label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="tvclub" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> TV Club</label>
-          </div>
-        </div>
+				<div class="sidebar-item">
+					<h3>Select View</h3>
+					<div style="display: flex; flex-direction: column; gap: var(--space-sm); margin-top: var(--space-xs);">
+						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;">
+							<input type="radio" name="view" value="listMonth" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Agenda
+						</label>
+						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;">
+							<input type="radio" name="view" value="timeGridWeek" style="width: 16px; height: 16px; accent-color: var(--teal);"> Week
+						</label>
+						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;">
+							<input type="radio" name="view" value="dayGridMonth" style="width: 16px; height: 16px; accent-color: var(--teal);"> Month
+						</label>
+					</div>
+				</div>
 
-        <div class="sidebar-item">
-          <h3>Take It With You</h3>
-          <p>
-            You can print your calendar or subscribe to have it show up in your Google, Apple, or Microsoft calendar app.
-          </p>
-          <a href="#" id="print-calendar" class="sidebar-link">🖨️ Print Calendar →</a>
-          <a href="#" id="open-subscribe-modal" class="sidebar-link">📅 Subscribe →</a>
-        </div>
+				<div class="sidebar-item">
+					<h3>Show Calendars</h3>
+					<div style="display: flex; flex-direction: column; gap: var(--space-sm); margin-top: var(--space-xs);">
+						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="grandview" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Grandview Events</label>
+						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="bocce" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Bocce Club</label>
+						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="caregiver" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Caregiver Support</label>
+						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="fitness" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Fitness</label>
+						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="itclub" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Computer/IT Club</label>
+						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="mahjongg" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Mah Jongg Club</label>
+						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="ressvcs" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Resident Services</label>
+						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="speaker" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Speaker Presentation</label>
+						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="tvclub" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> TV Club</label>
+					</div>
+				</div>
 
-      </aside>
+				<div class="sidebar-item">
+					<h3>Take It With You</h3>
+					<p>
+						You can print your calendar or subscribe to have it show up in your Google, Apple, or Microsoft calendar app.
+					</p>
+					<a href="#" id="print-calendar" class="sidebar-link">🖨️ Print Calendar →</a>
+					<a href="#" id="open-subscribe-modal" class="sidebar-link">📅 Subscribe →</a>
+				</div>
 
-    </div>
-  </div>
+			</aside>
 
-  <footer class="site-footer">
-    <p>
-      © 2026 Grandview Exchange ·
-      Questions? <a href="mailto:admin@grandviewexchange.com">Contact Us</a>
-    </p>
-  </footer>
+		</div>
+	</div>
 
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-
-      /* ------------------------------
-         SUBSCRIBE MODAL LOGIC
-      --------------------------------*/
-      const subscribeModal = document.getElementById('subscribeModal');
-      const openSubscribeModal = document.getElementById('open-subscribe-modal');
-      const closeSubscribeModal = document.getElementById('subscribeModalClose');
-
-      openSubscribeModal.onclick = (e) => {
-        e.preventDefault();
-        subscribeModal.style.display = 'flex';
-      };
-
-      closeSubscribeModal.onclick = () => {
-        subscribeModal.style.display = 'none';
-      };
-
-      subscribeModal.onclick = (e) => {
-        if (e.target.id === 'subscribeModal') {
-          subscribeModal.style.display = 'none';
-        }
-      };
-
-      const subscribeLinks = {
-        grandview: 'grandviewexchangecalendar@gmail.com',
-        bocce: 'b4c130c3e917691e68fec55c696619fef0d8ebffbf6a9cada933dfb24cd7eabd@group.calendar.google.com',
-        caregiver: 'cc70e98ddc6a791a08c5a2579b0454a4a3ef0f32b63278f826458a491121c90e@group.calendar.google.com',
-        fitness: '6414f0cca63a5a4e8d8b0af9e9bdf0c4fa6137d48b2e498b9629646cd0eba3c9@group.calendar.google.com',
-        itclub: 'd4bcf6eb1219625344c2a4ce5c6df668079606cc68376546e709d00b95b51235@group.calendar.google.com',
-        mahjongg: '0600556da20bf5b6a09423771a1b4648fcd42be6eb2d89ec5af163985a07b65a@group.calendar.google.com',
-        ressvcs: '0e4ab0bc0f1e58403601174fa8dc8978346a80fbd2db6e9af8e5736ce68621fd@group.calendar.google.com',
-        speaker: '3d2cea04a3553108cd39768aa1fe619f854ffa34dac90c0206c395c7d2b91f2b@group.calendar.google.com',
-        tvclub: '1a4620164a980e3cf9adbacc780e5451b5635ccf0bd2c61bea93146ee8c99926@group.calendar.google.com'
-      };
-
-      document.getElementById('subscribeNow').onclick = () => {
-        const cal = document.getElementById('calendarSelect').value;
-        const platform = document.querySelector('input[name="subPlatform"]:checked').value;
-        const id = subscribeLinks[cal];
-
-        let url = '';
-
-        if (platform === 'google') {
-          url = `https://calendar.google.com/calendar/u/0?cid=${encodeURIComponent(id)}`;
-        } else if (platform === 'apple') {
-          url = `webcal://calendar.google.com/calendar/ical/${encodeURIComponent(id)}/public/basic.ics`;
-        } else {
-          url = `https://calendar.google.com/calendar/ical/${encodeURIComponent(id)}/public/basic.ics`;
-        }
-
-        window.open(url, '_blank');
-
-        setTimeout(() => {
-          const again = confirm("Subscription added. Would you like to subscribe to another calendar?");
-          if (!again) {
-            subscribeModal.style.display = 'none';
-          }
-        }, 500);
-      };
+	<footer class="site-footer">
+		<p>
+			© 2026 Grandview Exchange ·
+			Questions? <a href="mailto:admin@grandviewexchange.com">Contact Us</a>
+		</p>
+	</footer>
 
 
-      /* ------------------------------
-         FULLCALENDAR MOUNTING ENGINE
-      --------------------------------*/
-      const calendarEl = document.getElementById('calendar');
 
-      const eventSourceConfigs = {
-        grandview: {
-          id: 'grandview',
-          googleCalendarId: 'grandviewexchangecalendar@gmail.com',
-          color: '#0d7377'
-        },
-        bocce: {
-          id: 'bocce',
-          googleCalendarId: 'b4c130c3e917691e68fec55c696619fef0d8ebffbf6a9cada933dfb24cd7eabd@group.calendar.google.com',
-          color: '#2a5b8a'
-        },
-        caregiver: {
-          id: 'caregiver',
-          googleCalendarId: 'cc70e98ddc6a791a08c5a2579b0454a4a3ef0f32b63278f826458a491121c90e@group.calendar.google.com',
-          color: '#b84a4a'
-        },
-        fitness: {
-          id: 'fitness',
-          googleCalendarId: '6414f0cca63a5a4e8d8b0af9e9bdf0c4fa6137d48b2e498b9629646cd0eba3c9@group.calendar.google.com',
-          color: '#3f7d4e'
-        },
-        itclub: {
-          id: 'itclub',
-          googleCalendarId: 'd4bcf6eb1219625344c2a4ce5c6df668079606cc68376546e709d00b95b51235@group.calendar.google.com',
-          color: '#c8922a'
-        },
-        mahjongg: {
-          id: 'mahjongg',
-          googleCalendarId: '0600556da20bf5b6a09423771a1b4648fcd42be6eb2d89ec5af163985a07b65a@group.calendar.google.com',
-          color: '#6b7c82'
-        },
-        ressvcs: {
-          id: 'ressvcs',
-          googleCalendarId: '0e4ab0bc0f1e58403601174fa8dc8978346a80fbd2db6e9af8e5736ce68621fd@group.calendar.google.com',
-          color: '#7a4f8e'
-        },
-        speaker: {
-          id: 'speaker',
-          googleCalendarId: '3d2cea04a3553108cd39768aa1fe619f854ffa34dac90c0206c395c7d2b91f2b@group.calendar.google.com',
-          color: '#d07a32'
-        },
-        tvclub: {
-          id: 'tvclub',
-          googleCalendarId: '1a4620164a980e3cf9adbacc780e5451b5635ccf0bd2c61bea93146ee8c99926@group.calendar.google.com',
-          color: '#4a6f7c'
-        }
-      };
 
-      const calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'listMonth',
-        height: 'auto',
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
 
-        headerToolbar: {
-          left: 'prev',
-          center: 'title',
-          right: 'next'
-        },
-        buttonText: {
-          prev: '< Previous',
-          next: 'Next >'
-        },
+			/* ------------------------------
+			   SUBSCRIBE MODAL LOGIC
+			--------------------------------*/
+			const subscribeModal = document.getElementById('subscribeModal');
+			const openSubscribeModal = document.getElementById('open-subscribe-modal');
+			const closeSubscribeModal = document.getElementById('subscribeModalClose');
 
-        viewDidMount: function (info) {
-          const toolbar = document.querySelector('.fc-header-toolbar');
-          if (!toolbar) return;
+			openSubscribeModal.onclick = (e) => {
+				e.preventDefault();
+				subscribeModal.style.display = 'flex';
+			};
 
-          if (info.view.type === 'listMonth') {
-            toolbar.style.display = 'none';
-          } else {
-            toolbar.style.display = 'flex';
-          }
-        },
+			closeSubscribeModal.onclick = () => {
+				subscribeModal.style.display = 'none';
+			};
 
-        googleCalendarApiKey: 'AIzaSyAkm3pk9TEvD2qZekyq8Exw99k4WYmPK3E',
-        eventSources: Object.values(eventSourceConfigs),
+			subscribeModal.onclick = (e) => {
+				if (e.target.id === 'subscribeModal') {
+					subscribeModal.style.display = 'none';
+				}
+			};
 
-        eventClick: function (info) {
-          info.jsEvent.preventDefault();
-          const event = info.event;
+			const subscribeLinks = {
+				grandview: 'grandviewexchangecalendar@gmail.com',
+				bocce: 'b4c130c3e917691e68fec55c696619fef0d8ebffbf6a9cada933dfb24cd7eabd@group.calendar.google.com',
+				caregiver: 'cc70e98ddc6a791a08c5a2579b0454a4a3ef0f32b63278f826458a491121c90e@group.calendar.google.com',
+				fitness: '6414f0cca63a5a4e8d8b0af9e9bdf0c4fa6137d48b2e498b9629646cd0eba3c9@group.calendar.google.com',
+				itclub: 'd4bcf6eb1219625344c2a4ce5c6df668079606cc68376546e709d00b95b51235@group.calendar.google.com',
+				mahjongg: '0600556da20bf5b6a09423771a1b4648fcd42be6eb2d89ec5af163985a07b65a@group.calendar.google.com',
+				ressvcs: '0e4ab0bc0f1e58403601174fa8dc8978346a80fbd2db6e9af8e5736ce68621fd@group.calendar.google.com',
+				speaker: '3d2cea04a3553108cd39768aa1fe619f854ffa34dac90c0206c395c7d2b91f2b@group.calendar.google.com',
+				tvclub: '1a4620164a980e3cf9adbacc780e5451b5635ccf0bd2c61bea93146ee8c99926@group.calendar.google.com'
+			};
 
-          document.getElementById('modalTitle').textContent = event.title;
+			document.getElementById('subscribeNow').onclick = () => {
+				const cal = document.getElementById('calendarSelect').value;
+				const platform = document.querySelector('input[name="subPlatform"]:checked').value;
+				const id = subscribeLinks[cal];
 
-          const start = event.start;
-          const dateOptions = {
-            weekday: 'long',
-            month: 'long',
-            day: 'numeric',
-            hour: 'numeric',
-            minute: '2-digit'
-          };
-          document.getElementById('modalDate').textContent = start.toLocaleString('en-US', dateOptions);
+				let url = '';
 
-          document.getElementById('modalLocation').textContent =
-            event.extendedProps.location ? `Location: ${event.extendedProps.location}` : '';
+				if (platform === 'google') {
+					url = `https://calendar.google.com/calendar/u/0?cid=${encodeURIComponent(id)}`;
+				} else if (platform === 'apple') {
+					url = `webcal://calendar.google.com/calendar/ical/${encodeURIComponent(id)}/public/basic.ics`;
+				} else {
+					url = `https://calendar.google.com/calendar/ical/${encodeURIComponent(id)}/public/basic.ics`;
+				}
 
-          let desc = event.extendedProps.description || "";
-          desc = desc.replace(/<(script|style)[^>]*>[\s\S]*?<\/(script|style)>/gi, '');
+				window.open(url, '_blank');
 
-          if (desc.includes('<a ')) {
-            desc = desc.replace(/\n/g, '<br>');
-          } else {
-            desc = desc
-              .replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>')
-              .replace(/\n/g, '<br>');
-          }
+				setTimeout(() => {
+					const again = confirm("Subscription added. Would you like to subscribe to another calendar?");
+					if (!again) {
+						subscribeModal.style.display = 'none';
+					}
+				}, 500);
+			};
 
-          document.getElementById('modalDescription').innerHTML = desc;
-          document.getElementById('eventModal').style.display = 'flex';
-        }
-      });
 
-      calendar.render();
+			/* ------------------------------
+			   FULLCALENDAR MOUNTING ENGINE
+			--------------------------------*/
+			const calendarEl = document.getElementById('calendar');
 
-      document.querySelectorAll('input[name="view"]').forEach(radio => {
-        radio.addEventListener('change', () => {
-          calendar.changeView(radio.value);
-        });
-      });
+			const eventSourceConfigs = {
+				grandview: {
+					id: 'grandview',
+					googleCalendarId: 'grandviewexchangecalendar@gmail.com',
+					color: '#0d7377'
+				},
+				bocce: {
+					id: 'bocce',
+					googleCalendarId: 'b4c130c3e917691e68fec55c696619fef0d8ebffbf6a9cada933dfb24cd7eabd@group.calendar.google.com',
+					color: '#2a5b8a'
+				},
+				caregiver: {
+					id: 'caregiver',
+					googleCalendarId: 'cc70e98ddc6a791a08c5a2579b0454a4a3ef0f32b63278f826458a491121c90e@group.calendar.google.com',
+					color: '#b84a4a'
+				},
+				fitness: {
+					id: 'fitness',
+					googleCalendarId: '6414f0cca63a5a4e8d8b0af9e9bdf0c4fa6137d48b2e498b9629646cd0eba3c9@group.calendar.google.com',
+					color: '#3f7d4e'
+				},
+				itclub: {
+					id: 'itclub',
+					googleCalendarId: 'd4bcf6eb1219625344c2a4ce5c6df668079606cc68376546e709d00b95b51235@group.calendar.google.com',
+					color: '#c8922a'
+				},
+				mahjongg: {
+					id: 'mahjongg',
+					googleCalendarId: '0600556da20bf5b6a09423771a1b4648fcd42be6eb2d89ec5af163985a07b65a@group.calendar.google.com',
+					color: '#6b7c82'
+				},
+				ressvcs: {
+					id: 'ressvcs',
+					googleCalendarId: '0e4ab0bc0f1e58403601174fa8dc8978346a80fbd2db6e9af8e5736ce68621fd@group.calendar.google.com',
+					color: '#7a4f8e'
+				},
+				speaker: {
+					id: 'speaker',
+					googleCalendarId: '3d2cea04a3553108cd39768aa1fe619f854ffa34dac90c0206c395c7d2b91f2b@group.calendar.google.com',
+					color: '#d07a32'
+				},
+				tvclub: {
+					id: 'tvclub',
+					googleCalendarId: '1a4620164a980e3cf9adbacc780e5451b5635ccf0bd2c61bea93146ee8c99926@group.calendar.google.com',
+					color: '#4a6f7c'
+				}
+			};
 
-      document.querySelectorAll('.cal-toggle').forEach(cb => {
-        cb.addEventListener('change', function () {
-          const id = this.dataset.cal;
-          const existing = calendar.getEventSourceById(id);
+			const calendar = new FullCalendar.Calendar(calendarEl, {
+				initialView: 'listMonth',
+				height: 'auto',
 
-          if (this.checked) {
-            if (!existing) calendar.addEventSource(eventSourceConfigs[id]);
-          } else {
-            if (existing) existing.remove();
-          }
-        });
-      });
+				headerToolbar: {
+					left: 'prev',
+					center: 'title',
+					right: 'next'
+				},
+				buttonText: {
+					prev: '< Previous',
+					next: 'Next >'
+				},
 
-      document.getElementById('print-calendar').onclick = (e) => {
-        e.preventDefault();
-        calendar.changeView('listMonth');
-        setTimeout(() => window.print(), 200);
-      };
+				viewDidMount: function(info) {
+					const toolbar = document.querySelector('.fc-header-toolbar');
+					if (!toolbar) return;
 
-      document.getElementById('modalClose').onclick = () => {
-        document.getElementById('eventModal').style.display = 'none';
-      };
+					if (info.view.type === 'listMonth') {
+						toolbar.style.display = 'none';
+					} else {
+						toolbar.style.display = 'flex';
+					}
+				},
 
-      document.getElementById('eventModal').onclick = (e) => {
-        if (e.target.id === 'eventModal') {
-          document.getElementById('eventModal').style.display = 'none';
-        }
-      };
+				googleCalendarApiKey: 'AIzaSyAkm3pk9TEvD2qZekyq8Exw99k4WYmPK3E',
+				eventSources: Object.values(eventSourceConfigs),
 
-    });
-  </script>
+				eventClick: function(info) {
+					info.jsEvent.preventDefault();
+					const event = info.event;
 
-  <div id="eventModal" class="modal-overlay" style="display:none;">
-    <div class="modal-card">
-      <button class="modal-close" id="modalClose">×</button>
-      <h3 id="modalTitle" style="font-family: 'Lora', serif; margin-bottom: 8px;"></h3>
-      <p id="modalDate" style="font-size: 1rem; color: var(--text-dark); margin-bottom: 6px;"></p>
-      <p id="modalLocation" style="font-size: 1rem; font-weight: 600; color: var(--text-dark); margin-bottom: 12px;"></p>
-      <p id="modalDescription" style="line-height: 1.5; color: var(--text-body);"></p>
-    </div>
-  </div>
+					document.getElementById('modalTitle').textContent = event.title;
 
-  <div id="subscribeModal" class="modal-overlay" style="display:none;">
-    <div class="modal-card">
-      <button class="modal-close" id="subscribeModalClose">×</button>
+					const start = event.start;
+					const dateOptions = {
+						weekday: 'long',
+						month: 'long',
+						day: 'numeric',
+						hour: 'numeric',
+						minute: '2-digit'
+					};
+					document.getElementById('modalDate').textContent = start.toLocaleString('en-US', dateOptions);
 
-      <h3 style="font-family: 'Lora', serif; font-size: 1.4rem; color: var(--text-dark); margin-bottom: 16px;">
-        Subscribe to Grandview Calendars
-      </h3>
+					document.getElementById('modalLocation').textContent =
+						event.extendedProps.location ? `Location: ${event.extendedProps.location}` : '';
 
-      <div style="margin-bottom: var(--space-md);">
-        <label for="calendarSelect" style="display: block; margin-bottom: 6px; color: var(--text-dark);">
-          <strong>Select a calendar:</strong>
-        </label>
-        <select id="calendarSelect" class="modal-select" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid var(--border); font-size: 1rem;">
-          <option value="grandview">Grandview Events</option>
-          <option value="bocce">Bocce</option>
-          <option value="caregiver">Caregiver Support</option>
-          <option value="fitness">Fitness</option>
-          <option value="itclub">Computer/IT Club</option>
-          <option value="mahjongg">Mah Jongg Club</option>
-          <option value="ressvcs">Resident Services</option>
-          <option value="speaker">Speaker Series</option>
-          <option value="tvclub">TV Club</option>
-        </select>
-      </div>
+					let desc = event.extendedProps.description || "";
+					desc = desc.replace(/<(script|style)[^>]*>[\s\S]*?<\/(script|style)>/gi, '');
 
-      <div class="modal-section" style="margin: 20px 0;">
-        <strong style="display: block; margin-bottom: 8px; color: var(--text-dark);">Choose your calendar app:</strong>
-        <div style="display: flex; flex-direction: column; gap: 8px;">
-          <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">
-            <input type="radio" name="subPlatform" value="google" checked style="accent-color: var(--teal);"> Google Calendar
-          </label>
-          <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">
-            <input type="radio" name="subPlatform" value="apple" style="accent-color: var(--teal);"> Apple Calendar
-          </label>
-          <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">
-            <input type="radio" name="subPlatform" value="outlook" style="accent-color: var(--teal);"> Outlook / Other
-          </label>
-        </div>
-      </div>
+					if (desc.includes('<a ')) {
+						desc = desc.replace(/\n/g, '<br>');
+					} else {
+						desc = desc
+							.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>')
+							.replace(/\n/g, '<br>');
+					}
 
-      <button id="subscribeNow" class="btn" style="display: block; margin: var(--space-lg) auto 0; padding: 10px 24px;">
-        Subscribe
-      </button>
-    </div>
-  </div>
+					document.getElementById('modalDescription').innerHTML = desc;
+					document.getElementById('eventModal').style.display = 'flex';
+				}
+			});
+
+			calendar.render();
+
+			document.querySelectorAll('input[name="view"]').forEach(radio => {
+				radio.addEventListener('change', () => {
+					calendar.changeView(radio.value);
+				});
+			});
+
+			document.querySelectorAll('.cal-toggle').forEach(cb => {
+				cb.addEventListener('change', function() {
+					const id = this.dataset.cal;
+					const existing = calendar.getEventSourceById(id);
+
+					if (this.checked) {
+						if (!existing) calendar.addEventSource(eventSourceConfigs[id]);
+					} else {
+						if (existing) existing.remove();
+					}
+				});
+			});
+
+			document.getElementById('print-calendar').onclick = (e) => {
+				e.preventDefault();
+				calendar.changeView('listMonth');
+				setTimeout(() => window.print(), 200);
+			};
+
+			document.getElementById('modalClose').onclick = () => {
+				document.getElementById('eventModal').style.display = 'none';
+			};
+
+			document.getElementById('eventModal').onclick = (e) => {
+				if (e.target.id === 'eventModal') {
+					document.getElementById('eventModal').style.display = 'none';
+				}
+			};
+
+		});
+	</script>
+
+	<div id="eventModal" class="modal-overlay" style="display:none;">
+		<div class="modal-card">
+			<button class="modal-close" id="modalClose">×</button>
+			<h3 id="modalTitle" style="font-family: 'Lora', serif; margin-bottom: 8px;"></h3>
+			<p id="modalDate" style="font-size: 1rem; color: var(--text-dark); margin-bottom: 6px;"></p>
+			<p id="modalLocation" style="font-size: 1rem; font-weight: 600; color: var(--text-dark); margin-bottom: 12px;"></p>
+			<p id="modalDescription" style="line-height: 1.5; color: var(--text-body);"></p>
+		</div>
+	</div>
+
+	<div id="subscribeModal" class="modal-overlay" style="display:none;">
+		<div class="modal-card">
+			<button class="modal-close" id="subscribeModalClose">×</button>
+
+			<h3 style="font-family: 'Lora', serif; font-size: 1.4rem; color: var(--text-dark); margin-bottom: 16px;">
+				Subscribe to Grandview Calendars
+			</h3>
+
+			<div style="margin-bottom: var(--space-md);">
+				<label for="calendarSelect" style="display: block; margin-bottom: 6px; color: var(--text-dark);">
+					<strong>Select a calendar:</strong>
+				</label>
+				<select id="calendarSelect" class="modal-select" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid var(--border); font-size: 1rem;">
+					<option value="grandview">Grandview Events</option>
+					<option value="bocce">Bocce</option>
+					<option value="caregiver">Caregiver Support</option>
+					<option value="fitness">Fitness</option>
+					<option value="itclub">Computer/IT Club</option>
+					<option value="mahjongg">Mah Jongg Club</option>
+					<option value="ressvcs">Resident Services</option>
+					<option value="speaker">Speaker Series</option>
+					<option value="tvclub">TV Club</option>
+				</select>
+			</div>
+
+			<div class="modal-section" style="margin: 20px 0;">
+				<strong style="display: block; margin-bottom: 8px; color: var(--text-dark);">Choose your calendar app:</strong>
+				<div style="display: flex; flex-direction: column; gap: 8px;">
+					<label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">
+						<input type="radio" name="subPlatform" value="google" checked style="accent-color: var(--teal);"> Google Calendar
+					</label>
+					<label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">
+						<input type="radio" name="subPlatform" value="apple" style="accent-color: var(--teal);"> Apple Calendar
+					</label>
+					<label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">
+						<input type="radio" name="subPlatform" value="outlook" style="accent-color: var(--teal);"> Outlook / Other
+					</label>
+				</div>
+			</div>
+
+			<button id="subscribeNow" class="btn" style="display: block; margin: var(--space-lg) auto 0; padding: 10px 24px;">
+				Subscribe
+			</button>
+		</div>
+	</div>
 
 </body>
+
 </html>

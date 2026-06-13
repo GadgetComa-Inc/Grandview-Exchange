@@ -2,154 +2,155 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Ways to Use Grandview Exchange – Grandview Exchange</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+	<title>Ways to Use Grandview Exchange – Grandview Exchange</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/main.css">
+	<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/main.css">
 </head>
 
 <body class="help-site">
 
-  <!-- Site Banner -->
-  <header class="site-header">
-    <img src="assets/img/coverphoto.png" alt="Grandview Exchange Banner">
-  </header>
+	<!-- Site Banner -->
+	<header class="site-header">
+		<img src="assets/img/coverphoto.png" alt="Grandview Exchange Banner">
+	</header>
 
-  <div class="site-shell">
+	<div class="site-shell">
 
-    <!-- GLOBAL NAV INCLUDE -->
-    <div id="site-nav"></div>
-    <script>
-      fetch('/includes/site-nav.html')
-        .then(r => r.text())
-        .then(html => {
-          document.getElementById('site-nav').innerHTML = html;
-          const title = document.title.replace(' – Grandview Exchange', '');
-          document.querySelector('.current-page').textContent = title;
-        });
-    </script>
+		<!-- GLOBAL NAV INCLUDE -->
+		<div id="site-nav"></div>
+		<script>
+			fetch('/includes/site-nav.html')
+				.then(r => r.text())
+				.then(html => {
+					document.getElementById('site-nav').innerHTML = html;
+					const title = document.title.replace(' – Grandview Exchange', '');
+					document.querySelector('.current-page').textContent = title;
+				});
+		</script>
 
-    <!-- Standardized Introduction Header Block Layout -->
-    <section class="page-intro-summary">
-      <h1>Choose How You Want to Use Grandview Exchange</h1>
-      <p class="lead-text">
-        You can use Grandview Exchange in three different ways -- the Groups.io app on your phone or tablet,
-        your favorite web browser on any device, or your email.
-      </p>
-      <p>
-        Each one works well -- the best choice depends on what device you like to use and how you prefer to read and send messages.
-      </p>
-    </section>
+		<!-- Standardized Introduction Header Block Layout -->
+		<section class="page-intro-summary">
+			<h1>Choose How You Want to Use Grandview Exchange</h1>
+			<p class="lead-text">
+				You can use Grandview Exchange in three different ways -- the Groups.io app on your phone or tablet,
+				your favorite web browser on any device, or your email.
+			</p>
+			<p>
+				Each one works well -- the best choice depends on what device you like to use and how you prefer to read and send messages.
+			</p>
+		</section>
 
-    <!-- Balanced Two-Column Structural Shell Wrapper -->
-    <div class="main-layout-wrapper">
+		<!-- Balanced Two-Column Structural Shell Wrapper -->
+		<div class="main-layout-wrapper">
 
-      <!-- Column Track 1: Main Content Container Frame (Aligned Left) -->
-      <main class="main-content-area">
-        <section class="section-block">
-          
-          <div class="grid grid-1col">
+			<!-- Column Track 1: Main Content Container Frame (Aligned Left) -->
+			<main class="main-content-area">
+				<section class="section-block">
 
-            <!-- APP -->
-            <!-- FIXED: Converted layout block container to use your unified .section-item-row system -->
-            <div class="section-item-row">
-              <h3 class="section-item-title">Use the Groups.io App</h3>
-              <div class="section-item-desc">
-                The Groups.io app lets you read and post messages on your phone or tablet. Once installed,
-                it stays signed in and is easy to open anytime.
-              </div>
+					<div class="grid grid-1col">
 
-              <h4 style="font-weight: 600; margin-top: var(--space-xs); color: var(--text-dark);">This is a good choice for you:</h4>
-              <ul style="margin: 0; padding-left: var(--space-lg); color: var(--text-body); line-height: 1.5;">
-                <li>If you use a phone or tablet frequently</li>
-                <li>If you like opening an app from your home screen</li>
-                <li>If you want something that stays signed in and ready</li>
-              </ul>
+						<!-- APP -->
+						<!-- FIXED: Converted layout block container to use your unified .section-item-row system -->
+						<div class="section-item-row">
+							<h3 class="section-item-title">Use the Groups.io App</h3>
+							<div class="section-item-desc">
+								The Groups.io app lets you read and post messages on your phone or tablet. Once installed,
+								it stays signed in and is easy to open anytime.
+							</div>
 
-              <p class="section-item-desc" style="margin-top: var(--space-xs);"><strong>Drawback:</strong> If you prefer a larger screen, the app may feel a bit small.</p>
-              
-              <!-- FIXED: Heavy card action container dropped for your prominent .section-item-action link style -->
-              <a class="section-item-action" href="#">Get Started With the App →</a>
-            </div>
+							<h4 style="font-weight: 600; margin-top: var(--space-xs); color: var(--text-dark);">This is a good choice for you:</h4>
+							<ul style="margin: 0; padding-left: var(--space-lg); color: var(--text-body); line-height: 1.5;">
+								<li>If you use a phone or tablet frequently</li>
+								<li>If you like opening an app from your home screen</li>
+								<li>If you want something that stays signed in and ready</li>
+							</ul>
 
-            <!-- BROWSER -->
-            <div class="section-item-row">
-              <h3 class="section-item-title">Use Your Favorite Browser</h3>
-              <div class="section-item-desc">
-                Using a browser gives you the full Grandview Exchange website on a larger screen. This is the easiest way to read messages and explore the site.
-              </div>
+							<p class="section-item-desc" style="margin-top: var(--space-xs);"><strong>Drawback:</strong> If you prefer a larger screen, the app may feel a bit small.</p>
 
-              <h4 style="font-weight: 600; margin-top: var(--space-xs); color: var(--text-dark);">This is a good choice for you:</h4>
-              <ul style="margin: 0; padding-left: var(--space-lg); color: var(--text-body); line-height: 1.5;">
-                <li>If you like using a computer or tablet with a larger screen</li>
-                <li>If you prefer seeing more information at once</li>
-                <li>If you’re comfortable clicking links or using bookmarks</li>
-              </ul>
+							<!-- FIXED: Heavy card action container dropped for your prominent .section-item-action link style -->
+							<a class="section-item-action" href="#">Get Started With the App →</a>
+						</div>
 
-              <p class="section-item-desc" style="margin-top: var(--space-xs);"><strong>Drawback:</strong> You may need to type the website address or use a bookmark.</p>
-              
-              <!-- FIXED: Prominent .section-item-action link style -->
-              <a class="section-item-action" href="#">Get Started With Your Browser →</a>
-            </div>
+						<!-- BROWSER -->
+						<div class="section-item-row">
+							<h3 class="section-item-title">Use Your Favorite Browser</h3>
+							<div class="section-item-desc">
+								Using a browser gives you the full Grandview Exchange website on a larger screen. This is the easiest way to read messages and explore the site.
+							</div>
 
-            <!-- EMAIL -->
-            <div class="section-item-row">
-              <h3 class="section-item-title">Use Your Email</h3>
-              <div class="section-item-desc">
-                You can receive Grandview Exchange messages directly in your email inbox and reply just like any other email.
-              </div>
+							<h4 style="font-weight: 600; margin-top: var(--space-xs); color: var(--text-dark);">This is a good choice for you:</h4>
+							<ul style="margin: 0; padding-left: var(--space-lg); color: var(--text-body); line-height: 1.5;">
+								<li>If you like using a computer or tablet with a larger screen</li>
+								<li>If you prefer seeing more information at once</li>
+								<li>If you’re comfortable clicking links or using bookmarks</li>
+							</ul>
 
-              <h4 style="font-weight: 600; margin-top: var(--space-xs); color: var(--text-dark);">This is a good choice for you:</h4>
-              <ul style="margin: 0; padding-left: var(--space-lg); color: var(--text-body); line-height: 1.5;">
-                <li>If you already read email every day</li>
-                <li>If you prefer everything to come directly to your inbox</li>
-                <li>If you want to reply just like any other email</li>
-              </ul>
+							<p class="section-item-desc" style="margin-top: var(--space-xs);"><strong>Drawback:</strong> You may need to type the website address or use a bookmark.</p>
 
-              <p class="section-item-desc" style="margin-top: var(--space-xs);"><strong>Drawback:</strong> It’s harder to browse older messages or explore groups.</p>
-              
-              <!-- FIXED: Prominent .section-item-action link style -->
-              <a class="section-item-action" href="#">Get Started With Email →</a>
-            </div>
+							<!-- FIXED: Prominent .section-item-action link style -->
+							<a class="section-item-action" href="#">Get Started With Your Browser →</a>
+						</div>
 
-          </div><!-- end grid -->
-        </section>
-      </main>
+						<!-- EMAIL -->
+						<div class="section-item-row">
+							<h3 class="section-item-title">Use Your Email</h3>
+							<div class="section-item-desc">
+								You can receive Grandview Exchange messages directly in your email inbox and reply just like any other email.
+							</div>
 
-      <!-- Column Track 2: Sidebar Container Frame (Aligned Right) -->
-      <aside class="site-sidebar section-block">
-        <h2 class="sidebar-heading">App Shortcuts</h2>
-        <p class="sidebar-intro">Quickly download or access Grandview Exchange platforms.</p>
+							<h4 style="font-weight: 600; margin-top: var(--space-xs); color: var(--text-dark);">This is a good choice for you:</h4>
+							<ul style="margin: 0; padding-left: var(--space-lg); color: var(--text-body); line-height: 1.5;">
+								<li>If you already read email every day</li>
+								<li>If you prefer everything to come directly to your inbox</li>
+								<li>If you want to reply just like any other email</li>
+							</ul>
 
-        <!-- Mobile App Downloads Block -->
-        <div class="sidebar-item">
-          <h3>Get the Mobile App</h3>
-          <p>Download the free Groups.io mobile app directly onto your smartphone or tablet device.</p>
-          <a class="sidebar-link" href="https://apps.apple.com/us/app/groups-io/id1316872512" target="_blank">📱 Apple App Store →</a>
-          <a class="sidebar-link" href="https://play.google.com/store/apps/details?id=io.groups.app" target="_blank">🤖 Google Play Store →</a>
-        </div>
+							<p class="section-item-desc" style="margin-top: var(--space-xs);"><strong>Drawback:</strong> It’s harder to browse older messages or explore groups.</p>
 
-        <!-- Direct Site Access Block -->
-        <div class="sidebar-item">
-          <h3>Grandview Exchange Website</h3>
-          <p>Visit our online community hub directly via your computer or tablet internet browser.</p>
-          <a class="sidebar-link" href="https://grandviewexchange.groups.io/g/Home" target="_blank">Visit Website →</a>
-        </div>
-      </aside>
+							<!-- FIXED: Prominent .section-item-action link style -->
+							<a class="section-item-action" href="#">Get Started With Email →</a>
+						</div>
 
-    </div><!-- end main-layout-wrapper -->
+					</div><!-- end grid -->
+				</section>
+			</main>
 
-  </div><!-- end site-shell -->
+			<!-- Column Track 2: Sidebar Container Frame (Aligned Right) -->
+			<aside class="site-sidebar section-block">
+				<h2 class="sidebar-heading">App Shortcuts</h2>
+				<p class="sidebar-intro">Quickly download or access Grandview Exchange platforms.</p>
 
-  <!-- FIXED: Inline text centering rule added to keep the global layout canvas perfectly centered -->
-  <footer class="site-footer" style="text-align: center;">
-    <p>
-      © 2026 Grandview Exchange ·
-      Questions? <a href="mailto:admin@grandviewexchange.com">Contact Us</a>
-    </p>
-  </footer>
+				<!-- Mobile App Downloads Block -->
+				<div class="sidebar-item">
+					<h3>Get the Mobile App</h3>
+					<p>Download the free Groups.io mobile app directly onto your smartphone or tablet device.</p>
+					<a class="sidebar-link" href="https://apps.apple.com/us/app/groups-io/id1316872512" target="_blank">📱 Apple App Store →</a>
+					<a class="sidebar-link" href="https://play.google.com/store/apps/details?id=io.groups.app" target="_blank">🤖 Google Play Store →</a>
+				</div>
+
+				<!-- Direct Site Access Block -->
+				<div class="sidebar-item">
+					<h3>Grandview Exchange Website</h3>
+					<p>Visit our online community hub directly via your computer or tablet internet browser.</p>
+					<a class="sidebar-link" href="https://grandviewexchange.groups.io/g/Home" target="_blank">Visit Website →</a>
+				</div>
+			</aside>
+
+		</div><!-- end main-layout-wrapper -->
+
+	</div><!-- end site-shell -->
+
+	<footer class="site-footer">
+		<p>
+			© 2026 Grandview Exchange ·
+			Questions? <a href="mailto:admin@grandviewexchange.com">Contact Us</a>
+		</p>
+	</footer>
+
 
 </body>
+
 </html>

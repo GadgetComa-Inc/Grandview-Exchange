@@ -2,108 +2,107 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Grandview Exchange – Training</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Grandview Exchange – Training</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/main.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="assets/css/main.css" />
 </head>
 
 <body class="help-site">
 
-  <!-- HEADER IMAGE -->
-  <header class="site-header">
-    <img src="assets/img/coverphoto.png" alt="Grandview Exchange — Connecting Our Community" />
-  </header>
+	<!-- HEADER IMAGE -->
+	<header class="site-header">
+		<img src="assets/img/coverphoto.png" alt="Grandview Exchange — Connecting Our Community" />
+	</header>
 
-  <div class="site-shell">
+	<div class="site-shell">
 
-    <!-- NAVIGATION -->
-    <div id="site-nav"></div>
+		<!-- NAVIGATION -->
+		<div id="site-nav"></div>
 
-    <script>
-      fetch('/includes/site-nav.html')
-        .then(r => r.text())
-        .then(html => {
-          document.getElementById('site-nav').innerHTML = html;
+		<script>
+			fetch('/includes/site-nav.html')
+				.then(r => r.text())
+				.then(html => {
+					document.getElementById('site-nav').innerHTML = html;
 
-          const title = document.title.replace(' – Grandview Exchange', '');
-          document.querySelector('.current-page').textContent = title;
-        });
-    </script>
+					const title = document.title.replace(' – Grandview Exchange', '');
+					document.querySelector('.current-page').textContent = title;
+				});
+		</script>
 
-    <!-- HERO BOX -->
-    <section class="section">
-      <div class="card card-hero">
-        <h1>Grandview Exchange Training Opportunities</h1>
-        <p>
-          Learn how to use Grandview Exchange with confidence. Whether you're brand new or want help with specific
-          features, we offer two types of training opportunities.
-        </p>
-      </div>
-    </section>
+		<!-- HERO BOX -->
+		<section class="section">
+			<div class="card card-hero">
+				<h1>Grandview Exchange Training Opportunities</h1>
+				<p>
+					Learn how to use Grandview Exchange with confidence. Whether you're brand new or want help with specific
+					features, we offer two types of training opportunities.
+				</p>
+			</div>
+		</section>
 
-    <!-- TRAINING OPTIONS -->
-    <section class="section">
-      <div class="card card-light">
+		<!-- TRAINING OPTIONS -->
+		<section class="section">
+			<div class="card card-light">
 
-        <div class="card-body card-body-center">
-          <h2>Training Options</h2>
-        </div>
+				<div class="card-body card-body-center">
+					<h2>Training Options</h2>
+				</div>
 
-        <div class="grid grid-2col">
+				<div class="grid grid-2col">
 
-          <!-- INTRODUCTION TO GRANDVIEW EXCHANGE -->
-          <div class="card">
-            <div class="card-body">
-              <div class="card-title">Introduction to Grandview Exchange</div>
-              <div class="card-desc">
-                Introductory training sessions for Grandview Exchange are scheduled periodically. As of May 15, 2026, no
-                sessions are planned, but more will be coming soon.
-                Announcements of new sessions will be made on Grandview Exchange and listed on the My Erickson Activity
-                Calendar.
-              </div>
-            </div>
+					<!-- INTRODUCTION TO GRANDVIEW EXCHANGE -->
+					<div class="card">
+						<div class="card-body">
+							<div class="card-title">Introduction to Grandview Exchange</div>
+							<div class="card-desc">
+								Introductory training sessions for Grandview Exchange are scheduled periodically. As of May 15, 2026, no
+								sessions are planned, but more will be coming soon.
+								Announcements of new sessions will be made on Grandview Exchange and listed on the My Erickson Activity
+								Calendar.
+							</div>
+						</div>
 
-            <div class="card-actions card-actions-center">
-              <a class="btn btn-secondary btn-disabled btn-card" tabindex="-1" aria-disabled="true">
-                Coming Soon
-              </a>
-            </div>
-          </div>
+						<div class="card-actions card-actions-center">
+							<a class="btn btn-secondary btn-disabled btn-card" tabindex="-1" aria-disabled="true">
+								Coming Soon
+							</a>
+						</div>
+					</div>
 
-          <!-- HANDS-ON TRAINING -->
-          <div class="card">
-            <div class="card-body">
-              <div class="card-title">Hands-On Training</div>
-              <div class="card-desc">
-                You can sign up for a 15‑minute hands‑on help session to get started or get past obstacles preventing
-                you from taking full advantage of the site.
-              </div>
-            </div>
+					<!-- HANDS-ON TRAINING -->
+					<div class="card">
+						<div class="card-body">
+							<div class="card-title">Hands-On Training</div>
+							<div class="card-desc">
+								You can sign up for a 15‑minute hands‑on help session to get started or get past obstacles preventing
+								you from taking full advantage of the site.
+							</div>
+						</div>
 
-            <div class="card-actions card-actions-center">
-              <a class="btn btn-card" href="https://calendar.app.google/SMqEUDAJcNxaynwR6" target="_blank">
-                Sign Up for Hands‑On Training
-              </a>
-            </div>
-          </div>
+						<div class="card-actions card-actions-center">
+							<a class="btn btn-card" href="https://calendar.app.google/SMqEUDAJcNxaynwR6" target="_blank">
+								Sign Up for Hands‑On Training
+							</a>
+						</div>
+					</div>
 
-        </div><!-- end grid -->
+				</div><!-- end grid -->
 
-      </div><!-- end card-light -->
-    </section>
+			</div><!-- end card-light -->
+		</section>
 
-  </div><!-- end site-shell -->
+	</div><!-- end site-shell -->
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <p>
-      © 2026 Grandview Exchange ·
-      Questions? <a href="mailto:admin@grandviewexchange.com?subject=Questions%20about%20Grandview%20Exchange">Contact Us</a>
-    </p>
-  </footer>
+	<footer class="site-footer">
+		<p>
+			© 2026 Grandview Exchange ·
+			Questions? <a href="mailto:admin@grandviewexchange.com">Contact Us</a>
+		</p>
+	</footer>
 
 </body>
 
