@@ -1,11 +1,23 @@
-/* ============================================
-   Page -- Ways to Use Grandview Exchange
-============================================ */
+/* ============================================================
+   Page -- Ways to Use (Layout Spacing Adjustments)
+============================================================ */
 
-/* No card overrides */
-/* No spacing overrides */
-/* No typography overrides */
-/* No layout overrides */
+/* Add clean spacing below each option title */
+.ways-to-use-area .section-item-desc {
+  margin-bottom: var(--space-md);
+}
 
-/* Page-specific styles only (if any) */
-.page-ways-to-use { }
+/* Clear list parameters to ensure consistent padding structures */
+.ways-to-use-area ul {
+  margin: 0 0 var(--space-md) 0;
+  padding-left: var(--space-lg);
+}
+
+.ways-to-use-area ul li {
+  line-height: 1.5;
+}
+
+/* Lift the drawback paragraph slightly above the action link elements */
+.ways-to-use-area .drawback-text {
+  margin-top: var(--space-md);
+}
