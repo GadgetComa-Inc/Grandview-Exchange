@@ -21,3 +21,9 @@
 .ways-to-use-area .drawback-text {
   margin-top: var(--space-xs);
 }
+
+/* FIXED: Forces the main card's divider border to show up under the title description */
+.ways-to-use-area .section-desc + .grid .section-item-row:first-of-type {
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-lg);
+}
