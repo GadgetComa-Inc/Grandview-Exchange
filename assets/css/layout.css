@@ -34,20 +34,19 @@
 
 .site-header {
   max-width: var(--content-width);
-  margin: 0 auto; /* Spacing below the header image */
+  margin: 0 auto; 
   padding: 0 var(--space-md);
 }
 
 .site-header img {
   width: 100%;
-  height: auto; /* Maintains native aspect ratio beautifully */
+  height: auto; 
   display: block;
 }
 
 /* ---- Balanced Two-Column Structural Frame ---- */
 .main-layout-wrapper {
   display: grid;
-  /* Left Content track gets flexible space, Right Sidebar track gets 320px */
   grid-template-columns: 1fr 320px; 
   gap: var(--space-xl);
   margin-top: var(--space-xl);
@@ -125,10 +124,12 @@
   margin: var(--space-lg) auto; 
   padding: 0 var(--space-md);
   width: 100%;
+  display: block; /* Ensures the container is active and visible */
 }
 
-/* Enforces the inner injected layout container to space out to the edges */
-#site-nav .site-nav-row {
+/* Forces the inner elements to flex horizontally across the layout width */
+#site-nav .site-nav-row,
+.site-nav-row {
   display: flex !important;
   justify-content: space-between;
   align-items: center;
@@ -136,57 +137,62 @@
 }
 
 /* Base styles for the breadcrumb text link string */
-#site-nav .breadcrumb {
+.breadcrumb {
   font-family: 'Source Sans 3', sans-serif;
   font-size: 1.15rem;
   color: var(--text-body);
 }
 
-#site-nav .breadcrumb a {
+.breadcrumb a {
   color: var(--teal);
   text-decoration: none;
 }
 
-#site-nav .breadcrumb a:hover {
+.breadcrumb a:hover {
   text-decoration: underline;
 }
 
 /* Container for your right-aligned button track */
-#site-nav .nav-buttons {
+.nav-buttons {
   display: flex;
   align-items: center;
 }
 
-/* Reconciled: Light, tinted button with smooth rounded corners */
-#site-nav .btn-nav-return {
-  display: inline-block;
+/* Reconciled Layout Selector: Targets BOTH the class name and link ID to guarantee visibility */
+#site-nav .btn-nav-return,
+#nav-back-link,
+.btn-nav-return {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
   padding: 0.4rem 0.8rem;
   font-family: 'Source Sans 3', sans-serif;
   font-size: 0.95rem;
   font-weight: 500;
-  color: var(--text-dark);
-  text-decoration: none;
+  color: var(--text-dark) !important;
+  text-decoration: none !important;
   
   /* Tinted box styling */
-  background-color: rgba(0, 0, 0, 0.05); 
+  background-color: rgba(0, 0, 0, 0.05) !important; 
   border-radius: 6px; 
   
   transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 /* Gentle hover shift for focus interaction */
-#site-nav .btn-nav-return:hover {
-  background-color: rgba(0, 0, 0, 0.09);
-  color: var(--text-dark);
-  text-decoration: none;
+#site-nav .btn-nav-return:hover,
+#nav-back-link:hover,
+.btn-nav-return:hover {
+  background-color: rgba(0, 0, 0, 0.09) !important;
+  color: var(--text-dark) !important;
 }
 
 /* ============================================================
    GLOBAL FOOTER SYSTEM
 ============================================================ */
 .site-footer {
-  text-align: center;         /* Enforces horizontal center on all pages */
-  padding: var(--space-xl) 0;  /* Standard visual breathing room at page bottom */
+  text-align: center;         
+  padding: var(--space-xl) 0;  
   border-top: 1px solid var(--border);
   width: 100%;
 }
