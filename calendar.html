@@ -24,28 +24,6 @@
 
 	<div class="site-shell">
 
-		<!-- GLOBAL NAV INCLUDE -->
-		<div id="site-nav"></div>
-		<script>
-			fetch('/includes/site-nav.html')
-				.then(r => r.text())
-				.then(html => {
-					document.getElementById('site-nav').innerHTML = html;
-					const title = document.title.replace(' – Grandview Exchange', '').replace(' Help', '');
-					document.querySelector('.current-page').textContent = title;
-
-					// Hook up the action link to step back in browser history safely
-					const prevLink = document.getElementById('nav-back-link');
-					if (prevLink) {
-						prevLink.addEventListener('click', (e) => {
-							if (document.referrer.includes(window.location.hostname)) {
-								e.preventDefault();
-								window.history.back();
-							}
-						});
-					}
-				});
-		</script>
 		
 		<section class="page-intro-summary">
 			<h1>The Grandview Community Calendar</h1>
