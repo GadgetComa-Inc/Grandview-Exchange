@@ -8,6 +8,7 @@
 
 	<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="assets/css/main.css">
+		<link rel="stylesheet" href="assets/css/main.css" />
 </head>
 
 <body class="help-site">
@@ -21,16 +22,7 @@
 
 		<!-- GLOBAL NAV INCLUDE -->
 		<div id="site-nav"></div>
-		<script>
-			fetch('/includes/site-nav.html')
-				.then(r => r.text())
-				.then(html => {
-					document.getElementById('site-nav').innerHTML = html;
-					const title = document.title.replace(' – Grandview Exchange', '');
-					document.querySelector('.current-page').textContent = title;
-				});
-		</script>
-
+		
 		<!-- Standardized Introduction Header Block Layout -->
 		<section class="page-intro-summary">
 			<h1>Choose How You Want to Use Grandview Exchange</h1>
