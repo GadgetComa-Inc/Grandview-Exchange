@@ -17,7 +17,7 @@
   line-height: 1.5;
 }
 
-/* Lift the drawback paragraph slightly above the action link elements */
+/* FIXED: Reduced top margin to match the tight spacing above the h4 headers */
 .ways-to-use-area .drawback-text {
-  margin-top: var(--space-md);
+  margin-top: var(--space-xs);
 }
