@@ -32,10 +32,24 @@
   padding: 0 var(--space-md);
 }
 
+/* Find the .site-header block in layout.css and update it to this: */
+.site-header {
+  max-width: var(--content-width);
+  margin: 0 auto; /* Increased global spacing below the header image */
+  padding: 0 var(--space-md);
+}
+
+.site-header img {
+  width: 100%;
+  height: auto; /* Maintains native aspect ratio beautifully */
+  display: block;
+}
+
 /* ---- Balanced Two-Column Structural Frame ---- */
 .main-layout-wrapper {
   display: grid;
-  grid-template-columns: 260px 1fr;
+  /* Left Content track gets flexible space, Right Sidebar track gets 320px */
+  grid-template-columns: 1fr 320px; 
   gap: var(--space-xl);
   margin-top: var(--space-xl);
   align-items: start;
@@ -44,41 +58,69 @@
 @media (max-width: 768px) {
   .main-layout-wrapper {
     grid-template-columns: 1fr;
+    gap: var(--space-lg);
   }
 }
 
 /* ------------------------------------------------------------
-   CARD SYSTEM
-   White cards on a soft, tinted canvas background
+   CARD SYSTEM & CONTAINERS
 ============================================================ */
 .card {
-  background: var(--bg-white);
-  border: none; /* Removed heavy border boxes */
-  border-radius: 8px;
-  padding: var(--space-lg);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-shadow: var(--shadow-card); /* Soft depth cue instead of a line */
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+  border-radius: 0;
 }
 
 .card-title {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 600;
   color: var(--text-dark);
-  margin-bottom: var(--space-sm);
 }
 
 .card-desc {
-  font-size: 1rem;
+  font-size: 1.15rem;
   color: var(--text-body);
   line-height: 1.5;
-  margin-bottom: var(--space-lg);
-  flex: 1; /* Pushes true buttons uniformly to the bottom baseline */
 }
 
-.card-actions-center {
-  display: flex;
-  justify-content: center;
+/* Main content area expands to fill left-side track grid space */
+.main-content-area {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Sidebar layout track base configuration rules */
+.site-sidebar {
   width: 100%;
+}
+
+/* Vertical structural layout divider on desktop viewports */
+@media (min-width: 769px) {
+  .site-sidebar {
+    border-left: 1px solid var(--border);
+    padding-left: var(--space-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .site-sidebar {
+    padding-left: 0;
+  }
+}
+
+/* ---- Unified Structural Component Block ---- */
+.section-block {
+  background: var(--bg-white);
+  border-radius: 8px;
+  padding: var(--space-xl);
+  margin-bottom: var(--space-xl);
+  box-shadow: var(--shadow-card);
+}
+
+#site-nav {
+  max-width: var(--content-width);
+  /* Balanced top and bottom margin automatically centers the bar */
+  margin: var(--space-lg) auto; 
+  padding: 0 var(--space-md);
 }

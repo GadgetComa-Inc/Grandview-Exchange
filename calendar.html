@@ -35,73 +35,72 @@
         });
     </script>
 
-    <section class="page-intro-summary" style="margin-bottom: var(--space-xl);">
+    <section class="page-intro-summary">
       <h1>The Grandview Community Calendar</h1>
       <p class="lead-text">
-        This calendar shows upcoming activities, meetings, and events happening at The Grandview.
-      </p>
-      <p>
-        You can view it online, print it, or subscribe to it so events will show up on your Google, Apple, or
+        This calendar shows upcoming activities, meetings, and events happening at The Grandview. You can view it online, print it, or subscribe to it so events will show up on your Google, Apple, or
         Microsoft calendar.
       </p>
     </section>
 
     <div class="main-layout-wrapper">
 
-      <aside class="site-sidebar">
-        
-        <div class="sidebar-item">
-          <h3 class="sidebar-item-title">Select View</h3>
-          <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px;">
-            <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px;"><input type="radio" name="view" value="listMonth" checked> Agenda</label>
-            <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px;"><input type="radio" name="view" value="timeGridWeek"> Week</label>
-            <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px;"><input type="radio" name="view" value="dayGridMonth"> Month</label>
-          </div>
-        </div>
-
-        <div class="sidebar-item">
-          <h3 class="sidebar-item-title">Show Calendars</h3>
-          <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px;">
-            <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px;"><input type="checkbox" class="cal-toggle" data-cal="grandview" checked> Grandview Events</label>
-            <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px;"><input type="checkbox" class="cal-toggle" data-cal="bocce" checked> Bocce Club</label>
-            <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px;"><input type="checkbox" class="cal-toggle" data-cal="caregiver" checked> Caregiver Support</label>
-            <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px;"><input type="checkbox" class="cal-toggle" data-cal="fitness" checked> Fitness</label>
-            <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px;"><input type="checkbox" class="cal-toggle" data-cal="itclub" checked> Computer/IT Club</label>
-            <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px;"><input type="checkbox" class="cal-toggle" data-cal="mahjongg" checked> Mah Jongg Club</label>
-            <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px;"><input type="checkbox" class="cal-toggle" data-cal="ressvcs" checked> Resident Services</label>
-            <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px;"><input type="checkbox" class="cal-toggle" data-cal="speaker" checked> Speaker Presentation</label>
-            <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px;"><input type="checkbox" class="cal-toggle" data-cal="tvclub" checked> TV Club</label>
-          </div>
-        </div>
-
-        <div class="sidebar-item">
-          <h3 class="sidebar-item-title">Take It With You</h3>
-          <p class="sidebar-desc" style="margin-bottom: var(--space-md);">
-            You can print your calendar or subscribe to have it show up in your Google, Apple, or Microsoft calendar app.
-          </p>
-
-          <div class="actions-stack">
-            <button id="print-calendar" class="btn btn-secondary" style="width: 100%; margin-bottom: 12px; padding: 12px; font-size: 1rem; font-weight: 600;">
-              🖨️ Print Calendar
-            </button>
-            <button id="open-subscribe-modal" class="btn" style="width: 100%; padding: 12px; font-size: 1rem; font-weight: 600;">
-              📅 Subscribe
-            </button>
-          </div>
-        </div>
-
-      </aside>
-
       <main class="main-content-area">
-        <div class="card" style="padding: var(--space-lg);">
-          <h2 id="print-heading" class="print-only" style="font-family: 'Lora', serif; margin-bottom: var(--space-md);">
-            Grandview Community Calendar
-          </h2>
+        <div class="section-block">
           <div id="calendar"></div>
         </div>
       </main>
 
-    </div></div><footer class="site-footer">
+      <aside class="site-sidebar section-block">
+        
+        <h2 class="sidebar-heading">Options</h2>
+        <p class="sidebar-intro">Choose a calendar view and what events to include.</p>
+
+        <div class="sidebar-item">
+          <h3>Select View</h3>
+          <div style="display: flex; flex-direction: column; gap: var(--space-sm); margin-top: var(--space-xs);">
+            <label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;">
+              <input type="radio" name="view" value="listMonth" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Agenda
+            </label>
+            <label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;">
+              <input type="radio" name="view" value="timeGridWeek" style="width: 16px; height: 16px; accent-color: var(--teal);"> Week
+            </label>
+            <label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;">
+              <input type="radio" name="view" value="dayGridMonth" style="width: 16px; height: 16px; accent-color: var(--teal);"> Month
+            </label>
+          </div>
+        </div>
+
+        <div class="sidebar-item">
+          <h3>Show Calendars</h3>
+          <div style="display: flex; flex-direction: column; gap: var(--space-sm); margin-top: var(--space-xs);">
+            <label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="grandview" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Grandview Events</label>
+            <label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="bocce" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Bocce Club</label>
+            <label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="caregiver" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Caregiver Support</label>
+            <label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="fitness" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Fitness</label>
+            <label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="itclub" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Computer/IT Club</label>
+            <label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="mahjongg" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Mah Jongg Club</label>
+            <label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="ressvcs" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Resident Services</label>
+            <label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="speaker" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Speaker Presentation</label>
+            <label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="tvclub" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> TV Club</label>
+          </div>
+        </div>
+
+        <div class="sidebar-item">
+          <h3>Take It With You</h3>
+          <p>
+            You can print your calendar or subscribe to have it show up in your Google, Apple, or Microsoft calendar app.
+          </p>
+          <a href="#" id="print-calendar" class="sidebar-link">🖨️ Print Calendar →</a>
+          <a href="#" id="open-subscribe-modal" class="sidebar-link">📅 Subscribe →</a>
+        </div>
+
+      </aside>
+
+    </div>
+  </div>
+
+  <footer class="site-footer">
     <p>
       © 2026 Grandview Exchange ·
       Questions? <a href="mailto:admin@grandviewexchange.com">Contact Us</a>
@@ -119,7 +118,8 @@
       const openSubscribeModal = document.getElementById('open-subscribe-modal');
       const closeSubscribeModal = document.getElementById('subscribeModalClose');
 
-      openSubscribeModal.onclick = () => {
+      openSubscribeModal.onclick = (e) => {
+        e.preventDefault();
         subscribeModal.style.display = 'flex';
       };
 
@@ -133,7 +133,6 @@
         }
       };
 
-      /* Calendar IDs for subscription links */
       const subscribeLinks = {
         grandview: 'grandviewexchangecalendar@gmail.com',
         bocce: 'b4c130c3e917691e68fec55c696619fef0d8ebffbf6a9cada933dfb24cd7eabd@group.calendar.google.com',
@@ -290,14 +289,12 @@
 
       calendar.render();
 
-      // View switching radio setup
       document.querySelectorAll('input[name="view"]').forEach(radio => {
         radio.addEventListener('change', () => {
           calendar.changeView(radio.value);
         });
       });
 
-      // Calendar checkbox filter setup
       document.querySelectorAll('.cal-toggle').forEach(cb => {
         cb.addEventListener('change', function () {
           const id = this.dataset.cal;
@@ -311,13 +308,12 @@
         });
       });
 
-      // Print operational command
-      document.getElementById('print-calendar').onclick = () => {
+      document.getElementById('print-calendar').onclick = (e) => {
+        e.preventDefault();
         calendar.changeView('listMonth');
         setTimeout(() => window.print(), 200);
       };
 
-      // General Event Modal close triggers
       document.getElementById('modalClose').onclick = () => {
         document.getElementById('eventModal').style.display = 'none';
       };
@@ -369,14 +365,14 @@
       <div class="modal-section" style="margin: 20px 0;">
         <strong style="display: block; margin-bottom: 8px; color: var(--text-dark);">Choose your calendar app:</strong>
         <div style="display: flex; flex-direction: column; gap: 8px;">
-          <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px;">
-            <input type="radio" name="subPlatform" value="google" checked> Google Calendar
+          <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">
+            <input type="radio" name="subPlatform" value="google" checked style="accent-color: var(--teal);"> Google Calendar
           </label>
-          <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px;">
-            <input type="radio" name="subPlatform" value="apple"> Apple Calendar
+          <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">
+            <input type="radio" name="subPlatform" value="apple" style="accent-color: var(--teal);"> Apple Calendar
           </label>
-          <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px;">
-            <input type="radio" name="subPlatform" value="outlook"> Outlook / Other
+          <label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">
+            <input type="radio" name="subPlatform" value="outlook" style="accent-color: var(--teal);"> Outlook / Other
           </label>
         </div>
       </div>
